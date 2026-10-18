@@ -1,7 +1,7 @@
-# PROMPT-1.0.6 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.0.7 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.6
+-   **Versão:** 1.0.7
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -173,20 +173,43 @@ linha correspondente do relatório foi atualizada com sucesso.
 Se houver erro, usar `GERADA_A_VALIDAR` ou `BLOQUEADA`, conforme o caso.
 Não aprovar apenas porque a imagem foi gerada.
 
-## 8. Skills e ferramentas
+## 8. Roteamento de skills e recursos visuais
 
--   Consultar [Higgsfield
-    Skills](https://github.com/higgsfield-ai/skills) como referência de
-    skills de criação visual, caso a skill adequada esteja disponível no
-    ambiente.
--   Verificar a skill e a ferramenta reais antes de afirmar que foram
-    instaladas ou executadas.
--   Se a skill não estiver disponível, usar a ferramenta de geração de
-    imagens disponível e declarar essa limitação. Não inventar execução
-    de skill.
--   A ferramenta deve receber instruções explícitas para seguir as
-    imagens de referência aprovadas, o nome canônico e a composição
-    especificada.
+A escolha dos recursos deve ser orientada pela tarefa. Os links abaixo são fontes oficiais dos projetos externos indicados; consultá-los não significa que uma skill esteja instalada nem que tenha sido executada.
+
+### 8.1 Skill principal de geração — `higgsfield-generate`
+
+- Repositório: [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills)
+- Instruções da skill: [higgsfield-generate/SKILL.md](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md)
+
+**Uso:** recurso principal para geração ou edição de imagem quando a skill e a ferramenta associada estiverem realmente disponíveis no ambiente. Antes de usar, consultar as instruções atuais da skill e verificar os parâmetros de geração suportados. Para cada história, solicitar uma única imagem final por chamada e definir quantidade igual a `1` quando houver esse parâmetro.
+
+Se a skill não estiver instalada ou a ferramenta não estiver acessível, não declarar que foi executada. Usar apenas a ferramenta de geração realmente disponível e informar a limitação quando relevante.
+
+### 8.2 Direção artística complementar — `taste-skill`
+
+- Repositório: [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)
+
+**Uso complementar:** consultar quando for necessário avaliar direção de arte, referências visuais, hierarquia de composição ou reduzir resultados genéricos. Aplicar somente os princípios compatíveis com a identidade visual já aprovada do projeto.
+
+A taste-skill não substitui a fonte narrativa, o prompt visual oficial nem a ferramenta de geração. Não deve introduzir outro estilo a cada história nem autorizar a criação de múltiplas alternativas.
+
+### 8.3 Recurso opcional para exploração visual — `open-design`
+
+- Repositório: [nexu-io/open-design](https://github.com/nexu-io/open-design)
+
+**Uso opcional:** considerar somente em tarefas específicas de exploração, organização ou discussão de conceitos e referências visuais, quando o ambiente realmente disponibilizar esse recurso e a tarefa se beneficiar dele.
+
+`open-design` não é requisito para a geração normal de cada história e não deve ser acionado automaticamente para todas as execuções. Não substitui `higgsfield-generate` nem altera o requisito de produzir uma única prancha final por história.
+
+### 8.4 Ordem de precedência
+
+1. `historia-novo-testamento.md` determina exclusivamente a narrativa.
+2. `ROTA-SKILLS-ESTUDO-BIBLICO.md` e `prompt-geracao-imagem.md` determinam o procedimento e o padrão visual do projeto.
+3. As imagens aprovadas 001 e 002 determinam as referências visuais disponíveis.
+4. As skills e ferramentas externas ajudam a executar ou avaliar o trabalho, mas não podem contrariar os itens anteriores.
+
+Verificar a disponibilidade real de cada recurso antes de utilizá-lo. Nunca afirmar instalação, consulta ou execução sem evidência. Se uma skill estiver indisponível, seguir com os recursos de fato acessíveis e declarar a limitação; não inventar operações nem resultados.
 
 ## 9. Fonte de verdade e precedência
 
