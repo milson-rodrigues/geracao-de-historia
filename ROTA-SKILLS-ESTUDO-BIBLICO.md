@@ -80,25 +80,20 @@ visual, não a narrativa.
 
 ## 4. Processo obrigatório por história
 
-1.  Identificar o número solicitado.
-2.  Ler diretamente a entrada completa da história exata em
-    `historia-novo-testamento.md`.
-3.  Consultar a linha dessa história em `status-criacao-historia.md`.
-4.  Se a linha não existir no relatório ou se número/título divergirem, interromper e informar; não deduzir estado nem criar linha automaticamente.
-5.  Se estiver `CONCLUIDA`, não gerar novamente sem solicitação explícita. Se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e informar o estado.
-5.  Consultar visualmente as imagens 001 e 002 como referência.
-6.  Criar uma única prancha final com seis quadros narrativos e os três
-    painéis pedagógicos.
-7.  Revisar fidelidade narrativa, sequência, ortografia, legibilidade,
-    composição e consistência visual.
-8.  Salvar uma única imagem final no caminho canônico calculado a partir
-    do título oficial.
-9.  Confirmar que o arquivo existe no destino correto e que seu nome
-    está correto.
-10. Atualizar a linha existente da história no relatório. Nunca
-    adicionar uma segunda linha para o mesmo número.
-11. Informar o resultado, o caminho confirmado e o estado real da
-    validação.
+1. Identificar o número solicitado.
+2. Consultar a branch `main` do GitHub e ler a entrada completa da história exata em `historia-novo-testamento.md`.
+3. Consultar a linha correspondente em `status-criacao-historia.md`.
+4. Comparar número e título entre fonte narrativa e relatório. Se houver divergência, interromper e informar os dois valores.
+5. Se a linha não existir no relatório, interromper e informar; não deduzir o estado nem criar uma linha automaticamente.
+6. Se estiver `CONCLUIDA`, não gerar novamente sem solicitação explícita. Se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e informar o estado; somente `PENDENTE` permite iniciar nova geração.
+7. Consultar visualmente as imagens de referência 001 e 002 quando estiverem acessíveis. Se não puderem ser acessadas, declarar a limitação.
+8. Preparar uma única prancha horizontal com exatamente seis quadros narrativos em duas linhas de três e os três painéis pedagógicos obrigatórios.
+9. Fazer uma única chamada destinada à imagem final, configurando quantidade igual a 1 quando a ferramenta permitir. Não pedir alternativas nem executar chamadas paralelas.
+10. Validar identidade narrativa, sequência, ortografia, legibilidade, composição e consistência visual.
+11. Salvar uma única imagem final no nome canônico calculado a partir do título oficial, desde que a ferramenta e o ambiente permitam a gravação.
+12. Confirmar o arquivo e o nome no destino. Não declarar que a imagem foi salva se só tiver sido exibida no chat.
+13. Atualizar somente a linha existente do relatório após a validação e o salvamento confirmados.
+14. Informar resultado, caminho confirmado e estado real. Se alguma operação não puder ser executada, declarar a limitação; nunca inventar uma confirmação.
 
 ### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
 
