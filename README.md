@@ -97,6 +97,8 @@ Cada prancha deve seguir as instruções completas em `ROTA-SKILLS-ESTUDO-BIBLIC
 - ilustração bíblica infantil colorida, detalhada e acolhedora;
 - cabeçalho com número e título oficiais;
 - exatamente seis quadros narrativos, organizados em duas fileiras de três;
+- cada quadro contém uma ilustração e uma legenda narrativa curta, integrada e legível; a numeração não substitui a legenda;
+- todas as seis legendas devem corresponder à história oficial e não acrescentar fatos sem sustentação;
 - três painéis inferiores com os títulos exatos **O QUE APRENDEMOS**, **PERGUNTAS PARA A CRIANÇA** e **ORAÇÃO**;
 - texto em português brasileiro, apropriado para crianças e revisado;
 - continuidade visual de personagens recorrentes, quando aplicável;
@@ -130,6 +132,8 @@ Antes de marcar como `CONCLUIDA`, confirme:
 - todos os acontecimentos representados pertencem à história atual e respeitam sua sequência;
 - não há mistura de histórias;
 - os seis quadros narrativos e os três painéis pedagógicos estão presentes;
+- cada um dos seis quadros contém legenda narrativa legível, além da ilustração e do número;
+- as legendas correspondem à fonte oficial e não misturam histórias;
 - os três títulos pedagógicos estão corretos;
 - textos relevantes são legíveis e ortograficamente adequados;
 - personagens e estilo estão consistentes;
