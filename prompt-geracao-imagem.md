@@ -120,15 +120,15 @@ execute exatamente:
 7. Comparar número e título entre os dois arquivos.
 8. Se houver inconsistência, PARAR e informar.
 9. Se já estiver `CONCLUIDA`, perguntar se o usuário deseja gerar novamente.
-10. Se estiver pendente ou não existir no arquivo de status, continuar.
+10. Se o número solicitado não existir no arquivo de status, PARAR e informar a ausência. Não gerar nem inferir status. Se estiver `PENDENTE`, seguir; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e explicar o estado, sem iniciar outra geração automaticamente.
 11. Extrair o conteúdo completo da história do arquivo principal.
 12. Construir o roteiro visual.
 13. Criar no mínimo 6 blocos narrativos/visuais.
 14. Aplicar o padrão visual global.
 15. Gerar a imagem.
 16. Validar a imagem.
-17. Somente após geração bem-sucedida, atualizar o arquivo de status.
-18. Marcar a história como `CONCLUIDA`.
+17. Registrar `GERADA_A_VALIDAR` após geração efetiva, se a imagem tiver sido gerada mas ainda não validada.
+18. Marcar `CONCLUIDA` somente depois de validar a imagem, confirmar o nome/caminho canônico e confirmar a gravação do arquivo e a atualização da linha existente do relatório. Se a ferramenta não permitir salvar a imagem ou escrever no relatório, informar a limitação e não declarar conclusão.
 
 ---
 
@@ -264,18 +264,7 @@ O título NÃO é suficiente.
 
 # [CONTROLE DE STATUS]
 
-O arquivo:
-
-`status-criacao-historia.md`
-
-deve utilizar este padrão:
-
-001. O mundo antes do nascimento de Jesus - CONCLUIDA
-002. O anjo Gabriel aparece a Zacarias - CONCLUIDA
-003. Isabel descobre que está grávida - PENDENTE
-004. O anjo Gabriel aparece a Maria - PENDENTE
-
-etc.
+O arquivo `status-criacao-historia.md` é a fonte oficial do progresso e deve ser consultado diretamente na branch `main` do GitHub a cada solicitação. O formato atualmente publicado é uma tabela/linha delimitada por `|`, com número, título, estado, caminho do arquivo e validação editorial. Não converter esse formato para o padrão exemplificado abaixo nem substituir o arquivo por uma lista de texto. Preserve as linhas existentes e altere somente a linha da história solicitada após os critérios de validação serem satisfeitos.
 
 Estados permitidos (usar exatamente estes nomes em todos os arquivos do projeto):
 
@@ -326,12 +315,12 @@ NÃO marcar como `CONCLUIDA` uma geração que falhou.
 
 Quando uma história for concluída:
 
-- se a linha já existir como `PENDENTE`, alterar para `CONCLUIDA`;
-- se estiver como `EM_GERACAO`, alterar para `CONCLUIDA`;
-- se não existir, adicionar a entrada;
-- manter a ordem numérica;
+- localizar e editar exclusivamente a linha existente da história solicitada;
+- não criar uma linha quando o número não estiver presente; interromper e relatar;
+- manter o título oficial, a ordem, as demais linhas e as colunas do formato atual;
 - não duplicar a história;
-- não alterar histórias já concluídas.
+- não alterar histórias já concluídas;
+- atualizar o estado e o campo de validação de acordo com a evidência real; `CONCLUIDA` exige imagem salva e validação aprovada.
 
 Exemplo:
 
@@ -744,7 +733,7 @@ A composição final deve integrar:
 1. número da história;
 2. título;
 3. contexto/introdução quando necessário;
-4. no mínimo 6 blocos narrativos/visuais;
+4. exatamente 6 quadros narrativos principais, organizados em duas linhas de três, conforme a identidade visual aprovada;
 5. narrativa bíblica;
 6. contexto histórico quando necessário;
 7. O QUE APRENDEMOS;
@@ -769,7 +758,7 @@ Use esse registro como fonte única de conteúdo durante a geração e a valida�
 
 As imagens anteriores servem apenas de referência de estilo e continuidade visual. Não reutilize nelas cenas, títulos, legendas, orações ou acontecimentos como conteúdo da história atual.
 
-**Quantidade obrigatória:** solicite uma única imagem por chamada sempre que a ferramenta permitir configurar esse parâmetro. Não solicite variações, grades de alternativas, lotes nem chamadas paralelas para a mesma história. Todos os quadros e painéis devem estar integrados em uma única prancha.
+**Quantidade obrigatória:** uma história solicitada = uma única chamada de geração destinada à imagem final = uma única imagem final. Configure a quantidade como `1` (`n=1` ou parâmetro equivalente) se o gerador oferecer esse controle. Não solicite quatro imagens, alternativas, variações, grades, lotes nem chamadas paralelas para a mesma história. Todos os quadros narrativos e os três painéis pedagógicos obrigatórios devem estar integrados numa única prancha horizontal. Se a ferramenta não expuser controle técnico de quantidade, declare essa limitação; não prometa que a quantidade foi garantida.
 
 Se a ferramenta devolver múltiplas imagens apesar da instrução, avalie no máximo uma candidata e não a aprove automaticamente. Não crie outra geração sem identificar e corrigir a causa da falha. Se não houver controle técnico da quantidade, informe a limitação.
 
@@ -791,7 +780,7 @@ Antes de gerar, confirme internamente:
 [ ] Personagens identificados
 [ ] Acontecimentos identificados
 [ ] Contexto identificado
-[ ] No mínimo 6 blocos planejados
+[ ] Exatamente 6 quadros narrativos planejados em duas linhas de três
 [ ] Contexto histórico separado corretamente da narrativa bíblica
 [ ] Continuidade visual considerada
 [ ] Estilo artístico preservado
@@ -817,7 +806,7 @@ Depois de gerar a imagem, verificar:
 [ ] Título correto
 [ ] Conteúdo corresponde à história
 [ ] Não repetiu outra história
-[ ] Mínimo de 6 blocos
+[ ] Exatamente 6 quadros narrativos, em duas linhas de três
 [ ] Personagens coerentes
 [ ] Estilo coerente
 [ ] Sangria presente
@@ -965,7 +954,7 @@ Skill principal:
 
 `higgsfield-generate`
 
-Aplicar as instruções e boas práticas da skill instalada no ambiente.
+Verificar se a skill `higgsfield-generate` está realmente instalada e se a ferramenta associada está disponível antes de declarar seu uso. Se não estiver disponível, usar somente a ferramenta de imagem realmente acessível e informar essa limitação; nunca afirmar instalação ou execução sem evidência.
 
 Para continuidade visual, quando o gerador suportar referências,
 utilizar imagens anteriores relevantes como referências visuais.
