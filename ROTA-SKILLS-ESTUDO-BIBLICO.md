@@ -170,7 +170,7 @@ Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
 
 ### Integridade do relatório
 
-A meta do projeto é registrar uma linha por história, para as 232 histórias. O arquivo atualmente publicado contém somente os registros 001, 002 e 003. Não invente nem preencha automaticamente as 229 linhas ausentes: a expansão ou normalização do relatório é uma ação separada, que exige conferir os títulos oficiais e definir os estados reais. Até que isso seja regularizado, uma história sem registro está bloqueada para geração.
+A meta do projeto é registrar uma linha por história, para as 232 histórias. Não preencher em lote as linhas ausentes. Quando o usuário pedir explicitamente uma história cuja linha ainda não exista, aplicar a recuperação individual descrita na seção 4.2: confirmar o título na fonte e conferir o caminho canônico; se não houver arquivo de imagem, criar a linha como `PENDENTE | — | validacao: NÃO_INICIADA` e prosseguir. Se já houver arquivo não registrado, parar para reconciliar sem sobrescrever.
 
 ## 7. Critérios para aprovação
 
