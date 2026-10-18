@@ -164,7 +164,7 @@ NÃO gerar imediatamente.
 
 Responder:
 
-"A história 002 — O anjo Gabriel aparece a Zacarias — já está marcada como OK no status. Deseja gerar novamente?"
+"A história 002 — O anjo Gabriel aparece a Zacarias — já está marcada como CONCLUIDA. Deseja gerar novamente?"
 
 Somente gerar se o usuário confirmar.
 
@@ -184,7 +184,7 @@ Estado publicado atualmente na branch `main`:
 
 `003 | Isabel descobre que está grávida | PENDENTE | — | validacao: NÃO_INICIADA`
 
-O número, o título e o estado estão presentes no relatório e correspondem à fonte narrativa. Depois de confirmar novamente os dois arquivos, ler o conteúdo completo da entrada 003 e seguir todas as validações. Não usar este exemplo como autorização para gerar se a linha da história estiver ausente do relatório.
+O número, o título e o estado estão presentes neste exemplo e correspondem à fonte narrativa. Em uma execução real, consultar o status atual. Se a linha estiver ausente, aplicar a recuperação descrita em [CONTROLE DE STATUS]: confirmar a fonte, conferir o caminho canônico e criar somente a linha necessária se não houver imagem final.
 
 ---
 
@@ -1034,7 +1034,7 @@ na conversa.
 
 NUNCA considerar que o número sozinho identifica o conteúdo.
 
-NUNCA marcar uma história como OK antes da geração bem-sucedida.
+NUNCA marcar uma história como `CONCLUIDA` / `APROVADA` antes da geração efetiva, validação, salvamento confirmado e atualização bem-sucedida do status.
 
 Nunca interpretar `Gere novamente a História NNN` como pedido incompleto: esse comando já é a confirmação. Para o comando simples, pedir confirmação apenas quando o status atual estiver `CONCLUIDA`.
 
