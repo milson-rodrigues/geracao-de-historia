@@ -1,10 +1,10 @@
-# PROMPT-1.2.0 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.2.1 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.2.0
+Versão: 1.2.1
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -562,7 +562,7 @@ A numeração do quadro, sozinha, não conta como texto narrativo. Não é sufic
 
 Antes de gerar, redija e confira seis legendas numeradas em ordem narrativa. Cada legenda deve corresponder a um acontecimento ou informação sustentada pela entrada exata da história na fonte oficial. Se a fonte não sustentar determinado detalhe, não o invente. Se os tópicos forem insuficientes para seis cenas distintas sem extrapolação, não preencher lacunas por imaginação: organizar seis momentos visuais conservadores a partir dos tópicos existentes e usar legendas factuais, sem inserir acontecimentos externos. Não acrescente falas bíblicas, motivações, milagres, promessas ou explicações que não estejam na fonte narrativa consultada. Contexto histórico só pode complementar a apresentação e nunca substituir, ampliar indevidamente ou contradizer a narrativa.
 
-Seis quadros sem legendas narrativas completas constituem falha editorial e a imagem deve ser REPROVADA, mesmo que a ilustração e os painéis inferiores estejam bonitos. Também rejeite uma imagem cujo título não corresponda exatamente ao título oficial ou que inclua acontecimentos característicos de outra história. Se o texto não puder ser reproduzido com legibilidade, simplifique a redação antes de gerar, sem remover as seis legendas.
+Seis quadros sem legendas narrativas completas constituem falha editorial e o mockup/imagem deve ser REPROVADO, mesmo que a ilustração e os painéis inferiores estejam bonitos. Também rejeite um título que não corresponda exatamente ao título oficial ou acontecimentos de outra história. Se isso ocorrer, pare após a rejeição e espere novo comando explícito; não gere uma substituição automaticamente. Se o texto não puder ser reproduzido com legibilidade, simplifique a redação antes da próxima chamada, sem remover as seis legendas.
 
 Evite blocos excessivamente longos.
 
@@ -733,11 +733,15 @@ Seis legendas possíveis devem ser factuais e conservadoras, sem inventar aconte
 
 Use essas frases somente se forem compatíveis com a fonte atual consultada; não acrescente detalhes específicos que a fonte não sustente. Se uma frase não puder ser usada por falta de sustentação, reescreva-a de forma igualmente fiel antes de gerar.
 
-## Validação e nova tentativa
+## Validação do mockup e da imagem final — sem retries automáticos
 
-Depois de cada geração, confira primeiro o texto do cabeçalho e as seis legendas. Se o título não for idêntico ao oficial, ou se houver qualquer personagem/acontecimento proibido, rejeite a imagem inteira. Não a salve como final.
+A validação é obrigatória, mas não autoriza novas chamadas automáticas.
 
-Uma rejeição exige corrigir o prompt enviado ao gerador e tentar novamente sequencialmente. Cada tentativa deve gerar uma única imagem; não solicite alternativas em lote. Permita até duas tentativas corrigidas após a primeira falha. Se a ferramenta continuar trocando a história, interrompa, registre a tentativa como reprovada e informe o problema específico. Nunca aprove uma imagem só porque a composição está bonita.
+- Na Fase 1, revisar um único mockup e registrar `MOCKUP_PARA_APROVACAO`. Parar e esperar aprovação explícita.
+- Se o mockup não corresponder à história, explicar o problema e esperar que o usuário diga `Refaça o mockup da História NNN`. Não gerar outro mockup no mesmo turno.
+- Na Fase 2, gerar uma única imagem final. Se título, cenas ou legendas estiverem errados, rejeitar a imagem, registrar a falha real e parar. Não repetir a chamada automaticamente.
+- Toda nova chamada de imagem exige um novo comando explícito. Não há retry automático, loop, lote nem chamadas paralelas.
+- Nunca aprovar uma imagem só porque a composição está bonita.
 
 ---
 
@@ -779,7 +783,7 @@ Somente depois dessa validação gerar a imagem.
 
 # [VALIDAÇÃO DEPOIS DA GERAÇÃO]
 
-Depois de gerar a imagem, verificar:
+Depois de gerar o mockup ou a imagem final, verificar:
 
 [ ] É a história correta
 [ ] Número correto
