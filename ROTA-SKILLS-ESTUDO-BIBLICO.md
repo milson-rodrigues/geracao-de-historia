@@ -1,7 +1,7 @@
-# PROMPT-1.0.3 --- ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.0.6 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.5
+-   **Versão:** 1.0.6
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -133,55 +133,36 @@ Para cada comando `Gere a História NNN`, o resultado esperado é exatamente uma
     encontrados e solicitar autorização antes de excluí-las. Não apagar
     automaticamente.
 
-## 6. Relatório com uma linha por história
+## 6. Relatório central de progresso
 
-`status-criacao-historia.md` deve conter uma tabela Markdown com uma
-linha por história. Não escrever blocos de parágrafos por história, não
-criar relatórios paralelos e não duplicar linhas.
+O arquivo `status-criacao-historia.md` é a fonte oficial do estado de produção e deve ser consultado diretamente na branch `main` do GitHub antes de cada execução.
 
-Modelo:
+### Formato efetivamente publicado
 
-  -------------------------------------------------------------------------------------------------------------------------
-              Nº Título       Estado      Arquivo                                              Validação      Observações
-                 oficial                                                                                      
-  -------------- ------------ ----------- ---------------------------------------------------- -------------- -------------
-             001 O mundo      CONCLUIDA   imagens/001-mundo-antes-do-nascimento-de-jesus.png   APROVADA       ---
-                 antes do                                                                                     
-                 nascimento                                                                                   
-                 de Jesus                                                                                     
+Cada registro usa uma única linha delimitada por barras verticais, neste formato:
 
-             002 O anjo       CONCLUIDA   imagens/002-anjo-gabriel-aparece-a-zacarias.png      APROVADA       ---
-                 Gabriel                                                                                      
-                 aparece a                                                                                    
-                 Zacarias                                                                                     
+```text
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
+```
 
-             003 Confirmar na PENDENTE    ---                                                  NÃO_INICIADA   ---
-                 fonte                                                                                        
-                 oficial                                                                                      
-  -------------------------------------------------------------------------------------------------------------------------
+Colunas obrigatórias: número com três dígitos; título oficial; estado de produção; caminho canônico da imagem ou `—`; validação editorial. Não converter o arquivo para outro formato, adicionar colunas ou reescrever seus registros sem uma alteração explícita e controlada.
 
-As linhas acima são exemplos de formato; confirmar o conteúdo e o estado
-reais antes de adotá-las.
+Estados permitidos: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
 
-Colunas obrigatórias: - `Nº`: número com três dígitos. -
-`Título oficial`: copiar exatamente da fonte narrativa. - `Estado`:
-estado atual. - `Arquivo`: caminho relativo a partir de
-`Biblioteca/Estudo Bíblico/`. - `Validação`: estado da revisão
-editorial. - `Observações`: nota curta ou `—`, sempre na mesma linha da
-tabela.
+Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
 
-Estados permitidos: - `PENDENTE` - `EM_GERACAO` - `GERADA_A_VALIDAR` -
-`CONCLUIDA` - `BLOQUEADA`
+### Regras de leitura e atualização
 
-Valores de validação: - `NÃO_INICIADA` - `PENDENTE` - `APROVADA` -
-`REPROVADA`
+- Compare número e título com a entrada exata de `historia-novo-testamento.md`. Se houver divergência, interrompa e informe ambos os valores.
+- Só inicie uma nova geração quando a linha existente estiver `PENDENTE`. Se estiver `CONCLUIDA`, não regenere sem solicitação explícita; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interrompa e informe o estado.
+- Se a história não possuir linha no relatório, não deduza seu estado e não crie uma linha automaticamente. Interrompa e solicite regularização do relatório.
+- Atualize somente a linha existente correspondente à história solicitada. Não duplique registros nem altere as outras histórias.
+- Marque `CONCLUIDA` e `APROVADA` somente após geração efetiva, validação editorial, salvamento confirmado do arquivo canônico e atualização confirmada do relatório.
+- Se o gerador não permitir salvar o arquivo ou não houver permissão para atualizar o relatório, descreva a limitação e mantenha o estado real; nunca declare uma conclusão não confirmada.
 
-Ao atualizar: - editar a linha existente do número solicitado; - não
-inserir uma segunda linha para o mesmo número; - manter cada história em
-uma única linha de tabela; - atualizar a data geral do relatório apenas
-com a data real; - usar o caminho canônico do arquivo; - marcar
-`CONCLUIDA` somente após salvamento confirmado e validação aprovada; -
-se a gravação falhar, informar que o relatório não foi atualizado.
+### Integridade do relatório
+
+A meta do projeto é registrar uma linha por história, para as 232 histórias. O arquivo atualmente publicado contém somente os registros 001, 002 e 003. Não invente nem preencha automaticamente as 229 linhas ausentes: a expansão ou normalização do relatório é uma ação separada, que exige conferir os títulos oficiais e definir os estados reais. Até que isso seja regularizado, uma história sem registro está bloqueada para geração.
 
 ## 7. Critérios para aprovação
 
