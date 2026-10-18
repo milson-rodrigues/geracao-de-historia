@@ -1,16 +1,18 @@
-# PROMPT-1.0.0 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.1.3 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.2
+Versão: 1.1.3
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
 Fonte narrativa: `historia-novo-testamento.md`
 Fonte de controle: `status-criacao-historia.md`
-Skill visual: `higgsfield-generate`
+Skill visual principal: `higgsfield-generate`
+Direção artística complementar: `taste-skill`
+Recurso opcional de exploração visual: `open-design`
 Quantidade total: 232 histórias
 
 ---
@@ -852,22 +854,41 @@ priorizar o arquivo fornecido pelo usuário.
 
 ---
 
-# [ROTEAMENTO DE SKILLS]
+# [ROTEAMENTO DE SKILLS E RECURSOS VISUAIS]
 
-Para tarefas de geração de imagem, utilizar a skill visual disponível
-para geração de imagens.
+## Skill principal de geração: higgsfield-generate
 
-Skill principal:
+Repositório:
+https://github.com/higgsfield-ai/skills
 
-`higgsfield-generate`
+Instruções específicas:
+https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
 
-Verificar se a skill `higgsfield-generate` está realmente instalada e se a ferramenta associada está disponível antes de declarar seu uso. Se não estiver disponível, usar somente a ferramenta de imagem realmente acessível e informar essa limitação; nunca afirmar instalação ou execução sem evidência.
+Para geração ou edição de imagens, consultar e usar `higgsfield-generate` quando a skill e a ferramenta associada estiverem realmente disponíveis no ambiente. Verificar as instruções atuais e configurar uma única imagem por chamada, com quantidade `1` quando a ferramenta oferecer esse parâmetro.
 
-Para continuidade visual, quando o gerador suportar referências,
-utilizar imagens anteriores relevantes como referências visuais.
+Se a skill ou ferramenta não estiver disponível, não afirmar que foi executada. Utilizar somente a ferramenta de imagem de fato acessível e informar a limitação quando relevante.
 
-Não substituir a identidade visual estabelecida por uma nova identidade
-a cada geração.
+## Direção artística complementar: taste-skill
+
+Repositório:
+https://github.com/Leonxlnx/taste-skill
+
+Consultar quando for útil para direção artística, avaliação de referências, hierarquia de composição ou prevenção de resultados visuais genéricos. Aplicar suas orientações apenas se forem compatíveis com a identidade visual aprovada do projeto.
+
+A taste-skill não substitui o roteiro narrativo nem o padrão visual oficial e não deve fazer a aparência das páginas variar sem motivo.
+
+## Recurso opcional: open-design
+
+Repositório:
+https://github.com/nexu-io/open-design
+
+Considerar somente quando a tarefa envolver exploração de conceitos, organização de referências ou discussão de propostas visuais e o recurso estiver realmente disponível no ambiente. Não é requisito para a geração rotineira de cada história, não substitui o gerador de imagens e não deve provocar a criação de múltiplas saídas finais.
+
+## Prioridade das regras
+
+A fonte narrativa oficial e as regras deste projeto prevalecem sobre qualquer recomendação externa. As skills auxiliam a execução; não podem mudar os acontecimentos bíblicos, o conteúdo pedagógico, a identidade visual aprovada nem a regra de uma única imagem final por história.
+
+Antes de afirmar que uma skill foi consultada, instalada ou executada, confirmar a evidência real. O acesso a um link público não prova que a skill foi instalada ou executada como ferramenta.
 
 ---
 
