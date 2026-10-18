@@ -1,7 +1,7 @@
 # PROMPT-1.0.3 --- ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.3
+-   **Versão:** 1.0.4
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -85,7 +85,7 @@ visual, não a narrativa.
     `historia-novo-testamento.md`.
 3.  Consultar a linha dessa história em `status-criacao-historia.md`.
 4.  Se já estiver `CONCLUIDA`, não gerar novamente sem solicitação
-    explícita.
+    explícita. Em caso de status ausente ou divergente, não deduzir o estado: conferir fonte e relatório, e registrar a incerteza.
 5.  Consultar visualmente as imagens 001 e 002 como referência.
 6.  Criar uma única prancha final com seis quadros narrativos e os três
     painéis pedagógicos.
@@ -201,7 +201,14 @@ Não aprovar apenas porque a imagem foi gerada.
     imagens de referência aprovadas, o nome canônico e a composição
     especificada.
 
-## 9. Integridade
+## 9. Fonte de verdade e precedência
+
+- O GitHub é a fonte oficial versionada dos arquivos do projeto. A Biblioteca do ChatGPT é uma cópia de trabalho, salvo se uma integração explícita determinar o contrário.
+- Para o conteúdo narrativo, `historia-novo-testamento.md` é a fonte de verdade; para estado de produção, `status-criacao-historia.md` é a fonte de verdade.
+- A rota controla o procedimento; `prompt-geracao-imagem.md` detalha roteiro visual e validação. Em conflito entre esses dois documentos, a regra mais restritiva de identidade narrativa e uma imagem final prevalece, e a inconsistência deve ser resolvida sem inventar conteúdo.
+- Não misturar conteúdo recuperado do GitHub com uma cópia da Biblioteca que possa estar desatualizada. Registrar a origem consultada em cada execução e informar indisponibilidade.
+
+## 10. Integridade
 
 -   Não alterar `historia-novo-testamento.md`.
 -   Preservar as demais linhas do relatório.
@@ -213,7 +220,7 @@ Não aprovar apenas porque a imagem foi gerada.
     arquivo resultante para importação manual e dizer claramente que a
     gravação direta ficou pendente.
 
-## 10. Instrução de execução
+## 11. Instrução de execução
 
 Ao receber `Gere a História NNN`, processar apenas a história
 solicitada. Consultar a fonte oficial, verificar o status, consultar as
