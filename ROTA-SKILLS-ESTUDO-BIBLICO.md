@@ -1,7 +1,7 @@
-# PROMPT-1.0.7 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.0.8 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.7
+-   **Versão:** 1.0.8
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -61,7 +61,10 @@ A imagem final deve corresponder ao padrão visual das Histórias 001 e
 -   paleta quente, luz clara e contraste suficiente para leitura;
 -   cabeçalho superior decorativo de pergaminho, com número e título;
 -   molduras de pergaminho coerentes entre os quadros;
--   seis quadros narrativos principais em duas linhas de três;
+-   exatamente seis quadros narrativos principais em duas linhas de três;
+-   cada quadro deve conter uma ilustração e uma legenda narrativa curta, integrada ao próprio quadro e legível; numerar os quadros sem incluir a legenda não atende ao padrão;
+-   as seis legendas devem ser redigidas antes da geração, em ordem narrativa, e conferidas contra a entrada exata da história na fonte oficial;
+-   não omitir as legendas nem acrescentar fatos, falas ou motivações não sustentados pela história solicitada;
 -   três painéis pedagógicos na faixa inferior, com os títulos exatos:
     -   `O QUE APRENDEMOS`
     -   `PERGUNTAS PARA A CRIANÇA`
@@ -161,17 +164,21 @@ A meta do projeto é registrar uma linha por história, para as 232 histórias. 
 
 ## 7. Critérios para aprovação
 
-A história só pode ser marcada `CONCLUIDA` quando: - número e título
-conferem com a fonte; - a narrativa e a ordem dos acontecimentos estão
-corretas; - a prancha segue a composição e o estilo visual das
-referências 001 e 002; - os seis quadros narrativos e os três painéis
-inferiores estão presentes; - os três títulos pedagógicos estão escritos
-corretamente; - textos estão legíveis e revisados; - existe uma única
-imagem final oficial no destino; - nome e caminho estão corretos; - a
-linha correspondente do relatório foi atualizada com sucesso.
+A história só pode ser marcada `CONCLUIDA` quando todos os itens forem confirmados:
 
-Se houver erro, usar `GERADA_A_VALIDAR` ou `BLOQUEADA`, conforme o caso.
-Não aprovar apenas porque a imagem foi gerada.
+- número e título correspondem à fonte oficial;
+- a narrativa e a sequência dos acontecimentos estão corretas;
+- a prancha mantém o padrão visual aprovado;
+- existem exatamente seis quadros narrativos em duas linhas de três;
+- **cada um dos seis quadros contém uma legenda narrativa curta, integrada e legível, além da ilustração e da numeração**;
+- as seis legendas correspondem à história solicitada, sem mistura de narrativas ou detalhes não sustentados pela fonte;
+- os três painéis inferiores estão presentes e os títulos estão corretos;
+- todos os textos estão legíveis e revisados;
+- existe uma única imagem final oficial no destino;
+- nome e caminho canônicos estão corretos;
+- salvamento e atualização da linha correspondente do relatório foram confirmados.
+
+Quadro ilustrado sem legenda narrativa é falha editorial, mesmo quando a imagem visual é adequada. Se houver erro, use `GERADA_A_VALIDAR` enquanto a avaliação estiver pendente ou `BLOQUEADA` quando a falha impedir a continuação segura. Não aprove apenas porque a imagem foi gerada.
 
 ## 8. Roteamento de skills e recursos visuais
 
