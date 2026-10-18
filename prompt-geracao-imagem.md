@@ -1,10 +1,10 @@
-# PROMPT-1.1.4 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.1.5 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.4
+Versão: 1.1.5
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -105,34 +105,36 @@ obter o conteúdo específico da história solicitada.
 
 ---
 
-# [FLUXO OBRIGATÓRIO]
+# [FLUXO OBRIGATÓRIO — INTERPRETAÇÃO DOS COMANDOS]
 
-Sempre que o usuário solicitar:
+Primeiro identifique a intenção do usuário. Não aplique uma regra genérica de "já concluída" antes de verificar se ele pediu explicitamente para gerar novamente.
 
-"Gere a imagem da história X"
+### Comando: `Gere a História NNN`
 
-execute exatamente:
+1. Consultar a versão atual dos arquivos na branch `main`.
+2. Ler a entrada completa e confirmar número e título na fonte narrativa.
+3. Consultar o registro de status.
+4. Se o estado de produção for `PENDENTE`, iniciar a geração diretamente, sem pedir confirmação.
+5. Se a validação anterior for `REPROVADA`, mas a produção estiver `PENDENTE` e o arquivo reprovado tiver sido excluído ou não houver arquivo final utilizável, a reprovação anterior não bloqueia: a nova geração deve começar. Redefinir a validação para `NÃO_INICIADA` ao preparar a nova tentativa.
+6. Se a linha estiver ausente, confirmar que a história existe na fonte e verificar o caminho canônico. Se não existir imagem final nesse caminho, adicionar a linha como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar, pois o comando explícito autoriza a produção daquela história. Se já existir imagem não registrada, interromper para reconciliar antes de sobrescrever.
+7. Se estiver `CONCLUIDA`, não substituir a imagem com o comando simples; solicitar confirmação e aguardar.
+8. Se estiver `EM_GERACAO`, verificar se há execução realmente ativa para não criar chamadas paralelas. Se estiver `BLOQUEADA`, remover primeiro o impedimento real.
+9. Gerar uma única prancha com uma única chamada, validar o resultado e atualizar os arquivos apenas quando a operação real for confirmada.
 
-1. Identificar o número solicitado.
-2. Ler `status-criacao-historia.md`.
-3. Procurar o número correspondente.
-4. Verificar o status.
-5. Ler `historia-novo-testamento.md`.
-6. Localizar a mesma história.
-7. Comparar número e título entre os dois arquivos.
-8. Se houver inconsistência, PARAR e informar.
-9. Se já estiver `CONCLUIDA`, perguntar se o usuário deseja gerar novamente.
-10. Se o número solicitado não existir no arquivo de status, PARAR e informar a ausência. Não gerar nem inferir status. Se estiver `PENDENTE`, seguir; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e explicar o estado, sem iniciar outra geração automaticamente.
-11. Extrair o conteúdo completo da história do arquivo principal.
-12. Construir o roteiro visual.
-13. Planejar exatamente 6 quadros narrativos, organizados em duas linhas de três, sem perder acontecimentos essenciais.
-14. Aplicar o padrão visual global.
-15. Gerar a imagem.
-16. Validar a imagem.
-17. Registrar `GERADA_A_VALIDAR` após geração efetiva, se a imagem tiver sido gerada mas ainda não validada.
-18. Marcar `CONCLUIDA` somente depois de validar a imagem, confirmar o nome/caminho canônico e confirmar a gravação do arquivo e a atualização da linha existente do relatório. Se a ferramenta não permitir salvar a imagem ou escrever no relatório, informar a limitação e não declarar conclusão.
+### Comando: `Gere novamente a História NNN`
 
----
+Esse comando é, por si só, a confirmação do usuário. **Não pergunte novamente se ele deseja gerar de novo.**
+
+1. Consultar a fonte narrativa e o status atual.
+2. Confirmar número e título; se divergirem, parar.
+3. Se a história estiver `CONCLUIDA`, considerar o pedido autorização explícita para criar uma substituta. Manter a imagem aprovada existente até validar a nova imagem; substituir o arquivo canônico somente após aprovação da nova versão.
+4. Se a história estiver `PENDENTE` ou a tentativa anterior estiver `REPROVADA` e descartada, iniciar a nova tentativa diretamente.
+5. Se estiver `GERADA_A_VALIDAR`, examinar o resultado já existente antes de iniciar outra chamada; se a tentativa for reprovada/excluída, voltar a `PENDENTE` e prosseguir.
+6. Se estiver `EM_GERACAO`, confirmar que não há chamada ativa; só então reiniciar.
+7. Se estiver `BLOQUEADA` por conflito de fonte/título ou arquivo não reconciliado, parar e explicar o impedimento.
+8. Fazer uma única chamada de geração, configurar quantidade `1` quando disponível, validar, salvar e atualizar a linha de status conforme evidência real.
+
+Não confundir estado da produção com resultado da validação: `PENDENTE` permite nova tentativa; `REPROVADA` registra que um resultado anterior falhou. Uma reprovação anterior não pode bloquear indefinidamente uma nova solicitação válida.
 
 # [EXEMPLO — HISTÓRIA JÁ PRODUZIDA]
 
@@ -290,22 +292,21 @@ Se a geração falhar, não marque `CONCLUIDA`. Retorne para `PENDENTE` quando a
 # [REGRA DE ATUALIZAÇÃO]
 
 Ao atualizar o relatório:
-
 - localizar a linha existente pelo número e conferir o título;
-- editar somente essa linha, mantendo o formato delimitado por barras verticais;
-- não adicionar a entrada se ela não existir; interromper e informar a ausência;
-- manter a ordem, o caminho canônico e as demais histórias;
-- não duplicar entradas nem alterar histórias concluídas que não tenham sido solicitadas;
-- registrar o estado e a validação que correspondam à evidência real;
-- marcar `CONCLUIDA` com `validacao: APROVADA` somente após validação, salvamento confirmado e atualização confirmada.
+- editar somente essa linha, preservando o formato delimitado por barras verticais;
+- se a linha estiver ausente, confirmar a história na fonte e verificar se não existe imagem no caminho canônico; se a imagem também estiver ausente, o comando explícito para gerar essa história autoriza criar uma nova linha `PENDENTE | — | validacao: NÃO_INICIADA` na posição numérica correta;
+- se houver imagem no destino, mas faltar a linha de status, interromper e reconciliar sem sobrescrever;
+- não duplicar entradas nem alterar histórias não solicitadas;
+- ao preparar uma nova tentativa depois de uma imagem rejeitada e excluída, usar estado de produção `PENDENTE` e validação `NÃO_INICIADA`; a rejeição anterior permanece no histórico de commits;
+- marcar `CONCLUIDA` com `validacao: APROVADA` somente após validação, salvamento confirmado e atualização confirmada;
+- informar falhas de escrita e nunca alegar confirmação sem evidência.
 
-Exemplo de estrutura de linha, sem representar o estado real de qualquer história:
-
+Formato:
 ```text
-NNN | Título oficial | CONCLUIDA | imagens/NNN-slug-do-titulo-oficial.png | validacao: APROVADA
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 ```
 
----
+--- 
 
 # [ROTEAMENTO DA HISTÓRIA]
 
@@ -768,25 +769,12 @@ NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 
 # [HISTÓRIA JÁ CONCLUÍDA]
 
-Se o usuário solicitar uma história que já esteja:
+Se a história estiver `CONCLUIDA`:
 
-`- OK`
-
-NÃO gerar automaticamente.
-
-Informar:
-
-"A história XXX — [título] — já está marcada como OK no
-status-criacao-historia.md. Deseja gerar novamente?"
-
-Se o usuário responder afirmativamente:
-
-1. consultar novamente o `historia-novo-testamento.md`;
-2. reconstruir a história;
-3. gerar novamente;
-4. manter o status como `CONCLUIDA`.
-
----
+- Para `Gere a História NNN`, informar que a imagem já está concluída e perguntar se deseja gerar novamente.
+- Para `Gere novamente a História NNN`, não fazer outra pergunta: o próprio comando é a confirmação explícita. Consultar novamente fonte e status, gerar uma única candidata, validar e somente depois substituir a imagem oficial. Preservar a imagem aprovada antiga se a nova candidata falhar.
+- Se o usuário informar que excluiu uma imagem reprovada, confirmar o estado atual do arquivo e registrar a nova tentativa como `PENDENTE` com validação `NÃO_INICIADA`. Não insistir em validar um arquivo que foi excluído.
+- Nunca afirmar que um arquivo foi apagado, salvo ou substituído sem confirmação real.
 
 # [HISTÓRIA NÃO ENCONTRADA]
 
@@ -977,27 +965,17 @@ após todas as validações.
 
 # [COMANDO DE REGENERAÇÃO]
 
-Se o usuário disser:
+Se o usuário disser `Gere novamente a História NNN`, o comando já constitui autorização explícita. Não perguntar novamente.
 
-"gere novamente a história 27"
-
-ou confirmar:
-
-"sim, pode gerar novamente"
-
-o agente deve:
-
-1. consultar o status;
-2. consultar o arquivo principal;
-3. confirmar número e título;
-4. reconstruir a história;
-5. realizar uma única chamada destinada à imagem final, com quantidade `1` quando o parâmetro estiver disponível;
-6. validar a imagem gerada e confirmar o salvamento no caminho canônico;
-7. preservar o padrão visual e não alterar o conteúdo da história;
-8. não sobrescrever uma imagem aprovada sem autorização explícita;
-9. manter `CONCLUIDA` somente se a nova imagem tiver sido validada, salva e a linha existente do relatório tiver sido atualizada com sucesso. Se isso não ocorrer, relatar o estado real e não declarar conclusão.
-
----
+1. Consultar os arquivos oficiais na branch `main` e validar número/título.
+2. Confirmar o estado atual da imagem e do status.
+3. Se a imagem anterior foi reprovada e excluída, resetar para `PENDENTE` e validação `NÃO_INICIADA`, depois gerar.
+4. Se a imagem anterior foi aprovada, gerar a substituta sem apagar a aprovada antes da validação da nova.
+5. Se a linha de status não existir, aplicar a regra de recuperação na seção `[REGRA DE ATUALIZAÇÃO]`.
+6. Fazer uma única chamada destinada à imagem final, com quantidade `1` quando disponível.
+7. Validar as seis legendas narrativas, os três painéis pedagógicos, a fidelidade à fonte e o padrão visual.
+8. Substituir a imagem no caminho canônico somente após aprovação da nova versão.
+9. Atualizar a linha de status com o resultado real. Se geração, salvamento ou atualização falhar, informar o estado real e não declarar conclusão.
 
 # [REGRA FINAL]
 
@@ -1050,7 +1028,7 @@ NUNCA considerar que o número sozinho identifica o conteúdo.
 
 NUNCA marcar uma história como OK antes da geração bem-sucedida.
 
-NUNCA gerar uma história já marcada como OK sem confirmação do usuário.
+Nunca interpretar `Gere novamente a História NNN` como pedido incompleto: esse comando já é a confirmação. Para o comando simples, pedir confirmação apenas quando o status atual estiver `CONCLUIDA`.
 
 NUNCA permitir que uma história diferente seja usada para preencher
 a solicitação.
