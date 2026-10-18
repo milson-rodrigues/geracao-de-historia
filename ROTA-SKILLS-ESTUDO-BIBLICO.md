@@ -1,7 +1,7 @@
-# PROMPT-1.0.3 --- ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.0.6 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.3
+-   **Versão:** 1.0.6
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -80,29 +80,35 @@ visual, não a narrativa.
 
 ## 4. Processo obrigatório por história
 
-1.  Identificar o número solicitado.
-2.  Ler diretamente a entrada completa da história exata em
-    `historia-novo-testamento.md`.
-3.  Consultar a linha dessa história em `status-criacao-historia.md`.
-4.  Se já estiver `CONCLUIDA`, não gerar novamente sem solicitação
-    explícita.
-5.  Consultar visualmente as imagens 001 e 002 como referência.
-6.  Criar uma única prancha final com seis quadros narrativos e os três
-    painéis pedagógicos.
-7.  Revisar fidelidade narrativa, sequência, ortografia, legibilidade,
-    composição e consistência visual.
-8.  Salvar uma única imagem final no caminho canônico calculado a partir
-    do título oficial.
-9.  Confirmar que o arquivo existe no destino correto e que seu nome
-    está correto.
-10. Atualizar a linha existente da história no relatório. Nunca
-    adicionar uma segunda linha para o mesmo número.
-11. Informar o resultado, o caminho confirmado e o estado real da
-    validação.
+1. Identificar o número solicitado.
+2. Consultar a branch `main` do GitHub e ler a entrada completa da história exata em `historia-novo-testamento.md`.
+3. Consultar a linha correspondente em `status-criacao-historia.md`.
+4. Comparar número e título entre fonte narrativa e relatório. Se houver divergência, interromper e informar os dois valores.
+5. Se a linha não existir no relatório, interromper e informar; não deduzir o estado nem criar uma linha automaticamente.
+6. Se estiver `CONCLUIDA`, não gerar novamente sem solicitação explícita. Se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e informar o estado; somente `PENDENTE` permite iniciar nova geração.
+7. Consultar visualmente as imagens de referência 001 e 002 quando estiverem acessíveis. Se não puderem ser acessadas, declarar a limitação.
+8. Preparar uma única prancha horizontal com exatamente seis quadros narrativos em duas linhas de três e os três painéis pedagógicos obrigatórios.
+9. Fazer uma única chamada destinada à imagem final, configurando quantidade igual a 1 quando a ferramenta permitir. Não pedir alternativas nem executar chamadas paralelas.
+10. Validar identidade narrativa, sequência, ortografia, legibilidade, composição e consistência visual.
+11. Salvar uma única imagem final no nome canônico calculado a partir do título oficial, desde que a ferramenta e o ambiente permitam a gravação.
+12. Confirmar o arquivo e o nome no destino. Não declarar que a imagem foi salva se só tiver sido exibida no chat.
+13. Atualizar somente a linha existente do relatório após a validação e o salvamento confirmados.
+14. Informar resultado, caminho confirmado e estado real. Se alguma operação não puder ser executada, declarar a limitação; nunca inventar uma confirmação.
 
-Se a ferramenta produzir várias opções, selecionar somente uma para
-validação e gravação. Não declarar que há uma imagem salva se o ambiente
-apenas a exibiu no chat.
+### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
+
+Para cada comando `Gere a História NNN`, o resultado esperado é exatamente uma imagem final.
+
+1. Configure a ferramenta para produzir uma única imagem por chamada, quando o parâmetro estiver disponível.
+2. Faça uma única chamada destinada à composição final. Não solicite quatro variações nem execute chamadas paralelas para a mesma história.
+3. Todos os quadros narrativos e os três painéis pedagógicos devem estar integrados na mesma imagem.
+4. Se a ferramenta retornar várias imagens apesar da configuração solicitada, não as trate como entregas finais múltiplas. Avalie no máximo uma candidata, sem aprová-la automaticamente.
+5. Confira a identidade narrativa da candidata antes de salvá-la. Se representar outra história ou misturar histórias, rejeite-a.
+6. Não gere alternativas automaticamente. Antes de uma nova tentativa, identifique e corrija a falha anterior.
+7. Preserve imagens já aprovadas. Não sobrescreva nem exclua arquivos existentes sem autorização explícita.
+8. Se não for possível controlar tecnicamente a quantidade, informe essa limitação; não afirme que a geração única foi garantida.
+
+**Critério de entrega:** uma história solicitada, uma imagem final aprovada e um único arquivo oficial. Imagens de trabalho não equivalem a imagens aprovadas.
 
 ## 5. Controle de duplicatas e substituições
 
@@ -122,55 +128,36 @@ apenas a exibiu no chat.
     encontrados e solicitar autorização antes de excluí-las. Não apagar
     automaticamente.
 
-## 6. Relatório com uma linha por história
+## 6. Relatório central de progresso
 
-`status-criacao-historia.md` deve conter uma tabela Markdown com uma
-linha por história. Não escrever blocos de parágrafos por história, não
-criar relatórios paralelos e não duplicar linhas.
+O arquivo `status-criacao-historia.md` é a fonte oficial do estado de produção e deve ser consultado diretamente na branch `main` do GitHub antes de cada execução.
 
-Modelo:
+### Formato efetivamente publicado
 
-  -------------------------------------------------------------------------------------------------------------------------
-              Nº Título       Estado      Arquivo                                              Validação      Observações
-                 oficial                                                                                      
-  -------------- ------------ ----------- ---------------------------------------------------- -------------- -------------
-             001 O mundo      CONCLUIDA   imagens/001-mundo-antes-do-nascimento-de-jesus.png   APROVADA       ---
-                 antes do                                                                                     
-                 nascimento                                                                                   
-                 de Jesus                                                                                     
+Cada registro usa uma única linha delimitada por barras verticais, neste formato:
 
-             002 O anjo       CONCLUIDA   imagens/002-anjo-gabriel-aparece-a-zacarias.png      APROVADA       ---
-                 Gabriel                                                                                      
-                 aparece a                                                                                    
-                 Zacarias                                                                                     
+```text
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
+```
 
-             003 Confirmar na PENDENTE    ---                                                  NÃO_INICIADA   ---
-                 fonte                                                                                        
-                 oficial                                                                                      
-  -------------------------------------------------------------------------------------------------------------------------
+Colunas obrigatórias: número com três dígitos; título oficial; estado de produção; caminho canônico da imagem ou `—`; validação editorial. Não converter o arquivo para outro formato, adicionar colunas ou reescrever seus registros sem uma alteração explícita e controlada.
 
-As linhas acima são exemplos de formato; confirmar o conteúdo e o estado
-reais antes de adotá-las.
+Estados permitidos: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
 
-Colunas obrigatórias: - `Nº`: número com três dígitos. -
-`Título oficial`: copiar exatamente da fonte narrativa. - `Estado`:
-estado atual. - `Arquivo`: caminho relativo a partir de
-`Biblioteca/Estudo Bíblico/`. - `Validação`: estado da revisão
-editorial. - `Observações`: nota curta ou `—`, sempre na mesma linha da
-tabela.
+Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
 
-Estados permitidos: - `PENDENTE` - `EM_GERACAO` - `GERADA_A_VALIDAR` -
-`CONCLUIDA` - `BLOQUEADA`
+### Regras de leitura e atualização
 
-Valores de validação: - `NÃO_INICIADA` - `PENDENTE` - `APROVADA` -
-`REPROVADA`
+- Compare número e título com a entrada exata de `historia-novo-testamento.md`. Se houver divergência, interrompa e informe ambos os valores.
+- Só inicie uma nova geração quando a linha existente estiver `PENDENTE`. Se estiver `CONCLUIDA`, não regenere sem solicitação explícita; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interrompa e informe o estado.
+- Se a história não possuir linha no relatório, não deduza seu estado e não crie uma linha automaticamente. Interrompa e solicite regularização do relatório.
+- Atualize somente a linha existente correspondente à história solicitada. Não duplique registros nem altere as outras histórias.
+- Marque `CONCLUIDA` e `APROVADA` somente após geração efetiva, validação editorial, salvamento confirmado do arquivo canônico e atualização confirmada do relatório.
+- Se o gerador não permitir salvar o arquivo ou não houver permissão para atualizar o relatório, descreva a limitação e mantenha o estado real; nunca declare uma conclusão não confirmada.
 
-Ao atualizar: - editar a linha existente do número solicitado; - não
-inserir uma segunda linha para o mesmo número; - manter cada história em
-uma única linha de tabela; - atualizar a data geral do relatório apenas
-com a data real; - usar o caminho canônico do arquivo; - marcar
-`CONCLUIDA` somente após salvamento confirmado e validação aprovada; -
-se a gravação falhar, informar que o relatório não foi atualizado.
+### Integridade do relatório
+
+A meta do projeto é registrar uma linha por história, para as 232 histórias. O arquivo atualmente publicado contém somente os registros 001, 002 e 003. Não invente nem preencha automaticamente as 229 linhas ausentes: a expansão ou normalização do relatório é uma ação separada, que exige conferir os títulos oficiais e definir os estados reais. Até que isso seja regularizado, uma história sem registro está bloqueada para geração.
 
 ## 7. Critérios para aprovação
 
@@ -201,7 +188,14 @@ Não aprovar apenas porque a imagem foi gerada.
     imagens de referência aprovadas, o nome canônico e a composição
     especificada.
 
-## 9. Integridade
+## 9. Fonte de verdade e precedência
+
+- O GitHub é a fonte oficial versionada dos arquivos do projeto. A Biblioteca do ChatGPT é uma cópia de trabalho, salvo se uma integração explícita determinar o contrário.
+- Para o conteúdo narrativo, `historia-novo-testamento.md` é a fonte de verdade; para estado de produção, `status-criacao-historia.md` é a fonte de verdade.
+- A rota controla o procedimento; `prompt-geracao-imagem.md` detalha roteiro visual e validação. Em conflito entre esses dois documentos, a regra mais restritiva de identidade narrativa e uma imagem final prevalece, e a inconsistência deve ser resolvida sem inventar conteúdo.
+- Não misturar conteúdo recuperado do GitHub com uma cópia da Biblioteca que possa estar desatualizada. Registrar a origem consultada em cada execução e informar indisponibilidade.
+
+## 10. Integridade
 
 -   Não alterar `historia-novo-testamento.md`.
 -   Preservar as demais linhas do relatório.
@@ -213,7 +207,7 @@ Não aprovar apenas porque a imagem foi gerada.
     arquivo resultante para importação manual e dizer claramente que a
     gravação direta ficou pendente.
 
-## 10. Instrução de execução
+## 11. Instrução de execução
 
 Ao receber `Gere a História NNN`, processar apenas a história
 solicitada. Consultar a fonte oficial, verificar o status, consultar as
