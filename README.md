@@ -56,7 +56,17 @@ A memória do projeto só é confiável quando o registro corresponde ao que rea
 - [`ROTA-SKILLS-ESTUDO-BIBLICO.md`](ROTA-SKILLS-ESTUDO-BIBLICO.md) — roteador operacional.
 - [`prompt-geracao-imagem.md`](prompt-geracao-imagem.md) — instruções do gerador e controlador de imagens.
 - [`imagens/`](imagens/) — imagens finais e referências visuais aprovadas.
-- [Higgsfield Skills](https://github.com/higgsfield-ai/skills) — repositório externo de skills visuais indicado pela rota. Consulte a rota para saber quando usar a referência e confirme a disponibilidade real da skill no ambiente antes de afirmar que foi utilizada.
+
+
+## Roteamento de skills e recursos visuais
+
+A rota do projeto define quando consultar cada recurso. Os links abaixo são repositórios de referência; a existência de um link não comprova que a skill esteja instalada nem que tenha sido executada.
+
+1. **Principal para geração de imagens — [`higgsfield-generate`](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md).** Consultar suas instruções atuais para geração/edição de imagem quando a skill e a ferramenta associada estiverem disponíveis. Solicitar uma única imagem por chamada, configurando quantidade `1` quando suportada.
+2. **Complementar para direção artística — [`taste-skill`](https://github.com/Leonxlnx/taste-skill).** Consultar seletivamente para referências, hierarquia visual e avaliação de estilo, sem contrariar as referências aprovadas nem o prompt oficial do projeto.
+3. **Opcional para exploração visual — [`open-design`](https://github.com/nexu-io/open-design).** Considerar apenas para tarefas específicas de exploração, organização ou discussão de referências visuais, quando disponível. Não é requisito para cada geração e não substitui a ferramenta de imagem.
+
+Consulte a [rota operacional](ROTA-SKILLS-ESTUDO-BIBLICO.md) antes de decidir qual recurso usar. Nunca declare uma skill instalada, consultada ou executada sem evidência. A narrativa oficial, o padrão visual do projeto e a regra de uma única imagem final têm prioridade sobre qualquer orientação externa.
 
 ## Fluxo de produção por história
 
