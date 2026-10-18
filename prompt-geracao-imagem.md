@@ -1,10 +1,10 @@
-# PROMPT-1.1.5 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.1.6 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.5
+Versão: 1.1.6
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -245,25 +245,24 @@ O título NÃO é suficiente.
 
 # [CONTROLE DE STATUS]
 
-O arquivo `status-criacao-historia.md` é a fonte oficial do progresso e deve ser consultado diretamente na branch `main` do GitHub a cada solicitação.
+O arquivo `status-criacao-historia.md` é a fonte oficial do progresso e deve ser lido da branch `main` através de conexão/ferramenta GitHub autenticada. O repositório é privado: abrir ou citar a URL sem recuperar o conteúdo não conta como leitura. Se o ambiente não tem autorização para ler o conteúdo, interromper e relatar que o acesso ao GitHub precisa ser habilitado; não declarar a fonte verificada.
 
-O formato atualmente publicado é uma linha delimitada por barras verticais:
-
+Formato:
 ```text
 NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 ```
 
-Campos: número com três dígitos; título copiado da fonte oficial; estado de produção; caminho canônico da imagem ou `—`; validação editorial.
+Estados: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
+Validações: `NÃO_INICIADA`, `PENDENTE`, `APROVADA`, `REPROVADA`.
 
-Estados permitidos: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
-
-Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
-
-O relatório publicado atualmente contém as linhas 001, 002 e 003. Se a história solicitada não tiver uma linha, NÃO inventar o estado, NÃO gerar e NÃO adicionar uma linha automaticamente. Interromper e solicitar regularização do relatório.
-
-Não converter o formato do relatório nem reescrever linhas não relacionadas. Atualizar somente a linha existente da história solicitada.
-
----
+Interpretação obrigatória:
+- `PENDENTE` autoriza uma nova tentativa.
+- `validacao: REPROVADA` registra a falha anterior, mas não bloqueia nova geração se a produção está `PENDENTE` e a imagem reprovada foi excluída ou não existe arquivo final utilizável. Antes da nova tentativa, redefinir validação para `NÃO_INICIADA`.
+- `CONCLUIDA`: o comando simples `Gere a História NNN` pede confirmação antes de substituir; `Gere novamente a História NNN` já é autorização explícita e não deve perguntar outra vez.
+- `EM_GERACAO`: verificar se há uma chamada realmente ativa; não iniciar uma chamada paralela. Se o estado for residual de uma execução interrompida, e o usuário pedir explicitamente para gerar novamente, retomar de forma controlada.
+- `BLOQUEADA`: usar apenas enquanto persistir impedimento real, como falta de acesso autenticado à fonte, divergência de número/título ou arquivo existente não reconciliado. Imagem rejeitada e excluída não é bloqueio permanente.
+- Se a linha da história estiver ausente, confirmar número/título na fonte e conferir o caminho canônico. Se a história existir e não houver imagem no caminho oficial, o comando explícito permite adicionar uma única linha `PENDENTE | — | validacao: NÃO_INICIADA` na posição correta e continuar. Se houver imagem sem registro, parar para reconciliar antes de sobrescrever.
+- Nunca inventar estado, duplicar linhas ou mudar outras histórias.
 
 # [REGRAS PARA ALTERAÇÃO DO STATUS]
 
@@ -559,9 +558,9 @@ Os textos devem ser escritos em PORTUGUÊS DO BRASIL, com linguagem infantil, cl
 
 A numeração do quadro, sozinha, não conta como texto narrativo. Não é suficiente colocar texto apenas nos painéis inferiores. Os seis quadros devem conter legendas, além dos três painéis pedagógicos.
 
-Antes de gerar, redija e confira seis legendas numeradas em ordem narrativa. Cada legenda deve corresponder a um acontecimento ou informação sustentada pela entrada exata da história na fonte oficial. Se a fonte não sustentar determinado detalhe, não o invente. Não acrescente falas bíblicas, motivações, milagres, promessas ou explicações que não estejam na fonte narrativa consultada. Contexto histórico só pode complementar a apresentação e nunca substituir, ampliar indevidamente ou contradizer a narrativa.
+Antes de gerar, redija e confira seis legendas numeradas em ordem narrativa. Cada legenda deve corresponder a um acontecimento ou informação sustentada pela entrada exata da história na fonte oficial. Se a fonte não sustentar determinado detalhe, não o invente. Se os tópicos forem insuficientes para seis cenas distintas sem extrapolação, não preencher lacunas por imaginação: organizar seis momentos visuais conservadores a partir dos tópicos existentes e usar legendas factuais, sem inserir acontecimentos externos. Não acrescente falas bíblicas, motivações, milagres, promessas ou explicações que não estejam na fonte narrativa consultada. Contexto histórico só pode complementar a apresentação e nunca substituir, ampliar indevidamente ou contradizer a narrativa.
 
-Seis quadros sem legendas narrativas completas constituem falha editorial e a imagem deve ser REPROVADA, mesmo que a ilustração e os painéis inferiores estejam bonitos. Se o texto não puder ser reproduzido com legibilidade, simplifique a redação antes de gerar, sem remover as seis legendas.
+Seis quadros sem legendas narrativas completas constituem falha editorial e a imagem deve ser REPROVADA, mesmo que a ilustração e os painéis inferiores estejam bonitos. Também rejeite uma imagem cujo título não corresponda exatamente ao título oficial ou que inclua acontecimentos característicos de outra história. Se o texto não puder ser reproduzido com legibilidade, simplifique a redação antes de gerar, sem remover as seis legendas.
 
 Evite blocos excessivamente longos.
 
@@ -687,6 +686,19 @@ Se a ferramenta devolver múltiplas imagens apesar da instrução, avalie no má
 Rejeite qualquer imagem com número/título incorretos, narrativa misturada, cenas incompatíveis, repetição de conteúdo de outra história ou ausência dos elementos obrigatórios. Imagem rejeitada não pode ser salva como final nem marcada como concluída.
 
 ---
+
+
+# [CONTRATO DE ROTEIRO ANTES DA CHAMADA DE IMAGEM]
+
+Antes de chamar o gerador, criar um roteiro de renderização separado do prompt visual, com os campos:
+- número exato e título oficial, copiados da fonte;
+- seis legendas narrativas, numeradas de 1 a 6;
+- descrição visual correspondente a cada legenda;
+- texto exato dos três painéis inferiores.
+
+Revisar o roteiro comparando-o linha a linha com a história oficial. Não enviar ao gerador apenas o número da história nem confiar que ele recupere os documentos por conta própria. Incluir o título e as seis legendas explicitamente no prompt de geração.
+
+O título não pode ser parafraseado. As cenas e legendas não podem ser importadas de outra história. Se o título gerado ou qualquer quadro representar outro acontecimento, rejeitar a imagem, atualizar a tentativa como pendente para uma nova execução e não salvar como final.
 
 # [VALIDAÇÃO ANTES DA GERAÇÃO]
 
