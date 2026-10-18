@@ -1,10 +1,10 @@
-# PROMPT-1.1.3 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.1.4 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.3
+Versão: 1.1.4
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -548,23 +548,21 @@ Nunca inventar título.
 
 ---
 
-# [TEXTOS]
+# [TEXTOS NARRATIVOS — OBRIGATÓRIOS NOS SEIS QUADROS]
 
-Os textos devem ser escritos em:
+Os textos devem ser escritos em PORTUGUÊS DO BRASIL, com linguagem infantil, clara, curta e legível.
 
-PORTUGUÊS DO BRASIL.
+**Cada um dos seis quadros narrativos deve conter obrigatoriamente:**
+1. Uma ilustração da cena.
+2. Uma legenda narrativa curta, integrada visualmente ao próprio quadro e legível em tamanho normal.
 
-Utilizar linguagem adequada para crianças.
+A numeração do quadro, sozinha, não conta como texto narrativo. Não é suficiente colocar texto apenas nos painéis inferiores. Os seis quadros devem conter legendas, além dos três painéis pedagógicos.
 
-Os textos devem ser:
+Antes de gerar, redija e confira seis legendas numeradas em ordem narrativa. Cada legenda deve corresponder a um acontecimento ou informação sustentada pela entrada exata da história na fonte oficial. Se a fonte não sustentar determinado detalhe, não o invente. Não acrescente falas bíblicas, motivações, milagres, promessas ou explicações que não estejam na fonte narrativa consultada. Contexto histórico só pode complementar a apresentação e nunca substituir, ampliar indevidamente ou contradizer a narrativa.
 
-- claros;
-- curtos;
-- naturais;
-- fáceis de compreender;
-- diretamente relacionados à cena.
+Seis quadros sem legendas narrativas completas constituem falha editorial e a imagem deve ser REPROVADA, mesmo que a ilustração e os painéis inferiores estejam bonitos. Se o texto não puder ser reproduzido com legibilidade, simplifique a redação antes de gerar, sem remover as seis legendas.
 
-Evitar blocos excessivamente longos.
+Evite blocos excessivamente longos.
 
 ---
 
@@ -704,6 +702,9 @@ Antes de gerar, confirme internamente:
 [ ] Acontecimentos identificados
 [ ] Contexto identificado
 [ ] Exatamente 6 quadros narrativos planejados em duas linhas de três
+[ ] Seis legendas narrativas curtas redigidas e conferidas contra a fonte oficial
+[ ] Cada quadro tem texto narrativo próprio além do número do quadro
+[ ] Nenhum texto depende da memória de outra história ou de detalhes inventados
 [ ] Contexto histórico separado corretamente da narrativa bíblica
 [ ] Continuidade visual considerada
 [ ] Estilo artístico preservado
@@ -730,6 +731,9 @@ Depois de gerar a imagem, verificar:
 [ ] Conteúdo corresponde à história
 [ ] Não repetiu outra história
 [ ] Exatamente 6 quadros narrativos, em duas linhas de três
+[ ] Todos os 6 quadros têm legenda narrativa integrada e legível
+[ ] Nenhum quadro contém apenas ilustração e número
+[ ] As 6 legendas correspondem à história solicitada e não contêm fatos não sustentados pela fonte
 [ ] Personagens coerentes
 [ ] Estilo coerente
 [ ] Sangria presente
