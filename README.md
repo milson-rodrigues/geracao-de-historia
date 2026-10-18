@@ -87,7 +87,7 @@ Consulte a [rota operacional](ROTA-SKILLS-ESTUDO-BIBLICO.md) antes de decidir qu
 10. Atualizar somente a linha existente da história no status; nunca duplicar uma linha.
 11. Comunicar claramente o que foi gerado, salvo, validado e atualizado. Separar operações concluídas das que ficaram pendentes.
 
-Se a linha da história não existir no relatório, a rota atual determina interromper a execução e pedir a regularização do status. Não invente o estado nem crie entradas automaticamente. Isso é especialmente importante porque o relatório precisa ser expandido, com títulos confirmados na fonte, antes de as histórias sem linha poderem ser geradas.
+Se a linha não existir, a rota confirma a história na fonte oficial e verifica o caminho canônico. Se a imagem também não existir, um comando explícito para gerar aquele número autoriza criar uma linha `PENDENTE | — | validacao: NÃO_INICIADA` em ordem numérica; se houver imagem não registrada, a execução para para reconciliar, sem sobrescrever. Isso é especialmente importante porque o relatório precisa ser expandido, com títulos confirmados na fonte, antes de as histórias sem linha poderem ser geradas.
 
 ## Padrão da imagem final
 
@@ -171,12 +171,12 @@ O arquivo de status contém registros apenas até a História 003. Antes de gera
 
 | Objetivo | Comando |
 |---|---|
-| Gerar uma história pendente | `Gere a História 003` |
-| Pedir regeneração de uma história concluída | `Gere novamente a História 003` |
+| Gerar ou tentar novamente uma história `PENDENTE` (incluindo tentativa anterior reprovada e descartada) | `Gere a História 003` |
+| Regenerar explicitamente uma história, inclusive concluída | `Gere novamente a História 003` |
 | Verificar o estado sem gerar | `Verifique o status da História 003` |
 | Diagnosticar bloqueios do projeto | `Diagnostique o fluxo de geração do projeto Estudo Bíblico, sem gerar imagens` |
 
-Os comandos são exemplos. A rota ainda deve verificar a fonte oficial e o status atual em cada execução; o número no comando não substitui a consulta aos arquivos.
+Os comandos são exemplos. A rota consulta a fonte e o status na branch `main` em cada execução. Uma reprovação anterior não bloqueia uma nova tentativa quando a imagem foi descartada e o estado é `PENDENTE`. `Gere novamente a História NNN` é autorização explícita e não deve gerar uma segunda pergunta de confirmação. O número no comando não substitui a consulta aos arquivos.
 
 ## Uso em ChatGPT, Codex, Claude e Antigravity
 
