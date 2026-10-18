@@ -165,7 +165,7 @@ Na versão consultada para a criação deste README:
 - História 002 — **CONCLUIDA / APROVADA**
 - História 003 — **PENDENTE / NÃO_INICIADA** — *Isabel descobre que está grávida*
 
-O arquivo de status contém registros apenas até a História 003. Antes de gerar histórias posteriores, é necessário regularizar o relatório com uma linha por história, títulos copiados da fonte e estados reais. Este resumo é apenas uma fotografia do estado atual; sempre consulte o arquivo de status na branch `main` antes de agir.
+O arquivo de status atualmente contém os registros 001, 002 e 003. Para histórias posteriores sem linha, não é necessário criar todo o relatório em lote: quando o usuário solicitar explicitamente um número, a rota confirma o título na fonte e verifica se já existe uma imagem no caminho canônico; se não existir imagem, cria apenas a linha daquela história como `PENDENTE` e continua. Se houver uma imagem não registrada, a execução para para reconciliar antes de sobrescrever. Este resumo é uma fotografia do estado atual; consulte sempre o status na branch `main` antes de agir.
 
 ## Comandos recomendados
 
