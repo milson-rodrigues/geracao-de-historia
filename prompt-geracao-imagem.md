@@ -1,10 +1,10 @@
-# PROMPT-1.1.6 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.1.7 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.6
+Versão: 1.1.7
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -700,6 +700,45 @@ Revisar o roteiro comparando-o linha a linha com a história oficial. Não envia
 
 O título não pode ser parafraseado. As cenas e legendas não podem ser importadas de outra história. Se o título gerado ou qualquer quadro representar outro acontecimento, rejeitar a imagem, atualizar a tentativa como pendente para uma nova execução e não salvar como final.
 
+# [ISOLAMENTO NARRATIVO E ANTI-CONTAMINAÇÃO]
+
+Leia apenas a entrada da história solicitada: o título `### NNN. ...` e os tópicos até o próximo título Markdown de história ou parte. Histórias vizinhas servem para detectar conteúdo proibido, nunca como material para cenas, legendas ou painéis.
+
+Antes da chamada ao gerador, construa o bloco `ROTEIRO BLOQUEADO` e inclua-o literalmente no prompt de imagem:
+- número e título oficial;
+- seis legendas narrativas numeradas;
+- descrição visual ligada a cada legenda;
+- textos dos três painéis pedagógicos;
+- lista de personagens, locais e acontecimentos proibidos por pertencerem a outras histórias.
+
+Nunca envie apenas o número da história e espere que o gerador recupere a fonte. Ele deve receber no mesmo prompt o título oficial e as seis legendas aprovadas internamente.
+
+## Bloqueio adicional para a História 003
+
+Título obrigatório e literal: `Isabel descobre que está grávida`.
+
+Conteúdo autorizado pelos tópicos da entrada 003: Isabel; Zacarias; gravidez; alegria; seis meses de gravidez.
+
+**Conteúdo proibido na História 003:** “O anjo Gabriel aparece a Maria”, Maria recebendo anúncio de Gabriel, Nazaré como cenário da anunciação, anúncio do nascimento de Jesus, nome Jesus nesse anúncio, Filho do Altíssimo, trono de Davi, Gabriel explicando a ação do Espírito Santo a Maria e Maria aceitando o anúncio. Esses elementos pertencem à História 004 e não podem aparecer no título, nas seis cenas, nas legendas, nas perguntas ou na oração da História 003.
+
+Seis legendas possíveis devem ser factuais e conservadoras, sem inventar acontecimentos:
+1. “Esta história acompanha Isabel e Zacarias.”
+2. “A gravidez de Isabel é o acontecimento central.”
+3. “Isabel descobre que está grávida.”
+4. “A gravidez de Isabel traz alegria.”
+5. “A história acompanha esse período da vida de Isabel.”
+6. “A narrativa destaca os seis meses de gravidez de Isabel.”
+
+Use essas frases somente se forem compatíveis com a fonte atual consultada; não acrescente detalhes específicos que a fonte não sustente. Se uma frase não puder ser usada por falta de sustentação, reescreva-a de forma igualmente fiel antes de gerar.
+
+## Validação e nova tentativa
+
+Depois de cada geração, confira primeiro o texto do cabeçalho e as seis legendas. Se o título não for idêntico ao oficial, ou se houver qualquer personagem/acontecimento proibido, rejeite a imagem inteira. Não a salve como final.
+
+Uma rejeição exige corrigir o prompt enviado ao gerador e tentar novamente sequencialmente. Cada tentativa deve gerar uma única imagem; não solicite alternativas em lote. Permita até duas tentativas corrigidas após a primeira falha. Se a ferramenta continuar trocando a história, interrompa, registre a tentativa como reprovada e informe o problema específico. Nunca aprove uma imagem só porque a composição está bonita.
+
+---
+
 # [VALIDAÇÃO ANTES DA GERAÇÃO]
 
 Antes de gerar, confirme internamente:
@@ -708,7 +747,9 @@ Antes de gerar, confirme internamente:
 [ ] Status consultado
 [ ] História consultada no arquivo principal
 [ ] Número corresponde
-[ ] Título corresponde
+[ ] Título corresponde literalmente ao título oficial
+[ ] Bloco ROTEIRO BLOQUEADO incluído no prompt real enviado ao gerador
+[ ] Conteúdo proibido das histórias vizinhas listado
 [ ] História ainda não está concluída, ou usuário autorizou repetição
 [ ] Conteúdo correto recuperado
 [ ] Personagens identificados
@@ -747,6 +788,7 @@ Depois de gerar a imagem, verificar:
 [ ] Todos os 6 quadros têm legenda narrativa integrada e legível
 [ ] Nenhum quadro contém apenas ilustração e número
 [ ] As 6 legendas correspondem à história solicitada e não contêm fatos não sustentados pela fonte
+[ ] Nenhum título, personagem ou acontecimento da história vizinha apareceu
 [ ] Personagens coerentes
 [ ] Estilo coerente
 [ ] Sangria presente
