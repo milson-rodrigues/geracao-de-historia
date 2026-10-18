@@ -4,7 +4,7 @@
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.0
+Versão: 1.1.1
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -144,7 +144,7 @@ Consultar:
 
 Encontrado:
 
-`002. O anjo Gabriel aparece a Zacarias - OK`
+`002. O anjo Gabriel aparece a Zacarias - CONCLUIDA`
 
 Depois consultar:
 
@@ -178,8 +178,8 @@ Consultar:
 
 Exemplo:
 
-`001. O mundo antes do nascimento de Jesus - OK`
-`002. O anjo Gabriel aparece a Zacarias - OK`
+`001. O mundo antes do nascimento de Jesus - CONCLUIDA`
+`002. O anjo Gabriel aparece a Zacarias - CONCLUIDA`
 
 A entrada:
 
@@ -201,7 +201,7 @@ Depois gerar a imagem obedecendo todas as regras deste documento.
 
 Após a geração bem-sucedida:
 
-`003. Isabel descobre que está grávida - OK`
+`003. Isabel descobre que está grávida - CONCLUIDA`
 
 deve ser registrado no arquivo de status.
 
@@ -220,7 +220,7 @@ Exemplo correto:
 
 Se o status apresentar:
 
-`027. Jesus acalma a tempestade - OK`
+`027. Jesus acalma a tempestade - CONCLUIDA`
 
 mas o arquivo principal apresentar:
 
@@ -270,8 +270,8 @@ O arquivo:
 
 deve utilizar este padrão:
 
-001. O mundo antes do nascimento de Jesus - OK
-002. O anjo Gabriel aparece a Zacarias - OK
+001. O mundo antes do nascimento de Jesus - CONCLUIDA
+002. O anjo Gabriel aparece a Zacarias - CONCLUIDA
 003. Isabel descobre que está grávida - PENDENTE
 004. O anjo Gabriel aparece a Maria - PENDENTE
 
@@ -285,7 +285,7 @@ Estados permitidos (usar exatamente estes nomes em todos os arquivos do projeto)
 - `CONCLUIDA`
 - `BLOQUEADA`
 
-Mapeamento legado: `EM_GERACAO` equivale a `EM_GERACAO`; `CONCLUIDA` equivale a `CONCLUIDA`, somente quando a imagem foi salva e validada. Ao migrar registros legados, não mudar o estado sem evidência.
+Mapeamento legado: `EM_GERACAO` equivale a `EM_GERACAO`; `OK` equivale a `CONCLUIDA` somente quando a imagem foi salva e validada. Na migração, preserve o estado real e não marque como concluída sem evidência.
 
 ---
 
@@ -295,13 +295,13 @@ Quando uma história ainda não foi produzida:
 
 PENDENTE
 ↓
-EM PRODUÇÃO
+EM_GERACAO
 ↓
 geração
 ↓
 validação
 ↓
-OK
+CONCLUIDA
 
 NUNCA marcar como `CONCLUIDA` antes de a imagem ser efetivamente gerada
 e validada.
@@ -341,12 +341,12 @@ Antes:
 
 Depois:
 
-`003. Isabel descobre que está grávida - OK`
+`003. Isabel descobre que está grávida - CONCLUIDA`
 
 NÃO criar:
 
-`003. Isabel descobre que está grávida - OK`
-`003. Isabel descobre que está grávida - OK`
+`003. Isabel descobre que está grávida - CONCLUIDA`
+`003. Isabel descobre que está grávida - CONCLUIDA`
 
 ---
 
@@ -849,7 +849,7 @@ Antes:
 
 Depois:
 
-`027. Jesus liberta um homem endemoninhado - OK`
+`027. Jesus liberta um homem endemoninhado - CONCLUIDA`
 
 A alteração deve preservar:
 
@@ -923,11 +923,11 @@ Aguardar correção.
 
 ---
 
-# [HISTÓRIA "EM PRODUÇÃO"]
+# [HISTÓRIA "EM_GERACAO"]
 
 Se a história estiver:
 
-`- EM PRODUÇÃO`
+`- EM_GERACAO`
 
 não iniciar automaticamente uma segunda geração.
 
@@ -1106,7 +1106,7 @@ VALIDAR IMAGEM
         ↓
 ATUALIZAR STATUS
         ↓
-OK
+CONCLUIDA
 
 ---
 
