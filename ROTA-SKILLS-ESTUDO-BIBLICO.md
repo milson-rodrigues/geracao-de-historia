@@ -1,7 +1,7 @@
-# PROMPT-1.1.1 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.1.2 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.1.1
+-   **Versão:** 1.1.2
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -83,60 +83,48 @@ visual, não a narrativa.
 
 ## 4. Processo obrigatório por história
 
-### 4.1 Identificar a intenção do comando antes de interpretar o status
+### 4.1 Comandos e fases
 
-- `Gere a História NNN`: gerar se a história estiver `PENDENTE`. Se a tentativa anterior estiver `REPROVADA` e a imagem tiver sido excluída ou não existir arquivo final canônico, tratar a reprovação como referente à tentativa antiga, manter/redefinir a produção como `PENDENTE` com validação `NÃO_INICIADA` e gerar sem pedir autorização adicional.
-- `Gere novamente a História NNN`: é autorização explícita para uma nova geração, inclusive quando o status está `CONCLUIDA` ou a tentativa anterior foi reprovada. Não perguntar novamente se deseja regenerar. A identidade da história ainda deve ser validada antes de gerar.
-- Uma reprovação editorial anterior não é, por si só, um bloqueio permanente. O estado de produção indica se uma nova tentativa pode começar; o campo de validação descreve o resultado da tentativa anterior.
-- `BLOQUEADA` deve ser reservado para impedimentos reais, como conflito entre número/título, fonte indisponível ou outra inconsistência que impeça gerar com segurança. Se o bloqueio for apenas uma imagem reprovada que foi excluída, regularizar o estado para `PENDENTE` e prosseguir.
-- Se uma imagem aprovada já existir e o usuário pedir regeneração explícita, preservar a imagem aprovada até que a substituta seja validada. Só então substituir o arquivo canônico.
+O fluxo tem duas fases obrigatórias e separadas. O mockup NÃO é a imagem final.
 
-### 4.2 Preparação e geração
+- `Gere a História NNN`: iniciar somente a Fase 1 — mockup para aprovação. Produzir exatamente um mockup e parar, esperando o usuário aprovar ou pedir alterações. Não gerar a imagem final neste turno.
+- `Aprovado`, `Aprovado. Gere a imagem final da História NNN` ou confirmação inequívoca equivalente, após o mockup da história correta: autoriza a Fase 2 — gerar a imagem final. Só executar depois de confirmar que a aprovação corresponde ao mockup correto.
+- `Refaça o mockup da História NNN`: produzir um único mockup substituto e parar novamente para aprovação.
+- `Gere novamente a História NNN`: se existe imagem final aprovada, iniciar a Fase 1 com um novo mockup para revisão antes de substituir a versão aprovada. Não gerar diretamente a imagem final nem apagar a versão existente.
+- Se o usuário reprovar ou apontar erro no mockup, não gerar outro automaticamente. Corrigir as orientações e aguardar um pedido explícito para refazer o mockup.
 
-1. Ler os arquivos da branch `main` por uma ferramenta/conexão GitHub autenticada com acesso ao repositório privado. Abrir ou citar um link, sem recuperar o conteúdo atual, não conta como consulta. Se o ambiente não tiver acesso autenticado e não conseguir ler o conteúdo integral, informar o bloqueio; não alegar que a fonte foi verificada.
-2. Ler a entrada completa da história em `historia-novo-testamento.md` e confirmar número e título.
-3. Consultar `status-criacao-historia.md` e localizar o registro correspondente.
-4. Se a linha existir, comparar número e título com a fonte narrativa. Se houver divergência, parar e informar os dois valores.
-5. Se a linha não existir, confirmar que a história existe na fonte e verificar se já existe uma imagem no caminho canônico. Se não houver imagem final e o usuário tiver solicitado explicitamente esse número, criar a linha em ordem numérica como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar. Se já houver imagem não registrada, interromper para reconciliar o arquivo antes de sobrescrever qualquer coisa.
-6. Consultar visualmente as imagens aprovadas 001 e 002, quando acessíveis; caso contrário, declarar a limitação.
-7. Fixar número, título, personagens, acontecimentos e sequência da história atual. Não importar conteúdo narrativo de outras histórias.
-8. Preparar seis quadros, cada qual com ilustração e legenda narrativa curta, mais os três painéis pedagógicos.
-9. Fazer uma única chamada destinada à imagem final, configurando quantidade igual a 1 quando a ferramenta permitir. Não solicitar alternativas nem executar chamadas paralelas.
-10. Validar número, título, fidelidade narrativa, seis legendas, ortografia, legibilidade e identidade visual.
-11. Salvar a única imagem aprovada no nome canônico, quando houver ferramenta de gravação, e confirmar o arquivo.
-12. Atualizar somente a linha da história solicitada, conforme a evidência real. Informar qualquer etapa não executada; nunca alegar salvamento ou atualização sem confirmação.
+### 4.2 Consulta e identidade narrativa
 
-## 4.3 Isolamento rígido da história solicitada
+1. Ler os arquivos da branch `main` através de uma ferramenta/conexão GitHub autenticada. Abrir ou citar links sem recuperar o conteúdo não conta como consulta. Se não houver acesso, informar o bloqueio e não presumir o conteúdo.
+2. Consultar a entrada exata em `historia-novo-testamento.md` e copiar o número e o título oficiais.
+3. Consultar `status-criacao-historia.md` e confirmar número, título, estado e existência do arquivo canônico.
+4. Se a linha estiver ausente, confirmar a história na fonte e verificar se existe imagem final. Se não houver arquivo, criar apenas o registro da história solicitada como `PENDENTE | — | validacao: NÃO_INICIADA`; se existir arquivo não registrado, interromper para reconciliar sem sobrescrever.
+5. Isolar a entrada narrativa da história solicitada até o próximo título de história. Não usar os tópicos de histórias vizinhas como conteúdo.
+6. Antes de cada chamada de imagem, preparar um roteiro com título oficial literal, seis legendas numeradas, descrição visual por quadro e textos dos três painéis pedagógicos. Validar o roteiro contra a fonte e incluir esse conteúdo explicitamente no prompt enviado ao gerador.
+7. Para a História 003, o título é `Isabel descobre que está grávida`. Conteúdo narrativo autorizado pelos tópicos: Isabel, Zacarias, gravidez, alegria e seis meses de gravidez. Não incluir a anunciação a Maria, Gabriel anunciando Jesus, Filho do Altíssimo, trono de Davi ou outros acontecimentos da História 004.
 
-O trecho narrativo válido é exclusivamente o título `### NNN. ...` solicitado e os tópicos até o próximo título de história ou de parte. Nunca incluir como entrada narrativa o texto da história anterior ou seguinte.
+### 4.3 Fase 1 — mockup para aprovação
 
-Antes da chamada ao gerador, criar um bloco `ROTEIRO BLOQUEADO` com:
-- número e título oficiais copiados literalmente;
-- seis legendas numeradas de 1 a 6;
-- descrição visual de cada quadro;
-- texto final dos três painéis pedagógicos;
-- lista explícita de acontecimentos/personagens proibidos por pertencerem a histórias vizinhas.
+1. Gerar exatamente uma imagem de mockup, com cabeçalho `MOCKUP PARA APROVAÇÃO — NÃO É A IMAGEM FINAL` claramente visível, mantendo número, título, seis quadros com legendas e os três painéis pedagógicos.
+2. Uma solicitação = uma única chamada de imagem. Não pedir múltiplas imagens, variantes, lote, chamadas paralelas, nem repetir a chamada automaticamente.
+3. Mostrar o mockup ao usuário e resumir número, título, seis cenas/legendas previstas e eventuais limitações.
+4. Atualizar o status para `MOCKUP_PARA_APROVACAO`, caminho final `—`, validação `PENDENTE`, se a escrita no GitHub estiver disponível. O mockup não pode ser registrado como imagem final nem salvo no nome canônico.
+5. Parar e aguardar a decisão do usuário. Não iniciar a Fase 2 sem aprovação explícita.
 
-Enviar o título e as seis legendas dentro do prompt real de geração. Não enviar apenas o número, não pedir ao gerador que descubra a história e não depender de ele consultar documentos por conta própria.
+### 4.4 Fase 2 — imagem final após aprovação
 
-**Incidente específico da História 003:** a narrativa é **“Isabel descobre que está grávida”**. Os únicos pontos narrativos desta entrada são Isabel, Zacarias, a gravidez, a alegria e os seis meses de gravidez. Não representar nem mencionar Maria recebendo visita de Gabriel, Nazaré como local da anunciação, anúncio do nascimento de Jesus, “Filho do Altíssimo”, trono de Davi, ação do Espírito Santo na concepção de Jesus ou a aceitação de Maria. Esses elementos pertencem à História 004, **“O anjo Gabriel aparece a Maria”**, e estão proibidos na História 003.
-
-Se o gerador devolver título diferente do título oficial ou conteúdo da história vizinha, rejeitar a candidata. Não salvar nem registrar como imagem final. Corrigir o prompt usando o bloco bloqueado e tentar novamente de forma sequencial, uma imagem por tentativa, sem produzir lotes nem alternativas paralelas. Parar e informar a falha somente após duas tentativas corrigidas sem sucesso ou quando a ferramenta não estiver disponível.
+1. Confirmar que a aprovação corresponde ao mockup da história solicitada.
+2. Executar uma única chamada destinada à imagem final, sem selo/etiqueta de mockup, com quantidade `1` quando suportada.
+3. Validar título literal, narrativa exclusiva da história, seis legendas, três painéis pedagógicos, ortografia e legibilidade.
+4. Se a imagem estiver errada, rejeitar e parar. Não tentar novamente, não abrir outra chamada e não gerar variações sem um novo comando explícito.
+5. Salvar a imagem no nome canônico somente depois de validada. Atualizar o status para `CONCLUIDA` / `APROVADA` apenas com confirmação de salvamento e atualização do registro.
+6. Se alguma operação não estiver disponível, informar a limitação sem afirmar que o arquivo foi salvo.
 
 ### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
 
-Para cada comando `Gere a História NNN`, o resultado esperado é exatamente uma imagem final.
+Cada comando que solicita uma imagem permite **uma única chamada de geração e uma única imagem**. A primeira chamada gera somente o mockup; a imagem final exige aprovação explícita em um turno posterior. Não solicite variações, lotes ou chamadas paralelas. Não repita chamadas automaticamente após falha ou reprovação. Se a ferramenta retornar múltiplas imagens em uma única chamada, apresente no máximo uma como candidata, não a aprove automaticamente e não chame o gerador de novo sem comando explícito. Preserve toda imagem final aprovada até que uma substituta tenha sido aprovada e salva.
 
-1. Configure a ferramenta para produzir uma única imagem por chamada, quando o parâmetro estiver disponível.
-2. Faça uma única chamada destinada à composição final. Não solicite quatro variações nem execute chamadas paralelas para a mesma história.
-3. Todos os quadros narrativos e os três painéis pedagógicos devem estar integrados na mesma imagem.
-4. Se a ferramenta retornar várias imagens apesar da configuração solicitada, não as trate como entregas finais múltiplas. Avalie no máximo uma candidata, sem aprová-la automaticamente.
-5. Confira a identidade narrativa da candidata antes de salvá-la. Se representar outra história ou misturar histórias, rejeite-a.
-6. Não gere alternativas automaticamente. Antes de uma nova tentativa, identifique e corrija a falha anterior.
-7. Preserve imagens já aprovadas. Não sobrescreva nem exclua arquivos existentes sem autorização explícita.
-8. Se não for possível controlar tecnicamente a quantidade, informe essa limitação; não afirme que a geração única foi garantida.
-
-**Critério de entrega:** uma história solicitada, uma imagem final aprovada e um único arquivo oficial. Imagens de trabalho não equivalem a imagens aprovadas.
+**Critério de entrega:** Fase 1 = mockup aguardando aprovação; Fase 2 = uma imagem final validada. O mockup nunca é a imagem oficial.
 
 ## 5. Controle de duplicatas e substituições
 
@@ -170,17 +158,17 @@ NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 
 Colunas obrigatórias: número com três dígitos; título oficial; estado de produção; caminho canônico da imagem ou `—`; validação editorial. Não converter o arquivo para outro formato, adicionar colunas ou reescrever seus registros sem uma alteração explícita e controlada.
 
-Estados permitidos: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
+Estados permitidos: `PENDENTE`, `EM_GERACAO`, `MOCKUP_PARA_APROVACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
 
 Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
 
 ### Regras de leitura e atualização
 
 - Compare número e título com a entrada exata de `historia-novo-testamento.md`. Se houver divergência, interrompa e informe os dois valores.
-- `PENDENTE` permite iniciar a geração. `validacao: REPROVADA` descreve uma tentativa anterior e não bloqueia, por si só, uma nova tentativa quando a imagem reprovada foi excluída ou não existe arquivo final utilizável.
+- `PENDENTE` permite iniciar a Fase 1 (mockup), não a imagem final. `MOCKUP_PARA_APROVACAO` exige aguardar aprovação explícita; não gerar a imagem final automaticamente. `validacao: REPROVADA` descreve uma tentativa anterior e não bloqueia uma nova Fase 1 após novo comando.
 - Se a história estiver `CONCLUIDA`, `Gere a História NNN` deve solicitar confirmação antes de substituir a imagem; `Gere novamente a História NNN` já é a confirmação explícita e deve prosseguir sem perguntar de novo.
 - Se a linha não existir, consultar novamente o GitHub e a fonte narrativa. Se a história existir e não houver imagem no caminho canônico, o comando explícito do usuário autoriza criar a linha como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar. Se existir uma imagem não registrada, interromper para reconciliar sem sobrescrevê-la.
-- `EM_GERACAO` impede chamadas paralelas; para reiniciar uma tentativa abandonada, o usuário deve usar `Gere novamente a História NNN` e o agente deve confirmar que não há geração ativa.
+- `EM_GERACAO` impede chamadas paralelas. Uma chamada por comando, sem loops de retry. Se falhar, relatar o problema e aguardar novo comando explícito.
 - `BLOQUEADA` só deve impedir a geração enquanto persistir um impedimento real, como divergência narrativa, fonte inacessível ou arquivo preexistente não reconciliado. Uma imagem reprovada já excluída não é, por si só, motivo para permanecer bloqueada.
 - Atualize somente a linha correspondente, sem duplicar registros nem alterar outras histórias. Marque `CONCLUIDA` e `APROVADA` somente após validação, salvamento confirmado e atualização confirmada do relatório.
 - Se o gerador não permitir salvar ou não houver permissão de escrita, informar a limitação e manter o estado real.
@@ -266,7 +254,7 @@ Verificar a disponibilidade real de cada recurso antes de utilizá-lo. Nunca afi
 
 ## 11. Instrução de execução
 
-Ao receber `Gere a História NNN`, processar somente essa história. Consultar a fonte oficial e o status atual na branch `main`. Se estiver `PENDENTE`, gerar sem pedir confirmação adicional, mesmo que uma tentativa anterior tenha sido reprovada e excluída. Ao receber `Gere novamente a História NNN`, interpretar o comando como autorização explícita para nova geração, sem perguntar novamente. Aplicar as regras de bloqueio, gerar uma única prancha, validá-la, salvar com o nome canônico e atualizar apenas a linha correspondente. Se a linha estiver ausente, aplicar a regra de recuperação da seção 4.2.
+Ao receber `Gere a História NNN`, executar exclusivamente a Fase 1: consultar a fonte e o status, preparar o roteiro, gerar um único mockup, registrar `MOCKUP_PARA_APROVACAO` e aguardar. Não gerar a imagem final no mesmo turno. Somente após aprovação explícita, executar a Fase 2 com uma única chamada de imagem. `Gere novamente a História NNN` também começa por um mockup de revisão quando já existe uma imagem final aprovada. Não executar chamadas automáticas repetidas.
 
 **Resultado esperado:** uma história = uma imagem final na pasta
 `imagens/` + uma única linha correspondente no relatório.
