@@ -1,7 +1,7 @@
 # PROMPT-1.0.3 --- ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.4
+-   **Versão:** 1.0.5
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -100,9 +100,20 @@ visual, não a narrativa.
 11. Informar o resultado, o caminho confirmado e o estado real da
     validação.
 
-Se a ferramenta produzir várias opções, selecionar somente uma para
-validação e gravação. Não declarar que há uma imagem salva se o ambiente
-apenas a exibiu no chat.
+### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
+
+Para cada comando `Gere a História NNN`, o resultado esperado é exatamente uma imagem final.
+
+1. Configure a ferramenta para produzir uma única imagem por chamada, quando o parâmetro estiver disponível.
+2. Faça uma única chamada destinada à composição final. Não solicite quatro variações nem execute chamadas paralelas para a mesma história.
+3. Todos os quadros narrativos e os três painéis pedagógicos devem estar integrados na mesma imagem.
+4. Se a ferramenta retornar várias imagens apesar da configuração solicitada, não as trate como entregas finais múltiplas. Avalie no máximo uma candidata, sem aprová-la automaticamente.
+5. Confira a identidade narrativa da candidata antes de salvá-la. Se representar outra história ou misturar histórias, rejeite-a.
+6. Não gere alternativas automaticamente. Antes de uma nova tentativa, identifique e corrija a falha anterior.
+7. Preserve imagens já aprovadas. Não sobrescreva nem exclua arquivos existentes sem autorização explícita.
+8. Se não for possível controlar tecnicamente a quantidade, informe essa limitação; não afirme que a geração única foi garantida.
+
+**Critério de entrega:** uma história solicitada, uma imagem final aprovada e um único arquivo oficial. Imagens de trabalho não equivalem a imagens aprovadas.
 
 ## 5. Controle de duplicatas e substituições
 
