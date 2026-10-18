@@ -12,7 +12,7 @@ No ChatGPT, dentro do projeto **Estudo Bíblico**, o comando normal é:
 Gere a História 003
 ```
 
-A rota do projeto deve fazer o restante: consultar a versão atual dos arquivos na branch `main`, verificar o status, localizar a história exata, aplicar as instruções visuais, gerar e validar a imagem e só então registrar o resultado.
+A rota do projeto deve fazer o restante: consultar a versão atual dos arquivos na branch `main` por acesso GitHub autenticado, verificar o status, localizar a história exata, preparar e validar o roteiro de seis legendas, aplicar as instruções visuais, gerar e validar a imagem e só então registrar o resultado. Se o ambiente não tiver acesso autenticado ao repositório privado, a geração deve parar com um aviso de permissão; o link sozinho não prova leitura.
 
 Para uma história que já esteja concluída, use um pedido explícito de regeneração, por exemplo:
 
