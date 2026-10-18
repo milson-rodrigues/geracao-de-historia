@@ -769,7 +769,7 @@ Só atualize `status-criacao-historia.md` depois de verificar a imagem gerada.
 - Se a imagem ainda aguardar análise, atualizar a linha existente para `GERADA_A_VALIDAR` e validação `PENDENTE`, caso o arquivo tenha sido salvo com segurança.
 - Se a imagem tiver sido aprovada, o arquivo tiver sido salvo no nome e caminho canônicos e a alteração do relatório tiver sido confirmada, atualizar a linha existente para `CONCLUIDA` e validação `APROVADA`.
 - Se o salvamento ou a atualização do relatório falhar, não declarar conclusão e informar qual etapa ficou pendente.
-- Nunca criar uma segunda linha ou adicionar automaticamente uma linha ausente.
+- Nunca criar uma segunda linha. Se a linha estiver ausente, aplicar a regra de recuperação da seção `[CONTROLE DE STATUS]`: confirmar fonte e caminho canônico; quando a história existe e não há arquivo final, o comando explícito autoriza criar uma única linha `PENDENTE | — | validacao: NÃO_INICIADA`.
 
 Preserve exatamente o formato corrente da linha:
 
