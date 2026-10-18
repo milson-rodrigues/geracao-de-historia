@@ -1,10 +1,10 @@
-# PROMPT-1.2.1 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.2.2 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.2.1
+Versão: 1.2.2
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -451,30 +451,23 @@ Priorizar:
 
 ---
 
-# [ESTILO ARTÍSTICO]
+# [PADRÃO VISUAL CANÔNICO — REFERÊNCIAS 001 E 002]
 
-Manter continuidade com as imagens anteriores do projeto.
+As imagens aprovadas `imagens/001-mundo-antes-do-nascimento-de-jesus.png` e `imagens/002-anjo-gabriel-aparece-a-zacarias.png` são as referências visuais obrigatórias. O resultado precisa parecer uma nova página do mesmo livro ilustrado.
 
-Estilo:
+- Tela horizontal 16:9, uma única prancha contínua e ocupando quase toda a área.
+- Moldura externa decorada com folhagens verdes nos cantos, borda dourada/pergaminho e ornamentos orgânicos.
+- Cabeçalho no topo em grande pergaminho horizontal com extremidades enroladas. Mostrar `HISTÓRIA NNN` e o título oficial literal, com hierarquia tipográfica igual à das referências.
+- Seis painéis principais em grade exata de 3 × 2, com moldura dourada, separadores consistentes e pequeno marcador numérico no canto superior esquerdo.
+- **Cada painel deve ter três elementos editoriais:** (1) título temático próprio na faixa/cabeçalho superior; (2) cena ilustrada; (3) caixa de narrativa em pergaminho integrada à parte superior da cena, com legenda curta legível. Não usar somente o número e uma tira de legenda na borda inferior.
+- Na base, três painéis contíguos: livro + `O QUE APRENDEMOS`; ícone de interrogação + `PERGUNTAS PARA A CRIANÇA`; mãos em oração + `ORAÇÃO`. Manter cabeçalhos decorativos, conteúdo legível e distribuição semelhante às referências.
+- Paleta creme/dourado/castanho, títulos marrom escuro ou vinho, céu azul vivo, folhagem verde e iluminação quente; animação 3D infantil detalhada, acolhedora, expressiva e consistente.
+- Tipografia serifada de alto contraste; textos em português brasileiro, sem cortes nem deformações. Proteger margens e não deixar ornamentos encobrirem palavras.
+- Não criar dobra central, linha vertical ao meio, miniaturas laterais, margens vazias exageradas, alternativas em mosaico ou cartões soltos.
 
-- livro bíblico infantil;
-- quadrinhos ilustrados;
-- colorido;
-- detalhado;
-- expressivo;
-- cinematográfico;
-- acolhedor;
-- adequado para crianças;
-- cenários historicamente contextualizados;
-- contornos definidos;
-- iluminação agradável;
-- aparência de ilustração profissional.
+## Rótulo do mockup fora da imagem
 
-Não mudar radicalmente o estilo entre histórias.
-
-As 232 histórias devem parecer pertencer ao mesmo livro.
-
----
+Na Fase 1, **não** inserir faixa, selo, texto vermelho ou marca-d'água `MOCKUP PARA APROVAÇÃO` dentro da arte. A imagem deve manter o mesmo padrão limpo das referências oficiais. Identificar que é um mockup apenas no texto da resposta que acompanha a imagem.
 
 # [CONTINUIDADE VISUAL]
 
@@ -708,8 +701,9 @@ Leia apenas a entrada da história solicitada: o título `### NNN. ...` e os tó
 
 Antes da chamada ao gerador, construa o bloco `ROTEIRO BLOQUEADO` e inclua-o literalmente no prompt de imagem:
 - número e título oficial;
+- seis títulos temáticos de painel;
 - seis legendas narrativas numeradas;
-- descrição visual ligada a cada legenda;
+- descrição visual ligada a cada legenda e título temático;
 - textos dos três painéis pedagógicos;
 - lista de personagens, locais e acontecimentos proibidos por pertencerem a outras histórias.
 
@@ -737,7 +731,7 @@ Use essas frases somente se forem compatíveis com a fonte atual consultada; nã
 
 A validação é obrigatória, mas não autoriza novas chamadas automáticas.
 
-- Na Fase 1, revisar um único mockup e registrar `MOCKUP_PARA_APROVACAO`. Parar e esperar aprovação explícita.
+- Na Fase 1, revisar um único mockup sem rótulo embutido na arte e registrar `MOCKUP_PARA_APROVACAO`. Parar e esperar aprovação explícita.
 - Se o mockup não corresponder à história, explicar o problema e esperar que o usuário diga `Refaça o mockup da História NNN`. Não gerar outro mockup no mesmo turno.
 - Na Fase 2, gerar uma única imagem final. Se título, cenas ou legendas estiverem errados, rejeitar a imagem, registrar a falha real e parar. Não repetir a chamada automaticamente.
 - Toda nova chamada de imagem exige um novo comando explícito. Não há retry automático, loop, lote nem chamadas paralelas.
