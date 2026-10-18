@@ -1,10 +1,10 @@
-# PROMPT-1.1.7 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
+# PROMPT-1.2.0 - GERADOR E CONTROLADOR DAS IMAGENS DAS 232 HISTÓRIAS
 
 ## [METADADOS]
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.7
+Versão: 1.2.0
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -105,36 +105,37 @@ obter o conteúdo específico da história solicitada.
 
 ---
 
-# [FLUXO OBRIGATÓRIO — INTERPRETAÇÃO DOS COMANDOS]
+# [FLUXO OBRIGATÓRIO — MOCKUP E APROVAÇÃO EM DUAS FASES]
 
-Primeiro identifique a intenção do usuário. Não aplique uma regra genérica de "já concluída" antes de verificar se ele pediu explicitamente para gerar novamente.
+O processo é um fluxo com aprovação humana entre as duas imagens. **Nunca produzir mockup e imagem final na mesma execução.**
 
-### Comando: `Gere a História NNN`
+### Comando `Gere a História NNN` — Fase 1
 
-1. Consultar a versão atual dos arquivos na branch `main`.
-2. Ler a entrada completa e confirmar número e título na fonte narrativa.
-3. Consultar o registro de status.
-4. Se o estado de produção for `PENDENTE`, iniciar a geração diretamente, sem pedir confirmação.
-5. Se a validação anterior for `REPROVADA`, mas a produção estiver `PENDENTE` e o arquivo reprovado tiver sido excluído ou não houver arquivo final utilizável, a reprovação anterior não bloqueia: a nova geração deve começar. Redefinir a validação para `NÃO_INICIADA` ao preparar a nova tentativa.
-6. Se a linha estiver ausente, confirmar que a história existe na fonte e verificar o caminho canônico. Se não existir imagem final nesse caminho, adicionar a linha como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar, pois o comando explícito autoriza a produção daquela história. Se já existir imagem não registrada, interromper para reconciliar antes de sobrescrever.
-7. Se estiver `CONCLUIDA`, não substituir a imagem com o comando simples; solicitar confirmação e aguardar.
-8. Se estiver `EM_GERACAO`, verificar se há execução realmente ativa para não criar chamadas paralelas. Se estiver `BLOQUEADA`, remover primeiro o impedimento real.
-9. Gerar uma única prancha com uma única chamada, validar o resultado e atualizar os arquivos apenas quando a operação real for confirmada.
+1. Ler, pela conexão GitHub autorizada, o conteúdo atual da fonte narrativa, do status, da rota e deste prompt na branch `main`. Se não conseguir recuperar o conteúdo, parar e informar o bloqueio; links isolados não contam como leitura.
+2. Confirmar número e título literal na fonte.
+3. Verificar estado e arquivo canônico no status.
+4. Se estiver `PENDENTE`, preparar o roteiro completo e gerar apenas um mockup para aprovação. Não gerar a imagem final neste turno.
+5. Se estiver `MOCKUP_PARA_APROVACAO`, mostrar/consultar o mockup vigente e aguardar resposta. Não gerar outro mockup nem a imagem final automaticamente.
+6. Se não houver linha de status, confirmar título na fonte e verificar o caminho canônico. Se a imagem final estiver ausente, criar a linha `PENDENTE | — | validacao: NÃO_INICIADA` e iniciar apenas a Fase 1. Se houver um arquivo não registrado, parar para reconciliar.
+7. Se estiver `CONCLUIDA`, o comando simples não substitui a imagem aprovada: perguntar se o usuário deseja iniciar uma nova revisão por mockup.
+8. Fazer uma única chamada de imagem. Não criar variantes, executar chamadas paralelas ou repetir automaticamente em caso de erro.
 
-### Comando: `Gere novamente a História NNN`
+### Aprovação explícita — Fase 2
 
-Esse comando é, por si só, a confirmação do usuário. **Não pergunte novamente se ele deseja gerar de novo.**
+Quando o usuário disser `Aprovado`, `Aprovado. Gere a imagem final da História NNN` ou equivalente inequívoco, verificar que se refere ao mockup atualmente exibido para a mesma história. Então:
 
-1. Consultar a fonte narrativa e o status atual.
-2. Confirmar número e título; se divergirem, parar.
-3. Se a história estiver `CONCLUIDA`, considerar o pedido autorização explícita para criar uma substituta. Manter a imagem aprovada existente até validar a nova imagem; substituir o arquivo canônico somente após aprovação da nova versão.
-4. Se a história estiver `PENDENTE` ou a tentativa anterior estiver `REPROVADA` e descartada, iniciar a nova tentativa diretamente.
-5. Se estiver `GERADA_A_VALIDAR`, examinar o resultado já existente antes de iniciar outra chamada; se a tentativa for reprovada/excluída, voltar a `PENDENTE` e prosseguir.
-6. Se estiver `EM_GERACAO`, confirmar que não há chamada ativa; só então reiniciar.
-7. Se estiver `BLOQUEADA` por conflito de fonte/título ou arquivo não reconciliado, parar e explicar o impedimento.
-8. Fazer uma única chamada de geração, configurar quantidade `1` quando disponível, validar, salvar e atualizar a linha de status conforme evidência real.
+1. Ler novamente a fonte e o status.
+2. Enviar ao gerador o título oficial literal, as seis legendas aprovadas e a descrição visual de cada quadro. Não enviar somente o número e esperar que o gerador descubra a narrativa.
+3. Gerar uma única imagem final, sem marca de mockup, em uma única chamada com quantidade `1` quando disponível.
+4. Validar título, número, seis quadros com legendas, três painéis pedagógicos e fidelidade narrativa.
+5. Se a imagem final estiver errada, rejeitar e parar. Não repetir a chamada nem iniciar novas gerações até receber novo comando explícito.
+6. Salvar no caminho canônico e atualizar o status somente se geração, validação e gravação forem confirmadas.
 
-Não confundir estado da produção com resultado da validação: `PENDENTE` permite nova tentativa; `REPROVADA` registra que um resultado anterior falhou. Uma reprovação anterior não pode bloquear indefinidamente uma nova solicitação válida.
+### Pedido para refazer
+
+- `Refaça o mockup da História NNN`: uma única chamada para novo mockup; depois, aguardar aprovação.
+- `Gere novamente a História NNN`: se já houver imagem final aprovada, iniciar nova revisão por mockup; preservar a imagem aprovada antiga até a substituta ser aprovada e salva.
+- A reprovação de qualquer imagem não dispara uma nova chamada automaticamente. Cada nova tentativa depende de novo comando explícito do usuário.
 
 # [EXEMPLO — HISTÓRIA JÁ PRODUZIDA]
 
@@ -252,11 +253,12 @@ Formato:
 NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 ```
 
-Estados: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
+Estados: `PENDENTE`, `EM_GERACAO`, `MOCKUP_PARA_APROVACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
 Validações: `NÃO_INICIADA`, `PENDENTE`, `APROVADA`, `REPROVADA`.
 
 Interpretação obrigatória:
-- `PENDENTE` autoriza uma nova tentativa.
+- `PENDENTE` autoriza somente a Fase 1: gerar um mockup e aguardar aprovação.
+- `MOCKUP_PARA_APROVACAO` significa que há um mockup para o usuário avaliar; não gerar imagem final nem outro mockup sem um comando explícito.
 - `validacao: REPROVADA` registra a falha anterior, mas não bloqueia nova geração se a produção está `PENDENTE` e a imagem reprovada foi excluída ou não existe arquivo final utilizável. Antes da nova tentativa, redefinir validação para `NÃO_INICIADA`.
 - `CONCLUIDA`: o comando simples `Gere a História NNN` pede confirmação antes de substituir; `Gere novamente a História NNN` já é autorização explícita e não deve perguntar outra vez.
 - `EM_GERACAO`: verificar se há uma chamada realmente ativa; não iniciar uma chamada paralela. Se o estado for residual de uma execução interrompida, e o usuário pedir explicitamente para gerar novamente, retomar de forma controlada.
@@ -266,21 +268,21 @@ Interpretação obrigatória:
 
 # [REGRAS PARA ALTERAÇÃO DO STATUS]
 
-Fluxo permitido:
+Fluxo de duas fases:
 
 ```text
 PENDENTE
-   ↓
+   ↓ uma única chamada de imagem
+MOCKUP_PARA_APROVACAO
+   ↓ aprovação explícita do usuário
 EM_GERACAO
-   ↓
-geração efetiva
-   ↓
+   ↓ uma única chamada de imagem final
 GERADA_A_VALIDAR
-   ↓
-validação editorial + confirmação de arquivo/caminho
-   ↓
+   ↓ validação + salvamento confirmado
 CONCLUIDA | validação: APROVADA
 ```
+
+Reprovação ou erro não dispara retry automático. O agente relata o resultado e aguarda novo comando.
 
 Nunca marque uma história como `CONCLUIDA` apenas porque uma imagem foi exibida no chat ou porque a chamada de geração terminou. A conclusão exige evidência da imagem final, validação aprovada, nome/caminho canônico confirmado e atualização confirmada da linha existente no relatório.
 
@@ -808,7 +810,8 @@ Se houver erro grave, NÃO marcar como `CONCLUIDA`.
 
 Só atualize `status-criacao-historia.md` depois de verificar a imagem gerada.
 
-- Se a imagem ainda aguardar análise, atualizar a linha existente para `GERADA_A_VALIDAR` e validação `PENDENTE`, caso o arquivo tenha sido salvo com segurança.
+- Após gerar o mockup, atualizar o estado para `MOCKUP_PARA_APROVACAO`, caminho final `—` e validação `PENDENTE`. Mockup não é arquivo final.
+- Após a geração final, se ainda aguardar análise, atualizar para `GERADA_A_VALIDAR` e validação `PENDENTE`, se o arquivo tiver sido salvo com segurança.
 - Se a imagem tiver sido aprovada, o arquivo tiver sido salvo no nome e caminho canônicos e a alteração do relatório tiver sido confirmada, atualizar a linha existente para `CONCLUIDA` e validação `APROVADA`.
 - Se o salvamento ou a atualização do relatório falhar, não declarar conclusão e informar qual etapa ficou pendente.
 - Nunca criar uma segunda linha. Se a linha estiver ausente, aplicar a regra de recuperação da seção `[CONTROLE DE STATUS]`: confirmar fonte e caminho canônico; quando a história existe e não há arquivo final, o comando explícito autoriza criar uma única linha `PENDENTE | — | validacao: NÃO_INICIADA`.
@@ -824,11 +827,9 @@ NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 # [HISTÓRIA JÁ CONCLUÍDA]
 
 Se a história estiver `CONCLUIDA`:
-
-- Para `Gere a História NNN`, informar que a imagem já está concluída e perguntar se deseja gerar novamente.
-- Para `Gere novamente a História NNN`, não fazer outra pergunta: o próprio comando é a confirmação explícita. Consultar novamente fonte e status, gerar uma única candidata, validar e somente depois substituir a imagem oficial. Preservar a imagem aprovada antiga se a nova candidata falhar.
-- Se o usuário informar que excluiu uma imagem reprovada, confirmar o estado atual do arquivo e registrar a nova tentativa como `PENDENTE` com validação `NÃO_INICIADA`. Não insistir em validar um arquivo que foi excluído.
-- Nunca afirmar que um arquivo foi apagado, salvo ou substituído sem confirmação real.
+- `Gere a História NNN`: perguntar se o usuário deseja iniciar uma nova revisão por mockup.
+- `Gere novamente a História NNN`: autorização explícita para iniciar um novo mockup. Não perguntar novamente. Preservar a imagem final aprovada até que a nova versão seja aprovada e salva.
+- Nunca apagar nem substituir a imagem aprovada durante a fase de mockup.
 
 # [HISTÓRIA NÃO ENCONTRADA]
 
@@ -869,11 +870,7 @@ Aguardar correção.
 
 # [HISTÓRIA "EM_GERACAO"]
 
-O estado `EM_GERACAO` impede chamadas paralelas. Antes de iniciar outra chamada, verificar se existe uma geração realmente ativa.
-
-- No comando `Gere a História NNN`, não iniciar uma segunda chamada enquanto a execução estiver realmente em andamento.
-- No comando explícito `Gere novamente a História NNN`, verificar se há chamada ativa. Se não houver e o estado for apenas residual de uma tentativa abandonada, reiniciar a tentativa de forma controlada, atualizando o status antes da chamada.
-- Nunca manter `EM_GERACAO` indefinidamente após falha ou interrupção. Se não houver imagem utilizável, retornar para `PENDENTE`; se houver imagem ainda por avaliar, usar `GERADA_A_VALIDAR`.
+`EM_GERACAO` impede chamadas paralelas. Uma chamada por comando. Se a chamada falhar, parar, informar o erro e aguardar uma nova instrução; não repetir automaticamente.
 
 ---
 
@@ -1015,17 +1012,14 @@ após todas as validações.
 
 # [COMANDO DE REGENERAÇÃO]
 
-Se o usuário disser `Gere novamente a História NNN`, o comando já constitui autorização explícita. Não perguntar novamente.
-
-1. Consultar os arquivos oficiais na branch `main` e validar número/título.
-2. Confirmar o estado atual da imagem e do status.
-3. Se a imagem anterior foi reprovada e excluída, resetar para `PENDENTE` e validação `NÃO_INICIADA`, depois gerar.
-4. Se a imagem anterior foi aprovada, gerar a substituta sem apagar a aprovada antes da validação da nova.
-5. Se a linha de status não existir, aplicar a regra de recuperação na seção `[REGRA DE ATUALIZAÇÃO]`.
-6. Fazer uma única chamada destinada à imagem final, com quantidade `1` quando disponível.
-7. Validar as seis legendas narrativas, os três painéis pedagógicos, a fidelidade à fonte e o padrão visual.
-8. Substituir a imagem no caminho canônico somente após aprovação da nova versão.
-9. Atualizar a linha de status com o resultado real. Se geração, salvamento ou atualização falhar, informar o estado real e não declarar conclusão.
+`Gere novamente a História NNN` inicia um novo ciclo de revisão, mesmo quando a imagem já está `CONCLUIDA`:
+1. consultar fonte e status;
+2. preparar o roteiro da história exata;
+3. fazer uma única chamada para gerar mockup;
+4. registrar `MOCKUP_PARA_APROVACAO` e aguardar avaliação do usuário;
+5. somente após aprovação explícita, fazer uma chamada independente para a imagem final;
+6. validar e salvar a imagem final; preservar a versão aprovada anterior até a substituição ser validada e salva.
+Nenhum retry automático, loop de geração ou geração paralela é permitido.
 
 # [REGRA FINAL]
 
