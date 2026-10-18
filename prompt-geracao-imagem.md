@@ -4,7 +4,7 @@
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.1.1
+Versão: 1.1.2
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -176,34 +176,11 @@ Consultar:
 
 `status-criacao-historia.md`
 
-Exemplo:
+Estado publicado atualmente na branch `main`:
 
-`001. O mundo antes do nascimento de Jesus - CONCLUIDA`
-`002. O anjo Gabriel aparece a Zacarias - CONCLUIDA`
+`003 | Isabel descobre que está grávida | PENDENTE | — | validacao: NÃO_INICIADA`
 
-A entrada:
-
-`003.`
-
-não está marcada como `CONCLUIDA`.
-
-Depois consultar:
-
-`historia-novo-testamento.md`
-
-Localizar:
-
-`003. Isabel descobre que está grávida`
-
-Ler o conteúdo correspondente.
-
-Depois gerar a imagem obedecendo todas as regras deste documento.
-
-Após a geração bem-sucedida:
-
-`003. Isabel descobre que está grávida - CONCLUIDA`
-
-deve ser registrado no arquivo de status.
+O número, o título e o estado estão presentes no relatório e correspondem à fonte narrativa. Depois de confirmar novamente os dois arquivos, ler o conteúdo completo da entrada 003 e seguir todas as validações. Não usar este exemplo como autorização para gerar se a linha da história estiver ausente do relatório.
 
 ---
 
@@ -388,58 +365,13 @@ acontecimento bíblico.
 
 # [MÍNIMO DE BLOCOS]
 
-Cada história deve possuir:
-
-## NO MÍNIMO 6 BLOCOS NARRATIVOS/VISUAIS.
-
-6 é o MÍNIMO.
-
-Não é obrigatório ter exatamente 6.
-
-Histórias mais complexas podem utilizar:
-
-- 7 blocos;
-- 8 blocos;
-- 9 blocos;
-- 10 blocos;
-- ou mais.
-
-O número de blocos deve ser determinado pela necessidade narrativa.
-
-NUNCA reduzir uma história complexa para 6 blocos se isso fizer
-com que acontecimentos importantes desapareçam.
-
-NUNCA adicionar blocos artificiais apenas para aumentar a quantidade.
+Cada prancha deve possuir exatamente 6 quadros narrativos principais, organizados em duas linhas de três. Condense ou combine momentos relacionados sem omitir acontecimentos essenciais da entrada oficial. Não invente eventos nem acrescente quadros narrativos extras. A fidelidade à história tem prioridade.
 
 ---
 
-# [ESTRUTURA DOS BLOCOS]
+# [ESTRUTURA DOS QUADROS]
 
-Sempre que adequado:
-
-BLOCO 1
-Ambientação ou início.
-
-BLOCO 2
-Apresentação da situação/personagens.
-
-BLOCO 3
-Início do acontecimento principal.
-
-BLOCO 4
-Desenvolvimento.
-
-BLOCO 5
-Clímax ou consequência.
-
-BLOCO 6
-Desfecho.
-
-Blocos adicionais podem ser acrescentados quando necessário.
-
-Essa estrutura não é rígida.
-
-A fidelidade à história tem prioridade.
+Use os seis quadros para apresentar, de forma clara e em ordem, a ambientação quando necessária, os personagens, os acontecimentos centrais e o desfecho da história. A distribuição exata deve ser derivada exclusivamente da entrada oficial; não reutilize cenas de outra história.
 
 ---
 
@@ -1007,12 +939,13 @@ ou:
 
 então:
 
-1. ler `status-criacao-historia.md`;
-2. encontrar a primeira história que não esteja `CONCLUIDA`;
-3. confirmar o número;
-4. consultar `historia-novo-testamento.md`;
-5. gerar essa história;
-6. atualizar o status.
+1. ler `status-criacao-historia.md` diretamente na branch oficial;
+2. localizar a primeira linha existente com estado `PENDENTE`;
+3. se houver história anterior em `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e relatar o impedimento, sem iniciar nova geração;
+4. se não houver linha `PENDENTE` identificável, não inferir uma história ausente nem inventar uma nova linha;
+5. confirmar número e título em `historia-novo-testamento.md`;
+6. gerar apenas após validar a correspondência entre os arquivos;
+7. registrar o progresso somente conforme os critérios reais de validação e salvamento.
 
 NÃO assumir a próxima história pela memória da conversa.
 
@@ -1058,10 +991,11 @@ o agente deve:
 2. consultar o arquivo principal;
 3. confirmar número e título;
 4. reconstruir a história;
-5. gerar uma nova imagem;
-6. preservar o mesmo padrão visual;
-7. não alterar o conteúdo da história;
-8. manter o status como `CONCLUIDA`.
+5. realizar uma única chamada destinada à imagem final, com quantidade `1` quando o parâmetro estiver disponível;
+6. validar a imagem gerada e confirmar o salvamento no caminho canônico;
+7. preservar o padrão visual e não alterar o conteúdo da história;
+8. não sobrescrever uma imagem aprovada sem autorização explícita;
+9. manter `CONCLUIDA` somente se a nova imagem tiver sido validada, salva e a linha existente do relatório tiver sido atualizada com sucesso. Se isso não ocorrer, relatar o estado real e não declarar conclusão.
 
 ---
 
