@@ -84,8 +84,8 @@ visual, não a narrativa.
 2.  Ler diretamente a entrada completa da história exata em
     `historia-novo-testamento.md`.
 3.  Consultar a linha dessa história em `status-criacao-historia.md`.
-4.  Se já estiver `CONCLUIDA`, não gerar novamente sem solicitação
-    explícita. Em caso de status ausente ou divergente, não deduzir o estado: conferir fonte e relatório, e registrar a incerteza.
+4.  Se a linha não existir no relatório ou se número/título divergirem, interromper e informar; não deduzir estado nem criar linha automaticamente.
+5.  Se estiver `CONCLUIDA`, não gerar novamente sem solicitação explícita. Se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e informar o estado.
 5.  Consultar visualmente as imagens 001 e 002 como referência.
 6.  Criar uma única prancha final com seis quadros narrativos e os três
     painéis pedagógicos.
