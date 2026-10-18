@@ -1,7 +1,7 @@
-# PROMPT-1.1.2 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.1.3 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.1.2
+-   **Versão:** 1.1.3
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -52,34 +52,29 @@ pasta oficial.
 
 ## 3. Referência visual obrigatória
 
-A imagem final deve corresponder ao padrão visual das Histórias 001 e
-002:
+As imagens `imagens/001-mundo-antes-do-nascimento-de-jesus.png` e `imagens/002-anjo-gabriel-aparece-a-zacarias.png` são os modelos visuais oficiais. Reproduzir a mesma linguagem visual e a mesma arquitetura da prancha, sem copiar suas narrativas.
 
--   prancha horizontal em proporção aproximada de 16:9;
--   ilustração bíblica infantil com aparência 3D, detalhada, acolhedora
-    e colorida;
--   paleta quente, luz clara e contraste suficiente para leitura;
--   cabeçalho superior decorativo de pergaminho, com número e título;
--   molduras de pergaminho coerentes entre os quadros;
--   exatamente seis quadros narrativos principais em duas linhas de três;
--   cada quadro deve conter uma ilustração e uma legenda narrativa curta, integrada ao próprio quadro e legível; numerar os quadros sem incluir a legenda não atende ao padrão;
--   as seis legendas devem ser redigidas antes da geração, em ordem narrativa, e conferidas contra a entrada exata da história na fonte oficial;
--   não omitir as legendas nem acrescentar fatos, falas ou motivações não sustentados pela história solicitada;
--   três painéis pedagógicos na faixa inferior, com os títulos exatos:
-    -   `O QUE APRENDEMOS`
-    -   `PERGUNTAS PARA A CRIANÇA`
-    -   `ORAÇÃO`
--   folhagens e detalhes ornamentais nas bordas, sem prejudicar o
-    conteúdo;
--   tipografia serifada, legível e visualmente compatível com as
-    referências;
--   texto em português brasileiro, com ortografia revisada;
--   continuidade visual dos personagens recorrentes quando aplicável.
+### Estrutura visual que deve ser preservada
 
-Não mudar para estilo de quadrinhos realista, mangá, pintura escura,
-colagem fotográfica ou outra linguagem visual sem autorização explícita.
-Não imitar os acontecimentos das Histórias 001 e 002: copiar o padrão
-visual, não a narrativa.
+- **Formato:** uma única prancha horizontal 16:9, preenchendo quase toda a tela, sem miniaturas laterais, margens vazias exageradas nem composição dividida em imagens independentes.
+- **Moldura externa:** borda decorativa com folhagens verdes nos cantos e detalhes orgânicos, contorno dourado/pergaminho e aspecto de página de livro bíblico infantil.
+- **Cabeçalho superior:** grande pergaminho horizontal com pontas enroladas. Exibir `HISTÓRIA NNN` em destaque e o título oficial exatamente como aparece na fonte narrativa, com hierarquia tipográfica semelhante às referências.
+- **Seis quadros narrativos:** grade rigorosa de 3 colunas × 2 linhas; molduras de pergaminho dourado, separadores consistentes e pequenos marcadores numéricos no canto superior esquerdo.
+- **Título temático em cada quadro:** cada um dos seis quadros deve ter uma faixa/cabeçalho próprio com um título curto, relacionado àquela cena. A numeração não substitui o título temático.
+- **Texto narrativo dentro do quadro:** cada quadro contém sua ilustração e uma caixa de texto em pergaminho integrada à cena, geralmente na parte superior, com a legenda narrativa legível. Não usar apenas uma tira de legenda colada sob a imagem; a cena, seu título e seu texto devem parecer um único painel editorial, como nas referências 001 e 002.
+- **Três painéis inferiores fixos:** uma faixa na base dividida em três blocos contíguos com cabeçalhos decorativos e ícones: livro para `O QUE APRENDEMOS`, ponto de interrogação para `PERGUNTAS PARA A CRIANÇA`, mãos em oração para `ORAÇÃO`. Os três painéis devem estar claramente separados, equilibrados e plenamente legíveis.
+- **Paleta:** pergaminho creme e dourado, bordas castanhas, títulos em marrom escuro/vinho, céu azul luminoso, folhagens verdes e iluminação quente. Manter saturação, contraste e acabamento comparáveis às referências.
+- **Personagens e cenas:** animação 3D infantil polida, personagens expressivos e acolhedores, cenários bíblicos detalhados e continuidade de aparência. Variar composição e personagens conforme a narrativa oficial, não conforme cenas das histórias anteriores.
+- **Tipografia:** serifada, forte e legível, com bom contraste. Priorizar textos curtos que possam ser lidos em tamanho normal; nunca sacrificar o texto narrativo para aumentar a ilustração.
+- **Composição:** sem dobra central, sem linha divisória vertical no meio, sem painel cortado, sem texto fora da moldura e sem elemento decorativo encobrindo texto.
+
+### Regras específicas para a fase de mockup
+
+A palavra `MOCKUP` é um rótulo de revisão da interface/mensagem, **não um elemento da arte**. Não adicionar faixa vermelha, selo, marca-d'água ou a frase `MOCKUP PARA APROVAÇÃO — NÃO É A IMAGEM FINAL` dentro da prancha. Entregar a imagem no padrão visual limpo das referências e identificá-la como “Mockup para aprovação — não é a imagem final” no texto que acompanha a imagem.
+
+Não substituir os cabeçalhos temáticos dos seis quadros por apenas números e legendas. Não colocar uma faixa vermelha sobre o pergaminho principal. Não alterar o padrão para tiras cinematográficas, cartões soltos, layout de apresentação corporativa ou grade de alternativas.
+
+Não mudar para mangá, realismo fotográfico, pintura escura, colagem ou outra linguagem visual sem autorização explícita. Copiar o padrão visual aprovado, nunca a narrativa das Histórias 001 e 002.
 
 ## 4. Processo obrigatório por história
 
@@ -100,12 +95,12 @@ O fluxo tem duas fases obrigatórias e separadas. O mockup NÃO é a imagem fina
 3. Consultar `status-criacao-historia.md` e confirmar número, título, estado e existência do arquivo canônico.
 4. Se a linha estiver ausente, confirmar a história na fonte e verificar se existe imagem final. Se não houver arquivo, criar apenas o registro da história solicitada como `PENDENTE | — | validacao: NÃO_INICIADA`; se existir arquivo não registrado, interromper para reconciliar sem sobrescrever.
 5. Isolar a entrada narrativa da história solicitada até o próximo título de história. Não usar os tópicos de histórias vizinhas como conteúdo.
-6. Antes de cada chamada de imagem, preparar um roteiro com título oficial literal, seis legendas numeradas, descrição visual por quadro e textos dos três painéis pedagógicos. Validar o roteiro contra a fonte e incluir esse conteúdo explicitamente no prompt enviado ao gerador.
+6. Antes de cada chamada de imagem, preparar um roteiro com título oficial literal, seis títulos temáticos, seis legendas numeradas, descrição visual por quadro e textos dos três painéis pedagógicos. Validar o roteiro contra a fonte e incluir esse conteúdo explicitamente no prompt enviado ao gerador.
 7. Para a História 003, o título é `Isabel descobre que está grávida`. Conteúdo narrativo autorizado pelos tópicos: Isabel, Zacarias, gravidez, alegria e seis meses de gravidez. Não incluir a anunciação a Maria, Gabriel anunciando Jesus, Filho do Altíssimo, trono de Davi ou outros acontecimentos da História 004.
 
 ### 4.3 Fase 1 — mockup para aprovação
 
-1. Gerar exatamente uma imagem de mockup, com cabeçalho `MOCKUP PARA APROVAÇÃO — NÃO É A IMAGEM FINAL` claramente visível, mantendo número, título, seis quadros com legendas e os três painéis pedagógicos.
+1. Gerar exatamente uma imagem de mockup que siga a estrutura visual das referências 001 e 002. Não colocar a palavra ou faixa `MOCKUP` dentro da arte; identificar a prévia como “Mockup para aprovação — não é a imagem final” somente na mensagem que acompanha a imagem. Cada um dos seis quadros precisa de título temático, ilustração e caixa de narrativa em pergaminho integrada ao painel.
 2. Uma solicitação = uma única chamada de imagem. Não pedir múltiplas imagens, variantes, lote, chamadas paralelas, nem repetir a chamada automaticamente.
 3. Mostrar o mockup ao usuário e resumir número, título, seis cenas/legendas previstas e eventuais limitações.
 4. Atualizar o status para `MOCKUP_PARA_APROVACAO`, caminho final `—`, validação `PENDENTE`, se a escrita no GitHub estiver disponível. O mockup não pode ser registrado como imagem final nem salvo no nome canônico.
@@ -184,8 +179,8 @@ A história só pode ser marcada `CONCLUIDA` quando todos os itens forem confirm
 - número e título correspondem à fonte oficial;
 - a narrativa e a sequência dos acontecimentos estão corretas;
 - a prancha mantém o padrão visual aprovado;
-- existem exatamente seis quadros narrativos em duas linhas de três;
-- **cada um dos seis quadros contém uma legenda narrativa curta, integrada e legível, além da ilustração e da numeração**;
+- existem exatamente seis quadros narrativos em duas linhas de três, cada qual com título temático e caixa de narrativa em pergaminho;
+- **cada um dos seis quadros contém título temático, ilustração e legenda narrativa em caixa de pergaminho integrada e legível**;
 - as seis legendas correspondem à história solicitada, sem mistura de narrativas ou detalhes não sustentados pela fonte;
 - os três painéis inferiores estão presentes e os títulos estão corretos;
 - todos os textos estão legíveis e revisados;
@@ -254,7 +249,7 @@ Verificar a disponibilidade real de cada recurso antes de utilizá-lo. Nunca afi
 
 ## 11. Instrução de execução
 
-Ao receber `Gere a História NNN`, executar exclusivamente a Fase 1: consultar a fonte e o status, preparar o roteiro, gerar um único mockup, registrar `MOCKUP_PARA_APROVACAO` e aguardar. Não gerar a imagem final no mesmo turno. Somente após aprovação explícita, executar a Fase 2 com uma única chamada de imagem. `Gere novamente a História NNN` também começa por um mockup de revisão quando já existe uma imagem final aprovada. Não executar chamadas automáticas repetidas.
+Ao receber `Gere a História NNN`, executar exclusivamente a Fase 1: consultar a fonte e o status, preparar roteiro com títulos temáticos e caixas narrativas integradas, gerar um único mockup fiel às referências sem faixa de mockup dentro da arte, registrar `MOCKUP_PARA_APROVACAO` e aguardar. Não gerar a imagem final no mesmo turno. Somente após aprovação explícita, executar a Fase 2 com uma única chamada de imagem. `Gere novamente a História NNN` também começa por um mockup de revisão quando já existe uma imagem final aprovada. Não executar chamadas automáticas repetidas.
 
 **Resultado esperado:** uma história = uma imagem final na pasta
 `imagens/` + uma única linha correspondente no relatório.
