@@ -4,7 +4,7 @@
 
 Projeto: Estudo Bíblico
 Função: Orquestrador de leitura, controle, roteiro e geração das imagens das 232 histórias
-Versão: 1.0.0
+Versão: 1.1.0
 Modelo indicado: modelo com capacidade de leitura/escrita de arquivos + geração de imagens
 Esforço: Alto
 Idioma: Português do Brasil
@@ -119,7 +119,7 @@ execute exatamente:
 6. Localizar a mesma história.
 7. Comparar número e título entre os dois arquivos.
 8. Se houver inconsistência, PARAR e informar.
-9. Se já estiver `OK`, perguntar se o usuário deseja gerar novamente.
+9. Se já estiver `CONCLUIDA`, perguntar se o usuário deseja gerar novamente.
 10. Se estiver pendente ou não existir no arquivo de status, continuar.
 11. Extrair o conteúdo completo da história do arquivo principal.
 12. Construir o roteiro visual.
@@ -128,7 +128,7 @@ execute exatamente:
 15. Gerar a imagem.
 16. Validar a imagem.
 17. Somente após geração bem-sucedida, atualizar o arquivo de status.
-18. Marcar a história como `OK`.
+18. Marcar a história como `CONCLUIDA`.
 
 ---
 
@@ -185,7 +185,7 @@ A entrada:
 
 `003.`
 
-não está marcada como `OK`.
+não está marcada como `CONCLUIDA`.
 
 Depois consultar:
 
@@ -277,11 +277,15 @@ deve utilizar este padrão:
 
 etc.
 
-Estados permitidos:
+Estados permitidos (usar exatamente estes nomes em todos os arquivos do projeto):
 
 - `PENDENTE`
-- `EM PRODUÇÃO`
-- `OK`
+- `EM_GERACAO`
+- `GERADA_A_VALIDAR`
+- `CONCLUIDA`
+- `BLOQUEADA`
+
+Mapeamento legado: `EM_GERACAO` equivale a `EM_GERACAO`; `CONCLUIDA` equivale a `CONCLUIDA`, somente quando a imagem foi salva e validada. Ao migrar registros legados, não mudar o estado sem evidência.
 
 ---
 
@@ -299,14 +303,14 @@ validação
 ↓
 OK
 
-NUNCA marcar como `OK` antes de a imagem ser efetivamente gerada
+NUNCA marcar como `CONCLUIDA` antes de a imagem ser efetivamente gerada
 e validada.
 
 Se a geração falhar:
 
 manter:
 
-`EM PRODUÇÃO`
+`EM_GERACAO`
 
 ou retornar para:
 
@@ -314,7 +318,7 @@ ou retornar para:
 
 conforme a situação.
 
-NÃO marcar como `OK` uma geração que falhou.
+NÃO marcar como `CONCLUIDA` uma geração que falhou.
 
 ---
 
@@ -322,8 +326,8 @@ NÃO marcar como `OK` uma geração que falhou.
 
 Quando uma história for concluída:
 
-- se a linha já existir como `PENDENTE`, alterar para `OK`;
-- se estiver como `EM PRODUÇÃO`, alterar para `OK`;
+- se a linha já existir como `PENDENTE`, alterar para `CONCLUIDA`;
+- se estiver como `EM_GERACAO`, alterar para `CONCLUIDA`;
 - se não existir, adicionar a entrada;
 - manter a ordem numérica;
 - não duplicar a história;
@@ -751,6 +755,28 @@ Tudo deve pertencer à mesma linguagem visual.
 
 ---
 
+# [BLOQUEIO DE IDENTIDADE NARRATIVA E QUANTIDADE]
+
+Antes de gerar, estabeleça um registro de execução para a história atual:
+
+- `HISTORIA_ID`: número solicitado com três dígitos.
+- `HISTORIA_TITULO`: título copiado exatamente da entrada oficial.
+- `HISTORIA_FONTE`: conteúdo da entrada exata consultada.
+- `HISTORIA_PERSONAGENS`: personagens autorizados pela narrativa.
+- `HISTORIA_CENAS`: sequência de acontecimentos derivados exclusivamente dessa entrada.
+
+Use esse registro como fonte única de conteúdo durante a geração e a validação. Número e título devem corresponder entre a fonte narrativa e o status. Se houver divergência, interrompa e informe os títulos encontrados.
+
+As imagens anteriores servem apenas de referência de estilo e continuidade visual. Não reutilize nelas cenas, títulos, legendas, orações ou acontecimentos como conteúdo da história atual.
+
+**Quantidade obrigatória:** solicite uma única imagem por chamada sempre que a ferramenta permitir configurar esse parâmetro. Não solicite variações, grades de alternativas, lotes nem chamadas paralelas para a mesma história. Todos os quadros e painéis devem estar integrados em uma única prancha.
+
+Se a ferramenta devolver múltiplas imagens apesar da instrução, avalie no máximo uma candidata e não a aprove automaticamente. Não crie outra geração sem identificar e corrigir a causa da falha. Se não houver controle técnico da quantidade, informe a limitação.
+
+Rejeite qualquer imagem com número/título incorretos, narrativa misturada, cenas incompatíveis, repetição de conteúdo de outra história ou ausência dos elementos obrigatórios. Imagem rejeitada não pode ser salva como final nem marcada como concluída.
+
+---
+
 # [VALIDAÇÃO ANTES DA GERAÇÃO]
 
 Antes de gerar, confirme internamente:
@@ -803,7 +829,7 @@ Depois de gerar a imagem, verificar:
 [ ] Texto legível
 [ ] Composição visual equilibrada
 
-Se houver erro grave, NÃO marcar como `OK`.
+Se houver erro grave, NÃO marcar como `CONCLUIDA`.
 
 ---
 
@@ -856,7 +882,7 @@ Se o usuário responder afirmativamente:
 1. consultar novamente o `historia-novo-testamento.md`;
 2. reconstruir a história;
 3. gerar novamente;
-4. manter o status como `OK`.
+4. manter o status como `CONCLUIDA`.
 
 ---
 
@@ -993,7 +1019,7 @@ ou:
 então:
 
 1. ler `status-criacao-historia.md`;
-2. encontrar a primeira história que não esteja `OK`;
+2. encontrar a primeira história que não esteja `CONCLUIDA`;
 3. confirmar o número;
 4. consultar `historia-novo-testamento.md`;
 5. gerar essa história;
@@ -1046,7 +1072,7 @@ o agente deve:
 5. gerar uma nova imagem;
 6. preservar o mesmo padrão visual;
 7. não alterar o conteúdo da história;
-8. manter o status como `OK`.
+8. manter o status como `CONCLUIDA`.
 
 ---
 
