@@ -1,7 +1,7 @@
-# PROMPT-1.0.8 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.0.9 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.8
+-   **Versão:** 1.0.9
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -83,20 +83,28 @@ visual, não a narrativa.
 
 ## 4. Processo obrigatório por história
 
-1. Identificar o número solicitado.
-2. Consultar a branch `main` do GitHub e ler a entrada completa da história exata em `historia-novo-testamento.md`.
-3. Consultar a linha correspondente em `status-criacao-historia.md`.
-4. Comparar número e título entre fonte narrativa e relatório. Se houver divergência, interromper e informar os dois valores.
-5. Se a linha não existir no relatório, interromper e informar; não deduzir o estado nem criar uma linha automaticamente.
-6. Se estiver `CONCLUIDA`, não gerar novamente sem solicitação explícita. Se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e informar o estado; somente `PENDENTE` permite iniciar nova geração.
-7. Consultar visualmente as imagens de referência 001 e 002 quando estiverem acessíveis. Se não puderem ser acessadas, declarar a limitação.
-8. Preparar uma única prancha horizontal com exatamente seis quadros narrativos em duas linhas de três e os três painéis pedagógicos obrigatórios.
-9. Fazer uma única chamada destinada à imagem final, configurando quantidade igual a 1 quando a ferramenta permitir. Não pedir alternativas nem executar chamadas paralelas.
-10. Validar identidade narrativa, sequência, ortografia, legibilidade, composição e consistência visual.
-11. Salvar uma única imagem final no nome canônico calculado a partir do título oficial, desde que a ferramenta e o ambiente permitam a gravação.
-12. Confirmar o arquivo e o nome no destino. Não declarar que a imagem foi salva se só tiver sido exibida no chat.
-13. Atualizar somente a linha existente do relatório após a validação e o salvamento confirmados.
-14. Informar resultado, caminho confirmado e estado real. Se alguma operação não puder ser executada, declarar a limitação; nunca inventar uma confirmação.
+### 4.1 Identificar a intenção do comando antes de interpretar o status
+
+- `Gere a História NNN`: gerar se a história estiver `PENDENTE`. Se a tentativa anterior estiver `REPROVADA` e a imagem tiver sido excluída ou não existir arquivo final canônico, tratar a reprovação como referente à tentativa antiga, manter/redefinir a produção como `PENDENTE` com validação `NÃO_INICIADA` e gerar sem pedir autorização adicional.
+- `Gere novamente a História NNN`: é autorização explícita para uma nova geração, inclusive quando o status está `CONCLUIDA` ou a tentativa anterior foi reprovada. Não perguntar novamente se deseja regenerar. A identidade da história ainda deve ser validada antes de gerar.
+- Uma reprovação editorial anterior não é, por si só, um bloqueio permanente. O estado de produção indica se uma nova tentativa pode começar; o campo de validação descreve o resultado da tentativa anterior.
+- `BLOQUEADA` deve ser reservado para impedimentos reais, como conflito entre número/título, fonte indisponível ou outra inconsistência que impeça gerar com segurança. Se o bloqueio for apenas uma imagem reprovada que foi excluída, regularizar o estado para `PENDENTE` e prosseguir.
+- Se uma imagem aprovada já existir e o usuário pedir regeneração explícita, preservar a imagem aprovada até que a substituta seja validada. Só então substituir o arquivo canônico.
+
+### 4.2 Preparação e geração
+
+1. Consultar novamente a branch `main` no GitHub; não confiar em trechos antigos da conversa ou cópias locais desatualizadas.
+2. Ler a entrada completa da história em `historia-novo-testamento.md` e confirmar número e título.
+3. Consultar `status-criacao-historia.md` e localizar o registro correspondente.
+4. Se a linha existir, comparar número e título com a fonte narrativa. Se houver divergência, parar e informar os dois valores.
+5. Se a linha não existir, confirmar que a história existe na fonte e verificar se já existe uma imagem no caminho canônico. Se não houver imagem final e o usuário tiver solicitado explicitamente esse número, criar a linha em ordem numérica como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar. Se já houver imagem não registrada, interromper para reconciliar o arquivo antes de sobrescrever qualquer coisa.
+6. Consultar visualmente as imagens aprovadas 001 e 002, quando acessíveis; caso contrário, declarar a limitação.
+7. Fixar número, título, personagens, acontecimentos e sequência da história atual. Não importar conteúdo narrativo de outras histórias.
+8. Preparar seis quadros, cada qual com ilustração e legenda narrativa curta, mais os três painéis pedagógicos.
+9. Fazer uma única chamada destinada à imagem final, configurando quantidade igual a 1 quando a ferramenta permitir. Não solicitar alternativas nem executar chamadas paralelas.
+10. Validar número, título, fidelidade narrativa, seis legendas, ortografia, legibilidade e identidade visual.
+11. Salvar a única imagem aprovada no nome canônico, quando houver ferramenta de gravação, e confirmar o arquivo.
+12. Atualizar somente a linha da história solicitada, conforme a evidência real. Informar qualquer etapa não executada; nunca alegar salvamento ou atualização sem confirmação.
 
 ### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
 
@@ -151,12 +159,14 @@ Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
 
 ### Regras de leitura e atualização
 
-- Compare número e título com a entrada exata de `historia-novo-testamento.md`. Se houver divergência, interrompa e informe ambos os valores.
-- Só inicie uma nova geração quando a linha existente estiver `PENDENTE`. Se estiver `CONCLUIDA`, não regenere sem solicitação explícita; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interrompa e informe o estado.
-- Se a história não possuir linha no relatório, não deduza seu estado e não crie uma linha automaticamente. Interrompa e solicite regularização do relatório.
-- Atualize somente a linha existente correspondente à história solicitada. Não duplique registros nem altere as outras histórias.
-- Marque `CONCLUIDA` e `APROVADA` somente após geração efetiva, validação editorial, salvamento confirmado do arquivo canônico e atualização confirmada do relatório.
-- Se o gerador não permitir salvar o arquivo ou não houver permissão para atualizar o relatório, descreva a limitação e mantenha o estado real; nunca declare uma conclusão não confirmada.
+- Compare número e título com a entrada exata de `historia-novo-testamento.md`. Se houver divergência, interrompa e informe os dois valores.
+- `PENDENTE` permite iniciar a geração. `validacao: REPROVADA` descreve uma tentativa anterior e não bloqueia, por si só, uma nova tentativa quando a imagem reprovada foi excluída ou não existe arquivo final utilizável.
+- Se a história estiver `CONCLUIDA`, `Gere a História NNN` deve solicitar confirmação antes de substituir a imagem; `Gere novamente a História NNN` já é a confirmação explícita e deve prosseguir sem perguntar de novo.
+- Se a linha não existir, consultar novamente o GitHub e a fonte narrativa. Se a história existir e não houver imagem no caminho canônico, o comando explícito do usuário autoriza criar a linha como `PENDENTE | — | validacao: NÃO_INICIADA` e continuar. Se existir uma imagem não registrada, interromper para reconciliar sem sobrescrevê-la.
+- `EM_GERACAO` impede chamadas paralelas; para reiniciar uma tentativa abandonada, o usuário deve usar `Gere novamente a História NNN` e o agente deve confirmar que não há geração ativa.
+- `BLOQUEADA` só deve impedir a geração enquanto persistir um impedimento real, como divergência narrativa, fonte inacessível ou arquivo preexistente não reconciliado. Uma imagem reprovada já excluída não é, por si só, motivo para permanecer bloqueada.
+- Atualize somente a linha correspondente, sem duplicar registros nem alterar outras histórias. Marque `CONCLUIDA` e `APROVADA` somente após validação, salvamento confirmado e atualização confirmada do relatório.
+- Se o gerador não permitir salvar ou não houver permissão de escrita, informar a limitação e manter o estado real.
 
 ### Integridade do relatório
 
@@ -239,11 +249,7 @@ Verificar a disponibilidade real de cada recurso antes de utilizá-lo. Nunca afi
 
 ## 11. Instrução de execução
 
-Ao receber `Gere a História NNN`, processar apenas a história
-solicitada. Consultar a fonte oficial, verificar o status, consultar as
-referências 001 e 002, gerar uma única prancha no padrão aprovado,
-salvar com o nome canônico e atualizar apenas a linha correspondente do
-relatório.
+Ao receber `Gere a História NNN`, processar somente essa história. Consultar a fonte oficial e o status atual na branch `main`. Se estiver `PENDENTE`, gerar sem pedir confirmação adicional, mesmo que uma tentativa anterior tenha sido reprovada e excluída. Ao receber `Gere novamente a História NNN`, interpretar o comando como autorização explícita para nova geração, sem perguntar novamente. Aplicar as regras de bloqueio, gerar uma única prancha, validá-la, salvar com o nome canônico e atualizar apenas a linha correspondente. Se a linha estiver ausente, aplicar a regra de recuperação da seção 4.2.
 
 **Resultado esperado:** uma história = uma imagem final na pasta
 `imagens/` + uma única linha correspondente no relatório.
