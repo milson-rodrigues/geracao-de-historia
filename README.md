@@ -55,9 +55,8 @@ A memória do projeto só é confiável quando o registro corresponde ao que rea
 - [`status-criacao-historia.md`](status-criacao-historia.md) — controle de produção e validação.
 - [`ROTA-SKILLS-ESTUDO-BIBLICO.md`](ROTA-SKILLS-ESTUDO-BIBLICO.md) — roteador operacional.
 - [`prompt-geracao-imagem.md`](prompt-geracao-imagem.md) — instruções do gerador e controlador de imagens.
-- [`prompt-geracao-imagem-slide.md`](prompt-geracao-imagem-slide.md) — prompt alternativo de prancha/slide; usar somente quando a rota determinar.
 - [`imagens/`](imagens/) — imagens finais e referências visuais aprovadas.
-- [`.agents/skills/`](.agents/skills/) — skills disponíveis no repositório. Só afirmar que uma skill foi usada se ela estiver acessível no ambiente e tiver sido realmente consultada/executada.
+- [Higgsfield Skills](https://github.com/higgsfield-ai/skills) — repositório externo de skills visuais indicado pela rota. Consulte a rota para saber quando usar a referência e confirme a disponibilidade real da skill no ambiente antes de afirmar que foi utilizada.
 
 ## Fluxo de produção por história
 
