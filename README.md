@@ -89,22 +89,19 @@ Antes de agir, a execução precisa conseguir ler a branch `main` por acesso Git
 
 **Regra específica da História 003:** o título literal é “Isabel descobre que está grávida”. Não usar acontecimentos da História 004 (“O anjo Gabriel aparece a Maria”), incluindo a anunciação a Maria, Gabriel, Nazaré nesse contexto, Filho do Altíssimo ou trono de Davi. Se o gerador devolver esses elementos, rejeitar a imagem e corrigir o prompt antes de nova tentativa.
 
-## Padrão da imagem final
+## Padrão visual canônico
 
-Cada prancha deve seguir as instruções completas em `ROTA-SKILLS-ESTUDO-BIBLICO.md` e `prompt-geracao-imagem.md`. O padrão visual inclui:
+As imagens [001](imagens/001-mundo-antes-do-nascimento-de-jesus.png) e [002](imagens/002-anjo-gabriel-aparece-a-zacarias.png) são as referências visuais oficiais. A nova prancha deve parecer uma página do mesmo livro:
 
-- formato horizontal, próximo de 16:9;
-- ilustração bíblica infantil colorida, detalhada e acolhedora;
-- cabeçalho com número e título oficiais;
-- exatamente seis quadros narrativos, organizados em duas fileiras de três;
-- cada quadro contém uma ilustração e uma legenda narrativa curta, integrada e legível; a numeração não substitui a legenda;
-- todas as seis legendas devem corresponder à história oficial e não acrescentar fatos sem sustentação;
-- três painéis inferiores com os títulos exatos **O QUE APRENDEMOS**, **PERGUNTAS PARA A CRIANÇA** e **ORAÇÃO**;
-- texto em português brasileiro, apropriado para crianças e revisado;
-- continuidade visual de personagens recorrentes, quando aplicável;
-- contexto histórico coerente, sem contradizer ou ampliar indevidamente a narrativa oficial.
+- Horizontal 16:9, página contínua, sem dobra central nem miniaturas laterais.
+- Moldura externa dourada/pergaminho, folhagens verdes nos cantos e ornamentos orgânicos.
+- Cabeçalho em grande pergaminho com pontas enroladas; `HISTÓRIA NNN` e título oficial literal.
+- Exatamente seis painéis em grade 3 × 2. Cada painel deve ter um **título temático próprio**, uma ilustração e uma caixa de narrativa em pergaminho integrada à cena, normalmente na parte superior. Número e legenda sem cabeçalho temático não atendem ao padrão.
+- Faixa inferior com três painéis contíguos e cabeçalhos decorativos/ícones: livro + **O QUE APRENDEMOS**, interrogação + **PERGUNTAS PARA A CRIANÇA**, mãos em oração + **ORAÇÃO**.
+- Animação 3D infantil polida, expressiva e detalhada; paleta creme/dourado/castanho, títulos vinho/marrom escuro, céu azul luminoso, verde nas folhagens e iluminação quente.
+- Tipografia serifada, texto legível em português brasileiro e margens seguras.
 
-A composição deve integrar todos os quadros e painéis em uma única imagem. Não produzir uma imagem independente por quadro.
+**Mockup:** não inserir a palavra, faixa vermelha, selo ou marca-d'água “MOCKUP PARA APROVAÇÃO” dentro da imagem. Identificar a prévia como mockup somente na mensagem que acompanha a imagem; assim o layout permanece igual ao modelo aprovado.
 
 ## Nome e local do arquivo
 
@@ -200,4 +197,4 @@ As instruções em Markdown não concedem permissões nem criam integração aut
 
 **A fonte narrativa define o que contar; as referências aprovadas definem como ilustrar; o status define se a geração pode começar; a validação define se o resultado pode ser considerado concluído.**
 
-Uma história = roteiro validado = mockup único para aprovação = confirmação explícita = imagem final em chamada separada. Sem loops nem retries automáticos.
+Uma história = roteiro validado = mockup único no padrão visual aprovado = confirmação explícita = imagem final em chamada separada. O rótulo do mockup fica fora da arte. Sem loops nem retries automáticos.
