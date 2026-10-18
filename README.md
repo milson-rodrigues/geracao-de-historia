@@ -80,12 +80,14 @@ Antes de agir, a execução precisa conseguir ler a branch `main` por acesso Git
    - `Gere novamente a História NNN`: autorização explícita para regenerar; não perguntar novamente se o usuário deseja.
    - Se estiver `CONCLUIDA`, o comando simples exige confirmação antes de substituir a imagem aprovada.
 5. Se não houver linha no status, conferir a história e o caminho canônico. Se a história existir e o arquivo final também estiver ausente, criar apenas a linha daquela história como `PENDENTE | — | validacao: NÃO_INICIADA` e prosseguir. Se houver arquivo sem registro, reconciliar antes de sobrescrever.
-6. Preparar um roteiro antes da geração: título oficial literal, seis legendas narrativas numeradas e descrição visual correspondente a cada legenda. Conferir o roteiro contra a fonte oficial.
+6. Isolar somente a entrada da história solicitada até o próximo título de história. Preparar um roteiro antes da geração: título oficial literal, seis legendas narrativas numeradas, descrição visual de cada quadro e lista de conteúdo proibido das histórias vizinhas. Conferir o roteiro contra a fonte oficial.
 7. Gerar uma única prancha em uma única chamada, usando quantidade `1` quando houver parâmetro. Não pedir alternativas nem fazer chamadas paralelas.
-8. Validar número, título, fidelidade narrativa, seis legendas, três painéis pedagógicos, ortografia, legibilidade e consistência visual.
+8. Validar número, título literal, fidelidade narrativa, seis legendas, três painéis pedagógicos, ortografia, legibilidade e consistência visual. Se aparecer conteúdo de outra história, rejeitar, corrigir o prompt e repetir sequencialmente, uma imagem por tentativa, até duas tentativas corrigidas.
 9. Salvar com o nome canônico e confirmar o arquivo. Não declarar que a imagem foi salva se apenas apareceu no chat.
 10. Atualizar uma única linha do status conforme o resultado real. Uma imagem reprovada que foi excluída volta para `PENDENTE` com validação `NÃO_INICIADA`; uma reprovação anterior não bloqueia indefinidamente uma nova tentativa.
 11. Marcar `CONCLUIDA` / `APROVADA` apenas quando a imagem correta estiver validada, salva e o status tiver sido atualizado com sucesso.
+
+**Regra específica da História 003:** o título literal é “Isabel descobre que está grávida”. Não usar acontecimentos da História 004 (“O anjo Gabriel aparece a Maria”), incluindo a anunciação a Maria, Gabriel, Nazaré nesse contexto, Filho do Altíssimo ou trono de Davi. Se o gerador devolver esses elementos, rejeitar a imagem e corrigir o prompt antes de nova tentativa.
 
 ## Padrão da imagem final
 
@@ -192,4 +194,4 @@ As instruções em Markdown não concedem permissões nem criam integração aut
 
 **A fonte narrativa define o que contar; as referências aprovadas definem como ilustrar; o status define se a geração pode começar; a validação define se o resultado pode ser considerado concluído.**
 
-Uma história = uma identidade narrativa bloqueada = uma única imagem final = uma validação verificável = uma linha de progresso.
+Uma história = uma identidade narrativa bloqueada = um roteiro explícito enviado ao gerador = uma imagem final validada = uma linha de progresso.
