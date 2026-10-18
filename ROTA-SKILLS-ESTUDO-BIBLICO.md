@@ -1,7 +1,7 @@
-# PROMPT-1.0.9 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.1.0 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.0.9
+-   **Versão:** 1.1.0
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -93,7 +93,7 @@ visual, não a narrativa.
 
 ### 4.2 Preparação e geração
 
-1. Consultar novamente a branch `main` no GitHub; não confiar em trechos antigos da conversa ou cópias locais desatualizadas.
+1. Ler os arquivos da branch `main` por uma ferramenta/conexão GitHub autenticada com acesso ao repositório privado. Abrir ou citar um link, sem recuperar o conteúdo atual, não conta como consulta. Se o ambiente não tiver acesso autenticado e não conseguir ler o conteúdo integral, informar o bloqueio; não alegar que a fonte foi verificada.
 2. Ler a entrada completa da história em `historia-novo-testamento.md` e confirmar número e título.
 3. Consultar `status-criacao-historia.md` e localizar o registro correspondente.
 4. Se a linha existir, comparar número e título com a fonte narrativa. Se houver divergência, parar e informar os dois valores.
@@ -231,7 +231,7 @@ Verificar a disponibilidade real de cada recurso antes de utilizá-lo. Nunca afi
 ## 9. Fonte de verdade e precedência
 
 - O GitHub é a fonte oficial versionada dos arquivos do projeto. A Biblioteca do ChatGPT é uma cópia de trabalho, salvo se uma integração explícita determinar o contrário.
-- Para o conteúdo narrativo, `historia-novo-testamento.md` é a fonte de verdade; para estado de produção, `status-criacao-historia.md` é a fonte de verdade.
+- Para o conteúdo narrativo, `historia-novo-testamento.md` é a fonte de verdade; para estado de produção, `status-criacao-historia.md` é a fonte de verdade. Como o repositório pode ser privado, é necessário acesso GitHub autorizado no ambiente que executa o comando; URLs públicas ou links na instrução não concedem essa autorização.
 - A rota controla o procedimento; `prompt-geracao-imagem.md` detalha roteiro visual e validação. Em conflito entre esses dois documentos, a regra mais restritiva de identidade narrativa e uma imagem final prevalece, e a inconsistência deve ser resolvida sem inventar conteúdo.
 - Não misturar conteúdo recuperado do GitHub com uma cópia da Biblioteca que possa estar desatualizada. Registrar a origem consultada em cada execução e informar indisponibilidade.
 
