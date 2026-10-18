@@ -12,7 +12,7 @@ No ChatGPT, dentro do projeto **Estudo Bíblico**, o comando normal é:
 Gere a História 003
 ```
 
-A rota do projeto deve fazer o restante: consultar a versão atual dos arquivos na branch `main` por acesso GitHub autenticado, verificar o status, localizar a história exata, preparar e validar o roteiro de seis legendas, aplicar as instruções visuais, gerar e validar a imagem e só então registrar o resultado. Se o ambiente não tiver acesso autenticado ao repositório privado, a geração deve parar com um aviso de permissão; o link sozinho não prova leitura.
+A rota do projeto deve fazer o restante: consultar a versão atual dos arquivos na branch `main` por acesso GitHub autenticado, verificar o status, localizar a história exata, preparar e validar o roteiro de seis legendas, aplicar as instruções visuais, gerar e validar a imagem e só então registrar o resultado. Como o repositório é privado, se o ambiente não tiver acesso autenticado, a geração deve parar com aviso de permissão; apenas incluir o link não concede acesso.
 
 Para uma história que já esteja concluída, use um pedido explícito de regeneração, por exemplo:
 
@@ -70,24 +70,22 @@ Consulte a [rota operacional](ROTA-SKILLS-ESTUDO-BIBLICO.md) antes de decidir qu
 
 ## Fluxo de produção por história
 
-1. Identificar exatamente o número solicitado, no formato de três dígitos: `NNN`.
-2. Consultar `status-criacao-historia.md` e localizar a linha exata.
-3. Consultar a entrada correspondente em `historia-novo-testamento.md`.
-4. Comparar número e título. Se houver divergência, parar e informar o problema.
-5. Respeitar o estado:
-   - `PENDENTE`: pode iniciar a geração;
-   - `EM_GERACAO`: não iniciar outra execução automaticamente;
-   - `GERADA_A_VALIDAR`: a imagem aguarda validação;
-   - `CONCLUIDA`: não gerar novamente sem pedido explícito;
-   - `BLOQUEADA`: resolver o bloqueio antes de prosseguir.
-6. Preparar uma única composição horizontal.
-7. Solicitar uma única imagem por chamada, com a quantidade configurada como `1` quando disponível.
-8. Validar a imagem contra a narrativa, o estilo e a composição definidos.
-9. Salvar a imagem usando o nome canônico e confirmar o arquivo no destino.
-10. Atualizar somente a linha existente da história no status; nunca duplicar uma linha.
-11. Comunicar claramente o que foi gerado, salvo, validado e atualizado. Separar operações concluídas das que ficaram pendentes.
+Antes de agir, a execução precisa conseguir ler a branch `main` por acesso GitHub autenticado. O repositório pode ser privado; citar ou abrir um link sem recuperar o conteúdo atual não é consulta. Se não houver acesso autorizado, o agente deve informar o bloqueio e não alegar que validou a fonte.
 
-Se a linha não existir, a rota confirma a história na fonte oficial e verifica o caminho canônico. Se a imagem também não existir, um comando explícito para gerar aquele número autoriza criar uma linha `PENDENTE | — | validacao: NÃO_INICIADA` em ordem numérica; se houver imagem não registrada, a execução para para reconciliar, sem sobrescrever. Isso é especialmente importante porque o relatório precisa ser expandido, com títulos confirmados na fonte, antes de as histórias sem linha poderem ser geradas.
+1. Identificar exatamente o número solicitado.
+2. Ler a entrada completa em `historia-novo-testamento.md` e confirmar título e tópicos.
+3. Consultar `status-criacao-historia.md` e conferir número/título.
+4. Interpretar o comando:
+   - `Gere a História NNN`: iniciar diretamente quando estiver `PENDENTE`, inclusive após uma tentativa reprovada e excluída.
+   - `Gere novamente a História NNN`: autorização explícita para regenerar; não perguntar novamente se o usuário deseja.
+   - Se estiver `CONCLUIDA`, o comando simples exige confirmação antes de substituir a imagem aprovada.
+5. Se não houver linha no status, conferir a história e o caminho canônico. Se a história existir e o arquivo final também estiver ausente, criar apenas a linha daquela história como `PENDENTE | — | validacao: NÃO_INICIADA` e prosseguir. Se houver arquivo sem registro, reconciliar antes de sobrescrever.
+6. Preparar um roteiro antes da geração: título oficial literal, seis legendas narrativas numeradas e descrição visual correspondente a cada legenda. Conferir o roteiro contra a fonte oficial.
+7. Gerar uma única prancha em uma única chamada, usando quantidade `1` quando houver parâmetro. Não pedir alternativas nem fazer chamadas paralelas.
+8. Validar número, título, fidelidade narrativa, seis legendas, três painéis pedagógicos, ortografia, legibilidade e consistência visual.
+9. Salvar com o nome canônico e confirmar o arquivo. Não declarar que a imagem foi salva se apenas apareceu no chat.
+10. Atualizar uma única linha do status conforme o resultado real. Uma imagem reprovada que foi excluída volta para `PENDENTE` com validação `NÃO_INICIADA`; uma reprovação anterior não bloqueia indefinidamente uma nova tentativa.
+11. Marcar `CONCLUIDA` / `APROVADA` apenas quando a imagem correta estiver validada, salva e o status tiver sido atualizado com sucesso.
 
 ## Padrão da imagem final
 
