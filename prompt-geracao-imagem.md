@@ -241,78 +241,67 @@ O título NÃO é suficiente.
 
 # [CONTROLE DE STATUS]
 
-O arquivo `status-criacao-historia.md` é a fonte oficial do progresso e deve ser consultado diretamente na branch `main` do GitHub a cada solicitação. O formato atualmente publicado é uma tabela/linha delimitada por `|`, com número, título, estado, caminho do arquivo e validação editorial. Não converter esse formato para o padrão exemplificado abaixo nem substituir o arquivo por uma lista de texto. Preserve as linhas existentes e altere somente a linha da história solicitada após os critérios de validação serem satisfeitos.
+O arquivo `status-criacao-historia.md` é a fonte oficial do progresso e deve ser consultado diretamente na branch `main` do GitHub a cada solicitação.
 
-Estados permitidos (usar exatamente estes nomes em todos os arquivos do projeto):
+O formato atualmente publicado é uma linha delimitada por barras verticais:
 
-- `PENDENTE`
-- `EM_GERACAO`
-- `GERADA_A_VALIDAR`
-- `CONCLUIDA`
-- `BLOQUEADA`
+```text
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
+```
 
-Compatibilidade com formato antigo: interprete `EM PRODUÇÃO` como `EM_GERACAO`; interprete `OK` como `CONCLUIDA` somente quando houver evidência de que a imagem foi salva e validada. A nomenclatura oficial para novos registros é a lista de estados acima.
+Campos: número com três dígitos; título copiado da fonte oficial; estado de produção; caminho canônico da imagem ou `—`; validação editorial.
+
+Estados permitidos: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA` e `BLOQUEADA`.
+
+Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA` e `REPROVADA`.
+
+O relatório publicado atualmente contém as linhas 001, 002 e 003. Se a história solicitada não tiver uma linha, NÃO inventar o estado, NÃO gerar e NÃO adicionar uma linha automaticamente. Interromper e solicitar regularização do relatório.
+
+Não converter o formato do relatório nem reescrever linhas não relacionadas. Atualizar somente a linha existente da história solicitada.
 
 ---
 
 # [REGRAS PARA ALTERAÇÃO DO STATUS]
 
-Quando uma história ainda não foi produzida:
+Fluxo permitido:
 
+```text
 PENDENTE
-↓
+   ↓
 EM_GERACAO
-↓
-geração
-↓
-validação
-↓
-CONCLUIDA
+   ↓
+geração efetiva
+   ↓
+GERADA_A_VALIDAR
+   ↓
+validação editorial + confirmação de arquivo/caminho
+   ↓
+CONCLUIDA | validação: APROVADA
+```
 
-NUNCA marcar como `CONCLUIDA` antes de a imagem ser efetivamente gerada
-e validada.
+Nunca marque uma história como `CONCLUIDA` apenas porque uma imagem foi exibida no chat ou porque a chamada de geração terminou. A conclusão exige evidência da imagem final, validação aprovada, nome/caminho canônico confirmado e atualização confirmada da linha existente no relatório.
 
-Se a geração falhar:
-
-manter:
-
-`EM_GERACAO`
-
-ou retornar para:
-
-`PENDENTE`
-
-conforme a situação.
-
-NÃO marcar como `CONCLUIDA` uma geração que falhou.
+Se a geração falhar, não marque `CONCLUIDA`. Retorne para `PENDENTE` quando a tentativa tiver sido interrompida sem um resultado utilizável; use `BLOQUEADA` quando houver uma inconsistência, ausência de registro, impedimento técnico ou outra condição que impeça a continuação segura. Se uma imagem tiver sido gerada, mas ainda não estiver validada, use `GERADA_A_VALIDAR` com validação `PENDENTE`.
 
 ---
 
 # [REGRA DE ATUALIZAÇÃO]
 
-Quando uma história for concluída:
+Ao atualizar o relatório:
 
-- localizar e editar exclusivamente a linha existente da história solicitada;
-- não criar uma linha quando o número não estiver presente; interromper e relatar;
-- manter o título oficial, a ordem, as demais linhas e as colunas do formato atual;
-- não duplicar a história;
-- não alterar histórias já concluídas;
-- atualizar o estado e o campo de validação de acordo com a evidência real; `CONCLUIDA` exige imagem salva e validação aprovada.
+- localizar a linha existente pelo número e conferir o título;
+- editar somente essa linha, mantendo o formato delimitado por barras verticais;
+- não adicionar a entrada se ela não existir; interromper e informar a ausência;
+- manter a ordem, o caminho canônico e as demais histórias;
+- não duplicar entradas nem alterar histórias concluídas que não tenham sido solicitadas;
+- registrar o estado e a validação que correspondam à evidência real;
+- marcar `CONCLUIDA` com `validacao: APROVADA` somente após validação, salvamento confirmado e atualização confirmada.
 
-Exemplo:
+Exemplo de estrutura de linha, sem representar o estado real de qualquer história:
 
-Antes:
-
-`003. Isabel descobre que está grávida - PENDENTE`
-
-Depois:
-
-`003. Isabel descobre que está grávida - CONCLUIDA`
-
-NÃO criar:
-
-`003. Isabel descobre que está grávida - CONCLUIDA`
-`003. Isabel descobre que está grávida - CONCLUIDA`
+```text
+NNN | Título oficial | CONCLUIDA | imagens/NNN-slug-do-titulo-oficial.png | validacao: APROVADA
+```
 
 ---
 
@@ -756,32 +745,18 @@ Se houver erro grave, NÃO marcar como `CONCLUIDA`.
 
 # [ATUALIZAÇÃO DO STATUS APÓS GERAÇÃO]
 
-Somente depois de uma geração bem-sucedida:
+Só atualize `status-criacao-historia.md` depois de verificar a imagem gerada.
 
-Atualizar:
+- Se a imagem ainda aguardar análise, atualizar a linha existente para `GERADA_A_VALIDAR` e validação `PENDENTE`, caso o arquivo tenha sido salvo com segurança.
+- Se a imagem tiver sido aprovada, o arquivo tiver sido salvo no nome e caminho canônicos e a alteração do relatório tiver sido confirmada, atualizar a linha existente para `CONCLUIDA` e validação `APROVADA`.
+- Se o salvamento ou a atualização do relatório falhar, não declarar conclusão e informar qual etapa ficou pendente.
+- Nunca criar uma segunda linha ou adicionar automaticamente uma linha ausente.
 
-`status-criacao-historia.md`
+Preserve exatamente o formato corrente da linha:
 
-Exemplo:
-
-Antes:
-
-`027. Jesus liberta um homem endemoninhado - PENDENTE`
-
-Depois:
-
-`027. Jesus liberta um homem endemoninhado - CONCLUIDA`
-
-A alteração deve preservar:
-
-- numeração;
-- título;
-- ordem;
-- demais histórias.
-
-Não apagar outras informações.
-
-Não duplicar entradas.
+```text
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
+```
 
 ---
 
