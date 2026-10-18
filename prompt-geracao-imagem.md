@@ -285,7 +285,7 @@ Estados permitidos (usar exatamente estes nomes em todos os arquivos do projeto)
 - `CONCLUIDA`
 - `BLOQUEADA`
 
-Mapeamento legado: `EM_GERACAO` equivale a `EM_GERACAO`; `OK` equivale a `CONCLUIDA` somente quando a imagem foi salva e validada. Na migração, preserve o estado real e não marque como concluída sem evidência.
+Compatibilidade com formato antigo: interprete `EM PRODUÇÃO` como `EM_GERACAO`; interprete `OK` como `CONCLUIDA` somente quando houver evidência de que a imagem foi salva e validada. A nomenclatura oficial para novos registros é a lista de estados acima.
 
 ---
 
