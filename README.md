@@ -151,7 +151,7 @@ Cada história deve ocupar uma única linha, no formato:
 NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
 ```
 
-Estados oficiais: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
+Estados oficiais: `PENDENTE`, `EM_GERACAO`, `MOCKUP_PARA_APROVACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
 
 Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA`, `REPROVADA`.
 
@@ -167,16 +167,22 @@ Na versão consultada para a criação deste README:
 
 O arquivo de status atualmente contém os registros 001, 002 e 003. Para histórias posteriores sem linha, não é necessário criar todo o relatório em lote: quando o usuário solicitar explicitamente um número, a rota confirma o título na fonte e verifica se já existe uma imagem no caminho canônico; se não existir imagem, cria apenas a linha daquela história como `PENDENTE` e continua. Se houver uma imagem não registrada, a execução para para reconciliar antes de sobrescrever. Este resumo é uma fotografia do estado atual; consulte sempre o status na branch `main` antes de agir.
 
+## Aprovação obrigatória em duas fases
+
+A primeira imagem é um **mockup de revisão**, identificado como `MOCKUP PARA APROVAÇÃO — NÃO É A IMAGEM FINAL`. Ela serve para validar número, título, roteiro e cenas. O usuário precisa aprovar explicitamente esse mockup antes de a ferramenta gerar a imagem final.
+
+Cada comando de geração pode disparar somente uma chamada de imagem. Não gerar várias imagens em lote, não repetir a chamada automaticamente e não iniciar geração paralela. Se houver erro, apresentar o problema e aguardar um novo comando.
+
 ## Comandos recomendados
 
 | Objetivo | Comando |
 |---|---|
-| Gerar ou tentar novamente uma história `PENDENTE` (incluindo tentativa anterior reprovada e descartada) | `Gere a História 003` |
-| Regenerar explicitamente uma história, inclusive concluída | `Gere novamente a História 003` |
+| Iniciar o mockup para aprovação de uma história pendente | `Gere a História 003` |
+| Iniciar nova revisão de uma história já gerada | `Gere novamente a História 003` |
 | Verificar o estado sem gerar | `Verifique o status da História 003` |
 | Diagnosticar bloqueios do projeto | `Diagnostique o fluxo de geração do projeto Estudo Bíblico, sem gerar imagens` |
 
-Os comandos são exemplos. A rota consulta a fonte e o status na branch `main` em cada execução. Uma reprovação anterior não bloqueia uma nova tentativa quando a imagem foi descartada e o estado é `PENDENTE`. `Gere novamente a História NNN` é autorização explícita e não deve gerar uma segunda pergunta de confirmação. O número no comando não substitui a consulta aos arquivos.
+Os comandos são exemplos. A rota consulta a fonte e o status na branch `main` em cada execução. Cada comando de imagem produz no máximo uma imagem e nunca dispara tentativas automáticas. `Gere a História NNN` produz somente um mockup e aguarda revisão. `Aprovado` autoriza a chamada separada para a imagem final. `Refaça o mockup da História NNN` solicita um único mockup novo. `Gere novamente a História NNN` inicia um novo mockup de revisão, sem perguntar outra vez. O número no comando não substitui a consulta aos arquivos.
 
 ## Uso em ChatGPT, Codex, Claude e Antigravity
 
@@ -194,4 +200,4 @@ As instruções em Markdown não concedem permissões nem criam integração aut
 
 **A fonte narrativa define o que contar; as referências aprovadas definem como ilustrar; o status define se a geração pode começar; a validação define se o resultado pode ser considerado concluído.**
 
-Uma história = uma identidade narrativa bloqueada = um roteiro explícito enviado ao gerador = uma imagem final validada = uma linha de progresso.
+Uma história = roteiro validado = mockup único para aprovação = confirmação explícita = imagem final em chamada separada. Sem loops nem retries automáticos.
