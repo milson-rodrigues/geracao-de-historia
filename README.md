@@ -1,0 +1,184 @@
+# Estudo Bíblico — 232 histórias ilustradas do Novo Testamento
+
+Projeto para produzir uma coleção de pranchas bíblicas infantis com narrativa fiel à fonte oficial, identidade visual consistente, validação editorial e controle explícito de progresso.
+
+> **Regra central:** uma história solicitada = uma única prancha final. O conteúdo vem da história correspondente na fonte oficial; as imagens aprovadas anteriores servem como referência visual, não como fonte narrativa.
+
+## Início rápido
+
+No ChatGPT, dentro do projeto **Estudo Bíblico**, o comando normal é:
+
+```text
+Gere a História 003
+```
+
+A rota do projeto deve fazer o restante: consultar a versão atual dos arquivos na branch `main`, verificar o status, localizar a história exata, aplicar as instruções visuais, gerar e validar a imagem e só então registrar o resultado.
+
+Para uma história que já esteja concluída, use um pedido explícito de regeneração, por exemplo:
+
+```text
+Gere novamente a História 003
+```
+
+Se a rota detectar que a história já está concluída, deve confirmar a intenção antes de gerar outra imagem. Não sobrescreva uma imagem aprovada sem autorização.
+
+**Atenção:** a instrução textual não garante, sozinha, que uma ferramenta de imagem produza apenas um arquivo. Configure a quantidade como `1` quando a ferramenta permitir, não faça chamadas paralelas nem solicite variações. Se a ferramenta não permitir controlar a quantidade, declare a limitação.
+
+## A memória durável do projeto
+
+Neste projeto, a “memória de criação” não deve depender apenas do histórico da conversa ou da memória interna de um modelo. A memória durável é formada pelos arquivos versionados no GitHub e pelos ativos visuais aprovados.
+
+| Elemento de memória | Arquivo ou local | Para que serve |
+|---|---|---|
+| Memória narrativa | `historia-novo-testamento.md` | Define o número, o título, os personagens e os acontecimentos de cada história. É a fonte narrativa oficial e não deve ser alterada durante a geração de imagens. |
+| Memória de progresso | `status-criacao-historia.md` | Registra o estado de produção, o caminho da imagem e o estado de validação. Deve ser consultado antes de toda geração. |
+| Memória de procedimento | `ROTA-SKILLS-ESTUDO-BIBLICO.md` | Define a ordem de execução, os bloqueios, as regras de salvamento e o tratamento de falhas. |
+| Memória de direção visual | `prompt-geracao-imagem.md` | Define a composição, o estilo, os painéis pedagógicos e os critérios de validação. |
+| Memória visual aprovada | `imagens/001-mundo-antes-do-nascimento-de-jesus.png` e `imagens/002-anjo-gabriel-aparece-a-zacarias.png` | Preserva o padrão visual de referência. Consultar as imagens quando estiverem acessíveis. |
+| Memória de alterações | Histórico de commits do GitHub | Permite rastrear mudanças nos arquivos e recuperar versões anteriores. |
+
+### Como utilizar essa memória corretamente
+
+1. **Leia a fonte atual a cada execução.** Não use apenas o que o modelo lembra de outra conversa, história ou sessão.
+2. **Leia o status atual na branch `main`.** O status determina se a geração pode iniciar.
+3. **Bloqueie a identidade narrativa.** Fixe o número, título e conteúdo da entrada exata antes de gerar. Não misture cenas, legendas, orações ou ensinamentos de outra história.
+4. **Use as imagens anteriores somente para identidade visual.** Elas orientam composição, paleta, molduras e continuidade dos personagens; não autorizam copiar suas narrativas.
+5. **Registre o resultado no arquivo de progresso.** A execução seguinte deve consultar a linha atualizada, não inferir o resultado pelo histórico do chat.
+6. **Se o GitHub não estiver acessível, informe a limitação.** Não presuma que uma cópia local ou da Biblioteca do ChatGPT está atualizada.
+7. **Mantenha uma fonte oficial.** O GitHub é a fonte versionada oficial. A Biblioteca do ChatGPT pode ser usada como apoio visual ou cópia de trabalho, mas não deve divergir silenciosamente do repositório.
+
+A memória do projeto só é confiável quando o registro corresponde ao que realmente foi gerado, validado e salvo. Não marque uma imagem como concluída com base apenas na geração ou na exibição no chat.
+
+## Arquivos principais
+
+- [`historia-novo-testamento.md`](historia-novo-testamento.md) — fonte narrativa das 232 histórias.
+- [`status-criacao-historia.md`](status-criacao-historia.md) — controle de produção e validação.
+- [`ROTA-SKILLS-ESTUDO-BIBLICO.md`](ROTA-SKILLS-ESTUDO-BIBLICO.md) — roteador operacional.
+- [`prompt-geracao-imagem.md`](prompt-geracao-imagem.md) — instruções do gerador e controlador de imagens.
+- [`prompt-geracao-imagem-slide.md`](prompt-geracao-imagem-slide.md) — prompt alternativo de prancha/slide; usar somente quando a rota determinar.
+- [`imagens/`](imagens/) — imagens finais e referências visuais aprovadas.
+- [`.agents/skills/`](.agents/skills/) — skills disponíveis no repositório. Só afirmar que uma skill foi usada se ela estiver acessível no ambiente e tiver sido realmente consultada/executada.
+
+## Fluxo de produção por história
+
+1. Identificar exatamente o número solicitado, no formato de três dígitos: `NNN`.
+2. Consultar `status-criacao-historia.md` e localizar a linha exata.
+3. Consultar a entrada correspondente em `historia-novo-testamento.md`.
+4. Comparar número e título. Se houver divergência, parar e informar o problema.
+5. Respeitar o estado:
+   - `PENDENTE`: pode iniciar a geração;
+   - `EM_GERACAO`: não iniciar outra execução automaticamente;
+   - `GERADA_A_VALIDAR`: a imagem aguarda validação;
+   - `CONCLUIDA`: não gerar novamente sem pedido explícito;
+   - `BLOQUEADA`: resolver o bloqueio antes de prosseguir.
+6. Preparar uma única composição horizontal.
+7. Solicitar uma única imagem por chamada, com a quantidade configurada como `1` quando disponível.
+8. Validar a imagem contra a narrativa, o estilo e a composição definidos.
+9. Salvar a imagem usando o nome canônico e confirmar o arquivo no destino.
+10. Atualizar somente a linha existente da história no status; nunca duplicar uma linha.
+11. Comunicar claramente o que foi gerado, salvo, validado e atualizado. Separar operações concluídas das que ficaram pendentes.
+
+Se a linha da história não existir no relatório, a rota atual determina interromper a execução e pedir a regularização do status. Não invente o estado nem crie entradas automaticamente. Isso é especialmente importante porque o relatório precisa ser expandido, com títulos confirmados na fonte, antes de as histórias sem linha poderem ser geradas.
+
+## Padrão da imagem final
+
+Cada prancha deve seguir as instruções completas em `ROTA-SKILLS-ESTUDO-BIBLICO.md` e `prompt-geracao-imagem.md`. O padrão visual inclui:
+
+- formato horizontal, próximo de 16:9;
+- ilustração bíblica infantil colorida, detalhada e acolhedora;
+- cabeçalho com número e título oficiais;
+- exatamente seis quadros narrativos, organizados em duas fileiras de três;
+- três painéis inferiores com os títulos exatos **O QUE APRENDEMOS**, **PERGUNTAS PARA A CRIANÇA** e **ORAÇÃO**;
+- texto em português brasileiro, apropriado para crianças e revisado;
+- continuidade visual de personagens recorrentes, quando aplicável;
+- contexto histórico coerente, sem contradizer ou ampliar indevidamente a narrativa oficial.
+
+A composição deve integrar todos os quadros e painéis em uma única imagem. Não produzir uma imagem independente por quadro.
+
+## Nome e local do arquivo
+
+O nome oficial segue o formato:
+
+```text
+NNN-slug-do-titulo-oficial.png
+```
+
+Exemplo de nome confirmado:
+
+```text
+001-mundo-antes-do-nascimento-de-jesus.png
+```
+
+Para uma nova história, copie o título da fonte oficial e gere o slug a partir dele: minúsculas, sem acentos ou pontuação e com palavras separadas por hífen. O destino oficial no repositório é `imagens/`.
+
+Não salvar alternativas, prévias ou versões duplicadas na pasta oficial. Não apagar nem sobrescrever arquivos aprovados sem autorização.
+
+## Critérios de validação
+
+Antes de marcar como `CONCLUIDA`, confirme:
+
+- número e título correspondem à fonte narrativa;
+- todos os acontecimentos representados pertencem à história atual e respeitam sua sequência;
+- não há mistura de histórias;
+- os seis quadros narrativos e os três painéis pedagógicos estão presentes;
+- os três títulos pedagógicos estão corretos;
+- textos relevantes são legíveis e ortograficamente adequados;
+- personagens e estilo estão consistentes;
+- existe um único arquivo final com nome e caminho canônicos;
+- o salvamento foi confirmado;
+- a linha correspondente do relatório foi atualizada com sucesso.
+
+Se a imagem foi gerada, mas ainda aguarda validação, use `GERADA_A_VALIDAR` com validação pendente. Se houver erro que impeça a continuação, use `BLOQUEADA` e registre o motivo. Nunca declare conclusão sem evidência.
+
+## Formato do relatório de progresso
+
+Cada história deve ocupar uma única linha, no formato:
+
+```text
+NNN | Título oficial | ESTADO | caminho/arquivo.png ou — | validacao: VALOR
+```
+
+Estados oficiais: `PENDENTE`, `EM_GERACAO`, `GERADA_A_VALIDAR`, `CONCLUIDA`, `BLOQUEADA`.
+
+Valores de validação: `NÃO_INICIADA`, `PENDENTE`, `APROVADA`, `REPROVADA`.
+
+Mantenha uma linha por número, preserve a ordem e altere somente o registro da história em processamento. Se houver divergências no status, não as corrija silenciosamente; informe o problema.
+
+## Situação registrada atualmente
+
+Na versão consultada para a criação deste README:
+
+- História 001 — **CONCLUIDA / APROVADA**
+- História 002 — **CONCLUIDA / APROVADA**
+- História 003 — **PENDENTE / NÃO_INICIADA** — *Isabel descobre que está grávida*
+
+O arquivo de status contém registros apenas até a História 003. Antes de gerar histórias posteriores, é necessário regularizar o relatório com uma linha por história, títulos copiados da fonte e estados reais. Este resumo é apenas uma fotografia do estado atual; sempre consulte o arquivo de status na branch `main` antes de agir.
+
+## Comandos recomendados
+
+| Objetivo | Comando |
+|---|---|
+| Gerar uma história pendente | `Gere a História 003` |
+| Pedir regeneração de uma história concluída | `Gere novamente a História 003` |
+| Verificar o estado sem gerar | `Verifique o status da História 003` |
+| Diagnosticar bloqueios do projeto | `Diagnostique o fluxo de geração do projeto Estudo Bíblico, sem gerar imagens` |
+
+Os comandos são exemplos. A rota ainda deve verificar a fonte oficial e o status atual em cada execução; o número no comando não substitui a consulta aos arquivos.
+
+## Uso em ChatGPT, Codex, Claude e Antigravity
+
+Para manter o mesmo comportamento entre ambientes:
+
+1. Disponibilize o repositório e os arquivos atuais ao agente.
+2. Configure as instruções do projeto para tratar `ROTA-SKILLS-ESTUDO-BIBLICO.md` como roteador operacional e `prompt-geracao-imagem.md` como especificação visual.
+3. Oriente o agente a consultar a branch `main` em cada execução, em vez de confiar em memória de conversa ou cópias antigas.
+4. Confirme que o ambiente consegue ler arquivos, consultar imagens de referência, gerar imagens e salvar/atualizar os arquivos necessários.
+5. Se alguma capacidade estiver ausente, peça que o agente informe o bloqueio, sem alegar que salvou ou sincronizou arquivos.
+
+As instruções em Markdown não concedem permissões nem criam integração automática. Cada ambiente precisa ter acesso real ao GitHub, às referências e às ferramentas de geração/salvamento.
+
+## Princípio final
+
+**A fonte narrativa define o que contar; as referências aprovadas definem como ilustrar; o status define se a geração pode começar; a validação define se o resultado pode ser considerado concluído.**
+
+Uma história = uma identidade narrativa bloqueada = uma única imagem final = uma validação verificável = uma linha de progresso.
