@@ -123,7 +123,7 @@ execute exatamente:
 10. Se o número solicitado não existir no arquivo de status, PARAR e informar a ausência. Não gerar nem inferir status. Se estiver `PENDENTE`, seguir; se estiver `EM_GERACAO`, `GERADA_A_VALIDAR` ou `BLOQUEADA`, interromper e explicar o estado, sem iniciar outra geração automaticamente.
 11. Extrair o conteúdo completo da história do arquivo principal.
 12. Construir o roteiro visual.
-13. Criar no mínimo 6 blocos narrativos/visuais.
+13. Planejar exatamente 6 quadros narrativos, organizados em duas linhas de três, sem perder acontecimentos essenciais.
 14. Aplicar o padrão visual global.
 15. Gerar a imagem.
 16. Validar a imagem.
