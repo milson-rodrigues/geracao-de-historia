@@ -1,7 +1,7 @@
-# PROMPT-1.1.0 — ROTA-SKILLS-ESTUDO-BIBLICO
+# PROMPT-1.1.1 — ROTA-SKILLS-ESTUDO-BIBLICO
 
 -   **ID:** PROMPT-ESTUDO-BIBLICO-ROTA-SKILLS
--   **Versão:** 1.1.0
+-   **Versão:** 1.1.1
 -   **Status:** Instrução operacional
 -   **Objetivo:** produzir as histórias ilustradas do Novo Testamento
     mantendo o padrão visual aprovado, os nomes canônicos dos arquivos e
@@ -105,6 +105,23 @@ visual, não a narrativa.
 10. Validar número, título, fidelidade narrativa, seis legendas, ortografia, legibilidade e identidade visual.
 11. Salvar a única imagem aprovada no nome canônico, quando houver ferramenta de gravação, e confirmar o arquivo.
 12. Atualizar somente a linha da história solicitada, conforme a evidência real. Informar qualquer etapa não executada; nunca alegar salvamento ou atualização sem confirmação.
+
+## 4.3 Isolamento rígido da história solicitada
+
+O trecho narrativo válido é exclusivamente o título `### NNN. ...` solicitado e os tópicos até o próximo título de história ou de parte. Nunca incluir como entrada narrativa o texto da história anterior ou seguinte.
+
+Antes da chamada ao gerador, criar um bloco `ROTEIRO BLOQUEADO` com:
+- número e título oficiais copiados literalmente;
+- seis legendas numeradas de 1 a 6;
+- descrição visual de cada quadro;
+- texto final dos três painéis pedagógicos;
+- lista explícita de acontecimentos/personagens proibidos por pertencerem a histórias vizinhas.
+
+Enviar o título e as seis legendas dentro do prompt real de geração. Não enviar apenas o número, não pedir ao gerador que descubra a história e não depender de ele consultar documentos por conta própria.
+
+**Incidente específico da História 003:** a narrativa é **“Isabel descobre que está grávida”**. Os únicos pontos narrativos desta entrada são Isabel, Zacarias, a gravidez, a alegria e os seis meses de gravidez. Não representar nem mencionar Maria recebendo visita de Gabriel, Nazaré como local da anunciação, anúncio do nascimento de Jesus, “Filho do Altíssimo”, trono de Davi, ação do Espírito Santo na concepção de Jesus ou a aceitação de Maria. Esses elementos pertencem à História 004, **“O anjo Gabriel aparece a Maria”**, e estão proibidos na História 003.
+
+Se o gerador devolver título diferente do título oficial ou conteúdo da história vizinha, rejeitar a candidata. Não salvar nem registrar como imagem final. Corrigir o prompt usando o bloco bloqueado e tentar novamente de forma sequencial, uma imagem por tentativa, sem produzir lotes nem alternativas paralelas. Parar e informar a falha somente após duas tentativas corrigidas sem sucesso ou quando a ferramenta não estiver disponível.
 
 ### REGRA CRÍTICA — UMA ÚNICA IMAGEM FINAL
 
