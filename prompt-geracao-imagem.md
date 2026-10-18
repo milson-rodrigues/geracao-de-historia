@@ -815,15 +815,11 @@ Aguardar correção.
 
 # [HISTÓRIA "EM_GERACAO"]
 
-Se a história estiver:
+O estado `EM_GERACAO` impede chamadas paralelas. Antes de iniciar outra chamada, verificar se existe uma geração realmente ativa.
 
-`- EM_GERACAO`
-
-não iniciar automaticamente uma segunda geração.
-
-Informar que a história está registrada como em produção.
-
-Perguntar se o usuário deseja continuar/reiniciar a produção.
+- No comando `Gere a História NNN`, não iniciar uma segunda chamada enquanto a execução estiver realmente em andamento.
+- No comando explícito `Gere novamente a História NNN`, verificar se há chamada ativa. Se não houver e o estado for apenas residual de uma tentativa abandonada, reiniciar a tentativa de forma controlada, atualizando o status antes da chamada.
+- Nunca manter `EM_GERACAO` indefinidamente após falha ou interrupção. Se não houver imagem utilizável, retornar para `PENDENTE`; se houver imagem ainda por avaliar, usar `GERADA_A_VALIDAR`.
 
 ---
 
