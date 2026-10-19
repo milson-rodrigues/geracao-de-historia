@@ -38,4 +38,4 @@ Este arquivo controla o progresso de produção das 232 histórias ilustradas do
 | 002 | O anjo Gabriel aparece a Zacarias | CONCLUIDA | `imagens/002-anjo-gabriel-aparece-a-zacarias.png` | APROVADA |
 | 003 | Isabel descobre que está grávida | GERADA_A_VALIDAR | — | PENDENTE |
 | 004 | O anjo Gabriel aparece a Maria | GERADA_A_VALIDAR | — | PENDENTE |
-| 005 | Maria visita Isabel | MOCKUP_PARA_APROVACAO | — | PENDENTE |
+| 005 | Maria visita Isabel | GERADA_A_VALIDAR | — | PENDENTE |
