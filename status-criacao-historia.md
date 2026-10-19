@@ -2,4 +2,4 @@
 002 | O anjo Gabriel aparece a Zacarias | CONCLUIDA | imagens/002-anjo-gabriel-aparece-a-zacarias.png | validacao: APROVADA
 003 | Isabel descobre que está grávida | GERADA_A_VALIDAR | — | validacao: PENDENTE
 004 | O anjo Gabriel aparece a Maria | GERADA_A_VALIDAR | — | validacao: PENDENTE
-005 | Maria visita Isabel | PENDENTE | — | validacao: NÃO_INICIADA
+005 | Maria visita Isabel | MOCKUP_PARA_APROVACAO | — | validacao: PENDENTE
