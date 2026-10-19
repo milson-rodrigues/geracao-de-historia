@@ -39,3 +39,4 @@ Este arquivo controla o progresso de produção das 232 histórias ilustradas do
 | 003 | Isabel descobre que está grávida | GERADA_A_VALIDAR | — | PENDENTE |
 | 004 | O anjo Gabriel aparece a Maria | GERADA_A_VALIDAR | — | PENDENTE |
 | 005 | Maria visita Isabel | GERADA_A_VALIDAR | — | PENDENTE |
+| 015 | Os magos chegam a Jerusalém | GERADA_A_VALIDAR | — | PENDENTE |
