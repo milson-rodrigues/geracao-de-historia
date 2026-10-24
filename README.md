@@ -50,7 +50,7 @@ O agente deve resolver o contexto a partir da fonte canônica, verificar se a en
 | [`regras/VALIDACAO-FINAL.md`](regras/VALIDACAO-FINAL.md) | Checklist de qualidade editorial/visual |
 | `historia-novo-testamento.md` | Fonte narrativa do Novo Testamento atualmente na raiz |
 | `historias-antigo-testamento.md` | Fonte narrativa do Antigo Testamento atualmente na raiz |
-| `status-criacao-historia.md` | Status de produção que existe para o fluxo anterior; sua aplicabilidade deve ser verificada por template |
+| [`status-criacao-historia.template.md`](status-criacao-historia.template.md) | Esquema comum para registrar produção e validação |\n| [`status-criacao-historia.novo-testamento.md`](status-criacao-historia.novo-testamento.md) | Manifesto específico do Novo Testamento |\n| [`status-criacao-historia.antigo-testamento.md`](status-criacao-historia.antigo-testamento.md) | Manifesto específico do Antigo Testamento |\n| `status-criacao-historia.md` | Manifesto legado do Novo Testamento; não migrado automaticamente |
 | [`PROMPT-PROJETO-CHATGPT.md`](PROMPT-PROJETO-CHATGPT.md) | Instruções de projeto para colar manualmente |
 
 ## Skill routing
