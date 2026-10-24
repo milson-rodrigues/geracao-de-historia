@@ -8,11 +8,8 @@ O catálogo lista os templates disponíveis na branch `main`. Confirme que o arq
 
 ## Contrato universal das fontes
 
-Cada história/coleção identificada usa o par:
+As coleções narrativas seguem o padrão `historias/historias-<nome-colecao>.md`. O manifesto de status por coleção, quando utilizado, segue `historias/status-criacao-historia.<nome-colecao>.md`. Mantenha o identificador consistente quando ambos existirem. Exemplos atuais: `novo-testamento` e `antigo-testamento`.
 
-- Narrativa: `historias/historias-<nome-historia>.md`
-- Status: `historias/status-criacao-historia.<nome-historia>.md`
-
-O identificador deve ser igual nos dois arquivos, estável, minúsculo e sem espaços, preferencialmente separado por hífens. Exemplos existentes hoje: `novo-testamento` e `antigo-testamento`. Para novas coleções, verifique os nomes reais na árvore do GitHub e mantenha o par consistente.
+Uma cópia individual de roteiro em `historias/` é opcional e serve para rastreabilidade; não é pré-requisito para gerar a imagem. Para novas coleções, consulte a árvore real do GitHub e não presuma que arquivos existam.
 
 Direção visual aprovada pelo usuário: padrão horizontal 16:9 (1920 × 1080 mínimo) e variante vertical 9:16 (1080 × 1920 mínimo, somente quando solicitada). Ambos os SVGs ficam juntos em `mockups/`. O catálogo não substitui a fonte narrativa nem o manifesto. Não declare que uma história foi gerada/aprovada com base apenas no mockup de validação visual.
