@@ -1,80 +1,74 @@
 <div align="center">
 
-# 📖 Estudo Bíblico — Image & Sprite Lab
-### Templates versionados para produção de imagens bíblicas
+# Estudo Bíblico — Image & Sprite Lab
 
-**Narrativa contextualizada · Skills roteadas · Saídas controladas · Validação verificável**
+**Templates versionados para mockups e imagens bíblicas**
 
-[Roteador estável](ROUTER-MESTRE.md) · [Catálogo de templates](templates/CATALOGO.md) · [Rota geral](regras/ROTA-GERAL.md) · [Skills](regras/SKILLS-E-RECURSOS.md) · [Instruções do ChatGPT](PROMPT-PROJETO-CHATGPT.md)
+[Navegação estável](ROUTER-MESTRE.md) · [Catálogo de templates](templates/CATALOGO.md) · [Regras de trabalho](regras/00-LEIA-PRIMEIRO.md) · [Instruções do Projeto ChatGPT](configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md)
 
 </div>
 
 ---
 
-## Conceito atual
+## Como começar
 
-Este repositório organiza a produção visual por **template ID**, não apenas por um número de história. Cada template especifica coleção/testamento, tipo de ativo, fontes canônicas, contexto, roteiro de execução, regras de composição e critérios de validação.
+1. Leia [`ROUTER-MESTRE.md`](ROUTER-MESTRE.md).
+2. Confira o [catálogo](templates/CATALOGO.md) e use apenas um Template ID disponível.
+3. Abra o template escolhido e consulte a fonte narrativa oficial da coleção.
+4. Siga as regras de geração e validação.
+5. Registre o resultado no manifesto correto, se aplicável.
 
-Os principais tipos iniciais são histórias ilustradas e sprites para Novo e Antigo Testamento. O catálogo pode crescer com novos tipos de saída sem misturar as regras de cada um.
+### Template disponível
 
-## Início rápido
+O template ativo no catálogo é [`TPL-MOCKUP-HISTORIA`](templates/mockup-template.md). Ele define uma prancha/mockup de história bíblica em estilo de quadrinhos, com balões de fala e retângulos de narração.
 
-Informe um template ID e o título/elemento desejado:
-
-```text
-Gerar com template TPL-HNT-HISTORIA
-Título: O anjo Gabriel aparece a Maria
-```
-
-Para sprite:
+Exemplo:
 
 ```text
-Gerar com template TPL-HNT-SPRITE
-Elemento: Maria — sprite individual
-História de origem: O anjo Gabriel aparece a Maria
+Gerar com template TPL-MOCKUP-HISTORIA
+Coleção: Antigo Testamento
+História: 001. Deus cria o mundo
+Método preferido: ChatGPT
 ```
 
-O agente deve resolver o contexto a partir da fonte canônica, verificar se a entrada é inequívoca, ler o roteiro do template e as regras de skills, e interromper caso falte algum dado técnico ou narrativo essencial. Não assumir parâmetros técnicos de sprite que não foram fornecidos.
+O exemplo não substitui a conferência do título e da sequência na fonte oficial.
 
-## Arquitetura de documentação
+## Estrutura atual
 
 | Caminho | Responsabilidade |
 |---|---|
-| [`templates/CATALOGO.md`](templates/CATALOGO.md) | Inventário dos Template IDs, coleção, ativo e estado |
-| [`templates/README.md`](templates/README.md) | Convenção para criar e executar templates |
-| [`templates/novo-testamento/`](templates/novo-testamento/historia-ilustrada.template.md) | Roteiros para imagens/sprites do Novo Testamento |
-| [`templates/antigo-testamento/`](templates/antigo-testamento/historia-ilustrada.template.md) | Roteiros para imagens/sprites do Antigo Testamento |
-| [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md) | Roteador global e política de execução |
-| [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md) | Skill principal e skills complementares |
-| [`regras/PADRAO-VISUAL-E-COMPOSICAO.md`](regras/PADRAO-VISUAL-E-COMPOSICAO.md) | Padrão global para pranchas ilustradas |
-| [`regras/VALIDACAO-FINAL.md`](regras/VALIDACAO-FINAL.md) | Checklist de qualidade editorial/visual |
-| `historia-novo-testamento.md` | Fonte narrativa do Novo Testamento atualmente na raiz |
-| `historias-antigo-testamento.md` | Fonte narrativa do Antigo Testamento atualmente na raiz |
-| [`status-criacao-historia.template.md`](status-criacao-historia.template.md) | Esquema comum para registrar produção e validação |\n| [`status-criacao-historia.novo-testamento.md`](status-criacao-historia.novo-testamento.md) | Manifesto específico do Novo Testamento |\n| [`status-criacao-historia.antigo-testamento.md`](status-criacao-historia.antigo-testamento.md) | Manifesto específico do Antigo Testamento |\n| `status-criacao-historia.md` | Manifesto legado do Novo Testamento; não migrado automaticamente |
-| [`PROMPT-PROJETO-CHATGPT.md`](PROMPT-PROJETO-CHATGPT.md) | Instruções de projeto para colar manualmente |
+| [`ROUTER-MESTRE.md`](ROUTER-MESTRE.md) | Ponto de entrada estável |
+| [`regras/00-LEIA-PRIMEIRO.md`](regras/00-LEIA-PRIMEIRO.md) | Ordem de consulta |
+| [`templates/CATALOGO.md`](templates/CATALOGO.md) | Template IDs existentes e planejados |
+| [`templates/mockup-template.md`](templates/mockup-template.md) | Template de mockup em quadrinhos |
+| [`templates/status-criacao-historia.template.md`](templates/status-criacao-historia.template.md) | Esquema dos registros de produção |
+| [`historias/historia-novo-testamento.md`](historias/historia-novo-testamento.md) | Fonte narrativa do Novo Testamento |
+| [`historias/historias-antigo-testamento.md`](historias/historias-antigo-testamento.md) | Fonte narrativa do Antigo Testamento |
+| [`historias/status-criacao-historia.novo-testamento.md`](historias/status-criacao-historia.novo-testamento.md) | Manifesto do Novo Testamento |
+| [`historias/status-criacao-historia.antigo-testamento.md`](historias/status-criacao-historia.antigo-testamento.md) | Manifesto do Antigo Testamento |
+| [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md) | Fluxo operacional |
+| [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md) | Skills e ferramentas |
+| [`regras/PADRAO-VISUAL-E-COMPOSICAO.md`](regras/PADRAO-VISUAL-E-COMPOSICAO.md) | Direção visual |
+| [`regras/VALIDACAO-FINAL.md`](regras/VALIDACAO-FINAL.md) | Checklist de validação |
+| [`configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md`](configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md) | Instruções para configurar manualmente o Projeto ChatGPT |
 
-## Skill routing
+## Estilo visual
 
-1. **Principal para geração:** [`higgsfield-generate`](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md), no repositório oficial [higgsfield-ai/skills](https://github.com/higgsfield-ai/skills). A cópia local está em [`.agents/skills/higgsfield-generate/SKILL.md`](.agents/skills/higgsfield-generate/SKILL.md).
-2. **Complementar de direção artística:** [`taste-skill`](https://github.com/Leonxlnx/taste-skill).
-3. **Opcional para exploração visual:** [`open-design`](https://github.com/nexu-io/open-design).
+O mockup usa linguagem de quadrinhos bíblicos:
+- balões para falas de personagens;
+- retângulos para narração e contexto;
+- ordem de leitura clara;
+- texto legível em português brasileiro;
+- fidelidade à fonte narrativa.
 
-A skill é consultada antes da geração quando acessível; sua presença no GitHub não prova que a integração/CLI ou autenticação esteja operacional. Declare apenas ferramentas realmente usadas. A skill complementar pode apoiar direção artística, mas não pode substituir contexto narrativo, template ou regras globais.
+As imagens enviadas em uma conversa podem servir como referência durante aquela tarefa, mas não são automaticamente arquivos de referência do GitHub.
 
-## Princípios de execução
+## Geração e integridade
 
-- Template define coleção, ativo, contexto e roteiro.
-- A fonte narrativa define os fatos; o agente não completa lacunas com suposições.
-- Uma solicitação de saída final = uma única chamada destinada ao ativo final; usar quantidade 1 se suportado.
-- Não gerar variantes/lotes, a menos que isso esteja explicitamente previsto no template aprovado.
-- Validar antes de declarar aprovado; salvar/registrar apenas quando essas operações forem realmente realizadas.
-- Não sobrescrever ativo aprovado sem autorização.
-- Separar critérios de ilustração editorial de critérios técnicos de sprite. Uma imagem ilustrativa não é automaticamente um sprite pronto para engine.
+A imagem pode ser criada no ChatGPT ou por CLI/ferramenta externa se o recurso estiver realmente disponível. A skill prevista como principal é [`higgsfield-generate`](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md); sua existência não prova que a CLI ou credenciais estejam operacionais.
 
-## Estado da migração
+Não inventar arquivos, IDs, status, commits ou caminhos. Não declarar aprovação sem inspeção real e não declarar salvamento sem confirmar o arquivo.
 
-Os arquivos narrativos antigos continuam na raiz para preservar caminhos e histórico. Na árvore consultada não havia diretório `imagens/`; portanto, não presumir que ativos de referência/finais estejam arquivados no repositório. Uma migração para uma estrutura de coleção/ativos deve ser feita em etapa separada, depois de verificar conteúdo, links, status e binários reais.
+## Nota sobre templates planejados
 
----
-
-<sub>O catálogo de templates é a entrada operacional. Fontes narrativas são autoridade de conteúdo; templates governam o fluxo; skills executam tarefas quando disponíveis; validação estabelece o resultado.</sub>
+O catálogo lista os IDs antigos de histórias e sprites como indisponíveis porque seus arquivos específicos não estão presentes na estrutura atual. Reative-os somente após recriar os arquivos, verificar suas fontes e atualizar o catálogo e as rotas.
