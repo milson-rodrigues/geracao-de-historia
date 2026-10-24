@@ -1,39 +1,47 @@
-# Skills e recursos — roteamento oficial
+# Skills e recursos — roteamento
 
-**Versão:** 1.0.0  
-**Escopo:** roteamento da geração e avaliação das pranchas infantis.
+**Versão:** 2.0.0  
+**Uso:** qualquer template que peça criação, edição ou avaliação de imagens e sprites.
 
-## 1. Skill principal — geração de imagem
+## Skill principal: Higgsfield Generate
 
-- Repositório: https://github.com/higgsfield-ai/skills
-- Skill: [`higgsfield-generate/SKILL.md`](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md)
-- Cópia presente neste repositório: [`.agents/skills/higgsfield-generate/SKILL.md`](../.agents/skills/higgsfield-generate/SKILL.md)
+- Repositório oficial: https://github.com/higgsfield-ai/skills
+- Skill alvo: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
+- Cópia local presente: `.agents/skills/higgsfield-generate/SKILL.md`
 
-**Obrigatória como primeira escolha para geração**, quando de fato disponível. Antes de cada execução que gere imagem, abra a versão atual da skill externa na branch `main` ou use a cópia local se a consulta externa estiver indisponível e a rota permitir; registre qual fonte foi realmente lida. Não afirme que a skill foi executada só porque existe no repositório.
+É a primeira escolha para geração de imagem quando realmente acessível e operacional. Antes de cada chamada de geração:
+1. Consulte a versão atual da skill oficial, quando disponível.
+2. Leia os requisitos relevantes para o tipo de saída.
+3. Verifique se a ferramenta/CLI/integracão necessária está disponível no ambiente atual.
+4. Confirme suporte aos parâmetros pedidos (quantidade, tamanho, proporção, transparência ou outros).
+5. Registre a fonte efetivamente lida e a ferramenta realmente utilizada.
 
-Verifique se o ambiente tem a ferramenta/CLI necessária, acesso, autenticação e suporte ao parâmetro de quantidade. Não instale, execute nem suponha ferramentas ou credenciais sem evidência e autorização. Nunca exponha segredos.
+Não confunda um repositório, arquivo ou URL com instalação ou execução. Não invente autenticação, ferramentas, capacidades ou resultados. Nunca exponha credenciais.
 
-## 2. Skill complementar — direção artística
+## Complementar: Taste Skill
 
-- [taste-skill](https://github.com/Leonxlnx/taste-skill)
+- https://github.com/Leonxlnx/taste-skill
 
-Consultar quando for útil avaliar hierarquia visual, composição, paleta e acabamento. Não pode contrariar o texto bíblico oficial, o prompt do projeto, as imagens aprovadas ou as regras de qualidade infantil. O link não comprova instalação ou disponibilidade.
+Usar para apoiar direção artística, hierarquia visual, paleta, composição e acabamento quando for útil e realmente acessível. Não deve sobrescrever as regras do template, a narrativa canônica nem as referências aprovadas. Não é obrigatória quando não acrescenta valor.
 
-## 3. Skill opcional — exploração visual
+## Opcional: Open Design
 
-- [open-design](https://github.com/nexu-io/open-design)
+- https://github.com/nexu-io/open-design
 
-Usar somente quando a tarefa justificar exploração ou organização visual. Não é requisito por história e não substitui a skill principal.
+Somente para tarefas de exploração ou organização visual. Não é requisito de todas as execuções e não substitui a skill principal.
 
-## 4. Ordem de precedência
+## Outras skills locais de Higgsfield
 
-1. Narrativa oficial da história e identidade narrativa bloqueada.
-2. Estado de produção e autorização para iniciar.
-3. Rota e prompt oficiais do projeto.
-4. Skill principal de geração, se disponível.
-5. Referências visuais aprovadas.
-6. Skills complementares, sem contrariar as regras acima.
+O repositório contém outras skills sob `.agents/skills/`. Selecionar uma delas apenas se o catálogo e o escopo atual a justificarem; por exemplo, skills voltadas a websites, thumbnails, product photoshoot ou vídeo não devem ser escolhidas automaticamente para imagens bíblicas ou sprites.
 
-## 5. Evidência mínima
+## Precedência
 
-Ao terminar, informar: skill/documento realmente consultado; ferramenta real utilizada; quantidade configurada quando houver controle; quantidade de imagens retornada; limitações e resultado da validação. Se a skill ou ferramenta não estiver acessível, parar ou seguir apenas a alternativa explicitamente permitida, informando a limitação. Não alegar instalação, chamada, salvamento ou validação sem evidência.
+1. Narrativa canônica.
+2. Template específico e seus requisitos.
+3. Regras globais de integridade e validação.
+4. Skill principal de geração, se operacional.
+5. Referências aprovadas e skills complementares pertinentes.
+
+## Relatório obrigatório
+
+Identificar a skill/documentação efetivamente consultada, a ferramenta utilizada, os parâmetros confirmados, a quantidade configurada/retornada e as limitações. Se o recurso não estiver acessível, declarar o bloqueio; não afirmar que foi executado.
