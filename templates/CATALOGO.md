@@ -1,10 +1,20 @@
 # Catálogo de templates
 
-| Template ID | Coleção | Ativo | Arquivo | Status |
-|---|---|---|---|---|
-| `TPL-HNT-HISTORIA` | Novo Testamento | Prancha ilustrada de história | [novo-testamento/historia-ilustrada.template.md](novo-testamento/historia-ilustrada.template.md) | INICIAL |
-| `TPL-HAT-HISTORIA` | Antigo Testamento | Prancha ilustrada de história | [antigo-testamento/historia-ilustrada.template.md](antigo-testamento/historia-ilustrada.template.md) | INICIAL |
-| `TPL-HNT-SPRITE` | Novo Testamento | Sprite/elemento isolado | [novo-testamento/sprite.template.md](novo-testamento/sprite.template.md) | INICIAL |
-| `TPL-HAT-SPRITE` | Antigo Testamento | Sprite/elemento isolado | [antigo-testamento/sprite.template.md](antigo-testamento/sprite.template.md) | INICIAL |
+O catálogo lista apenas templates que existem e estão acessíveis na branch `main`. Não selecione um template marcado como planejado.
 
-**Status INICIAL** significa template estruturado para revisão e teste; não é indicação de validação editorial ou técnica de ativos.
+| Template ID | Coleção/escopo | Ativo | Arquivo | Estado |
+|---|---|---|---|---|
+| `TPL-MOCKUP-HISTORIA` | Novo ou Antigo Testamento | Mockup de história bíblica em quadrinhos | [mockup-template.md](mockup-template.md) | INICIAL |
+
+## Templates planejados, ainda indisponíveis
+
+Os IDs abaixo apareceram em versões anteriores da documentação, mas seus arquivos específicos não existem na estrutura atual. Não os use para iniciar geração até que os arquivos sejam recriados e adicionados ao catálogo.
+
+| ID anteriormente proposto | Ativo planejado | Situação |
+|---|---|---|
+| `TPL-HNT-HISTORIA` | Prancha ilustrada do Novo Testamento | Arquivo específico ausente |
+| `TPL-HAT-HISTORIA` | Prancha ilustrada do Antigo Testamento | Arquivo específico ausente |
+| `TPL-HNT-SPRITE` | Sprite derivado do Novo Testamento | Arquivo específico ausente |
+| `TPL-HAT-SPRITE` | Sprite derivado do Antigo Testamento | Arquivo específico ausente |
+
+**Estado INICIAL** significa que o template está documentado, mas ainda precisa de teste de ponta a ponta. Não indica que imagens foram geradas ou aprovadas.
