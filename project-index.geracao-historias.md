@@ -1,48 +1,44 @@
-# Índice do projeto — produção por templates
+# Índice do projeto — Image & Sprite Lab
 
-**Projeto:** Estudo Bíblico — Image & Sprite Lab  
 **Repositório:** https://github.com/milson-rodrigues/geracao-de-historia  
 **Branch:** `main`
 
-## Conceito
+## Entrada estável
 
-O ponto de entrada da produção é um Template ID que determina coleção e tipo de ativo. O usuário informa também o título/elemento. O template direciona fontes narrativas, contexto, roteiro de execução, regras visuais/técnicas, validação e relatório.
-
-## Entradas canônicas
-
+- Roteador: `ROUTER-MESTRE.md`
+- Ordem de consulta: `regras/00-LEIA-PRIMEIRO.md`
 - Catálogo: `templates/CATALOGO.md`
-- Regras para novos templates: `templates/README.md`
-- Rota geral: `regras/ROTA-GERAL.md`
-- Skills: `regras/SKILLS-E-RECURSOS.md`
-- Padrão de prancha: `regras/PADRAO-VISUAL-E-COMPOSICAO.md`
-- Validação final global: `regras/VALIDACAO-FINAL.md`
-- Instruções do ChatGPT: `PROMPT-PROJETO-CHATGPT.md`
+- Template atualmente disponível: `templates/mockup-template.md` — ID `TPL-MOCKUP-HISTORIA`
 
-## Fontes narrativas legadas
+## Fontes narrativas canônicas
 
-- Novo Testamento: `historia-novo-testamento.md`
-- Antigo Testamento: `historias-antigo-testamento.md`
+- Novo Testamento: `historias/historia-novo-testamento.md`
+- Antigo Testamento: `historias/historias-antigo-testamento.md`
 
-Esses arquivos permanecem na raiz até uma migração deliberada. A aplicabilidade do status legado deve ser verificada por template.
+## Manifestos de produção
 
-## Templates iniciais
+- Esquema: `templates/status-criacao-historia.template.md`
+- Novo Testamento: `historias/status-criacao-historia.novo-testamento.md`
+- Antigo Testamento: `historias/status-criacao-historia.antigo-testamento.md`
 
-- `TPL-HNT-HISTORIA`
-- `TPL-HAT-HISTORIA`
-- `TPL-HNT-SPRITE`
-- `TPL-HAT-SPRITE`
+## Regras operacionais
 
-Consulte `templates/CATALOGO.md` para os caminhos e o estado.
+- `regras/ROTA-GERAL.md`
+- `regras/SKILLS-E-RECURSOS.md`
+- `regras/PADRAO-VISUAL-E-COMPOSICAO.md`
+- `regras/VALIDACAO-FINAL.md`
+
+## Instruções do ChatGPT
+
+`configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md`
 
 ## Skill principal
 
-`higgsfield-generate`: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md  
+`higgsfield-generate`: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
+
 Complementar: https://github.com/Leonxlnx/taste-skill  
 Opcional: https://github.com/nexu-io/open-design
 
-## Pendências de estrutura
+## Estado
 
-- Confirmar tecnicamente os parâmetros exigidos para cada tipo de sprite (dimensão, fundo, pivot, frames, escala e engine, se aplicável).
-- Decidir se status/manifests de produção serão separados por coleção e tipo de ativo.
-- Migrar ou catalogar os ativos visuais somente após confirmação de quais arquivos aprovados realmente existem.
-- Revisar e harmonizar os documentos operacionais legados antes de removê-los ou mudar seus caminhos.
+O template de mockup está documentado, mas ainda requer teste visual de ponta a ponta. IDs antigos de histórias e sprites permanecem planejados e indisponíveis até que os arquivos correspondentes sejam recriados. Não presumir que referências visuais ou imagens finais estão armazenadas no repositório.
