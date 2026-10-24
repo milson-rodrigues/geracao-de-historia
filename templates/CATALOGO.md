@@ -15,4 +15,4 @@ Cada história/coleção identificada usa o par:
 
 O identificador deve ser igual nos dois arquivos, estável, minúsculo e sem espaços, preferencialmente separado por hífens. Exemplos existentes hoje: `novo-testamento` e `antigo-testamento`. Para novas coleções, verifique os nomes reais na árvore do GitHub e mantenha o par consistente.
 
-O catálogo não substitui a fonte narrativa nem o manifesto. Não declare que uma história foi gerada/aprovada com base apenas no mockup de validação visual.
+Mockup visual para aprovação: [\`mockups/mockup-template-universal.svg\`](../mockups/mockup-template-universal.svg). O catálogo não substitui a fonte narrativa nem o manifesto. Não declare que uma história foi gerada/aprovada com base apenas no mockup de validação visual.
