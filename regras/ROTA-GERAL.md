@@ -1,84 +1,76 @@
 # Rota geral — produção por templates
 
-**Versão:** 2.0.0  
+**Versão:** 3.0.0  
 **Idioma:** português brasileiro  
-**Fonte:** branch `main` do repositório `milson-rodrigues/geracao-de-historia`.
+**Repositório canônico:** `milson-rodrigues/geracao-de-historia`, branch `main`.
 
 ## 1. Objetivo
 
-Organizar a geração de imagens e sprites por Template ID. Cada template define coleção, fonte narrativa, contexto, ativo pretendido, etapas, restrições e validação. Esta rota distribui o trabalho entre template, regras globais e skills; não substitui o conteúdo dos templates.
+Definir fluxo universal para produzir mockups, imagens e outros ativos a partir de Template ID, sem amarrar o processo a uma coleção específica.
 
-## 2. Entrada do fluxo
+## 2. Entrada
 
-O usuário deve informar, no mínimo, o Template ID e o título/nome do que será produzido. Exemplos:
+O usuário fornece o Template ID e a história/ativo. Campos adicionais dependem do template. Para mockup universal, o ID é `TPL-MOCKUP-UNIVERSAL`.
 
-```text
-Gerar com template TPL-HNT-HISTORIA
-Título: O anjo Gabriel aparece a Maria
-```
-
-```text
-Gerar com template TPL-HNT-SPRITE
-Elemento: Maria — sprite individual
-História de origem: O anjo Gabriel aparece a Maria
-```
-
-Consulte primeiro [templates/CATALOGO.md](../templates/CATALOGO.md). No catálogo atual, o único template disponível é `TPL-MOCKUP-HISTORIA`, apontando para `templates/mockup-template.md`; os IDs antigos estão marcados como indisponíveis até que seus arquivos sejam recriados. Se o ID não existir, estiver duplicado ou não corresponder ao tipo de ativo solicitado, pare e informe. Não selecione silenciosamente outro template.
+Consulte primeiro [`templates/CATALOGO.md`](../templates/CATALOGO.md). Se o ID não existir ou o arquivo estiver ausente, pare e informe.
 
 ## 3. Ordem obrigatória de consulta
 
-1. `ROUTER-MESTRE.md`, `regras/00-LEIA-PRIMEIRO.md` e `templates/CATALOGO.md`.
-2. Template exato do catálogo.
-3. Arquivo narrativo da coleção: `historias/historia-novo-testamento.md` ou `historias/historias-antigo-testamento.md`.
-4. Manifesto específico da coleção, se aplicável: `historias/status-criacao-historia.novo-testamento.md` ou `historias/status-criacao-historia.antigo-testamento.md`; usar `templates/status-criacao-historia.template.md` como esquema. O manifesto legado não deve ser automaticamente migrado.
-5. `regras/SKILLS-E-RECURSOS.md`.
-6. Regras globais de composição/validação e quaisquer anexos apontados pelo template.
-7. Skills externas atuais aplicáveis, com evidência real de consulta e disponibilidade.
-8. Referências visuais/técnicas, somente se o arquivo realmente existir e estiver acessível.
+1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) e [`regras/00-LEIA-PRIMEIRO.md`](00-LEIA-PRIMEIRO.md).
+2. Catálogo e template exato.
+3. Fonte narrativa atual: `historias/historias-<nome-historia>.md`.
+4. Manifesto da mesma coleção: `historias/status-criacao-historia.<nome-historia>.md), se aplicável.
+5. Regras de skills, visual e validação.
+6. Documentação atual da skill/ferramenta principal no repositório oficial, quando acessível.
+7. Recursos complementares aprovados pelo template, por exemplo a biblioteca `awesome-gpt-image-2`.
+8. Referências visuais apenas se realmente acessíveis.
 
-Se o arquivo necessário não puder ser consultado, relatar o bloqueio. Não tratar memória, links ou nomes de arquivos como evidência de conteúdo acessível.
+Verifique a árvore atual e leia os arquivos no GitHub antes da geração. Não confie em caminhos memorizados ou cópias locais como fonte da versão atual.
 
-## 4. Separação de fontes de verdade
+## 4. Contrato de fontes
 
-- **Fonte narrativa:** determina fatos, personagens, acontecimentos, cenário narrativo, sequência e ensinamento.
-- **Template:** determina entrada, contexto de produção, formato do ativo, etapas e critérios específicos.
-- **Regras globais:** determinam integridade, roteamento, limitações, qualidade e registro.
-- **Skill:** ajuda a executar o processo técnico quando disponível; não pode alterar conteúdo narrativo nem substituir as exigências do template.
-- **Status/manifesto de ativos:** determina o estado apenas se existir, estiver atualizado e tiver relação explícita com o tipo de ativo. Não usar o status legado do Novo Testamento para presumir estado de outros templates ou sprites.
+O mesmo identificador `<nome-historia>` deve ser usado no arquivo narrativo e no manifesto. O padrão esperado é:
 
-## 5. Porta de entrada e bloqueios
+- `historias/historias-<nome-historia>.md`
+- `historias/status-criacao-historia.<nome-historia>.md`
 
-Antes da chamada de geração, validar:
-- Template ID e versão;
-- coleção e fonte narrativa correta;
-- título/elemento sem ambiguidade;
-- contexto e sequência bloqueados;
-- requisitos técnicos do ativo definidos;
-- status/autorização, quando o template usar controle de progresso;
-- skill/ferramenta e parâmetros disponíveis.
+Não assumir que o arquivo existe; validar caminho, conteúdo, coleção e correspondência entre os arquivos. A narrativa define fatos e sequência; status define somente o progresso registrado para essa coleção.
 
-Se faltar informação que altera materialmente o resultado — por exemplo, sprite individual versus sprite sheet, transparência, quantidade de frames, dimensões ou perspectiva — faça uma pergunta objetiva antes de gerar. Não invente o dado.
+## 5. Idioma e ortografia
 
-## 6. Skill routing obrigatório
+O idioma padrão do projeto é **português brasileiro (pt-BR)**. Isso vale para títulos, legendas, falas, narrações, textos dentro da imagem, nomes de campos, relatórios e documentação criada para o usuário.
 
-- **Principal para geração:** `higgsfield-generate` do repositório https://github.com/higgsfield-ai/skills, no caminho https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md.
-- Consultar a versão atual a cada execução de geração quando a fonte estiver acessível. Se não estiver, seguir apenas uma alternativa explicitamente permitida no template e declarar a limitação.
-- A cópia `.agents/skills/higgsfield-generate/SKILL.md` é uma cópia de trabalho; não prova disponibilidade de CLI, integração, credenciais ou execução.
-- `taste-skill` é complementar para direção artística; `open-design` é opcional para exploração visual.
-- Nunca declarar que instalou, consultou ou executou skill sem evidência.
+Revisar antes de gerar/aprovar: ortografia, acentuação, pontuação, concordância nominal/verbal, pronomes, naturalidade do diálogo e consistência dos termos. Não misturar português europeu e brasileiro. Não apresentar texto deformado/ilegível como válido; quando a geração de texto em imagem falhar, registrar o problema e preferir diagramação posterior se possível.
 
-## 7. Uma saída final por solicitação
+## 6. Separação de autoridade
 
-Para uma solicitação de ativo final, fazer uma única chamada destinada à saída final e configurar quantidade 1 quando houver controle. Não criar variantes, lotes ou chamadas paralelas, salvo se o template aprovado especificar explicitamente outra coisa. Se o gerador não permitir controlar quantidade, informar. Se retornar vários resultados apesar da configuração, não aprovar todos automaticamente.
+- Narrativa canônica: fatos, personagens, acontecimentos, ordem.
+- Template: formato do ativo, contexto, parâmetros e critérios específicos.
+- Regras globais: integridade e qualidade.
+- Skill principal: método técnico de geração quando acessível e operacional.
+- Biblioteca complementar: inspiração/estruturas de prompt, não fonte de verdade da narrativa.
+- Manifesto: estado de produção confirmado.
 
-## 8. Padrão visual e validação
+## 7. Roteamento de ferramentas
 
-Aplicar as regras específicas do template primeiro, junto às regras globais em [PADRAO-VISUAL-E-COMPOSICAO.md](PADRAO-VISUAL-E-COMPOSICAO.md) e [VALIDACAO-FINAL.md](VALIDACAO-FINAL.md). Não aplicar o layout de prancha 3×2 a sprites quando isso for incompatível com o template.
+### Principal
 
-Validar contra o tipo de ativo solicitado: fidelidade, composição, anatomia, continuidade, cor, legibilidade e/ou requisitos de sprite. Separar validação editorial de validação técnica.
+Consultar a versão atual da skill oficial Higgsfield: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Verificar documentação, ferramenta/CLI, autenticação e parâmetros disponíveis. Uma página no GitHub não prova execução no ambiente atual.
 
-## 9. Registro e encerramento
+### Complementar: GPT Image 2
 
-Não declarar arquivo salvo, caminho, aprovação, commit ou status atualizado sem comprovação. Não sobrescrever ativo aprovado sem autorização. Se a ferramenta não permitir salvar no repositório, entregar o artefato e registrar claramente que o upload/registro continua pendente.
+Consultar, quando útil, https://github.com/freestylefly/awesome-gpt-image-2 e sua skill `agents/skills/gpt-image-2-style-library/SKILL.md`. Usá-lo para procurar estruturas de prompt, estilos e exemplos relevantes. Não tratar esse repositório comunitário como substituto da documentação oficial da ferramenta nem copiar um prompt incompatível sem adaptação.
 
-Relatório final: Template ID/versão; título/elemento; fontes consultadas; skill/ferramenta realmente usada; parâmetros/quantidade; resultado da validação; arquivo e caminho reais; mudanças de status realmente confirmadas; pendências.
+### Método de saída
+
+A imagem pode ser gerada no ChatGPT ou por ferramenta externa realmente disponível. Declarar somente o método usado de fato. Para cada solicitação final, fazer uma única chamada de geração destinada à saída final e usar quantidade 1 quando suportada; não produzir variantes sem solicitação explícita.
+
+## 8. Validação
+
+Aplicar critérios específicos do template e consultar [padrão visual](PADRAO-VISUAL-E-COMPOSICAO.md) e [validação final](VALIDACAO-FINAL.md). Verificar fidelidade, sequência, composição, anatomia, consistência, ortografia pt-BR, legibilidade e requisitos específicos do ativo.
+
+## 9. Estado, salvamento e relatório
+
+Geração não é aprovação. Não declarar caminho, salvamento, aprovação, commit ou status atualizado sem evidência. Não sobrescrever ativos aprovados sem autorização.
+
+Relatório: Template ID/versão; título/coleção; fontes consultadas; versões de skills/documentação consultadas; método/ferramenta realmente usada; parâmetros/quantidade; validação; arquivo/caminho confirmado; mudança de status confirmada e pendências.
