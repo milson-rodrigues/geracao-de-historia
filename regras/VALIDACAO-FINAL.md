@@ -29,3 +29,12 @@ Aplicar somente quando o template exigir seis quadros em grade 3×2 e três pain
 - **BLOQUEADA:** fonte, ferramenta ou dependência essencial indisponível.
 
 Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
+
+
+## Proporção e resolução
+
+- [ ] Proporção correta: 16:9 por padrão; 9:16 somente se solicitado.
+- [ ] Imagem raster final tem no mínimo 1920 × 1080 para 16:9 ou 1080 × 1920 para 9:16.
+- [ ] Se a ferramenta oferecer resolução nativa maior adequada, foi considerada/preferida.
+- [ ] Arquivo salvo sob o nome e caminho corretos, sem confundir as duas variantes de mockup.
+- [ ] O texto permanece legível e totalmente desobstruído pelos personagens e elementos de cena.
