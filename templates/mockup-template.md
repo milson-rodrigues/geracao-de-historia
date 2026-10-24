@@ -6,7 +6,7 @@
 - **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
 - **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
-## Artefato visual para aprovação
+## Artefato visual aprovado — sincronização pendente
 
 A direção visual foi aprovada pelo usuário: composição horizontal 16:9, banner superior de pergaminho, seis quadros narrativos em grade 3 × 2, três painéis pedagógicos inferiores, paleta menos saturada, caixas retangulares de narração e balões de diálogo. As falas e textos demonstrativos não são canônicos. **Pendência de repositório:** o SVG atualmente vinculado ainda é uma versão vertical antiga; não o trate como arte final aprovada até substituí-lo pela composição horizontal aprovada.
 
@@ -106,7 +106,7 @@ A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente 
 
 - Uma solicitação de mockup final = uma chamada destinada à saída final; usar quantidade 1 quando suportada.
 - Não gerar variantes/lotes sem solicitação explícita.
-- O estado permanece `AGUARDANDO APROVAÇÃO VISUAL DO USUÁRIO` até aprovação ou pedido de ajustes.
+- A direção visual do template está aprovada. Cada imagem final de história continua exigindo validação própria.
 - Não marcar a história demonstrativa como concluída.
 - Não afirmar salvamento no GitHub sem confirmar o arquivo e o caminho real.
 
@@ -121,7 +121,7 @@ A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente 
 - [ ] Anatomia, rostos, mãos e objetos não apresentam falhas graves.
 - [ ] Conteúdo sintético não é apresentado como fato canônico.
 - [ ] Fontes/skills e método real de geração estão registrados.
-- [ ] Estado de aprovação permanece pendente até a validação do usuário.
+- [x] Direção visual universal aprovada pelo usuário. (A aprovação de uma história final é independente.)
 
 ## 10. Relatório
 
