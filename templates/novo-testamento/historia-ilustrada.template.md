@@ -15,7 +15,7 @@
 ## Fontes canônicas
 
 1. [Histórias do Novo Testamento](../../historia-novo-testamento.md) — narrativa oficial atual na raiz.
-2. [Status de produção](../../status-criacao-historia.md) — controlar se o item pode ser produzido e se já existe saída aprovada.
+2. [Manifesto de status do Novo Testamento](../../status-criacao-historia.novo-testamento.md) — controle de produção desta coleção. O arquivo legado `status-criacao-historia.md` não deve ser tratado como substituído até que sua migração seja conferida.
 3. [Rota geral](../../regras/ROTA-GERAL.md), [skills](../../regras/SKILLS-E-RECURSOS.md), [padrão visual](../../regras/PADRAO-VISUAL-E-COMPOSICAO.md) e [validação](../../regras/VALIDACAO-FINAL.md).
 
 Não use conhecimento geral ou memória para substituir a narrativa oficial. Se o título não localizar uma entrada exata e inequívoca, pare e peça o ID/referência que falta.
@@ -30,6 +30,12 @@ Não use conhecimento geral ou memória para substituir a narrativa oficial. Se 
 6. Roteamento técnico principal: `higgsfield-generate`, conforme [SKILLS-E-RECURSOS.md](../../regras/SKILLS-E-RECURSOS.md). Confirmar disponibilidade real da ferramenta.
 7. Gerar uma única prancha final em uma única chamada e definir quantidade 1 se o gerador suportar. Não criar lotes ou variações.
 8. Validar a imagem visualmente e registrar evidências. Não marcar aprovada sem inspeção real e arquivo salvo confirmado.
+
+## Direção visual
+
+- Linguagem de quadrinhos bíblicos: usar balões para falas de personagens e caixas retangulares para narração/contexto, distinguindo visualmente as duas funções.
+- Não atribuir fala à pessoa errada nem apresentar paráfrases como citações literais. Respeitar a fonte narrativa e a referência bíblica.
+- A imagem pode ser gerada no ChatGPT ou por CLI/ferramenta externa, conforme disponibilidade real. Registrar o método efetivamente usado no manifesto; não presumir que CLIs estão instaladas.
 
 ## Direção visual
 
