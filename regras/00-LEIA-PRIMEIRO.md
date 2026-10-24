@@ -4,33 +4,37 @@
 
 ## Ordem de leitura
 
-1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) — ponto de entrada estável.
+1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) — memória operacional e ponto de entrada.
 2. [`README.md`](../README.md) — visão geral.
-3. [`templates/CATALOGO.md`](../templates/CATALOGO.md) — confirmar que o Template ID existe.
-4. Abrir o arquivo exato do template.
-5. Consultar a fonte narrativa correspondente: `historias/historias-<nome-historia>.md`.
-6. Consultar o manifesto pareado quando o fluxo exigir status: `historias/status-criacao-historia.<nome-historia>.md`.
-7. Ler [rota geral](ROTA-GERAL.md), [skills](SKILLS-E-RECURSOS.md), [padrão visual](PADRAO-VISUAL-E-COMPOSICAO.md) e [validação final](VALIDACAO-FINAL.md).
-8. Consultar as versões atuais das skills e ferramentas externas indicadas no template, quando acessíveis.
+3. [`templates/CATALOGO.md`](../templates/CATALOGO.md) — confirmar o template.
+4. Abrir o template exato, normalmente [`templates/mockup-template.md`](../templates/mockup-template.md) para histórias em quadrinhos.
+5. Consultar a fonte narrativa atual em `historias/` e localizar a entrada exata pelo número e título.
+6. Ler as regras gerais, de skills, visuais e de validação.
+7. Consultar as versões atuais das skills externas no GitHub antes de gerar.
 
-## Convenção de fontes
+## Fluxo curto
 
-O segmento `<nome-historia>` deve ser o mesmo no arquivo narrativo e no manifesto de status. Descubra os arquivos reais pela árvore atual do GitHub; não monte caminhos apenas por convenção nem use caminhos antigos memorizados.
+**Pedido → localizar história → ler fonte → ler template e regras → consultar skills atuais → gerar uma imagem → validar → atualizar status se o estado mudou e houver acesso.**
+
+O usuário pode pedir em linguagem natural, por exemplo: `Gere a imagem da história. Título: 001 - Deus cria o mundo. Coleção: antigo-testamento.` Não exigir que ele conheça IDs internos se o objetivo estiver claro.
+
+## Fontes e cópia opcional
+
+As coleções narrativas vivem em `historias/historias-<nome-colecao>.md`. Os nomes atualmente encontrados incluem `historias-novo-testamento.md` e `historias-antigo-testamento.md`; confirme sempre a árvore atual do GitHub.
+
+Copiar um roteiro para um arquivo individual em `historias/` é **opcional** e serve para facilitar rastreio. Não obrigar a criar `historias/historia-<nome>.md` para cada pedido. Se o usuário fornecer um roteiro individual, use-o como fonte da tarefa e copie-o para o GitHub apenas quando isso for útil ou solicitado, preservando a origem e sem sobrescrever arquivos existentes sem revisão.
+
+Os manifestos `historias/status-criacao-historia.<nome-colecao>.md` rastreiam o progresso por coleção. Atualize o manifesto relevante quando o estado de produção realmente mudar, se houver acesso autorizado. Não invente estados nem afirme que houve atualização sem verificar o arquivo no GitHub.
 
 ## Integridade
 
-- Escreva e revise todo texto editorial em português brasileiro.
-- Preserve acentuação, pontuação e concordância. Não considerar texto de imagem válido sem inspeção legível.
-- Não invente arquivos, IDs, fontes, imagens de referência, resultados ou estados.
-- Se uma dependência estiver ausente, pare e informe o bloqueio.
-- A existência de uma skill no GitHub não prova que o CLI, integração ou credenciais estejam operacionais.
-- Não mover nem apagar fontes canônicas sem migração planejada e verificada.
-
-## Regra de persistência obrigatória
-
-ChatGPT, agente ou pessoa com acesso autorizado ao GitHub deve manter o par narrativo/status sincronizado ao criar ou modificar uma história: `historias/historias-<nome-historia>.md` e `historias/status-criacao-historia.<nome-historia>.md`. Aplicar o protocolo de escrita e verificação de [Rota Geral](ROTA-GERAL.md). Sem acesso de escrita, não alegar que o repositório foi atualizado.
-
+- Preserve número, título, personagens, referência bíblica e sequência da fonte.
+- Escreva e revise textos em português brasileiro.
+- Não invente arquivos, referências, imagens, commits ou resultados de ferramentas.
+- A existência de uma skill no GitHub não prova que o CLI ou integração esteja operacional.
+- Se faltar a fonte essencial, peça o arquivo ou esclarecimento em vez de completar por memória.
+- Não mover nem apagar fontes canônicas sem necessidade e sem verificar impactos.
 
 ## Padrão de proporção e qualidade
 
-Por padrão, toda imagem deve ser horizontal 16:9 e ter no mínimo 1920 × 1080 pixels (Full HD); quando a ferramenta suportar qualidade/resolução nativa maior, preferi-la. Só produzir em 9:16 vertical (mínimo 1080 × 1920) quando o usuário pedir explicitamente. Os modelos ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16). Verificar o caminho correto e as dimensões reais antes de declarar conclusão. Não alterar `ROUTER-MESTRE.md` para esta regra operacional.
+Por padrão, imagem horizontal 16:9, mínimo 1920 × 1080 (Full HD); prefira resolução maior quando a ferramenta suportar. Use 9:16 vertical (mínimo 1080 × 1920) somente se o usuário pedir explicitamente. Verifique dimensões reais antes de declarar a resolução final.
