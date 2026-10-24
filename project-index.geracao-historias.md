@@ -1,63 +1,48 @@
-# Índice do projeto — Geração das histórias do Novo Testamento
+# Índice do projeto — produção por templates
 
-Catálogo de contexto para a produção das 232 pranchas ilustradas. Atualizado em: 2026-10-21.
+**Projeto:** Estudo Bíblico — Image & Sprite Lab  
+**Repositório:** https://github.com/milson-rodrigues/geracao-de-historia  
+**Branch:** `main`
 
-## 1. Identificação
+## Conceito
 
-- **Sigla:** HNT
-- **Objetivo:** produzir uma prancha infantil ilustrada para cada história do Novo Testamento, com narrativa fiel e identidade visual consistente.
-- **Público:** crianças, famílias e estudos bíblicos infantis.
-- **Fase atual:** produção da Parte 1 — O NASCIMENTO E A INFÂNCIA DE JESUS.
-- **Local do projeto:** `N:\@Geral\_Milson\_Vendas-Ebooks\Historia Novo Testamento`
+O ponto de entrada da produção é um Template ID que determina coleção e tipo de ativo. O usuário informa também o título/elemento. O template direciona fontes narrativas, contexto, roteiro de execução, regras visuais/técnicas, validação e relatório.
 
-## 2. Fontes canônicas
+## Entradas canônicas
 
-| Arquivo/local | Função |
-|---|---|
-| `historia-novo-testamento.md` | Fonte narrativa oficial; não alterar durante a geração. |
-| `status-criacao-historia.md` | Estado de produção e validação por história. |
-| `ROTA-SKILLS-ESTUDO-BIBLICO.md` | Procedimento operacional e regras de segurança. |
-| `prompt-geracao-imagem.md` | Modelo de prompt, direção visual e critérios editoriais. |
-| `imagens/001-*.png` e `imagens/002-*.png` | Referências visuais aprovadas. |
-| `.agents/skills/` | Skills locais usadas como base de execução. |
+- Catálogo: `templates/CATALOGO.md`
+- Regras para novos templates: `templates/README.md`
+- Rota geral: `regras/ROTA-GERAL.md`
+- Skills: `regras/SKILLS-E-RECURSOS.md`
+- Padrão de prancha: `regras/PADRAO-VISUAL-E-COMPOSICAO.md`
+- Validação final global: `regras/VALIDACAO-FINAL.md`
+- Instruções do ChatGPT: `PROMPT-PROJETO-CHATGPT.md`
 
-## 3. Regra de produção
+## Fontes narrativas legadas
 
-- Cada número corresponde a uma história e a uma imagem independente.
-- O intervalo 003–022 contém **20 histórias**.
-- Cada história deve ter exatamente seis quadros narrativos e três painéis pedagógicos inferiores.
-- O fluxo é individual: mockup único para aprovação; depois, mediante aprovação explícita, uma única imagem final.
-- Não gerar lote, variantes ou chamadas paralelas.
-- Não misturar acontecimentos de histórias vizinhas.
+- Novo Testamento: `historia-novo-testamento.md`
+- Antigo Testamento: `historias-antigo-testamento.md`
 
-## 4. Direção visual aprovada
+Esses arquivos permanecem na raiz até uma migração deliberada. A aplicabilidade do status legado deve ser verificada por template.
 
-- Prancha horizontal 16:9, página contínua, sem dobra central.
-- Moldura de pergaminho dourado, folhagens verdes e ornamentos orgânicos.
-- Cabeçalho em pergaminho enrolado com `HISTÓRIA NNN` e título oficial literal.
-- Grade 3×2: cada quadro tem título temático, ilustração e caixa de narrativa legível integrada.
-- Rodapé com `O QUE APRENDEMOS`, `PERGUNTAS PARA A CRIANÇA` e `ORAÇÃO`.
-- Ilustração 3D infantil polida, expressiva, detalhada e acolhedora; paleta creme, dourado, castanho, azul e verde.
-- Texto em português brasileiro, com acentuação e margens seguras.
+## Templates iniciais
 
-## 5. Mapa da Parte 1
+- `TPL-HNT-HISTORIA`
+- `TPL-HAT-HISTORIA`
+- `TPL-HNT-SPRITE`
+- `TPL-HAT-SPRITE`
 
-| Faixa | Histórias | Estado conhecido |
-|---|---:|---|
-| Parte 1 — O NASCIMENTO E A INFÂNCIA DE JESUS | 001–022 | 001 e 002 concluídas; 003–022 em produção individual |
+Consulte `templates/CATALOGO.md` para os caminhos e o estado.
 
-## 6. Convenções de arquivo
+## Skill principal
 
-- Imagens finais: `imagens/NNN-slug-do-titulo-oficial.png`.
-- Não criar `v2`, `final2`, `nova` ou duplicatas.
-- Só marcar `CONCLUIDA | APROVADA` depois de validar e confirmar o salvamento.
+`higgsfield-generate`: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md  
+Complementar: https://github.com/Leonxlnx/taste-skill  
+Opcional: https://github.com/nexu-io/open-design
 
-## 7. Executor e skills
+## Pendências de estrutura
 
-- **Executor atual:** geração nativa de imagens do Codex.
-- **Base de direção:** `.agents/skills/higgsfield-generate/SKILL.md`, sem instalar ou executar a CLI Higgsfield.
-- **Skill de imagem:** `imagegen`, usando geração nativa e referências locais quando necessário.
-
-## 8. Próximo trabalho
-
-Iniciar a História 003 — `Isabel descobre que está grávida`, com conteúdo exclusivo: Isabel, Zacarias, gravidez, alegria e seis meses de gravidez. É proibido inserir Gabriel, Maria, anúncio do nascimento de Jesus, Herodes, magos ou fuga para o Egito.
+- Confirmar tecnicamente os parâmetros exigidos para cada tipo de sprite (dimensão, fundo, pivot, frames, escala e engine, se aplicável).
+- Decidir se status/manifests de produção serão separados por coleção e tipo de ativo.
+- Migrar ou catalogar os ativos visuais somente após confirmação de quais arquivos aprovados realmente existem.
+- Revisar e harmonizar os documentos operacionais legados antes de removê-los ou mudar seus caminhos.
