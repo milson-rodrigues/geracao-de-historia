@@ -30,7 +30,7 @@ Consulte primeiro [templates/CATALOGO.md](../templates/CATALOGO.md). Se o ID nã
 1. `README.md` e `templates/CATALOGO.md`.
 2. Template exato do catálogo.
 3. Arquivo narrativo da coleção.
-4. Status específico, se existir e o template disser que se aplica.
+4. Manifesto específico da coleção, se aplicável: `status-criacao-historia.novo-testamento.md` ou `status-criacao-historia.antigo-testamento.md`; usar `status-criacao-historia.template.md` como esquema. O manifesto legado não deve ser automaticamente migrado.
 5. `regras/SKILLS-E-RECURSOS.md`.
 6. Regras globais de composição/validação e quaisquer anexos apontados pelo template.
 7. Skills externas atuais aplicáveis, com evidência real de consulta e disponibilidade.
