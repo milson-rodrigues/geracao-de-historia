@@ -84,3 +84,8 @@ A regra é independente do executor. Quando houver acesso autorizado ao GitHub, 
 - `historias/status-criacao-historia.<nome-historia>.md`
 
 Use o mesmo `<nome-historia>` nos dois nomes. Leia ambos antes de editar, preserve conteúdo não relacionado, evite duplicatas e mantenha narrativa e status coerentes. Grave os dois arquivos na mesma tarefa (preferencialmente no mesmo commit), depois releia e verifique os resultados. Se a tarefa mudar somente o estado de produção, atualize o manifesto; não faça alterações artificiais na narrativa. Se o acesso de escrita não estiver disponível, entregue o conteúdo/diff e informe claramente que o GitHub ainda não foi atualizado. Nunca declarar sucesso sem confirmação dos arquivos e commits.
+
+
+## Padrão de proporção e qualidade
+
+Por padrão, toda imagem deve ser horizontal 16:9 e ter no mínimo 1920 × 1080 pixels (Full HD); quando a ferramenta suportar qualidade/resolução nativa maior, preferi-la. Só produzir em 9:16 vertical (mínimo 1080 × 1920) quando o usuário pedir explicitamente. Os modelos ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16). Verificar o caminho correto e as dimensões reais antes de declarar conclusão. Não alterar `ROUTER-MESTRE.md` para esta regra operacional.
