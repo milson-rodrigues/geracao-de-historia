@@ -1,20 +1,18 @@
 # Status de criação — Antigo Testamento
 
-**Coleção:** Antigo Testamento  
+**Identificador da coleção:** `antigo-testamento`  
 **Fonte narrativa oficial:** [`historias-antigo-testamento.md`](historias-antigo-testamento.md)  
-**Esquema:** [`status-criacao-historia.template.md`](status-criacao-historia.template.md)  
-**Estado inicial deste manifesto:** estrutura criada; registros ainda não catalogados neste arquivo.
+**Esquema de status:** [`templates/status-criacao-historia.template.md`](../templates/status-criacao-historia.template.md)
 
-## Regras específicas
+## Regras
 
-- Copiar ID e título exatamente da fonte narrativa oficial.
-- Não presumir que o manifesto legado do Novo Testamento cobre esta coleção.
-- Não preencher a tabela com IDs, títulos ou referências inferidos. Adicionar registros após conferir a fonte narrativa.
-- Não marcar uma história como aprovada sem imagem final acessível e inspeção documentada.
-- Registrar ChatGPT ou CLI apenas depois de confirmar qual método foi utilizado.
-- Manter a ordem numérica da fonte.
+- Este manifesto registra somente a coleção identificada como `antigo-testamento`.
+- Copiar títulos/IDs da fonte narrativa; não inventar registros.
+- Geração não equivale a aprovação. Marcar como aprovada somente após inspeção e confirmação do arquivo.
+- Registrar o método efetivamente usado (ChatGPT ou ferramenta externa), sem alegar execuções inexistentes.
+- Não misturar status de outra coleção.
 
 ## Registros
 
-| ID | Título oficial | Referência bíblica | Estado | Método de geração | Prompt/execução | Arquivo final | Validação | Pendências/observações |
-|---:|---|---|---|---|---|---|---|---|
+| ID | Título oficial | Referência | Estado | Método de geração | Arquivo final | Validação | Pendências |
+|---:|---|---|---|---|---|---|---|
