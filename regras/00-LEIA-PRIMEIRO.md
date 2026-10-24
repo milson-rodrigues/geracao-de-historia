@@ -29,3 +29,8 @@ O segmento `<nome-historia>` deve ser o mesmo no arquivo narrativo e no manifest
 ## Regra de persistência obrigatória
 
 ChatGPT, agente ou pessoa com acesso autorizado ao GitHub deve manter o par narrativo/status sincronizado ao criar ou modificar uma história: `historias/historias-<nome-historia>.md` e `historias/status-criacao-historia.<nome-historia>.md`. Aplicar o protocolo de escrita e verificação de [Rota Geral](ROTA-GERAL.md). Sem acesso de escrita, não alegar que o repositório foi atualizado.
+
+
+## Padrão de proporção e qualidade
+
+Por padrão, toda imagem deve ser horizontal 16:9 e ter no mínimo 1920 × 1080 pixels (Full HD); quando a ferramenta suportar qualidade/resolução nativa maior, preferi-la. Só produzir em 9:16 vertical (mínimo 1080 × 1920) quando o usuário pedir explicitamente. Os modelos ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16). Verificar o caminho correto e as dimensões reais antes de declarar conclusão. Não alterar `ROUTER-MESTRE.md` para esta regra operacional.
