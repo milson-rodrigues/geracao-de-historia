@@ -1,6 +1,6 @@
 # Template universal — status de criação
 
-**Versão:** 1.1.0  
+**Versão:** 1.1.1  
 **Uso:** esquema para manifestos de produção de qualquer coleção/história.  
 **Não é um manifesto preenchido e não prova que nenhum ativo foi produzido.**
 
@@ -11,13 +11,14 @@ Para o mesmo identificador `<nome-historia>`:
 - Fonte narrativa: `historias/historias-<nome-historia>.md`
 - Status: `historias/status-criacao-historia.<nome-historia>.md`
 
-O identificador deve ser igual, minúsculo, sem espaços e preferencialmente separado por hífens. Confira os arquivos na árvore atual do GitHub antes de usar ou criar um manifesto.
+O identificador deve ser igual, minúsculo, sem espaços e preferencialmente separado por hífens. Confira os caminhos reais na árvore atual do GitHub antes de usar ou criar um manifesto.
 
 ## Regras
 
 - Manter um registro por história; não duplicar IDs.
 - Copiar número e título exatamente da fonte narrativa oficial.
-- Registrar referência bíblica (ou outra referência de origem) somente quando confirmada na fonte.
+- Registrar referência de origem somente quando confirmada na fonte.
+- Todo texto editorial deve usar **português brasileiro (pt-BR)**, salvo pedido expresso de outro idioma. Revisar ortografia, acentuação, pontuação e concordância.
 - Nunca inferir que uma imagem foi gerada, salva ou aprovada.
 - Preencher o caminho final apenas depois de confirmar que o arquivo existe e abre.
 - `APROVADA` só após inspeção da imagem final; uma imagem exibida no chat não prova que foi salva no GitHub.
