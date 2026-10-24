@@ -1,6 +1,6 @@
 <div align="center">
 
-# Estudo Bíblico — Image & Sprite Lab
+# Geração de Histórias em Quadrinhos — Image & Sprite Lab
 
 **Templates universais para mockups e produção visual rastreável**
 
