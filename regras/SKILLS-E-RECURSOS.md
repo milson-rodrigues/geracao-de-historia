@@ -1,47 +1,48 @@
 # Skills e recursos — roteamento
 
-**Versão:** 2.0.0  
-**Uso:** qualquer template que peça criação, edição ou avaliação de imagens e sprites.
+**Versão:** 3.0.0  
+**Uso:** qualquer template de produção visual.
 
-## Skill principal: Higgsfield Generate
+## 1. Fonte principal — Higgsfield
 
 - Repositório oficial: https://github.com/higgsfield-ai/skills
-- Skill alvo: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
-- Cópia local presente: `.agents/skills/higgsfield-generate/SKILL.md`
+- Skill principal de imagem: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
 
-É a primeira escolha para geração de imagem quando realmente acessível e operacional. Antes de cada chamada de geração:
-1. Consulte a versão atual da skill oficial, quando disponível.
-2. Leia os requisitos relevantes para o tipo de saída.
-3. Verifique se a ferramenta/CLI/integracão necessária está disponível no ambiente atual.
-4. Confirme suporte aos parâmetros pedidos (quantidade, tamanho, proporção, transparência ou outros).
-5. Registre a fonte efetivamente lida e a ferramenta realmente utilizada.
+Antes de cada geração:
+1. Consultar a versão atual da skill diretamente no GitHub.
+2. Ler instruções específicas relevantes para o resultado pedido.
+3. Confirmar se a CLI/integração necessária está disponível e operacional na sessão.
+4. Conferir suporte aos parâmetros necessários (proporção, quantidade, formato, transparência, resolução).
+5. Registrar a fonte consultada e a ferramenta realmente utilizada.
 
-Não confunda um repositório, arquivo ou URL com instalação ou execução. Não invente autenticação, ferramentas, capacidades ou resultados. Nunca exponha credenciais.
+**Não use uma cópia local como autoridade para a versão mais recente.** Uma cópia local pode ser cache ou conveniência operacional; a versão atual do repositório oficial é a referência normativa. Não confundir link/skill com instalação ou execução.
 
-## Complementar: Taste Skill
+## 2. Complemento — GPT Image 2 Prompt Library
 
-- https://github.com/Leonxlnx/taste-skill
+- Repositório: https://github.com/freestylefly/awesome-gpt-image-2
+- Skill incluída no repositório: https://github.com/freestylefly/awesome-gpt-image-2/blob/main/agents/skills/gpt-image-2-style-library/SKILL.md
 
-Usar para apoiar direção artística, hierarquia visual, paleta, composição e acabamento quando for útil e realmente acessível. Não deve sobrescrever as regras do template, a narrativa canônica nem as referências aprovadas. Não é obrigatória quando não acrescenta valor.
+Uso recomendado: consultar casos e templates de prompt para descobrir direção de arte, composição, hierarquia visual e padrões de texto/layout. A skill deste repositório descreve um fluxo de seleção de templates por categoria/estilo/cena e recomenda combinar o caso mais próximo com o objetivo do usuário.
 
-## Opcional: Open Design
+É uma biblioteca comunitária complementar, não substitui:
+- a narrativa canônica;
+- as regras do template;
+- a documentação oficial da ferramenta de geração;
+- a inspeção real da imagem final.
 
-- https://github.com/nexu-io/open-design
+Antes de aplicar um template externo, confirme sua pertinência, adapte os textos para português brasileiro e evite regras incompatíveis ou não verificadas. Não é necessário copiar o repositório inteiro para o projeto.
 
-Somente para tarefas de exploração ou organização visual. Não é requisito de todas as execuções e não substitui a skill principal.
+## 3. Direção artística complementar
 
-## Outras skills locais de Higgsfield
+- Taste Skill: https://github.com/Leonxlnx/taste-skill
+- Open Design (opcional): https://github.com/nexu-io/open-design
 
-O repositório contém outras skills sob `.agents/skills/`. Selecionar uma delas apenas se o catálogo e o escopo atual a justificarem; por exemplo, skills voltadas a websites, thumbnails, product photoshoot ou vídeo não devem ser escolhidas automaticamente para imagens bíblicas ou sprites.
+Usar apenas quando relevantes e acessíveis. Essas referências apoiam estética/exploração, não alteram fatos nem prevalecem sobre o template.
 
-## Precedência
+## 4. Regra de disponibilidade
 
-1. Narrativa canônica.
-2. Template específico e seus requisitos.
-3. Regras globais de integridade e validação.
-4. Skill principal de geração, se operacional.
-5. Referências aprovadas e skills complementares pertinentes.
+Consultar a documentação pública não garante que uma ferramenta esteja conectada, instalada ou autorizada nesta sessão. Se não houver ferramenta operacional, declarar a limitação e não alegar geração externa.
 
-## Relatório obrigatório
+## 5. Relatório obrigatório
 
-Identificar a skill/documentação efetivamente consultada, a ferramenta utilizada, os parâmetros confirmados, a quantidade configurada/retornada e as limitações. Se o recurso não estiver acessível, declarar o bloqueio; não afirmar que foi executado.
+Informar as skills/docs consultadas com links, ferramenta efetivamente utilizada, parâmetros confirmados, quantidade configurada/retornada, resultado da validação e limitações. Não inventar execução.
