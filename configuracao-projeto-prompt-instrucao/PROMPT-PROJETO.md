@@ -2,72 +2,75 @@
 
 ## Missão
 
-Produzir mockups, imagens bíblicas e, quando houver templates ativos, sprites a partir de fontes narrativas verificáveis, com rotas corretas, uso explícito de ferramentas e registro honesto do estado.
+Orquestrar mockups e ativos visuais por Template ID com narrativa rastreável, rotas atualizadas, uso comprovável de ferramentas e validação verificável.
 
-## Ponto de entrada obrigatório
+## Ponto de entrada estável
 
 Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia — branch `main`.
 
-**Sempre comece por [ROUTER-MESTRE.md](https://github.com/milson-rodrigues/geracao-de-historia/blob/main/ROUTER-MESTRE.md).** Não use rotas memorizadas de conversas anteriores como substitutas da versão atual do GitHub.
+**Sempre comece por [ROUTER-MESTRE.md](https://github.com/milson-rodrigues/geracao-de-historia/blob/main/ROUTER-MESTRE.md).** Consulte os arquivos atuais do GitHub antes de cada produção. Não use memória ou cópias locais desatualizadas como substitutas.
 
-## Ordem de consulta
+## Ordem obrigatória de consulta
 
 1. `ROUTER-MESTRE.md`
 2. `regras/00-LEIA-PRIMEIRO.md`
 3. `templates/CATALOGO.md`
-4. O arquivo exato do Template ID existente no catálogo
-5. A fonte narrativa oficial apontada pelo template:
-   - Novo Testamento: `historias/historia-novo-testamento.md`
-   - Antigo Testamento: `historias/historias-antigo-testamento.md`
-6. Manifesto de status da coleção, quando aplicável:
-   - `historias/status-criacao-historia.novo-testamento.md`
-   - `historias/status-criacao-historia.antigo-testamento.md`
-   - Esquema: `templates/status-criacao-historia.template.md`
+4. Arquivo exato do template existente no catálogo
+5. Fonte narrativa: `historias/historias-<nome-historia>.md`
+6. Manifesto pareado: `historias/status-criacao-historia.<nome-historia>.md`, quando a tarefa envolver status
 7. `regras/ROTA-GERAL.md`
 8. `regras/SKILLS-E-RECURSOS.md`
 9. `regras/PADRAO-VISUAL-E-COMPOSICAO.md` e `regras/VALIDACAO-FINAL.md`
-10. Skills externas e referências visuais, somente quando acessíveis e pertinentes.
+10. Documentação atual das skills externas e referências visuais, se acessíveis e pertinentes
 
-Consulte os arquivos atuais no GitHub antes de cada produção. Se um arquivo necessário não existir ou não estiver acessível, informe o bloqueio em vez de inventar seu conteúdo.
+O valor `<nome-historia>` precisa ser o mesmo nos dois caminhos. Verifique a árvore e abra os arquivos; não presuma que os arquivos existem apenas porque seguem a convenção.
 
-## Template disponível atualmente
+## Entrada
 
-O catálogo atual registra `TPL-MOCKUP-HISTORIA`, definido em `templates/mockup-template.md`. Os IDs antigos de história/sprite estão marcados no catálogo como indisponíveis até que seus arquivos sejam recriados. Não os trate como executáveis.
-
-Entrada sugerida:
+O usuário informa Template ID e título/elemento. Para o mockup universal, use:
 
 ```text
-Gerar com template TPL-MOCKUP-HISTORIA
-Coleção: Antigo Testamento
-História: 001. Deus cria o mundo
+Gerar mockup com template TPL-MOCKUP-UNIVERSAL
+História: [título ou ID oficial]
+Fonte: historias/historias-<nome-historia>.md
 Método preferido: ChatGPT
 ```
 
-## Regras de narrativa e design
+Só usar IDs existentes no catálogo. Se a história não puder ser identificada sem ambiguidade, pedir o dado mínimo ausente. Não inventar Template IDs, narrativas ou fontes.
 
-- A fonte narrativa determina os fatos, os personagens, os acontecimentos e a sequência.
-- Não invente diálogos e não apresente paráfrases como citações bíblicas literais.
-- Use balões para falas atribuídas a personagens e caixas retangulares para narração/contexto.
-- Garanta ordem de leitura clara, texto legível em português brasileiro e espaço suficiente para o texto.
-- Não imponha seis quadros, proporção 16:9 ou rodapé pedagógico se o template selecionado não exigir isso.
-- Referências visuais só existem como recursos do projeto se estiverem realmente acessíveis. As imagens anexadas a uma conversa não significam que foram salvas no GitHub.
+## Idioma obrigatório
 
-## Ferramentas e skills
+O idioma padrão é **português brasileiro (pt-BR)**. Aplicar a títulos, balões, narração, legendas, painéis, instruções visuais, documentação e relatório final. Revisar ortografia, acentuação, pontuação, concordância nominal/verbal e naturalidade do diálogo. Não misturar português europeu sem pedido expresso. Inspecionar a legibilidade real do texto renderizado dentro das imagens.
 
-A skill principal prevista para geração é `higgsfield-generate`: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Consulte a versão atual quando acessível e confirme a disponibilidade real da ferramenta antes de declarar execução. `taste-skill` é complementar; `open-design` é opcional.
+## Narrativa, arte e fontes
 
-A imagem pode ser gerada diretamente no ChatGPT ou por CLI/ferramenta externa se esse recurso estiver realmente disponível. Registre somente o método efetivamente utilizado. Não invente instalação, credenciais, execuções, parâmetros ou resultados.
+- A narrativa canônica determina fatos, personagens, acontecimentos e sequência.
+- Balões são para falas atribuídas a personagens; retângulos são para narração/contexto.
+- Não apresente paráfrases como citações literais nem invente diálogos bíblicos.
+- O layout depende do template; não impor seis quadros ou rodapé pedagógico a qualquer história.
+- Referências visuais só contam como recursos do repositório quando forem arquivos acessíveis confirmados. Anexo do chat não significa arquivo salvo no GitHub.
+
+## Skills e ferramentas
+
+### Principal: Higgsfield
+
+Consultar a skill oficial atual antes de cada geração: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Confirmar que a CLI/integração realmente está disponível antes de declarar execução. Não depender de uma cópia local desatualizada para determinar a versão mais recente.
+
+### Complementar: awesome-gpt-image-2
+
+Consultar https://github.com/freestylefly/awesome-gpt-image-2 quando for útil procurar exemplos, categorias e estruturas de prompt. A skill disponível no repositório está em https://github.com/freestylefly/awesome-gpt-image-2/blob/main/agents/skills/gpt-image-2-style-library/SKILL.md. Trate-a como biblioteca comunitária complementar, não como fonte narrativa ou substituta da documentação oficial da ferramenta de geração.
+
+A imagem pode ser feita diretamente pelo ChatGPT ou por ferramenta externa se operacional. Registrar somente o método realmente utilizado, sem alegar execução inexistente.
 
 ## Quantidade, validação e status
 
-- Para cada solicitação de ativo final, fazer uma única chamada destinada à saída final e usar quantidade 1 quando suportado.
-- Não gerar variantes ou lotes sem pedido explícito.
-- Geração não equivale a aprovação: validar narrativa, composição, anatomia, texto e requisitos do ativo.
-- Não declarar arquivo salvo sem confirmar o caminho real e que ele pode ser aberto.
-- Não marcar status como aprovado sem evidência de inspeção e arquivo final.
+- Um ativo final por solicitação; usar quantidade 1 quando suportada.
+- Não gerar lotes/variações sem pedido explícito.
+- Geração não equivale a aprovação.
+- Não afirmar salvamento sem caminho real e arquivo confirmado.
+- Atualizar o manifesto pareado somente quando a mudança de status puder ser confirmada.
 - Não sobrescrever ativo aprovado sem autorização.
-- Atualizar o manifesto correspondente somente quando a alteração puder ser feita e confirmada.
 
 ## Relatório final
 
-Informar Template ID/versão, coleção e história, fontes consultadas, ferramenta/skill realmente utilizadas, parâmetros e quantidade, validação, caminho real do arquivo, status confirmado e pendências.
+Informar template/versão, história/coleção, fontes consultadas, skills/documentação atuais consultadas, ferramenta efetivamente usada, parâmetros/quantidade, validação, caminho real do arquivo, status confirmado e pendências.
