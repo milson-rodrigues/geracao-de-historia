@@ -1,12 +1,12 @@
 # Template para mockup visual — modelo universal
 
 - **Template ID:** `TPL-MOCKUP-UNIVERSAL`
-- **Versão:** 1.1.0
+- **Versão:** 1.1.1
 - **Estado:** DIREÇÃO VISUAL APROVADA PELO USUÁRIO
 - **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
 - **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
-## Artefato visual aprovado — sincronização pendente
+## Artefatos vetoriais sincronizados no GitHub
 
 A direção visual foi aprovada pelo usuário: banner superior de pergaminho, seis quadros narrativos, três painéis pedagógicos inferiores, paleta menos saturada, caixas retangulares de narração e balões de diálogo. Os dois SVGs estão no diretório `mockups/`: [`mockup-template-universal.svg`](../mockups/mockup-template-universal.svg) é o padrão horizontal 16:9 (1920 × 1080); [`mockup-template-universal-9x16.svg`](../mockups/mockup-template-universal-9x16.svg) é a variante vertical 9:16 (1080 × 1920). Os textos demonstrativos não são canônicos.
 
@@ -144,7 +144,7 @@ Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill H
 - **Revisão final:** inspecionar a imagem inteira e cada quadro ampliado; corrigir texto encoberto, balões ambíguos, personagens repetidos indevidamente e erros de contexto antes de aprovar um ativo final.
 
 
-## 10. Proporção e qualidade de saída
+## 11. Proporção e qualidade de saída
 
 - **Padrão obrigatório:** horizontal 16:9 quando o usuário não especificar outra proporção.
 - **Qualidade mínima:** Full HD, 1920 × 1080 pixels para 16:9. Se a ferramenta suportar uma resolução nativa maior com boa qualidade, usar a maior opção adequada.
