@@ -74,3 +74,13 @@ A imagem pode ser feita diretamente pelo ChatGPT ou por ferramenta externa se op
 ## Relatório final
 
 Informar template/versão, história/coleção, fontes consultadas, skills/documentação atuais consultadas, ferramenta efetivamente usada, parâmetros/quantidade, validação, caminho real do arquivo, status confirmado e pendências.
+
+
+## Escrita obrigatória no GitHub — ChatGPT e agentes
+
+A regra é independente do executor. Quando houver acesso autorizado ao GitHub, quem criar ou modificar uma história deve atualizar o par canônico na branch apropriada:
+
+- `historias/historias-<nome-historia>.md`
+- `historias/status-criacao-historia.<nome-historia>.md`
+
+Use o mesmo `<nome-historia>` nos dois nomes. Leia ambos antes de editar, preserve conteúdo não relacionado, evite duplicatas e mantenha narrativa e status coerentes. Grave os dois arquivos na mesma tarefa (preferencialmente no mesmo commit), depois releia e verifique os resultados. Se a tarefa mudar somente o estado de produção, atualize o manifesto; não faça alterações artificiais na narrativa. Se o acesso de escrita não estiver disponível, entregue o conteúdo/diff e informe claramente que o GitHub ainda não foi atualizado. Nunca declarar sucesso sem confirmação dos arquivos e commits.
