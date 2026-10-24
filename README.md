@@ -20,7 +20,7 @@
 
 [`TPL-MOCKUP-UNIVERSAL`](templates/mockup-template.md) — mockup de história com balões de fala, caixas retangulares de narração e layout adaptável.
 
-**Imagem para sua aprovação:** [`mockups/mockup-template-universal.svg`](mockups/mockup-template-universal.svg). O mockup é uma proposta visual; ainda não está aprovado.
+**Direção visual aprovada pelo usuário:** banner de pergaminho, composição horizontal 16:9, seis quadros narrativos e três painéis pedagógicos, narração em caixas retangulares e diálogos em balões. O SVG atual ainda é vertical e precisa ser substituído para refletir a composição aprovada.
 
 ## Convenção universal das fontes
 
@@ -45,7 +45,7 @@ Arquivos canônicos presentes:
 | [`regras/00-LEIA-PRIMEIRO.md`](regras/00-LEIA-PRIMEIRO.md) | Ordem de consulta |
 | [`templates/CATALOGO.md`](templates/CATALOGO.md) | IDs disponíveis |
 | [`templates/mockup-template.md`](templates/mockup-template.md) | Template de mockup universal |
-| [`mockups/mockup-template-universal.svg`](mockups/mockup-template-universal.svg) | Imagem vetorial para aprovação |
+| [`mockups/mockup-template-universal.svg`](mockups/mockup-template-universal.svg) | SVG legado vertical; substituir pela composição 16:9 aprovada |
 | [`templates/status-criacao-historia.template.md`](templates/status-criacao-historia.template.md) | Esquema dos manifestos |
 | [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md) | Fluxo operacional |
 | [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md) | Skills e recursos complementares |
