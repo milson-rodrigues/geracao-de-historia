@@ -23,14 +23,14 @@ Elemento: Maria — sprite individual
 História de origem: O anjo Gabriel aparece a Maria
 ```
 
-Consulte primeiro [templates/CATALOGO.md](../templates/CATALOGO.md). Se o ID não existir, estiver duplicado ou não corresponder ao tipo de ativo solicitado, pare e informe. Não selecione silenciosamente outro template.
+Consulte primeiro [templates/CATALOGO.md](../templates/CATALOGO.md). No catálogo atual, o único template disponível é `TPL-MOCKUP-HISTORIA`, apontando para `templates/mockup-template.md`; os IDs antigos estão marcados como indisponíveis até que seus arquivos sejam recriados. Se o ID não existir, estiver duplicado ou não corresponder ao tipo de ativo solicitado, pare e informe. Não selecione silenciosamente outro template.
 
 ## 3. Ordem obrigatória de consulta
 
-1. `README.md` e `templates/CATALOGO.md`.
+1. `ROUTER-MESTRE.md`, `regras/00-LEIA-PRIMEIRO.md` e `templates/CATALOGO.md`.
 2. Template exato do catálogo.
-3. Arquivo narrativo da coleção.
-4. Manifesto específico da coleção, se aplicável: `status-criacao-historia.novo-testamento.md` ou `status-criacao-historia.antigo-testamento.md`; usar `status-criacao-historia.template.md` como esquema. O manifesto legado não deve ser automaticamente migrado.
+3. Arquivo narrativo da coleção: `historias/historia-novo-testamento.md` ou `historias/historias-antigo-testamento.md`.
+4. Manifesto específico da coleção, se aplicável: `historias/status-criacao-historia.novo-testamento.md` ou `historias/status-criacao-historia.antigo-testamento.md`; usar `templates/status-criacao-historia.template.md` como esquema. O manifesto legado não deve ser automaticamente migrado.
 5. `regras/SKILLS-E-RECURSOS.md`.
 6. Regras globais de composição/validação e quaisquer anexos apontados pelo template.
 7. Skills externas atuais aplicáveis, com evidência real de consulta e disponibilidade.
