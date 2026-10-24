@@ -1,37 +1,39 @@
 # ROUTER-MESTRE.md — ponto de entrada estável
 
-**Política:** não alterar em atualizações rotineiras. Mudanças exigem autorização explícita do responsável pelo projeto.
+**Política:** não alterar em atualizações rotineiras. Mudanças na arquitetura de roteamento exigem autorização explícita do responsável pelo projeto.
 
 Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia — branch `main`.
 
-## Roteamento
+## Roteamento obrigatório
 
-1. [Catálogo de templates](templates/CATALOGO.md): confirmar Template ID.
-2. Abrir o arquivo exato indicado pelo catálogo.
-3. Consultar a fonte narrativa oficial indicada no template.
-4. Seguir [regras/ROTA-GERAL.md](regras/ROTA-GERAL.md).
-5. Aplicar [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md).
-6. Consultar regras globais e validação. Para status, usar o manifesto específico da coleção: [Novo Testamento](status-criacao-historia.novo-testamento.md) ou [Antigo Testamento](status-criacao-historia.antigo-testamento.md), seguindo o esquema [status-criacao-historia.template.md](status-criacao-historia.template.md).
+1. Leia [`regras/00-LEIA-PRIMEIRO.md`](regras/00-LEIA-PRIMEIRO.md).
+2. Consulte [`templates/CATALOGO.md`](templates/CATALOGO.md) e confirme que o Template ID está disponível.
+3. Abra o arquivo exato do template. No estado atual, o template disponível é [`templates/mockup-template.md`](templates/mockup-template.md), ID `TPL-MOCKUP-HISTORIA`.
+4. Consulte a fonte narrativa correspondente:
+   - Novo Testamento: [`historias/historia-novo-testamento.md`](historias/historia-novo-testamento.md).
+   - Antigo Testamento: [`historias/historias-antigo-testamento.md`](historias/historias-antigo-testamento.md).
+5. Consulte o manifesto de status aplicável, quando a tarefa exigir registro:
+   - [Status do Novo Testamento](historias/status-criacao-historia.novo-testamento.md).
+   - [Status do Antigo Testamento](historias/status-criacao-historia.antigo-testamento.md).
+   - Esquema: [`templates/status-criacao-historia.template.md`](templates/status-criacao-historia.template.md).
+6. Siga [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md), [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md), [padrão visual](regras/PADRAO-VISUAL-E-COMPOSICAO.md) e [validação final](regras/VALIDACAO-FINAL.md).
+7. Consulte referências visuais somente quando os arquivos estiverem realmente presentes e acessíveis.
 
 ## Precedência
 
-A fonte narrativa define fatos; o template define o ativo, contexto e roteiro; a rota geral define o fluxo; o documento de skills define os recursos técnicos. Skills não podem contrariar a narrativa nem o template.
+A fonte narrativa define os fatos; o template define o ativo e a composição; as regras definem o fluxo e a qualidade; a skill auxilia a execução técnica. Skills não podem contradizer a fonte ou o template.
 
-## Regras de integridade
+## Integridade
 
-- Não inventar Template IDs, fontes, arquivos, imagens salvas, status, commits ou execução de ferramentas.
-- Se um destino estiver ausente ou ambíguo, parar e informar.
-- Não mover nem excluir fontes canônicas sem migração planejada e revisão dos links.
-- Não afirmar que imagens de referência existem: elas ainda não foram adicionadas ao repositório.
-- Uma solicitação de ativo final usa uma única chamada destinada à saída final e quantidade 1 quando suportada.
-- Não aprovar sem inspeção real e confirmação do arquivo final.
-
-## Skills
-
-A skill principal para geração é `higgsfield-generate`: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Consultar a versão atual quando acessível e confirmar que a ferramenta está disponível antes de declarar execução. `taste-skill` é complementar; `open-design` é opcional. Ver [SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md).
+- Não inventar IDs, arquivos, fontes, imagens salvas, status, commits ou execução de ferramentas.
+- Se um destino estiver ausente ou ambíguo, parar e informar o bloqueio.
+- Não mover nem excluir fontes canônicas sem plano de migração e revisão de links.
+- Não afirmar que existem imagens de referência no GitHub: a estrutura atual não contém uma pasta de referências visuais catalogada.
+- Uma imagem exibida no chat não prova que foi salva no repositório.
+- Não aprovar um ativo sem inspeção real e confirmação do arquivo final.
 
 ## Política de mudança
 
-Atualizar templates e documentos especializados sem alterar este roteador. Se a arquitetura de roteamento precisar mudar, solicitar autorização, alterar este arquivo em commit dedicado e verificar todos os destinos.
+Atualizações comuns devem ocorrer nos templates, manifestos e regras especializadas. Para alterar este roteador, explicar o motivo, obter autorização explícita e conferir os links antes do commit.
 
-**Nota técnica:** este arquivo não fica imutável apenas por convenção. Para bloquear alterações no GitHub, configurar regras de proteção da branch e revisão obrigatória para mudanças neste caminho.
+**Limite técnico:** a convenção não torna o arquivo imutável no GitHub. Para bloqueio técnico, configurar regras de proteção da branch e revisão obrigatória para alterações neste caminho.
