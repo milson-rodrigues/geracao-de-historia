@@ -18,26 +18,19 @@ A direção visual do mockup está aprovada; isso não aprova histórias finais,
 
 ## 2. Entrada
 
-Definir o tema/título do mockup, e se usará uma história real ou uma demonstração visual genérica. Quando usar uma história real, informe o identificador da coleção ou o caminho da fonte. Método preferido pode ser ChatGPT ou ferramenta externa, conforme disponibilidade real.
+Entrada natural recomendada: **“Gere a imagem da história. Título: 001 - Deus cria o mundo. Coleção: antigo-testamento.”** O usuário também pode anexar ou indicar um roteiro `.md`; não exigir que ele saiba o Template ID.
 
-Se o tema não for definido, não atribua falas inventadas a figuras bíblicas identificáveis nem apresente elementos sintéticos como fatos canônicos. Identifique claramente a demonstração visual.
+Localize a história no repositório antes de gerar. Se o usuário só informar o título, procure correspondência exata na coleção apropriada. Se houver mais de uma correspondência ou a coleção for necessária para decidir a fonte, pergunte apenas o detalhe que falta. Se o roteiro não existir no GitHub nem tiver sido fornecido, peça a fonte em vez de inventar contexto.
+
+O método pode ser ChatGPT ou ferramenta externa, conforme disponibilidade real. Mockups demonstrativos sem história real devem ser identificados como demonstração, não como narrativa canônica.
 
 ## 3. Contrato universal de fontes
 
-Cada coleção/história deve usar o mesmo identificador estável nos dois arquivos:
+Fontes narrativas de coleção seguem o padrão `historias/historias-<nome-colecao>.md`. O manifesto para rastrear produção da coleção, quando utilizado, segue `historias/status-criacao-historia.<nome-colecao>.md`. O identificador deve ser consistente quando ambos existem.
 
-- Fonte narrativa: `historias/historias-<nome-historia>.md`
-- Manifesto de produção: `historias/status-criacao-historia.<nome-historia>.md`
+O usuário também pode fornecer um roteiro individual em Markdown. **Copiar esse roteiro para o GitHub não é obrigatório**: a cópia em `historias/` serve para facilitar rastreabilidade e só deve ser criada quando solicitada ou útil. Não inventar convenção como se fosse obrigatória, não substituir a fonte da coleção e não sobrescrever arquivos existentes sem revisão.
 
-O identificador deve ser igual nos dois caminhos, em minúsculas, sem espaços e preferencialmente separado por hífens.
-
-Exemplos atuais:
-- `historias/historias-novo-testamento.md`
-- `historias/status-criacao-historia.novo-testamento.md`
-- `historias/historias-antigo-testamento.md`
-- `historias/status-criacao-historia.antigo-testamento.md`
-
-O padrão de nome não prova que o arquivo existe. O agente deve consultar a árvore atual do GitHub, abrir os arquivos reais e verificar que narrativa e manifesto pertencem à mesma coleção. Não depender de nomes antigos ou de rotas memorizadas.
+O padrão de nome não prova que um arquivo existe. Consulte a árvore atual do GitHub e abra a fonte real; não dependa de nomes memorizados.
 
 ## 4. Leitura obrigatória antes de gerar
 
@@ -45,8 +38,8 @@ O padrão de nome não prova que o arquivo existe. O agente deve consultar a ár
 2. Ler `regras/00-LEIA-PRIMEIRO.md`.
 3. Verificar `templates/CATALOGO.md` e confirmar que `TPL-MOCKUP-UNIVERSAL` está disponível.
 4. Ler a versão atual deste template.
-5. Para uma história real, localizar e ler a fonte `historias/historias-<nome-historia>.md`.
-6. Se for tarefa de produção rastreada, ler o manifesto par `historias/status-criacao-historia.<nome-historia>.md`.
+5. Para uma história real, localizar e ler a fonte narrativa atual que contém o número e o título solicitados; normalmente é uma coleção `historias/historias-<nome-colecao>.md` ou um roteiro fornecido pelo usuário.
+6. Ler o manifesto de status da coleção se existir e for relevante para o estado da produção. Sua ausência não bloqueia a geração quando a fonte narrativa é suficiente.
 7. Ler `regras/ROTA-GERAL.md`, `regras/SKILLS-E-RECURSOS.md`, `regras/PADRAO-VISUAL-E-COMPOSICAO.md` e `regras/VALIDACAO-FINAL.md`.
 8. Consultar documentação atual das skills externas no GitHub antes da geração.
 9. Usar referências visuais apenas quando realmente acessíveis. Uma imagem anexada ao chat não é automaticamente um arquivo no repositório.
