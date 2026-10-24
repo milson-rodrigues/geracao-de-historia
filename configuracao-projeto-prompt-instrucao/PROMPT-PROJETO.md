@@ -89,3 +89,8 @@ Use o mesmo `<nome-historia>` nos dois nomes. Leia ambos antes de editar, preser
 ## Padrão de proporção e qualidade
 
 Por padrão, toda imagem deve ser horizontal 16:9 e ter no mínimo 1920 × 1080 pixels (Full HD); quando a ferramenta suportar qualidade/resolução nativa maior, preferi-la. Só produzir em 9:16 vertical (mínimo 1080 × 1920) quando o usuário pedir explicitamente. Os modelos ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16). Verificar o caminho correto e as dimensões reais antes de declarar conclusão. Não alterar `ROUTER-MESTRE.md` para esta regra operacional.
+
+
+## Cópias locais de skills
+
+A presença de skills em `.agents/skills/` não comprova que estejam atualizadas, instaladas como ferramenta executável ou autenticadas. Antes de gerar, consulte a fonte oficial atual no GitHub e verifique a disponibilidade real da ferramenta na sessão. Nunca declare execução apenas porque os arquivos estão no repositório.
