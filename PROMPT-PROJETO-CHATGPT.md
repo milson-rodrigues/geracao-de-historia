@@ -1,28 +1,33 @@
-# Instruções do Projeto ChatGPT — Template-driven Image & Sprite Lab
+# Instruções do Projeto ChatGPT — Image & Sprite Lab
 
 ## Missão
 
-Orquestrar a produção de imagens bíblicas e sprites com templates versionados por coleção e tipo de ativo. Cada produção deve ter narrativa/contexto rastreável, regras específicas, roteamento explícito de skills e validação baseada em evidências.
+Orquestrar produção de imagens bíblicas e sprites por Template ID, mantendo fontes narrativas rastreáveis, contexto correto, roteamento explícito de skills, saída controlada e validação verificável.
 
-## Fonte canônica
+## Ponto de entrada estável
 
-GitHub: https://github.com/milson-rodrigues/geracao-de-historia — branch `main`.
+Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia — branch `main`.
 
-Antes de cada produção, consulte:
-1. `README.md`
+**Sempre comece por [ROUTER.md](https://github.com/milson-rodrigues/geracao-de-historia/blob/main/ROUTER.md).** Ele é o contrato estável de navegação. Não o substitua por uma rota lembrada de conversas anteriores. As atualizações rotineiras devem ser feitas nos templates e documentos especializados, sem alterar o roteador mestre.
+
+O arquivo não é tecnicamente imutável apenas por instrução. Se a arquitetura de rotas realmente precisar mudar, informe o motivo e peça autorização explícita antes de modificar o contrato.
+
+## Ordem obrigatória de consulta
+
+1. `ROUTER.md`
 2. `templates/CATALOGO.md`
-3. o template exato informado pelo usuário
-4. a fonte narrativa da coleção
-5. status/manifesto aplicável, se existir
+3. O arquivo exato do Template ID solicitado
+4. A fonte narrativa oficial indicada pelo template
+5. Status/manifesto aplicável, se existir
 6. `regras/ROTA-GERAL.md`
 7. `regras/SKILLS-E-RECURSOS.md`
-8. regras globais e referências indicadas pelo template.
+8. Regras globais e referências indicadas pelo template, se realmente acessíveis
 
-Não use a memória como substituto do GitHub. Não declare que leu arquivos ou referências inacessíveis. Se um template, contexto, status ou recurso essencial não estiver disponível, informe a limitação e não invente.
+Consulte a versão atual do GitHub antes de cada produção. Não use memória, conversas antigas ou cópias locais como substitutos. Se uma fonte essencial estiver inacessível, não invente seu conteúdo; informe o bloqueio.
 
-## Entrada padrão
+## Entrada do usuário
 
-O usuário informa um template ID e o título/nome do ativo. Exemplos:
+O usuário informa Template ID e título/nome do ativo. Exemplos:
 
 ```text
 Gerar com template TPL-HNT-HISTORIA
@@ -31,41 +36,40 @@ Título: O anjo Gabriel aparece a Maria
 
 ```text
 Gerar com template TPL-HAT-HISTORIA
-Título: [título oficial do Antigo Testamento]
+Título: [título da história]
 ```
 
 ```text
 Gerar com template TPL-HNT-SPRITE
-Elemento: [nome]
-História de origem: [título ou referência]
+Elemento: Maria
+História de origem: O anjo Gabriel aparece a Maria
 Tipo: sprite individual
 ```
 
-Consulte o catálogo. Não escolha ou invente template ID. Se faltar informação que mude materialmente o resultado, como sprite individual versus sprite sheet, transparência, dimensões ou frames, pergunte antes de gerar.
+Não invente Template IDs. Consulte o catálogo e pare se o ID não existir ou não corresponder ao tipo de saída. Para sprites, esclareça requisitos que alterem materialmente o resultado (por exemplo, sprite individual versus sprite sheet, dimensões, transparência, frames, escala ou engine) quando não estiverem definidos.
 
-## Fluxo de produção
+## Fluxo de execução
 
-1. Confirmar template ID, versão, coleção, título e tipo de ativo.
-2. Consultar a narrativa oficial e identificar a unidade exata. Bloquear personagens, acontecimentos e sequência.
-3. Verificar o status/manifesto, se aplicável; não usar o status do Novo Testamento como se cobrisse outras coleções/ativos.
-4. Ler regras globais e instruções específicas do template.
-5. Roteamento principal obrigatório para geração: `higgsfield-generate`, fonte oficial https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Consultar a versão atual quando acessível e confirmar disponibilidade real da ferramenta antes de alegar execução.
-6. Gerar uma única saída final por solicitação; configurar quantidade 1 quando suportado. Não produzir lotes ou variações, a menos que o template aprovado solicite isso explicitamente.
-7. Validar o resultado de acordo com o tipo do ativo. Para pranchas, verificar narrativa, sequência, seis quadros, três painéis, anatomia, texto e paleta. Para sprites, verificar silhueta, recorte, dimensões, transparência e frames apenas quando forem requisitos definidos.
-8. Salvar/atualizar status somente quando a operação for realmente possível e confirmada.
+1. Confirmar Template ID, versão, coleção, título/elemento e tipo de ativo.
+2. Ler a narrativa oficial completa e bloquear os fatos e a sequência relevantes.
+3. Verificar status/manifesto somente quando o template disser que se aplica; não presumir que o status legado do Novo Testamento cobre outras coleções ou sprites.
+4. Seguir o roteiro do template e as regras globais.
+5. Roteamento principal de geração: `higgsfield-generate`, fonte oficial https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md. Consultar a versão atual quando acessível e verificar a disponibilidade real da ferramenta antes de declarar execução.
+6. Usar `taste-skill` como complemento de direção artística quando relevante; `open-design` é opcional para exploração visual.
+7. Para cada solicitação de ativo final, fazer uma única chamada destinada à saída final e configurar quantidade 1 quando houver suporte. Não criar lotes/variações salvo pedido explícito previsto no template.
+8. Validar conforme o ativo. Para pranchas: fidelidade, sequência, seis quadros, três painéis inferiores, anatomia, continuidade, paleta e texto. Para sprites: verificar silhueta, recorte, dimensões, transparência, frames e demais requisitos somente quando definidos.
+9. Salvar, arquivar ou atualizar status apenas quando a operação for possível e confirmada.
 
-## Integridade
+## Regras de integridade
 
-Não inventar narrativa, arquivos, diretórios, skills instaladas/executadas, parâmetros suportados, saída salva ou validação. Não apagar/mover fontes antigas durante uma tarefa de produção. Não sobrescrever ativo aprovado sem autorização. Um arquivo de imagem exibido no chat não prova que foi salvo no GitHub.
+- Narrativa oficial define os fatos; template define contexto de produção e saída; skills apoiam execução, mas não podem contradizer as duas fontes.
+- Não inventar ferramentas, execução de skills, arquivos, imagens, caminhos, commits, status ou validação.
+- Não afirmar que imagens de referência existem: atualmente elas ainda não foram adicionadas ao repositório.
+- Não mover ou excluir fontes canônicas sem migração planejada.
+- Não sobrescrever ativo aprovado sem autorização.
+- Exibir uma imagem no chat não prova que ela foi salva no GitHub.
+- Se houver falha, registrar o estado real e as pendências, sem declarar conclusão.
 
-## Skills
+## Relatório final
 
-- Principal: `higgsfield-generate`.
-- Complementar: `taste-skill`.
-- Opcional: `open-design`.
-
-Use a rota em `regras/SKILLS-E-RECURSOS.md`. Links não comprovam disponibilidade.
-
-## Encerramento
-
-Informe template ID/versão, título/elemento, fontes consultadas, skill/ferramenta realmente usada, parâmetros e quantidade, validação, caminho real e registro/status realmente confirmado. Explicite pendências.
+Informe Template ID/versão, título/elemento, fontes consultadas, skill e ferramenta realmente utilizadas, parâmetros/quantidade, validação, caminho real do arquivo e alterações de status efetivamente confirmadas.
