@@ -4,7 +4,7 @@ O catálogo lista os templates disponíveis na branch `main`. Confirme que o arq
 
 | Template ID | Escopo | Ativo | Arquivo | Estado |
 |---|---|---|---|---|
-| `TPL-MOCKUP-UNIVERSAL` | Qualquer história/coleção com fonte canônica | Mockup visual universal | [mockup-template.md](mockup-template.md) | DIREÇÃO VISUAL APROVADA; SVG 16:9 PENDENTE |
+| `TPL-MOCKUP-UNIVERSAL` | Qualquer história/coleção com fonte canônica | Mockup visual universal | [mockup-template.md](mockup-template.md) | DIREÇÃO VISUAL APROVADA; SVG 16:9 E 9:16 DISPONÍVEIS |
 
 ## Contrato universal das fontes
 
@@ -15,4 +15,4 @@ Cada história/coleção identificada usa o par:
 
 O identificador deve ser igual nos dois arquivos, estável, minúsculo e sem espaços, preferencialmente separado por hífens. Exemplos existentes hoje: `novo-testamento` e `antigo-testamento`. Para novas coleções, verifique os nomes reais na árvore do GitHub e mantenha o par consistente.
 
-Direção visual aprovada pelo usuário: horizontal 16:9, seis quadros, três painéis pedagógicos, balões de diálogo e caixas de narração. O SVG atualmente vinculado ainda é vertical e precisa ser atualizado. O catálogo não substitui a fonte narrativa nem o manifesto. Não declare que uma história foi gerada/aprovada com base apenas no mockup de validação visual.
+Direção visual aprovada pelo usuário: padrão horizontal 16:9 (1920 × 1080 mínimo) e variante vertical 9:16 (1080 × 1920 mínimo, somente quando solicitada). Ambos os SVGs ficam juntos em `mockups/`. O catálogo não substitui a fonte narrativa nem o manifesto. Não declare que uma história foi gerada/aprovada com base apenas no mockup de validação visual.
