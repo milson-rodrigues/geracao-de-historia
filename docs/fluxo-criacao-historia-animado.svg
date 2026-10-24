@@ -1,81 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1280" viewBox="0 0 1600 1280" role="img" aria-labelledby="title desc">
-  <title id="title">Fluxo de criação de histórias em quadrinhos</title>
-  <desc id="desc">Fluxo desde o pedido do usuário até a consulta ao GitHub, leitura da história e das regras, consulta das skills, geração e validação da imagem e atualização opcional do rastreio.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Da solicitação à história em quadrinhos gerada</title>
+  <desc id="desc">Uma pessoa pede uma imagem. O pedido atravessa as etapas de consulta à história, regras e geração. Uma página ilustrada de quadrinhos aparece no final.</desc>
   <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4A031"/><stop offset="1" stop-color="#F0D77C"/></linearGradient>
+    <linearGradient id="art" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D7E8F3"/><stop offset="1" stop-color="#F8E8BD"/></linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <style>
-      .stage-box { animation: appear 7.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
-      .stage-box.s1 { animation-delay: 0s; }
-      .stage-box.s2 { animation-delay: .35s; }
-      .stage-box.s3 { animation-delay: .7s; }
-      .stage-box.s4 { animation-delay: 1.05s; }
-      .stage-box.s5 { animation-delay: 1.4s; }
-      .stage-box.s6 { animation-delay: 1.75s; }
-      .flow-line { stroke-dasharray: 14 10; animation: flow 1.8s linear infinite; }
-      .step-number { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
-      .step-number.n2 { animation-delay: .25s; }
-      .step-number.n3 { animation-delay: .5s; }
-      .step-number.n4 { animation-delay: .75s; }
-      .step-number.n5 { animation-delay: 1s; }
-      .step-number.n6 { animation-delay: 1.25s; }
-      @keyframes appear {
-        0% { opacity: .48; }
-        12%, 82% { opacity: 1; }
-        96%, 100% { opacity: .48; }
+      text{font-family:Arial,Helvetica,sans-serif}
+      .title{font-size:36px;font-weight:700;fill:#172033}
+      .subtitle{font-size:18px;fill:#46556B}
+      .card{fill:#F4F6F9;stroke:#AAB6C5;stroke-width:2}
+      .darktext{fill:#172033}
+      .muted{fill:#46556B;font-size:16px}
+      .label{font-size:21px;font-weight:700;fill:#172033}
+      .mini{font-size:14px;fill:#344256}
+      .connector{fill:none;stroke:#B18B18;stroke-width:4;stroke-linecap:round;stroke-dasharray:9 13;animation: dash 1.4s linear infinite}
+      .pulse{fill:#C4A031;filter:url(#glow);animation: travel 4.8s ease-in-out infinite}
+      .request{animation: arrive 6s ease-in-out infinite}
+      .process1{animation: step 6s ease-in-out infinite;animation-delay:.6s}
+      .process2{animation: step 6s ease-in-out infinite;animation-delay:1.5s}
+      .process3{animation: step 6s ease-in-out infinite;animation-delay:2.4s}
+      .result{animation: result 6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+      .spark{transform-box:fill-box;transform-origin:center;animation:spark 1.8s ease-in-out infinite}
+      .spark.s2{animation-delay:.35s}.spark.s3{animation-delay:.7s}
+      @keyframes dash{to{stroke-dashoffset:-44}}
+      @keyframes travel{0%{transform:translate(0px,0px);opacity:0}8%{opacity:1}88%{opacity:1}100%{transform:translate(1100px,0px);opacity:0}}
+      @keyframes arrive{0%,8%{opacity:0;transform:translateX(-18px)}15%,85%{opacity:1;transform:translateX(0)}95%,100%{opacity:.65;transform:translateX(0)}}
+      @keyframes step{0%,15%{opacity:.45}22%,80%{opacity:1}92%,100%{opacity:.55}}
+      @keyframes result{0%,48%{opacity:.15;transform:scale(.94)}60%,84%{opacity:1;transform:scale(1)}96%,100%{opacity:.15;transform:scale(.94)}}
+      @keyframes spark{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.25)}}
+      @media(prefers-color-scheme:dark){
+        .title{fill:#fff}.subtitle,.muted{fill:#BFCBDD}.card{fill:#172B41;stroke:#526780}
+        .darktext,.label{fill:#fff}.mini{fill:#DCE5F1}.connector{stroke:#C4A031}
       }
-      @keyframes flow { to { stroke-dashoffset: -48; } }
-      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
-      @media (prefers-reduced-motion: reduce) {
-        .stage-box, .flow-line, .step-number { animation: none !important; }
+      @media(prefers-reduced-motion:reduce){
+        .connector,.pulse,.request,.process1,.process2,.process3,.result,.spark{animation:none!important}
+        .request,.process1,.process2,.process3,.result{opacity:1!important;transform:none!important}
       }
     </style>
   </defs>
-  <defs>
-    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4A031"/><stop offset="1" stop-color="#E2C66B"/></linearGradient>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1 1 L10 6 L1 11 Z" fill="#C4A031"/></marker>
-    <style>
-      .heading{font:700 38px Arial,Helvetica,sans-serif;fill:#172033}.sub{font:400 19px Arial,Helvetica,sans-serif;fill:#46556B}
-      .num{font:700 18px Arial,sans-serif;fill:#172033}.box-title{font:700 23px Arial,sans-serif;fill:#172033}
-      .body{font:400 18px Arial,sans-serif;fill:#344256}.small{font:400 16px Arial,sans-serif;fill:#46556B}
-      .step{fill:#F4F6F9;stroke:#AAB6C5;stroke-width:2}.optional{fill:#FFF9E8;stroke:#B18B18;stroke-width:2;stroke-dasharray:9 7}
-      .line{fill:none;stroke:#B18B18;stroke-width:4;marker-end:url(#arrow)}
-      @media (prefers-color-scheme: dark) {
-        .heading{fill:#fff}.sub{fill:#BFCBDD}.num{fill:#0A1628}.box-title{fill:#fff}
-        .body{fill:#DCE5F1}.small{fill:#BFCBDD}
-        .step{fill:#1A304B;stroke:#526780}.optional{fill:#172B41;stroke:#C4A031}
-        .line{stroke:#C4A031}
-      }
-    </style>
-  </defs>
-  <text x="110" y="125" class="heading">Criação de histórias em quadrinhos</text>
-  <text x="110" y="165" class="sub">Fluxo universal · ChatGPT ou agente · fontes e regras atuais do repositório</text>
-  <rect x="110" y="210" width="1380" height="112" rx="18" class="step stage-box s1"/>
-  <circle cx="155" cy="266" r="23" fill="url(#gold)" class="step-number n1"/><text x="155" y="273" text-anchor="middle" class="num">1</text>
-  <text x="195" y="254" class="box-title">Pedido do usuário</text>
-  <text x="195" y="286" class="body">“Gere a imagem da história” · título/número · coleção ou roteiro, se necessário</text>
-  <path d="M800 322 V360" class="line flow-line"/>
-  <rect x="110" y="370" width="1380" height="112" rx="18" class="step stage-box s2"/>
-  <circle cx="155" cy="426" r="23" fill="url(#gold)" class="step-number n2"/><text x="155" y="433" text-anchor="middle" class="num">2</text>
-  <text x="195" y="414" class="box-title">Consultar o GitHub antes de produzir</text>
-  <text x="195" y="446" class="body">ROUTER-MESTRE.md → catálogo → template adequado → fonte narrativa real em historias/</text>
-  <path d="M800 482 V520" class="line flow-line"/>
-  <rect x="110" y="530" width="1380" height="112" rx="18" class="step stage-box s3"/>
-  <circle cx="155" cy="586" r="23" fill="url(#gold)" class="step-number n3"/><text x="155" y="593" text-anchor="middle" class="num">3</text>
-  <text x="195" y="574" class="box-title">Ler contexto e regras atuais</text>
-  <text x="195" y="606" class="body">Preservar fatos, personagens e sequência · regras visuais · validação · português brasileiro</text>
-  <path d="M800 642 V680" class="line flow-line"/>
-  <rect x="110" y="690" width="1380" height="112" rx="18" class="step stage-box s4"/>
-  <circle cx="155" cy="746" r="23" fill="url(#gold)" class="step-number n4"/><text x="155" y="753" text-anchor="middle" class="num">4</text>
-  <text x="195" y="734" class="box-title">Consultar skills e verificar a ferramenta</text>
-  <text x="195" y="766" class="body">Higgsfield Generate como rota principal · recursos GPT Image 2 como complemento</text>
-  <path d="M800 802 V840" class="line flow-line"/>
-  <rect x="110" y="850" width="1380" height="112" rx="18" class="step stage-box s5"/>
-  <circle cx="155" cy="906" r="23" fill="url(#gold)" class="step-number n5"/><text x="155" y="913" text-anchor="middle" class="num">5</text>
-  <text x="195" y="894" class="box-title">Gerar uma imagem e validar</text>
-  <text x="195" y="926" class="body">Padrão 16:9 · Full HD mínimo · conferir história, quadros, balões, texto e legibilidade</text>
-  <path d="M800 962 V1000" class="line flow-line"/>
-  <rect x="110" y="1010" width="1380" height="112" rx="18" class="optional stage-box s6"/>
-  <circle cx="155" cy="1066" r="23" fill="url(#gold)" class="step-number n6"/><text x="155" y="1073" text-anchor="middle" class="num">6</text>
-  <text x="195" y="1054" class="box-title">Registrar o estado real (quando aplicável)</text>
-  <text x="195" y="1086" class="body">Atualizar o manifesto se o status mudou e houver acesso autorizado · cópia individual do roteiro é opcional</text>
-  <text x="110" y="1175" class="small">Se a fonte estiver ausente ou ambígua, pedir esclarecimento. Nunca inventar contexto, execução, arquivo salvo ou status.</text>
+
+  <text x="70" y="78" class="title">Do pedido à história em quadrinhos</text>
+  <text x="70" y="112" class="subtitle">O pedido entra, o sistema consulta as fontes e prepara a imagem final.</text>
+
+  <!-- Caminho animado por trás dos cartões -->
+  <path d="M250 410 H1320" class="connector"/>
+  <circle cx="250" cy="410" r="7" fill="#C4A031"/>
+  <circle cx="1320" cy="410" r="7" fill="#C4A031"/>
+  <circle cx="250" cy="410" r="9" class="pulse"/>
+  <circle cx="250" cy="410" r="9" class="pulse" style="animation-delay:2.4s"/>
+
+  <!-- 1. Pedido do usuário -->
+  <g class="request">
+    <rect x="55" y="220" width="300" height="390" rx="24" class="card"/>
+    <circle cx="110" cy="277" r="28" fill="#D9E4EF" stroke="#AAB6C5" stroke-width="2"/>
+    <circle cx="110" cy="269" r="9" fill="#6D8198"/>
+    <path d="M91 291 Q110 271 129 291" fill="#6D8198"/>
+    <text x="151" y="273" class="label">Você</text>
+    <text x="151" y="297" class="muted">faz um pedido</text>
+    <path d="M85 333 H310 Q325 333 325 348 V425 Q325 440 310 440 H139 L111 460 L116 440 H85 Q70 440 70 425 V348 Q70 333 85 333Z" fill="#FFF9E8" stroke="#D1B65A" stroke-width="2"/>
+    <text x="91" y="366" class="darktext" font-size="17" font-weight="700">“Gere a imagem</text>
+    <text x="91" y="391" class="darktext" font-size="17" font-weight="700">da história.”</text>
+    <text x="91" y="418" class="mini">Título + coleção ou roteiro</text>
+    <rect x="82" y="490" width="246" height="70" rx="13" fill="#E5EBF2"/>
+    <path d="M104 513 h16 v16 h-16z M109 508 h16 v16" fill="none" stroke="#64778E" stroke-width="2"/>
+    <text x="138" y="518" class="mini" font-weight="700">Pedido recebido</text>
+    <text x="138" y="540" class="mini">Iniciando o fluxo…</text>
+  </g>
+
+  <!-- 2. Consulta da narrativa -->
+  <g class="process1">
+    <rect x="390" y="280" width="250" height="260" rx="22" class="card"/>
+    <circle cx="425" cy="315" r="18" fill="url(#gold)"/><text x="425" y="321" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">1</text>
+    <path d="M466 307 h30 v36 h-30z M472 316 h18 M472 323 h18 M472 330 h13" fill="none" stroke="#6D8198" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="415" y="375" class="label">Consulta a história</text>
+    <text x="415" y="405" class="muted">GitHub · narrativa oficial</text>
+    <text x="415" y="435" class="mini">Confere personagens, fatos</text>
+    <text x="415" y="456" class="mini">e sequência dos eventos.</text>
+    <g class="spark"><path d="M600 310 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#C4A031"/></g>
+  </g>
+
+  <!-- 3. Regras e composição -->
+  <g class="process2">
+    <rect x="680" y="280" width="250" height="260" rx="22" class="card"/>
+    <circle cx="715" cy="315" r="18" fill="url(#gold)"/><text x="715" y="321" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">2</text>
+    <rect x="755" y="303" width="35" height="32" rx="4" fill="none" stroke="#6D8198" stroke-width="2.5"/>
+    <path d="M762 313 h21 M762 320 h21 M762 327 h14" stroke="#6D8198" stroke-width="2" stroke-linecap="round"/>
+    <text x="705" y="375" class="label">Prepara a composição</text>
+    <text x="705" y="405" class="muted">Template · regras · estilo</text>
+    <text x="705" y="435" class="mini">Organiza quadros, balões,</text>
+    <text x="705" y="456" class="mini">narração e legibilidade.</text>
+    <g class="spark s2"><path d="M890 310 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#C4A031"/></g>
+  </g>
+
+  <!-- 4. Geração -->
+  <g class="process3">
+    <rect x="970" y="280" width="250" height="260" rx="22" class="card"/>
+    <circle cx="1005" cy="315" r="18" fill="url(#gold)"/><text x="1005" y="321" text-anchor="middle" font-size="17" font-weight="700" fill="#172033">3</text>
+    <path d="M1048 333 l26 -31 9 8 -26 31 -13 5z" fill="#C4A031" stroke="#8B6C12" stroke-width="1.5"/>
+    <path d="M1048 333 l-4 13 13 -5" fill="#E2C66B"/>
+    <text x="995" y="375" class="label">Gera e revisa</text>
+    <text x="995" y="405" class="muted">Ferramenta disponível</text>
+    <text x="995" y="435" class="mini">Cria a imagem e verifica</text>
+    <text x="995" y="456" class="mini">texto, sequência e clareza.</text>
+    <g class="spark s3"><path d="M1180 310 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" fill="#C4A031"/></g>
+  </g>
+
+  <!-- 5. Resultado final: mini página de quadrinhos -->
+  <g class="result">
+    <rect x="1260" y="190" width="285" height="450" rx="22" class="card"/>
+    <text x="1402" y="226" text-anchor="middle" class="label">Imagem gerada</text>
+    <text x="1402" y="250" text-anchor="middle" class="muted">Sua história em quadrinhos</text>
+    <rect x="1284" y="273" width="237" height="326" rx="7" fill="#FFFFFF" stroke="#8A99AA" stroke-width="1.5"/>
+    <rect x="1297" y="286" width="211" height="32" rx="4" fill="#E8D18A"/>
+    <text x="1402" y="307" text-anchor="middle" font-size="13" font-weight="700" fill="#273247">A HISTÓRIA COMEÇA</text>
+    <rect x="1297" y="328" width="100" height="91" rx="3" fill="url(#art)" stroke="#29364A" stroke-width="1.5"/>
+    <circle cx="1348" cy="362" r="15" fill="#F2C27B"/>
+    <path d="M1328 358 Q1347 334 1367 358 L1362 347 L1334 347Z" fill="#6B4A32"/>
+    <path d="M1328 395 Q1348 368 1368 395 L1375 412 H1321Z" fill="#557B91"/>
+    <path d="M1308 342 h26 M1308 348 h17" stroke="#FFFFFF" stroke-width="2" opacity=".85"/>
+    <rect x="1407" y="328" width="101" height="91" rx="3" fill="#E9E2D0" stroke="#29364A" stroke-width="1.5"/>
+    <circle cx="1457" cy="362" r="16" fill="#F2C27B"/>
+    <path d="M1437 357 Q1457 334 1477 357 L1470 345 H1443Z" fill="#6B4A32"/>
+    <path d="M1436 395 Q1457 368 1478 395 L1485 412 H1429Z" fill="#C4A031"/>
+    <rect x="1297" y="429" width="211" height="72" rx="3" fill="#DCE8D8" stroke="#29364A" stroke-width="1.5"/>
+    <circle cx="1400" cy="454" r="12" fill="#F2C27B"/>
+    <path d="M1385 451 Q1400 432 1415 451 L1410 442 H1390Z" fill="#6B4A32"/>
+    <path d="M1380 484 Q1400 460 1420 484 L1427 494 H1373Z" fill="#557B91"/>
+    <path d="M1308 476 Q1330 450 1353 476 M1449 478 Q1474 452 1498 478" fill="none" stroke="#8EAA80" stroke-width="4"/>
+    <rect x="1297" y="511" width="211" height="72" rx="3" fill="#FFF9E8" stroke="#D1B65A" stroke-width="1.5"/>
+    <text x="1402" y="536" text-anchor="middle" font-size="12" font-weight="700" fill="#273247">O QUE APRENDEMOS</text>
+    <path d="M1315 549 h174 M1325 560 h154 M1340 571 h124" stroke="#9AA5B1" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="1507" cy="282" r="16" fill="#2E7D55"/>
+    <path d="M1499 282 l6 6 11 -13" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="1402" y="621" text-anchor="middle" class="muted">Pronta para conferir</text>
+  </g>
+
+  <text x="70" y="700" class="muted">O fluxo real consulta as fontes atuais e só registra arquivos ou status quando a operação é confirmada.</text>
+  <text x="70" y="735" class="muted">Animação ilustrativa do processo — a miniatura final é demonstrativa, não uma história bíblica específica.</text>
 </svg>
