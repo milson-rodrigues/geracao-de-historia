@@ -5,7 +5,7 @@
 
 **Narrativa contextualizada · Skills roteadas · Saídas controladas · Validação verificável**
 
-[Roteador estável](ROUTER.md) · [Catálogo de templates](templates/CATALOGO.md) · [Rota geral](regras/ROTA-GERAL.md) · [Skills](regras/SKILLS-E-RECURSOS.md) · [Instruções do ChatGPT](PROMPT-PROJETO-CHATGPT.md)
+[Roteador estável](ROUTER-MESTRE.md) · [Catálogo de templates](templates/CATALOGO.md) · [Rota geral](regras/ROTA-GERAL.md) · [Skills](regras/SKILLS-E-RECURSOS.md) · [Instruções do ChatGPT](PROMPT-PROJETO-CHATGPT.md)
 
 </div>
 
