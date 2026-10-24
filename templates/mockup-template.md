@@ -8,7 +8,7 @@
 
 ## Artefato visual aprovado — sincronização pendente
 
-A direção visual foi aprovada pelo usuário: composição horizontal 16:9, banner superior de pergaminho, seis quadros narrativos em grade 3 × 2, três painéis pedagógicos inferiores, paleta menos saturada, caixas retangulares de narração e balões de diálogo. As falas e textos demonstrativos não são canônicos. **Pendência de repositório:** o SVG atualmente vinculado ainda é uma versão vertical antiga; não o trate como arte final aprovada até substituí-lo pela composição horizontal aprovada.
+A direção visual foi aprovada pelo usuário: banner superior de pergaminho, seis quadros narrativos, três painéis pedagógicos inferiores, paleta menos saturada, caixas retangulares de narração e balões de diálogo. Os dois SVGs estão no diretório `mockups/`: [`mockup-template-universal.svg`](../mockups/mockup-template-universal.svg) é o padrão horizontal 16:9 (1920 × 1080); [`mockup-template-universal-9x16.svg`](../mockups/mockup-template-universal-9x16.svg) é a variante vertical 9:16 (1080 × 1920). Os textos demonstrativos não são canônicos.
 
 ## 1. Objetivo
 
@@ -142,3 +142,13 @@ Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill H
 - **Fidelidade narrativa:** cada quadro deve representar o trecho correspondente da fonte oficial e respeitar a ordem dos acontecimentos. Não repetir uma cena só para preencher espaço.
 - **Idioma:** português brasileiro (pt-BR), com revisão de ortografia, acentuação, pontuação, concordância e legibilidade.
 - **Revisão final:** inspecionar a imagem inteira e cada quadro ampliado; corrigir texto encoberto, balões ambíguos, personagens repetidos indevidamente e erros de contexto antes de aprovar um ativo final.
+
+
+## 10. Proporção e qualidade de saída
+
+- **Padrão obrigatório:** horizontal 16:9 quando o usuário não especificar outra proporção.
+- **Qualidade mínima:** Full HD, 1920 × 1080 pixels para 16:9. Se a ferramenta suportar uma resolução nativa maior com boa qualidade, usar a maior opção adequada.
+- **Exceção vertical:** usar 9:16 somente quando o usuário solicitar; mínimo 1080 × 1920 pixels.
+- Os modelos vetoriais correspondentes ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16).
+- Não inferir que o arquivo é Full HD apenas pela aparência. Conferir as dimensões da imagem raster final. SVG é escalável; para exportação, respeitar as dimensões mínimas acima.
+- Ao entregar ambos os formatos, manter o arquivo horizontal como principal e rotular claramente a variante vertical.
