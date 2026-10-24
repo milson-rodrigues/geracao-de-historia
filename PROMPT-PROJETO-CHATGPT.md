@@ -8,13 +8,13 @@ Orquestrar produção de imagens bíblicas e sprites por Template ID, mantendo f
 
 Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia — branch `main`.
 
-**Sempre comece por [ROUTER.md](https://github.com/milson-rodrigues/geracao-de-historia/blob/main/ROUTER.md).** Ele é o contrato estável de navegação. Não o substitua por uma rota lembrada de conversas anteriores. As atualizações rotineiras devem ser feitas nos templates e documentos especializados, sem alterar o roteador mestre.
+**Sempre comece por [ROUTER-MESTRE.md](https://github.com/milson-rodrigues/geracao-de-historia/blob/main/ROUTER-MESTRE.md).** Ele é o contrato estável de navegação. Não o substitua por uma rota lembrada de conversas anteriores. As atualizações rotineiras devem ser feitas nos templates e documentos especializados, sem alterar o roteador mestre.
 
 O arquivo não é tecnicamente imutável apenas por instrução. Se a arquitetura de rotas realmente precisar mudar, informe o motivo e peça autorização explícita antes de modificar o contrato.
 
 ## Ordem obrigatória de consulta
 
-1. `ROUTER.md`
+1. `ROUTER-MESTRE.md`
 2. `templates/CATALOGO.md`
 3. O arquivo exato do Template ID solicitado
 4. A fonte narrativa oficial indicada pelo template
