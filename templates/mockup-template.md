@@ -6,6 +6,10 @@
 - **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
 - **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
+## Artefato visual para aprovação
+
+O mockup vetorial de referência está em [\`mockups/mockup-template-universal.svg\`](../mockups/mockup-template-universal.svg). Ele demonstra a distinção entre balões de fala e retângulos de narração, com texto de exemplo em português brasileiro. As falas são demonstrativas, não canônicas. O usuário deve validar ou pedir ajustes antes de tratá-lo como padrão visual aprovado.
+
 ## 1. Objetivo
 
 Gerar uma página-mockup visual para o usuário avaliar. A linguagem deve combinar ilustrações sequenciais, **balões de fala** para diálogos e **caixas retangulares** para narração/contexto. O layout deve ser adaptável a histórias diferentes, sem impor uma quantidade fixa de quadros.
