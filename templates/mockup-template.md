@@ -1,20 +1,20 @@
 # Template para mockup visual — modelo universal
 
 - **Template ID:** `TPL-MOCKUP-UNIVERSAL`
-- **Versão:** 1.0.1
-- **Estado:** AGUARDANDO APROVAÇÃO VISUAL DO USUÁRIO
+- **Versão:** 1.1.0
+- **Estado:** DIREÇÃO VISUAL APROVADA PELO USUÁRIO
 - **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
 - **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
 ## Artefato visual para aprovação
 
-O mockup vetorial de referência está em [\`mockups/mockup-template-universal.svg\`](../mockups/mockup-template-universal.svg). Ele demonstra a distinção entre balões de fala e retângulos de narração, com texto de exemplo em português brasileiro. As falas são demonstrativas, não canônicas. O usuário deve validar ou pedir ajustes antes de tratá-lo como padrão visual aprovado.
+A direção visual foi aprovada pelo usuário: composição horizontal 16:9, banner superior de pergaminho, seis quadros narrativos em grade 3 × 2, três painéis pedagógicos inferiores, paleta menos saturada, caixas retangulares de narração e balões de diálogo. As falas e textos demonstrativos não são canônicos. **Pendência de repositório:** o SVG atualmente vinculado ainda é uma versão vertical antiga; não o trate como arte final aprovada até substituí-lo pela composição horizontal aprovada.
 
 ## 1. Objetivo
 
 Gerar uma página-mockup visual para o usuário avaliar. A linguagem deve combinar ilustrações sequenciais, **balões de fala** para diálogos e **caixas retangulares** para narração/contexto. O layout deve ser adaptável a histórias diferentes, sem impor uma quantidade fixa de quadros.
 
-O mockup é uma proposta para aprovação visual, não uma história final aprovada. Não altera o status de produção de nenhuma história real.
+A direção visual do mockup está aprovada; isso não aprova histórias finais, textos narrativos nem imagens produzidas para histórias específicas. Não altera o status de produção de nenhuma história real.
 
 ## 2. Entrada
 
@@ -126,3 +126,19 @@ A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente 
 ## 10. Relatório
 
 Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill Higgsfield consultada, uso (ou não) da biblioteca GPT Image 2, ferramenta efetivamente utilizada, resultado da inspeção, estado de aprovação e caminho real do arquivo caso tenha sido salvo.
+
+
+## Regras de composição aprovadas
+
+- **Formato:** horizontal 16:9.
+- **Cabeçalho:** banner de pergaminho com número/identificador, título da história e referência bíblica.
+- **Quadros narrativos:** seis quadros como composição-base, em grade 3 × 2; ajustar somente quando a narrativa exigir e o template específico permitir.
+- **Painéis inferiores:** “O QUE APRENDEMOS”, “PERGUNTAS PARA A CRIANÇA” e “ORAÇÃO”.
+- **Paleta:** tons quentes e naturais, com saturação moderada; evitar cores excessivamente vivas.
+- **Narração:** caixas retangulares de pergaminho em área reservada. A quantidade de texto deve caber na caixa; redigir ou dimensionar o bloco antes de compor a ilustração.
+- **Não obstruir texto:** personagens, cabelo, mãos, roupas, objetos e efeitos nunca podem cobrir títulos, narração, legendas ou balões. A área de texto deve ser planejada antes da ilustração.
+- **Diálogos:** balões com cauda apontando inequivocamente para o falante; não posicionar entre personagens se houver ambiguidade.
+- **Continuidade:** manter ficha visual de cada personagem e verificar rosto, cabelo, idade aparente, roupas e acessórios entre quadros. Não duplicar acidentalmente personagens no mesmo quadro.
+- **Fidelidade narrativa:** cada quadro deve representar o trecho correspondente da fonte oficial e respeitar a ordem dos acontecimentos. Não repetir uma cena só para preencher espaço.
+- **Idioma:** português brasileiro (pt-BR), com revisão de ortografia, acentuação, pontuação, concordância e legibilidade.
+- **Revisão final:** inspecionar a imagem inteira e cada quadro ampliado; corrigir texto encoberto, balões ambíguos, personagens repetidos indevidamente e erros de contexto antes de aprovar um ativo final.
