@@ -1,43 +1,34 @@
 # Padrão visual e composição
 
-## Linguagem visual: história em quadrinhos bíblica
+## Princípio universal
 
-Usar como direção visual as referências fornecidas na conversa quando estiverem disponíveis no contexto de produção. Elas são exemplos de linguagem visual, não arquivos de referência já armazenados no GitHub.
+A linguagem visual deve acompanhar a narrativa e o template selecionado. Não impor a todos os tipos de história uma contagem fixa de quadros, proporção ou painel pedagógico sem requisito explícito.
 
-- Estética de quadrinhos/graphic novel bíblica: quadros com bordas claras, ilustração narrativa detalhada, leitura sequencial e composição editorial.
-- **Balões de fala:** usar para falas atribuídas a personagens. Cada fala deve corresponder à personagem correta; manter o texto curto, legível e natural em português brasileiro.
-- **Retângulos de narração/legenda:** usar caixas retangulares distintas dos balões para descrever contexto, passagem do tempo, local ou ação narrativa. Não atribuir essas caixas a um personagem.
-- **Texto bíblico e fidelidade:** não inventar falas como citações bíblicas. Quando uma fala não estiver explicitamente disponível na fonte narrativa, redigir uma paráfrase breve coerente com ela ou preferir narração retangular; não apresentar paráfrases como citação literal.
-- **Leitura:** ordenar os quadros de forma inequívoca, com balões e legendas posicionados na ordem correta de leitura. Evitar texto sobre rostos, mãos, pontos focais ou detalhes essenciais.
-- **Layout:** a proporção e a quantidade de quadros são definidas pelo template escolhido. Não impor o layout de seis quadros e rodapé pedagógico a todo tipo de história se o template indicar outro formato.
-- **Texto:** reduzir o volume por balão/retângulo; usar contraste alto, tipografia consistente e margens internas. O texto deve ser revisado separadamente quando possível.
+## Quadrinhos e storytelling
 
-## Formato da prancha pedagógica padrão
+- Composição editorial clara, quadros sequenciais e pontos focais definidos.
+- **Balões de fala:** exclusivamente para fala atribuída a personagem; posicionar o bico do balão para indicar quem fala.
+- **Caixas retangulares:** para narração, contexto, local, passagem do tempo ou resumo de acontecimentos.
+- Deixar evidente a diferença visual entre fala e narração.
+- Ordenar os quadros e os textos para facilitar a leitura da esquerda para a direita e de cima para baixo, salvo layout intencionalmente diferente.
+- Manter textos curtos e espaço suficiente dentro de balões e caixas.
+- Não apresentar paráfrases como citações literais; não inventar diálogo como se fosse bíblico.
+- Manter consistência das personagens entre cenas e evitar sobreposição que obscureça ações importantes.
 
-Quando o template selecionado exigir a prancha pedagógica padrão:
+## Idioma e revisão textual
 
-- Proporção horizontal próxima de 16:9.
-- Cabeçalho com número/ID e título oficiais.
-- Exatamente seis quadros narrativos em duas fileiras de três.
-- Na faixa inferior, exatamente três painéis: `O QUE APRENDEMOS`, `PERGUNTAS PARA A CRIANÇA` e `ORAÇÃO`.
-- Manter balões de fala e caixas retangulares de narração dentro dos quadros, sem substituir a estrutura pedagógica exigida pelo template.
+O padrão do projeto é **português brasileiro (pt-BR)**. Títulos, diálogos, legendas, narrações e painéis devem usar ortografia brasileira, acentuação, pontuação e concordância corretas. Evitar mistura com formas do português europeu. Revisar o texto antes da geração e inspecioná-lo na imagem final.
 
-## Direção artística e continuidade
+Se o gerador deformar o texto, não considerar a imagem aprovada. Quando tecnicamente possível, criar a ilustração com áreas vazias para adicionar o texto posteriormente.
 
-- Ilustração bíblica infantil ou juvenil colorida, detalhada e consistente com o público definido pelo template.
-- Luz e paleta equilibradas; evitar cores fluorescentes, saturação excessiva, contraste agressivo ou tons de pele artificialmente laranja/vermelhos.
-- Manter continuidade de personagens recorrentes conforme referências aprovadas que realmente estejam acessíveis.
-- Figurinos, objetos, arquitetura e paisagens podem refletir contexto histórico, mas não alterar os acontecimentos narrados pela fonte oficial.
-- Composição clara, silhuetas distinguíveis, gestos compreensíveis e espaço suficiente para balões e caixas de narração.
+## Direção de arte
 
-## Anatomia e personagens
+- Paleta equilibrada, luz coerente, silhuetas legíveis e composição sem excesso visual.
+- Anatomia plausível: revisar mãos, dedos, braços, pernas, rostos, olhos e proporções.
+- Figurino, arquitetura e cenário podem apoiar o contexto histórico, mas não devem contradizer a narrativa.
+- Referências enviadas na conversa só valem como referência durante aquela sessão, salvo se estiverem arquivadas em local acessível e confirmadas.
+- Biblioteca comunitária de prompts pode ajudar a encontrar estilos, mas não é uma fonte narrativa.
 
-Conferir mãos e dedos, braços, pernas, pés, olhos, rostos, proporções e articulações. Evitar membros duplicados/faltantes, mãos fundidas, olhos desalinhados, rostos duplicados, corpos sobrepostos de modo ambíguo, personagens clonados sem motivo e elementos que atravessem molduras de forma acidental.
+## Layout pedagógico
 
-## Texto dentro da imagem
-
-Geradores podem errar texto. Sempre que possível, separar a criação da ilustração da diagramação final do texto. Se o texto for gerado dentro da imagem, revisar cada título, balão, legenda e painel; rejeitar letras deformadas, texto incompreensível, palavras inventadas ou títulos alterados. Não declarar legível sem inspecionar a imagem em resolução suficiente.
-
-## Método de geração
-
-A imagem pode ser criada diretamente no ChatGPT ou por CLI/ferramenta externa, desde que o recurso esteja realmente disponível e seja permitido pelo fluxo do template. Registrar no manifesto o método efetivamente utilizado. Não afirmar uso de CLI, skill, exportação ou salvamento sem evidência.
+Se o template pedir prancha pedagógica padrão, aplicar seus requisitos exatos (por exemplo, seis quadros e painéis inferiores). Caso contrário, adaptar a composição ao conteúdo.
