@@ -25,3 +25,7 @@ O segmento `<nome-historia>` deve ser o mesmo no arquivo narrativo e no manifest
 - Se uma dependência estiver ausente, pare e informe o bloqueio.
 - A existência de uma skill no GitHub não prova que o CLI, integração ou credenciais estejam operacionais.
 - Não mover nem apagar fontes canônicas sem migração planejada e verificada.
+
+## Regra de persistência obrigatória
+
+ChatGPT, agente ou pessoa com acesso autorizado ao GitHub deve manter o par narrativo/status sincronizado ao criar ou modificar uma história: `historias/historias-<nome-historia>.md` e `historias/status-criacao-historia.<nome-historia>.md`. Aplicar o protocolo de escrita e verificação de [Rota Geral](ROTA-GERAL.md). Sem acesso de escrita, não alegar que o repositório foi atualizado.
