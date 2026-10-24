@@ -1,37 +1,50 @@
 # Templates de produção
 
-Os templates são os pontos de entrada para cada tipo de produção visual. Cada template define coleção/testamento, objetivo narrativo, fonte de contexto, tipo de ativo, roteiro, regras visuais e validação específica.
+O catálogo oficial está em [`CATALOGO.md`](CATALOGO.md). Use somente IDs cujos arquivos existam na branch `main`.
 
-## Convenção de ID
+## Template disponível
 
-Use um identificador estável, legível e único:
-
-- `TPL-HNT-HISTORIA` — história ilustrada do Novo Testamento.
-- `TPL-HAT-HISTORIA` — história ilustrada do Antigo Testamento.
-- `TPL-HNT-SPRITE` — sprite derivado de conteúdo do Novo Testamento.
-- `TPL-HAT-SPRITE` — sprite derivado de conteúdo do Antigo Testamento.
-
-Esses IDs são a proposta de catálogo inicial. Para adicionar um template, criar seu arquivo e registrar no [catálogo](CATALOGO.md). Não reutilizar ID para um objetivo diferente.
+- `TPL-MOCKUP-HISTORIA` — mockup de uma história bíblica em estilo de quadrinhos; aceita coleção Novo ou Antigo Testamento. Arquivo: [`mockup-template.md`](mockup-template.md).
 
 ## Como executar
 
-O usuário informa o ID do template e o título/conteúdo a produzir, por exemplo:
-
 ```text
-Gerar com template TPL-HNT-HISTORIA
-Título: O anjo Gabriel aparece a Maria
+Gerar com template TPL-MOCKUP-HISTORIA
+Coleção: Antigo Testamento
+História: 001. Deus cria o mundo
 ```
 
-O template encaminha o agente à fonte narrativa da coleção e às regras globais/locais. O título é um identificador de trabalho, não permissão para inventar fatos. Se a narrativa oficial necessária não puder ser identificada sem ambiguidade, parar e pedir o dado mínimo ausente.
+Ou:
 
-## Conteúdo de cada template
+```text
+Gerar com template TPL-MOCKUP-HISTORIA
+Coleção: Novo Testamento
+História: 002. O anjo Gabriel aparece a Zacarias
+Método preferido: ChatGPT
+```
 
-Todo template deve declarar: ID/versão, coleção, ativo pretendido, entrada esperada, fontes canônicas, contexto, etapas do roteiro, regras de imagem, requisitos de quantidade, proibições, critérios de validação e formato do relatório final.
+O exemplo é apenas ilustrativo; antes da geração, confira o título e o conteúdo na fonte narrativa oficial. Não use um número/título de exemplo sem conferir a fonte.
 
-## Separação de responsabilidades
+## Como criar um novo template
 
-- O template da coleção determina narrativa e contexto.
-- Regras globais determinam integridade, skills e qualidade básica.
-- Regras específicas do ativo definem composição e requisitos técnicos.
-- A skill de geração é a execução técnica principal quando realmente acessível.
-- A validação decide aprovação; geração sozinha não aprova o resultado.
+Todo template deve declarar:
+
+1. ID único e versão;
+2. coleção e ativo;
+3. entrada obrigatória;
+4. fontes canônicas e caminhos atuais;
+5. roteiro de execução;
+6. regras visuais/técnicas e quantidade;
+7. critérios de validação;
+8. regras de status e relatório final.
+
+Depois de criar o arquivo, atualize `CATALOGO.md` e verifique todos os links. Não listar como disponível um template cujo arquivo não exista.
+
+## Responsabilidades
+
+- Fonte narrativa: fatos, personagens, acontecimentos e sequência.
+- Template: escopo, entrada, composição, execução e validação específica.
+- Roteador mestre: aponta para os documentos operacionais.
+- Rota geral: ordena o fluxo.
+- Skill: auxilia a execução técnica quando realmente disponível.
+- Manifesto de status: registra apenas estados confirmados.
