@@ -7,33 +7,36 @@ Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia 
 ## Roteamento obrigatório
 
 1. Leia [`regras/00-LEIA-PRIMEIRO.md`](regras/00-LEIA-PRIMEIRO.md).
-2. Consulte [`templates/CATALOGO.md`](templates/CATALOGO.md) e confirme que o Template ID está disponível.
-3. Abra o arquivo exato do template. No estado atual, o template disponível é [`templates/mockup-template.md`](templates/mockup-template.md), ID `TPL-MOCKUP-HISTORIA`.
-4. Consulte a fonte narrativa correspondente:
-   - Novo Testamento: [`historias/historia-novo-testamento.md`](historias/historia-novo-testamento.md).
-   - Antigo Testamento: [`historias/historias-antigo-testamento.md`](historias/historias-antigo-testamento.md).
-5. Consulte o manifesto de status aplicável, quando a tarefa exigir registro:
-   - [Status do Novo Testamento](historias/status-criacao-historia.novo-testamento.md).
-   - [Status do Antigo Testamento](historias/status-criacao-historia.antigo-testamento.md).
-   - Esquema: [`templates/status-criacao-historia.template.md`](templates/status-criacao-historia.template.md).
+2. Consulte [`templates/CATALOGO.md`](templates/CATALOGO.md) e confirme que o Template ID existe.
+3. Abra o arquivo exato do template selecionado. Para o mockup universal, use [`templates/mockup-template.md`](templates/mockup-template.md), ID `TPL-MOCKUP-UNIVERSAL`.
+4. Identifique a fonte narrativa correspondente na árvore atual do repositório: `historias/historias-<nome-historia>.md`. Não presuma que um arquivo existe só porque segue o padrão.
+5. Para tarefas rastreadas, identifique o manifesto par: `historias/status-criacao-historia.<nome-historia>.md`.
 6. Siga [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md), [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md), [padrão visual](regras/PADRAO-VISUAL-E-COMPOSICAO.md) e [validação final](regras/VALIDACAO-FINAL.md).
-7. Consulte referências visuais somente quando os arquivos estiverem realmente presentes e acessíveis.
+7. Consulte a documentação atual das skills externas e referências visuais quando acessíveis.
+
+## Contrato universal das fontes
+
+Para cada identificador estável `<nome-historia>`:
+
+- Narrativa: `historias/historias-<nome-historia>.md`
+- Status: `historias/status-criacao-historia.<nome-historia>.md`
+
+Use exatamente o mesmo identificador nos dois arquivos. O padrão não prova que o arquivo existe; verifique a árvore e leia o arquivo. Nunca associe uma narrativa a um manifesto de outra coleção.
 
 ## Precedência
 
-A fonte narrativa define os fatos; o template define o ativo e a composição; as regras definem o fluxo e a qualidade; a skill auxilia a execução técnica. Skills não podem contradizer a fonte ou o template.
+A narrativa canônica define fatos, personagens, acontecimentos e sequência. O template define o ativo e sua composição. As regras definem o fluxo. As skills apoiam a execução técnica e não podem contrariar as fontes anteriores.
 
 ## Integridade
 
-- Não inventar IDs, arquivos, fontes, imagens salvas, status, commits ou execução de ferramentas.
-- Se um destino estiver ausente ou ambíguo, parar e informar o bloqueio.
-- Não mover nem excluir fontes canônicas sem plano de migração e revisão de links.
-- Não afirmar que existem imagens de referência no GitHub: a estrutura atual não contém uma pasta de referências visuais catalogada.
+- Não inventar IDs, arquivos, fontes, imagens salvas, status, commits ou execuções de ferramentas.
+- Se uma fonte essencial estiver ausente ou inacessível, informar o bloqueio em vez de completar por memória.
+- Não afirmar que imagens de referência existem no GitHub sem verificar os arquivos.
 - Uma imagem exibida no chat não prova que foi salva no repositório.
 - Não aprovar um ativo sem inspeção real e confirmação do arquivo final.
 
 ## Política de mudança
 
-Atualizações comuns devem ocorrer nos templates, manifestos e regras especializadas. Para alterar este roteador, explicar o motivo, obter autorização explícita e conferir os links antes do commit.
+Atualizações comuns devem ocorrer nos templates, manifestos e regras especializadas. Alterar este roteador exige explicar o motivo, obter autorização explícita e conferir os links antes do commit.
 
-**Limite técnico:** a convenção não torna o arquivo imutável no GitHub. Para bloqueio técnico, configurar regras de proteção da branch e revisão obrigatória para alterações neste caminho.
+**Limite técnico:** esta convenção não torna o arquivo imutável no GitHub. Para bloqueio técnico, configure proteção da branch e revisão obrigatória para alterações neste caminho.
