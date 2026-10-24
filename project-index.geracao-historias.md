@@ -10,6 +10,7 @@
 - Catálogo: `templates/CATALOGO.md`
 - Template para aprovação visual: `templates/mockup-template.md`
 - Template ID: `TPL-MOCKUP-UNIVERSAL`
+- Imagem de mockup para validação: `mockups/mockup-template-universal.svg`
 
 ## Contrato universal das fontes
 
