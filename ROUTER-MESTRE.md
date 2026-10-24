@@ -27,6 +27,10 @@ Use exatamente o mesmo identificador nos dois arquivos. O padrão não prova que
 
 A narrativa canônica define fatos, personagens, acontecimentos e sequência. O template define o ativo e sua composição. As regras definem o fluxo. As skills apoiam a execução técnica e não podem contrariar as fontes anteriores.
 
+## Idioma
+
+O idioma padrão do projeto é português brasileiro (pt-BR), salvo pedido expresso de outro idioma. Toda produção textual deve passar por revisão de ortografia, acentuação, pontuação, concordância e legibilidade antes da aprovação.
+
 ## Integridade
 
 - Não inventar IDs, arquivos, fontes, imagens salvas, status, commits ou execuções de ferramentas.
