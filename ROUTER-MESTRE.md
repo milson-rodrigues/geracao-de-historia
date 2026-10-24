@@ -11,7 +11,7 @@ Repositório canônico: https://github.com/milson-rodrigues/geracao-de-historia 
 3. Consultar a fonte narrativa oficial indicada no template.
 4. Seguir [regras/ROTA-GERAL.md](regras/ROTA-GERAL.md).
 5. Aplicar [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md).
-6. Consultar regras globais, validação e status/manifesto somente quando aplicáveis e acessíveis.
+6. Consultar regras globais e validação. Para status, usar o manifesto específico da coleção: [Novo Testamento](status-criacao-historia.novo-testamento.md) ou [Antigo Testamento](status-criacao-historia.antigo-testamento.md), seguindo o esquema [status-criacao-historia.template.md](status-criacao-historia.template.md).
 
 ## Precedência
 
