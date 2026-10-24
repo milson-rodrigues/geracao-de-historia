@@ -1,38 +1,31 @@
 # Template para mockup visual — modelo universal
 
 - **Template ID:** `TPL-MOCKUP-UNIVERSAL`
-- **Versão:** 1.0.0
+- **Versão:** 1.0.1
 - **Estado:** AGUARDANDO APROVAÇÃO VISUAL DO USUÁRIO
-- **Finalidade:** criar uma imagem-mockup para o usuário avaliar a linguagem visual e a composição antes de gerar histórias reais.
-- **Escopo:** qualquer coleção/história declarada por uma fonte narrativa `historias/historias-<nome-historia>.md`.
+- **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
+- **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
 ## 1. Objetivo
 
-Gerar uma imagem de mockup representativa e reutilizável para validar o padrão gráfico. O mockup deve demonstrar como uma página de história combina ilustrações sequenciais, balões de fala e caixas retangulares de narração.
+Gerar uma página-mockup visual para o usuário avaliar. A linguagem deve combinar ilustrações sequenciais, **balões de fala** para diálogos e **caixas retangulares** para narração/contexto. O layout deve ser adaptável a histórias diferentes, sem impor uma quantidade fixa de quadros.
 
-Esta peça é de avaliação visual; não é uma história final aprovada, não deve ser marcada como concluída e não deve alterar o status de produção de uma história real.
+O mockup é uma proposta para aprovação visual, não uma história final aprovada. Não altera o status de produção de nenhuma história real.
 
 ## 2. Entrada
 
-Para criar o primeiro mockup, o responsável pode definir uma história de demonstração ou autorizar um exemplo visual sintético. Identifique claramente a fonte usada. Não apresente fatos, personagens ou falas inventados como conteúdo de uma história bíblica real.
+Definir o tema/título do mockup, e se usará uma história real ou uma demonstração visual genérica. Quando usar uma história real, informe o identificador da coleção ou o caminho da fonte. Método preferido pode ser ChatGPT ou ferramenta externa, conforme disponibilidade real.
 
-Definir antes de cada mockup:
-- coleção ou nome da história;
-- fonte narrativa oficial, se usar uma história real;
-- título de apresentação;
-- proporção/layout, se definido;
-- método preferido: ChatGPT ou ferramenta externa, conforme disponibilidade real.
+Se o tema não for definido, não atribua falas inventadas a figuras bíblicas identificáveis nem apresente elementos sintéticos como fatos canônicos. Identifique claramente a demonstração visual.
 
-Se o tema ainda não foi definido, usar uma demonstração visual genérica e não atribuir falas inventadas a figuras bíblicas identificáveis. Registrar que se trata de demonstração visual.
+## 3. Contrato universal de fontes
 
-## 3. Arquitetura universal de fontes
-
-Cada coleção/história deve seguir a convenção:
+Cada coleção/história deve usar o mesmo identificador estável nos dois arquivos:
 
 - Fonte narrativa: `historias/historias-<nome-historia>.md`
 - Manifesto de produção: `historias/status-criacao-historia.<nome-historia>.md`
 
-O identificador `<nome-historia>` deve ser estável, em minúsculas, sem espaços e preferencialmente com hífens. O mesmo identificador deve aparecer nos dois arquivos.
+O identificador deve ser igual nos dois caminhos, em minúsculas, sem espaços e preferencialmente separado por hífens.
 
 Exemplos atuais:
 - `historias/historias-novo-testamento.md`
@@ -40,79 +33,92 @@ Exemplos atuais:
 - `historias/historias-antigo-testamento.md`
 - `historias/status-criacao-historia.antigo-testamento.md`
 
-Novas coleções devem seguir a convenção sem exigir mudanças neste template. O agente deve descobrir o arquivo consultando a árvore atual do repositório GitHub e seguir os links do roteador/catálogo. Não inferir que um caminho existe apenas porque segue o padrão.
+O padrão de nome não prova que o arquivo existe. O agente deve consultar a árvore atual do GitHub, abrir os arquivos reais e verificar que narrativa e manifesto pertencem à mesma coleção. Não depender de nomes antigos ou de rotas memorizadas.
 
-## 4. Consulta obrigatória antes de gerar
+## 4. Leitura obrigatória antes de gerar
 
-1. Consultar a versão atual de `ROUTER-MESTRE.md` no repositório canônico.
+1. Consultar `ROUTER-MESTRE.md` no repositório canônico, na branch `main`.
 2. Ler `regras/00-LEIA-PRIMEIRO.md`.
-3. Consultar `templates/CATALOGO.md` e confirmar que este template está disponível.
-4. Ler a versão atual deste arquivo.
-5. Para uma história real, identificar e ler integralmente `historias/historias-<nome-historia>.md`.
-6. Consultar `historias/status-criacao-historia.<nome-historia>.md` se o trabalho envolver uma história rastreada.
+3. Verificar `templates/CATALOGO.md` e confirmar que `TPL-MOCKUP-UNIVERSAL` está disponível.
+4. Ler a versão atual deste template.
+5. Para uma história real, localizar e ler a fonte `historias/historias-<nome-historia>.md`.
+6. Se for tarefa de produção rastreada, ler o manifesto par `historias/status-criacao-historia.<nome-historia>.md`.
 7. Ler `regras/ROTA-GERAL.md`, `regras/SKILLS-E-RECURSOS.md`, `regras/PADRAO-VISUAL-E-COMPOSICAO.md` e `regras/VALIDACAO-FINAL.md`.
-8. Consultar a documentação atual das skills/ferramentas externas, especialmente a skill oficial Higgsfield no GitHub.
-9. Consultar referências visuais apenas quando realmente acessíveis. Anexos do chat não equivalem a arquivos salvos no repositório.
+8. Consultar documentação atual das skills externas no GitHub antes da geração.
+9. Usar referências visuais apenas quando realmente acessíveis. Uma imagem anexada ao chat não é automaticamente um arquivo no repositório.
 
-Se uma fonte essencial estiver ausente ou inacessível, declarar o bloqueio. Não preencher lacunas com memória ou suposições.
+Se qualquer fonte essencial estiver ausente ou inacessível, informar o bloqueio. Não preencher lacunas com memória ou suposições.
 
-## 5. Direção visual
+## 5. Direção visual universal
 
-A composição é universal e ajustável ao conteúdo, sem impor um número fixo de quadros a todos os tipos de história.
+- Layout de quadrinhos/graphic novel com sequência legível e quadros delimitados.
+- **Balões de fala** para falas de personagens; o bico do balão deve apontar para quem está falando.
+- **Caixas retangulares** para narração, lugar, contexto, passagem do tempo e resumo de ações.
+- Deixar clara a distinção entre fala e narração.
+- Composição adaptável à quantidade de cenas necessária; não impor seis quadros ou rodapé pedagógico sem exigência explícita.
+- Título com hierarquia visual clara.
+- Textos curtos, legíveis, com alto contraste e margens internas.
+- Não sobrepor texto a rostos, gestos ou objetos importantes.
+- Manter anatomia plausível, silhuetas claras, paleta equilibrada e continuidade visual.
+- A arte não pode introduzir fatos narrativos ausentes da fonte.
 
-- Página com leitura sequencial clara e quadros delimitados.
-- Ilustrações detalhadas, expressivas e consistentes ao longo da página.
-- **Balões de fala** para diálogos atribuídos à personagem que fala.
-- **Caixas retangulares** para narração, contexto, localização, passagem de tempo e ações descritas.
-- Texto curto, com alto contraste, português brasileiro correto e margens internas.
-- Balões e caixas organizados segundo a ordem de leitura, sem cobrir rostos ou ações importantes.
-- Título visível, hierarquia clara e espaço adequado para texto.
-- Se a tipografia gerada ficar deformada, preferir espaços limpos para compor o texto depois e registrar a limitação.
-- Paleta equilibrada, anatomia plausível, silhuetas claras e continuidade de personagens.
-- A direção artística não pode introduzir fatos narrativos ausentes da fonte.
+O primeiro mockup é avaliado sobretudo por legibilidade, hierarquia, composição, fluxo de leitura, adequação dos balões/retângulos e potencial de reutilização.
 
-O primeiro mockup destina-se à avaliação do usuário. Priorizar legibilidade, hierarquia, composição e distinção visual entre fala e narração, não a cobertura integral de uma história.
+## 6. Idioma obrigatório: português brasileiro
 
-## 6. Roteamento de geração
+Todo conteúdo editorial gerado pelo projeto deve estar em **português brasileiro (pt-BR)**, salvo pedido expresso de outro idioma. Isso se aplica a títulos, balões, narrações, legendas, painéis pedagógicos, instruções exibidas na imagem, documentação e relatório final.
 
-### Skill principal: Higgsfield
+Antes da geração e antes da aprovação, revisar:
+- ortografia e acentuação;
+- pontuação;
+- concordância nominal e verbal;
+- naturalidade do diálogo em português brasileiro;
+- consistência de nomes, termos e formas de tratamento;
+- texto que não corresponda ao que foi planejado.
 
-Fonte oficial: https://github.com/higgsfield-ai/skills  
-Skill de geração: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
+Não misturar formas brasileiras e europeias de maneira inconsistente. Não considerar texto deformado ou ilegível como aprovado. Se a ferramenta falhar ao renderizar letras, registrar a falha e, se viável, inserir o texto em uma etapa de diagramação posterior.
 
-Antes de cada execução, consultar a versão atual no GitHub e os documentos relevantes da skill. Não depender de cópia local desatualizada como fonte normativa. Confirmar que o CLI ou a integração está operacional antes de declarar execução.
+## 7. Skills e ferramentas
+
+### Principal: Higgsfield
+
+- Repositório oficial: https://github.com/higgsfield-ai/skills
+- Skill de geração: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
+
+Consultar a versão atual diretamente no GitHub antes de cada geração e ler as instruções relevantes. Uma cópia local pode estar desatualizada e não é a autoridade da versão. Confirmar que CLI/integração e credenciais estão realmente operacionais antes de declarar execução.
 
 ### Complemento: GPT Image 2 Prompt Library
 
-Repositório: https://github.com/freestylefly/awesome-gpt-image-2
+- Repositório: https://github.com/freestylefly/awesome-gpt-image-2
+- Skill: https://github.com/freestylefly/awesome-gpt-image-2/blob/main/agents/skills/gpt-image-2-style-library/SKILL.md
 
-Usar como biblioteca complementar de exemplos, estruturas de prompt e padrões visuais. Não é substituto da skill principal, da narrativa canônica nem das regras do projeto. Os exemplos devem ser avaliados quanto à relevância e adaptados, nunca copiados automaticamente.
+Usar quando útil para procurar exemplos e modelos de prompt por categoria, estilo, cena, composição e tratamento de texto. É uma biblioteca comunitária complementar, não substitui a narrativa, as regras do template ou a documentação oficial da ferramenta de geração. Adaptar exemplos ao objetivo e revisar o conteúdo em português brasileiro; não copiar automaticamente estruturas irrelevantes.
 
-### Ferramenta de saída
+### Método de saída
 
-A imagem poderá ser gerada no ChatGPT ou por ferramenta externa realmente disponível e autorizada. Registrar apenas a ferramenta usada. Um link para a ferramenta não comprova instalação ou execução.
+A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente disponível. Registrar apenas o método que foi de fato utilizado. Um link ou uma skill no GitHub não prova instalação ou execução.
 
-## 7. Quantidade e estado
+## 8. Quantidade e estado
 
-- Uma solicitação de mockup final deve resultar em uma única tentativa de saída final, com quantidade 1 quando suportada.
-- Não criar variantes/lotes sem solicitação explícita.
-- O estado do template permanece `AGUARDANDO APROVAÇÃO VISUAL DO USUÁRIO` até aprovação ou pedido de ajustes.
-- Não marcar a história usada como concluída: o mockup não representa a produção final.
-- Não afirmar que a imagem foi salva no GitHub sem confirmar arquivo e caminho.
+- Uma solicitação de mockup final = uma chamada destinada à saída final; usar quantidade 1 quando suportada.
+- Não gerar variantes/lotes sem solicitação explícita.
+- O estado permanece `AGUARDANDO APROVAÇÃO VISUAL DO USUÁRIO` até aprovação ou pedido de ajustes.
+- Não marcar a história demonstrativa como concluída.
+- Não afirmar salvamento no GitHub sem confirmar o arquivo e o caminho real.
 
-## 8. Checklist de aprovação
+## 9. Checklist de aprovação
 
-- [ ] O estilo atende ao uso pretendido.
-- [ ] Caixas retangulares são distintas dos balões.
-- [ ] É fácil identificar quem está falando.
-- [ ] A ordem de leitura é intuitiva.
-- [ ] Textos são legíveis ou há espaço para inseri-los depois.
-- [ ] A composição não está excessivamente carregada.
-- [ ] Anatomia, rostos e mãos não apresentam defeitos graves.
-- [ ] O layout pode adaptar-se a histórias diversas, sem ficar preso a seis quadros.
-- [ ] Conteúdo fictício não é apresentado como canônico.
-- [ ] Método de geração e estado do arquivo foram informados honestamente.
+- [ ] Linguagem visual adequada ao propósito.
+- [ ] Balões e caixas retangulares são visualmente distintos.
+- [ ] É fácil identificar quem fala e a ordem de leitura.
+- [ ] Texto em português brasileiro correto e legível, ou com áreas adequadas para composição posterior.
+- [ ] Layout pode adaptar-se a histórias diversas.
+- [ ] Composição tem hierarquia e espaço visual suficiente.
+- [ ] Anatomia, rostos, mãos e objetos não apresentam falhas graves.
+- [ ] Conteúdo sintético não é apresentado como fato canônico.
+- [ ] Fontes/skills e método real de geração estão registrados.
+- [ ] Estado de aprovação permanece pendente até a validação do usuário.
 
-## 9. Relatório
+## 10. Relatório
 
-Informar Template ID/versão, tema, fontes consultadas, versão da skill Higgsfield consultada, uso ou não da biblioteca GPT Image 2, ferramenta realmente utilizada, validação, estado da aprovação e caminho real do arquivo quando salvo.
+Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill Higgsfield consultada, uso (ou não) da biblioteca GPT Image 2, ferramenta efetivamente utilizada, resultado da inspeção, estado de aprovação e caminho real do arquivo caso tenha sido salvo.
