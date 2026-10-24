@@ -1,17 +1,26 @@
-# Estudo Bíblico — rota de trabalho
+# Estudo Bíblico — leia primeiro
 
-> **Fonte oficial:** repositório `milson-rodrigues/Historia-Novo-Testamento`, branch `main`.
+**Repositório canônico:** `milson-rodrigues/geracao-de-historia`, branch `main`.
 
-## Comece por aqui
+## Ordem de leitura
 
-1. Leia [README.md](../README.md) para entender a organização.
-2. Leia [ROTA-GERAL.md](ROTA-GERAL.md) para o fluxo de controle.
-3. Leia [SKILLS-E-RECURSOS.md](SKILLS-E-RECURSOS.md) antes de usar geração ou direção artística.
-4. Leia [PADRAO-VISUAL-E-COMPOSICAO.md](PADRAO-VISUAL-E-COMPOSICAO.md) e [VALIDACAO-FINAL.md](VALIDACAO-FINAL.md) quando a tarefa envolver uma prancha.
-5. Para gerar uma história, consulte também as fontes narrativas e o status no caminho apontado pelo README e pela rota operacional.
+1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) — ponto de entrada estável.
+2. [`README.md`](../README.md) — visão geral da estrutura.
+3. [`templates/CATALOGO.md`](../templates/CATALOGO.md) — verificar se o Template ID existe.
+4. O arquivo exato do template listado no catálogo.
+5. A fonte narrativa correspondente:
+   - [Novo Testamento](../historias/historia-novo-testamento.md)
+   - [Antigo Testamento](../historias/historias-antigo-testamento.md)
+6. O manifesto de status da coleção, se aplicável:
+   - [Novo Testamento](../historias/status-criacao-historia.novo-testamento.md)
+   - [Antigo Testamento](../historias/status-criacao-historia.antigo-testamento.md)
+7. [Rota geral](ROTA-GERAL.md), [skills e recursos](SKILLS-E-RECURSOS.md), [padrão visual](PADRAO-VISUAL-E-COMPOSICAO.md) e [validação](VALIDACAO-FINAL.md).
 
-## Regra de integridade
+## Regras de integridade
 
-Os documentos narrativos e de status atualmente mantidos na raiz são as fontes canônicas até uma migração explícita e verificada. Não invente diretórios `historias/` ou `imagens/` como se contivessem arquivos. Não mova, apague, duplique nem substitua fontes existentes sem plano de migração e atualização de todos os links.
-
-A rota principal de geração visual é a skill `higgsfield-generate`. Sua presença no repositório não prova que a ferramenta de geração, CLI ou credenciais estão disponíveis na sessão. Declare execução somente com evidência real.
+- Consulte a versão atual no GitHub antes de cada produção.
+- Não use caminhos antigos da raiz como se ainda fossem canônicos.
+- Não invente arquivos, IDs, imagens de referência, resultados de geração ou estados.
+- Se um destino essencial estiver ausente, pare e informe o bloqueio.
+- A presença de uma skill no repositório não prova que a ferramenta/CLI esteja operacional.
+- Não mova ou apague fontes canônicas sem migração planejada e verificada.
