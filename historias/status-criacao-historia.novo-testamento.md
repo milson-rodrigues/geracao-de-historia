@@ -1,19 +1,18 @@
 # Status de criação — Novo Testamento
 
-**Coleção:** Novo Testamento  
-**Fonte narrativa oficial:** [`historia-novo-testamento.md`](historia-novo-testamento.md)  
-**Esquema:** [`status-criacao-historia.template.md`](status-criacao-historia.template.md)  
-**Estado inicial deste manifesto:** estrutura criada; registros ainda não migrados nem validados neste arquivo.
+**Identificador da coleção:** `novo-testamento`  
+**Fonte narrativa oficial:** [`historias-novo-testamento.md`](historias-novo-testamento.md)  
+**Esquema de status:** [`templates/status-criacao-historia.template.md`](../templates/status-criacao-historia.template.md)
 
-## Regras específicas
+## Regras
 
-- Copiar ID e título exatamente da fonte narrativa oficial.
-- Não importar automaticamente estados do manifesto legado `status-criacao-historia.md`; comparar e migrar registros apenas após conferir a correspondência.
-- Não marcar uma história como aprovada sem imagem final acessível e inspeção documentada.
-- Registrar ChatGPT ou CLI apenas depois de confirmar qual método foi utilizado.
-- Manter a ordem numérica da fonte.
+- Este manifesto registra somente a coleção identificada como `novo-testamento`.
+- Copiar títulos/IDs da fonte narrativa; não inventar registros.
+- Geração não equivale a aprovação. Marcar como aprovada somente após inspeção e confirmação do arquivo.
+- Registrar o método efetivamente usado (ChatGPT ou ferramenta externa), sem alegar execuções inexistentes.
+- Não misturar status de outra coleção.
 
 ## Registros
 
-| ID | Título oficial | Referência bíblica | Estado | Método de geração | Prompt/execução | Arquivo final | Validação | Pendências/observações |
-|---:|---|---|---|---|---|---|---|---|
+| ID | Título oficial | Referência | Estado | Método de geração | Arquivo final | Validação | Pendências |
+|---:|---|---|---|---|---|---|---|
