@@ -99,3 +99,8 @@ O identificador `<nome-historia>` deve ser idêntico nos dois caminhos. Atualiza
 7. Se apenas um arquivo puder ser gravado, informar a inconsistência explicitamente e concluir a gravação do par antes de declarar a tarefa concluída. Não inventar status nem caminhos.
 
 A geração de uma imagem sem alteração da narrativa ainda exige atualizar o manifesto quando o estado de produção mudar. Não alterar a narrativa sem necessidade apenas para produzir um commit artificial. A criação de um novo registro de história exige criar o par de arquivos.
+
+
+## Proporção e qualidade padrão
+
+Se o template ou o usuário não determinar outra coisa, gerar em 16:9 horizontal com mínimo Full HD (1920 × 1080); preferir resolução nativa maior quando suportada. O formato vertical 9:16 (mínimo 1080 × 1920) só deve ser usado quando solicitado explicitamente. Consultar os modelos pareados em `mockups/` e manter claro qual é o padrão e qual é a variante. Antes de declarar qualidade, verificar as dimensões reais da saída raster. Para SVG, registrar a prancheta vetorial e as dimensões usadas na exportação.
