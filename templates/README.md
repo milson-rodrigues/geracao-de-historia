@@ -1,50 +1,32 @@
 # Templates de produção
 
-O catálogo oficial está em [`CATALOGO.md`](CATALOGO.md). Use somente IDs cujos arquivos existam na branch `main`.
+O catálogo oficial é [`CATALOGO.md`](CATALOGO.md). Use somente IDs cujo arquivo realmente exista na branch `main`.
 
 ## Template disponível
 
-- `TPL-MOCKUP-HISTORIA` — mockup de uma história bíblica em estilo de quadrinhos; aceita coleção Novo ou Antigo Testamento. Arquivo: [`mockup-template.md`](mockup-template.md).
+- `TPL-MOCKUP-UNIVERSAL` — imagem-mockup de história independente da coleção. Arquivo: [`mockup-template.md`](mockup-template.md).
 
-## Como executar
+## Convenção universal
 
-```text
-Gerar com template TPL-MOCKUP-HISTORIA
-Coleção: Antigo Testamento
-História: 001. Deus cria o mundo
-```
+Cada coleção/história deve ter dois arquivos com o mesmo identificador `<nome-historia>`:
 
-Ou:
+- Fonte narrativa: `historias/historias-<nome-historia>.md`
+- Manifesto de produção: `historias/status-criacao-historia.<nome-historia>.md`
 
-```text
-Gerar com template TPL-MOCKUP-HISTORIA
-Coleção: Novo Testamento
-História: 002. O anjo Gabriel aparece a Zacarias
-Método preferido: ChatGPT
-```
+O identificador deve ser estável, minúsculo, sem espaços, preferencialmente com hífens. Essa é uma convenção de nomes, não evidência de que o arquivo existe. Sempre consulte a árvore do repositório atual, os links do roteador e o conteúdo dos arquivos.
 
-O exemplo é apenas ilustrativo; antes da geração, confira o título e o conteúdo na fonte narrativa oficial. Não use um número/título de exemplo sem conferir a fonte.
+## Como criar uma nova coleção
 
-## Como criar um novo template
+1. Criar a fonte narrativa em `historias/historias-<nome-historia>.md`.
+2. Criar o manifesto correspondente em `historias/status-criacao-historia.<nome-historia>.md`.
+3. Confirmar que o identificador é idêntico nos dois caminhos.
+4. Atualizar índice/catalogação se aplicável e testar os links.
+5. Não copiar estados de outra coleção sem conferir cada registro.
 
-Todo template deve declarar:
+## Convenção para novos templates
 
-1. ID único e versão;
-2. coleção e ativo;
-3. entrada obrigatória;
-4. fontes canônicas e caminhos atuais;
-5. roteiro de execução;
-6. regras visuais/técnicas e quantidade;
-7. critérios de validação;
-8. regras de status e relatório final.
+Todo template declara ID/versão, escopo, entrada, fontes, execução, requisitos visuais/técnicos, quantidade, validação e relatório final. Após criar o arquivo, registrar no catálogo e validar todos os destinos.
 
-Depois de criar o arquivo, atualize `CATALOGO.md` e verifique todos os links. Não listar como disponível um template cujo arquivo não exista.
+## Idioma
 
-## Responsabilidades
-
-- Fonte narrativa: fatos, personagens, acontecimentos e sequência.
-- Template: escopo, entrada, composição, execução e validação específica.
-- Roteador mestre: aponta para os documentos operacionais.
-- Rota geral: ordena o fluxo.
-- Skill: auxilia a execução técnica quando realmente disponível.
-- Manifesto de status: registra apenas estados confirmados.
+Todo texto narrativo, balão, legenda, título, instrução visual e relatório destinado ao usuário final deve usar **português brasileiro**, salvo quando o usuário pedir outro idioma. Revisar ortografia, acentos, pontuação, concordância e consistência terminológica.
