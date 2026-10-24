@@ -14,7 +14,7 @@
 
 ## Fontes canônicas
 
-Usar o documento narrativo do Antigo Testamento atualmente existente em [historias-antigo-testamento.md](../../historias-antigo-testamento.md). Não presumir que a fonte tenha o mesmo esquema de IDs ou status do Novo Testamento. Antes da produção, verificar se há catálogo/status específico para esta coleção. Se faltar um controle necessário, registrar como pendência e não inventar uma linha.
+Usar o documento narrativo do Antigo Testamento atualmente existente em [historias-antigo-testamento.md](../../historias-antigo-testamento.md). Controlar o progresso em [status-criacao-historia.antigo-testamento.md](../../status-criacao-historia.antigo-testamento.md), usando o esquema [status-criacao-historia.template.md](../../status-criacao-historia.template.md). Não presumir que a fonte tenha o mesmo esquema de IDs ou status do Novo Testamento. Antes da produção, verificar se há catálogo/status específico para esta coleção. Se faltar um controle necessário, registrar como pendência e não inventar uma linha.
 
 Consultar também [rota geral](../../regras/ROTA-GERAL.md), [skills](../../regras/SKILLS-E-RECURSOS.md), [padrão visual](../../regras/PADRAO-VISUAL-E-COMPOSICAO.md) e [validação](../../regras/VALIDACAO-FINAL.md).
 
@@ -29,6 +29,12 @@ Consultar também [rota geral](../../regras/ROTA-GERAL.md), [skills](../../regra
 7. Roteamento técnico principal: `higgsfield-generate`, conforme [SKILLS-E-RECURSOS.md](../../regras/SKILLS-E-RECURSOS.md), se disponível.
 8. Fazer uma única chamada destinada a uma única prancha final; configurar quantidade 1 se suportada.
 9. Inspecionar e validar a imagem; registrar só resultados verificados.
+
+## Direção visual
+
+- Linguagem de quadrinhos bíblicos: balões para falas de personagens e caixas retangulares para narração/contexto; manter clara a distinção entre fala e narração.
+- Não inventar falas como citações bíblicas nem atribuir fala a personagem incorreta. Seguir a fonte narrativa oficial.
+- A imagem pode ser gerada no ChatGPT ou por CLI/ferramenta externa, se disponível. Registrar apenas o método realmente utilizado.
 
 ## Direção visual
 
