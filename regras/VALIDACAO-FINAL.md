@@ -1,28 +1,31 @@
-# Validação final da prancha
+# Validação final de ativos visuais
 
-A geração não equivale a aprovação. Preencha o checklist com evidências observadas na imagem final.
+A geração não equivale a aprovação. Preencha a checklist conforme o tipo de ativo e evidências observadas no arquivo final.
 
-## Checklist obrigatório
+## Checklist comum
 
-- [ ] Número e título coincidem com a entrada oficial e com o status.
-- [ ] A história retrata apenas os acontecimentos e personagens da entrada bloqueada, na sequência correta.
-- [ ] Não há mistura narrativa com outra história.
-- [ ] Existem exatamente seis quadros, organizados em duas fileiras de três.
-- [ ] Existem exatamente os três painéis inferiores: `O QUE APRENDEMOS`, `PERGUNTAS PARA A CRIANÇA`, `ORAÇÃO`.
-- [ ] Todos os textos estão em português brasileiro e são legíveis e coerentes.
-- [ ] Não há membros extras/faltantes, mãos/dedos graves, rostos/olhos duplicados ou anatomia quebrada.
-- [ ] Personagens estão visualmente distintos quando deveriam ser distintos e consistentes quando recorrentes.
-- [ ] Paleta não está excessivamente saturada; tons de pele, iluminação e contraste são adequados.
-- [ ] Continuidade visual respeita as referências aprovadas disponíveis.
-- [ ] Proporção e layout se aproximam do padrão horizontal; os painéis não estão cortados.
-- [ ] O arquivo está realmente salvo no caminho pretendido e pode ser aberto.
-- [ ] A linha de status existente foi atualizada e relida para confirmar o resultado.
+- [ ] Template ID, título, coleção e fonte correspondem ao pedido.
+- [ ] Os fatos, personagens e eventos seguem a fonte narrativa correta.
+- [ ] A composição é legível e apropriada ao tipo de ativo.
+- [ ] Balões de fala identificam corretamente quem está falando.
+- [ ] Caixas retangulares são usadas para narração/contexto.
+- [ ] Textos usam português brasileiro correto: ortografia, acentos, pontuação e concordância.
+- [ ] Não há texto deformado ou ininteligível apresentado como aprovado.
+- [ ] Anatomia, rostos, mãos e objetos não têm falhas graves.
+- [ ] Paleta, contraste e continuidade visual são coerentes.
+- [ ] Requisitos específicos do template foram atendidos.
+- [ ] O arquivo está realmente salvo e abre, quando se declara salvamento.
+- [ ] O manifesto da mesma coleção foi atualizado e relido, se houve alteração de status.
+
+## Para pranchas que exijam layout fixo
+
+Aplicar somente quando o template exigir seis quadros em grade 3×2 e três painéis inferiores (`O QUE APRENDEMOS`, `PERGUNTAS PARA A CRIANÇA`, `ORAÇÃO`). Não impor esse formato a um mockup universal ou a sprites por padrão.
 
 ## Decisão
 
-- **APROVADA:** todos os critérios críticos satisfeitos, arquivo confirmado e status confirmado.
-- **REPROVADA:** falha crítica narrativa, composição, texto ou qualidade visual. Não marcar como concluída.
-- **PENDENTE:** imagem aguardando avaliação ou falta evidência.
-- **BLOQUEADA:** fonte, acesso, ferramenta, salvamento ou outra dependência essencial indisponível.
+- **APROVADA:** critérios críticos atendidos e arquivo final inspecionado; salvamento confirmado se declarado.
+- **AJUSTES_NECESSARIOS:** falhas corrigíveis detectadas.
+- **PENDENTE:** aguardando avaliação ou evidência.
+- **BLOQUEADA:** fonte, ferramenta ou dependência essencial indisponível.
 
-Nunca marque `CONCLUIDA`/`APROVADA` com base apenas em uma imagem exibida no chat. Se não houver ferramenta de gravação no repositório, informe que o arquivo não foi salvo no GitHub e deixe o status coerente com a realidade.
+Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
