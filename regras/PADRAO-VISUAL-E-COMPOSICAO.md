@@ -32,3 +32,12 @@ Se o gerador deformar o texto, não considerar a imagem aprovada. Quando tecnica
 ## Layout pedagógico
 
 Se o template pedir prancha pedagógica padrão, aplicar seus requisitos exatos (por exemplo, seis quadros e painéis inferiores). Caso contrário, adaptar a composição ao conteúdo.
+
+
+## Proporção e resolução padrão
+
+- Se o usuário não especificar formato, produzir em **16:9 horizontal**.
+- A saída raster deve ter no mínimo **1920 × 1080 (Full HD)**; usar resolução nativa maior quando disponível e apropriada.
+- Produzir em **9:16 vertical, mínimo 1080 × 1920**, somente quando o usuário pedir explicitamente ou selecionar o template vertical.
+- Manter variantes nomeadas e lado a lado no diretório de mockups: `mockup-template-universal.svg` (padrão horizontal) e `mockup-template-universal-9x16.svg` (vertical).
+- Planejar primeiro as áreas de texto para que personagens, cenários, mãos e objetos não as encubram. O texto deve caber na composição, nunca ser escondido para caber na imagem.
