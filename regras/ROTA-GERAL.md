@@ -75,31 +75,31 @@ Geração não é aprovação. Não declarar caminho, salvamento, aprovação, c
 
 Relatório: Template ID/versão; título/coleção; fontes consultadas; versões de skills/documentação consultadas; método/ferramenta realmente usada; parâmetros/quantidade; validação; arquivo/caminho confirmado; mudança de status confirmada e pendências.
 
-## 10. Escrita obrigatória de volta no GitHub
+## 10. Registro e persistência no GitHub
 
-Esta regra vale para qualquer executor: ChatGPT, agente local, agente remoto ou pessoa, desde que tenha acesso autorizado ao GitHub. Não existe fluxo especial que permita criar ou alterar conteúdo narrativo e ignorar o registro canônico.
+O objetivo principal é gerar a imagem fiel à história. Criar uma cópia individual do roteiro no repositório é **opcional**, útil para rastreabilidade, e não deve bloquear a geração se a fonte canônica já estiver disponível e puder ser consultada.
 
-### Contrato de gravação pareada
+### Antes da geração
 
-Sempre que criar ou modificar uma história, atualizar os dois arquivos correspondentes:
+1. Verificar a árvore atual do GitHub e ler a fonte narrativa que contém a história.
+2. Se o usuário forneceu um arquivo `.md`, usar esse arquivo como fonte da tarefa; compará-lo com a fonte canônica quando houver uma correspondência clara.
+3. Não criar uma cópia individual automaticamente. Fazê-lo quando o usuário solicitar ou quando houver benefício concreto de rastreio e acesso de escrita.
+4. Nunca sobrescrever arquivo existente sem ler e preservar conteúdo não relacionado.
 
-1. Narrativa: `historias/historias-<nome-historia>.md`.
-2. Status: `historias/status-criacao-historia.<nome-historia>.md`.
+### Depois da geração
 
-O identificador `<nome-historia>` deve ser idêntico nos dois caminhos. Atualizar ambos na mesma tarefa e, sempre que possível, no mesmo commit. O arquivo de narrativa recebe o conteúdo narrativo revisado; o manifesto registra o estado real, a referência, as alterações e as pendências. Não substituir a narrativa por um resumo de status nem colocar o status apenas na narrativa.
+1. Se o estado da história mudou (por exemplo, imagem gerada, validada, aprovada ou com pendência), atualizar o manifesto de status da coleção correspondente, caso haja acesso autorizado ao GitHub.
+2. Se foi solicitada uma cópia individual, gravá-la em `historias/` com nome claro e origem indicada. Não usar a cópia como substituto silencioso da fonte canônica.
+3. Reabrir os arquivos alterados e confirmar conteúdo, caminho e commit antes de declarar que foram salvos.
+4. Se não houver acesso de escrita, fornecer o conteúdo ou diff e informar que a gravação está pendente. A geração da imagem não depende de criar a cópia opcional.
 
-### Protocolo de escrita
+### Convenção dos arquivos de rastreio
 
-1. Ler a versão atual de ambos os arquivos e verificar a árvore da branch de destino.
-2. Preservar conteúdo existente não relacionado e verificar se a história já existe; não criar duplicatas.
-3. Preparar as alterações dos dois arquivos, mantendo consistência entre título, identificador, referência e estado.
-4. Gravar os dois arquivos no GitHub com acesso autorizado. Se a ferramenta permitir apenas commits separados, registrar ambos e verificar os dois resultados.
-5. Reabrir os arquivos atualizados e confirmar o conteúdo, os caminhos e os commits. Só então informar que o GitHub foi atualizado.
-6. Se não houver acesso, autorização ou ferramenta funcional para gravar, não afirmar que os arquivos foram atualizados: fornecer o conteúdo/diff e marcar a gravação como pendente.
-7. Se apenas um arquivo puder ser gravado, informar a inconsistência explicitamente e concluir a gravação do par antes de declarar a tarefa concluída. Não inventar status nem caminhos.
+- Fontes de coleção: `historias/historias-<nome-colecao>.md`.
+- Manifestos de status por coleção: `historias/status-criacao-historia.<nome-colecao>.md`.
+- Cópia individual opcional: nome descritivo em `historias/`, sem sobrescrever arquivos existentes.
 
-A geração de uma imagem sem alteração da narrativa ainda exige atualizar o manifesto quando o estado de produção mudar. Não alterar a narrativa sem necessidade apenas para produzir um commit artificial. A criação de um novo registro de história exige criar o par de arquivos.
-
+O identificador de coleção deve ser consistente entre a fonte e o manifesto quando ambos existirem. Não inventar status nem commits.
 
 ## Proporção e qualidade padrão
 
