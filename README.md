@@ -20,7 +20,7 @@
 
 [`TPL-MOCKUP-UNIVERSAL`](templates/mockup-template.md) — mockup de história com balões de fala, caixas retangulares de narração e layout adaptável.
 
-**Direção visual aprovada pelo usuário:** banner de pergaminho, composição horizontal 16:9, seis quadros narrativos e três painéis pedagógicos, narração em caixas retangulares e diálogos em balões. O SVG atual ainda é vertical e precisa ser substituído para refletir a composição aprovada.
+**Direção visual aprovada:** padrão horizontal 16:9 (mínimo 1920 × 1080) e variante vertical 9:16 (mínimo 1080 × 1920, somente se solicitada). Os dois modelos estão juntos na pasta `mockups/`.
 
 ## Convenção universal das fontes
 
@@ -45,7 +45,8 @@ Arquivos canônicos presentes:
 | [`regras/00-LEIA-PRIMEIRO.md`](regras/00-LEIA-PRIMEIRO.md) | Ordem de consulta |
 | [`templates/CATALOGO.md`](templates/CATALOGO.md) | IDs disponíveis |
 | [`templates/mockup-template.md`](templates/mockup-template.md) | Template de mockup universal |
-| [`mockups/mockup-template-universal.svg`](mockups/mockup-template-universal.svg) | SVG legado vertical; substituir pela composição 16:9 aprovada |
+| [`mockups/mockup-template-universal.svg`](mockups/mockup-template-universal.svg) | Modelo principal 16:9, 1920 × 1080 |
+| [`mockups/mockup-template-universal-9x16.svg`](mockups/mockup-template-universal-9x16.svg) | Variante 9:16, 1080 × 1920; somente sob solicitação |
 | [`templates/status-criacao-historia.template.md`](templates/status-criacao-historia.template.md) | Esquema dos manifestos |
 | [`regras/ROTA-GERAL.md`](regras/ROTA-GERAL.md) | Fluxo operacional |
 | [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md) | Skills e recursos complementares |
