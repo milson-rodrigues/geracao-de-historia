@@ -43,3 +43,13 @@ O identificador deve ser igual, minúsculo, sem espaços e preferencialmente sep
 
 | ID | Título oficial | Referência | Estado | Método de geração | Prompt/execução | Arquivo final | Validação | Pendências |
 |---:|---|---|---|---|---|---|---|---|
+
+
+## Obrigação de sincronização com a narrativa
+
+Sempre que uma história for criada ou modificada, o executor deve atualizar também o arquivo narrativo pareado no GitHub. Não considerar concluída a tarefa até verificar os dois caminhos:
+
+- `historias/historias-<nome-historia>.md`
+- `historias/status-criacao-historia.<nome-historia>.md`
+
+O manifesto deve registrar apenas fatos confirmados. Para mudança narrativa, indicar brevemente o que foi alterado e manter referência/título coerentes com a fonte. Para avanço de produção visual, registrar o estado real e o caminho do ativo somente após verificar que existe. Se não houver acesso de escrita ao GitHub, declarar a gravação pendente e entregar o conteúdo para aplicação; nunca alegar sincronização.
