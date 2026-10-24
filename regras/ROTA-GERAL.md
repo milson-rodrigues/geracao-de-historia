@@ -1,69 +1,84 @@
-# ROTA-GERAL — Projeto Estudo Bíblico
+# Rota geral — produção por templates
 
-- Versão: 1.0.0
-- Status: regra operacional
-- Idioma: português brasileiro
-- Fonte oficial: branch `main` deste repositório
+**Versão:** 2.0.0  
+**Idioma:** português brasileiro  
+**Fonte:** branch `main` do repositório `milson-rodrigues/geracao-de-historia`.
 
-## Objetivo
+## 1. Objetivo
 
-Orientar a criação e validação consistente de pranchas ilustradas infantis, evitando erros anatômicos, repetição involuntária de pessoas/cenas, saturação fora do padrão, contaminação narrativa e registros falsos de conclusão.
+Organizar a geração de imagens e sprites por Template ID. Cada template define coleção, fonte narrativa, contexto, ativo pretendido, etapas, restrições e validação. Esta rota distribui o trabalho entre template, regras globais e skills; não substitui o conteúdo dos templates.
 
-## Estrutura oficial
+## 2. Entrada do fluxo
 
-- `historias/novo-testamento.md`: narrativa do Novo Testamento.
-- `historias/antigo-testamento.md`: narrativa do Antigo Testamento.
-- `regras/ROTA-GERAL.md`: este roteador.
-- `regras/PADRAO-VISUAL.md`: direção visual canônica.
-- `regras/VALIDACAO-ANATOMICA.md`: critérios de anatomia.
-- `regras/VALIDACAO-VISUAL.md`: cor, contraste, pele, iluminação e legibilidade.
-- `regras/CONTINUIDADE-PERSONAGENS.md`: identidade consistente de personagens.
-- `regras/ANTI-REPETICAO.md`: duplicações e contaminação entre histórias.
-- `regras/ROTEIRO-E-COMPOSICAO.md`: seis quadros e três painéis pedagógicos.
-- `regras/VALIDACAO-FINAL.md`: checklist de aprovação/reprovação.
-- `regras/SKILLS-E-REFERENCIAS.md`: fontes externas e requisitos de disponibilidade.
-- `status-criacao-historia.md`: registro oficial de progresso.
-- `imagens/`: destino dos ativos finais aprovados e referências visuais canônicas.
+O usuário deve informar, no mínimo, o Template ID e o título/nome do que será produzido. Exemplos:
 
-Os documentos existentes na raiz serão preservados durante a transição. Não mova, apague ou renomeie arquivos existentes sem revisar links e dependências.
+```text
+Gerar com template TPL-HNT-HISTORIA
+Título: O anjo Gabriel aparece a Maria
+```
 
-## Ordem obrigatória antes de qualquer geração
+```text
+Gerar com template TPL-HNT-SPRITE
+Elemento: Maria — sprite individual
+História de origem: O anjo Gabriel aparece a Maria
+```
 
-1. Identificar exatamente testamento/coleção e número solicitado.
-2. Ler diretamente no GitHub, na branch `main`, a fonte narrativa aplicável e `status-criacao-historia.md`.
-3. Ler este roteador e os documentos especializados listados acima. Se algum arquivo ainda não existir ou não puder ser lido, registrar o bloqueio; não afirmar que foi consultado.
-4. Comparar número e título literal entre fonte e status. Se houver divergência, parar.
-5. Verificar estado de produção e existência do arquivo canônico. Respeitar o fluxo de mockup/aprovação definido nas regras atuais. Não sobrescrever nem apagar imagem aprovada sem autorização.
-6. Quando acessíveis, inspecionar visualmente as referências oficiais 001 e 002. Referências visuais determinam estilo, nunca conteúdo narrativo.
-7. Criar o bloco `ROTEIRO BLOQUEADO`: número, título literal, personagens, locais, eventos, sequência, seis títulos de quadros, seis legendas e texto dos três painéis inferiores. Incluir uma lista explícita de elementos proibidos de histórias vizinhas.
-8. Validar o roteiro contra a fonte antes de gerar.
-9. Verificar que a ferramenta real de geração está disponível. Consultar a skill principal atual somente se o recurso e a ferramenta estiverem realmente acessíveis. Nunca fingir instalação, execução ou controle de quantidade.
-10. Executar uma única chamada por comando, uma única prancha. Definir quantidade 1 se houver parâmetro. Sem lote, variações, chamadas paralelas ou retry automático.
-11. Inspecionar o resultado usando `VALIDACAO-ANATOMICA.md`, `VALIDACAO-VISUAL.md`, `ANTI-REPETICAO.md`, `PADRAO-VISUAL.md` e `VALIDACAO-FINAL.md`.
-12. Se houver falha material, rejeitar e parar; relatar o erro e aguardar um novo comando explícito. Não tentar corrigir por geração automática.
-13. Salvar apenas no destino canônico, se a ferramenta permitir, depois de validar. Atualizar apenas a linha existente do status (ou aplicar a regra oficial para registro ausente); confirmar cada operação realmente executada.
-14. Informar resultado real, arquivo/path confirmado e qualquer etapa pendente. Exibir uma imagem no chat não prova salvamento.
+Consulte primeiro [templates/CATALOGO.md](../templates/CATALOGO.md). Se o ID não existir, estiver duplicado ou não corresponder ao tipo de ativo solicitado, pare e informe. Não selecione silenciosamente outro template.
 
-## Bloqueios obrigatórios
+## 3. Ordem obrigatória de consulta
 
-Parar sem gerar se:
-- GitHub/branch principal ou arquivos oficiais estiverem inacessíveis;
-- número/título divergir entre fonte e status;
-- houver outro processo registrado como `EM_GERACAO`;
-- existir imagem final sem registro e não for possível reconciliar com segurança;
-- skill/ferramenta for requisito explícito da solicitação e não estiver disponível;
-- as regras visuais especializadas exigidas não puderem ser consultadas.
+1. `README.md` e `templates/CATALOGO.md`.
+2. Template exato do catálogo.
+3. Arquivo narrativo da coleção.
+4. Status específico, se existir e o template disser que se aplica.
+5. `regras/SKILLS-E-RECURSOS.md`.
+6. Regras globais de composição/validação e quaisquer anexos apontados pelo template.
+7. Skills externas atuais aplicáveis, com evidência real de consulta e disponibilidade.
+8. Referências visuais/técnicas, somente se o arquivo realmente existir e estiver acessível.
 
-Se a geração estiver disponível por outra ferramenta real, a indisponibilidade de uma skill opcional não deve ser escondida: informar a limitação e só prosseguir se o procedimento permitir.
+Se o arquivo necessário não puder ser consultado, relatar o bloqueio. Não tratar memória, links ou nomes de arquivos como evidência de conteúdo acessível.
 
-## Fonte de verdade e precedência
+## 4. Separação de fontes de verdade
 
-1. Arquivo narrativo correspondente define o que contar.
-2. `status-criacao-historia.md` decide se pode iniciar e qual é o estado atual.
-3. Regras especializadas em `regras/` definem controles de composição e qualidade.
-4. Referências visuais aprovadas definem apenas estilo e continuidade visual.
-5. Skills externas apoiam a execução e não podem contrariar as regras anteriores.
+- **Fonte narrativa:** determina fatos, personagens, acontecimentos, cenário narrativo, sequência e ensinamento.
+- **Template:** determina entrada, contexto de produção, formato do ativo, etapas e critérios específicos.
+- **Regras globais:** determinam integridade, roteamento, limitações, qualidade e registro.
+- **Skill:** ajuda a executar o processo técnico quando disponível; não pode alterar conteúdo narrativo nem substituir as exigências do template.
+- **Status/manifesto de ativos:** determina o estado apenas se existir, estiver atualizado e tiver relação explícita com o tipo de ativo. Não usar o status legado do Novo Testamento para presumir estado de outros templates ou sprites.
 
-## Regra de integridade
+## 5. Porta de entrada e bloqueios
 
-Não inventar consulta, skill, chamada, validação, salvamento ou atualização. Uma conclusão só é válida quando a imagem final foi visualmente validada, o arquivo foi salvo no destino canônico e o status foi atualizado com confirmação.
+Antes da chamada de geração, validar:
+- Template ID e versão;
+- coleção e fonte narrativa correta;
+- título/elemento sem ambiguidade;
+- contexto e sequência bloqueados;
+- requisitos técnicos do ativo definidos;
+- status/autorização, quando o template usar controle de progresso;
+- skill/ferramenta e parâmetros disponíveis.
+
+Se faltar informação que altera materialmente o resultado — por exemplo, sprite individual versus sprite sheet, transparência, quantidade de frames, dimensões ou perspectiva — faça uma pergunta objetiva antes de gerar. Não invente o dado.
+
+## 6. Skill routing obrigatório
+
+- **Principal para geração:** `higgsfield-generate` do repositório https://github.com/higgsfield-ai/skills, no caminho https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md.
+- Consultar a versão atual a cada execução de geração quando a fonte estiver acessível. Se não estiver, seguir apenas uma alternativa explicitamente permitida no template e declarar a limitação.
+- A cópia `.agents/skills/higgsfield-generate/SKILL.md` é uma cópia de trabalho; não prova disponibilidade de CLI, integração, credenciais ou execução.
+- `taste-skill` é complementar para direção artística; `open-design` é opcional para exploração visual.
+- Nunca declarar que instalou, consultou ou executou skill sem evidência.
+
+## 7. Uma saída final por solicitação
+
+Para uma solicitação de ativo final, fazer uma única chamada destinada à saída final e configurar quantidade 1 quando houver controle. Não criar variantes, lotes ou chamadas paralelas, salvo se o template aprovado especificar explicitamente outra coisa. Se o gerador não permitir controlar quantidade, informar. Se retornar vários resultados apesar da configuração, não aprovar todos automaticamente.
+
+## 8. Padrão visual e validação
+
+Aplicar as regras específicas do template primeiro, junto às regras globais em [PADRAO-VISUAL-E-COMPOSICAO.md](PADRAO-VISUAL-E-COMPOSICAO.md) e [VALIDACAO-FINAL.md](VALIDACAO-FINAL.md). Não aplicar o layout de prancha 3×2 a sprites quando isso for incompatível com o template.
+
+Validar contra o tipo de ativo solicitado: fidelidade, composição, anatomia, continuidade, cor, legibilidade e/ou requisitos de sprite. Separar validação editorial de validação técnica.
+
+## 9. Registro e encerramento
+
+Não declarar arquivo salvo, caminho, aprovação, commit ou status atualizado sem comprovação. Não sobrescrever ativo aprovado sem autorização. Se a ferramenta não permitir salvar no repositório, entregar o artefato e registrar claramente que o upload/registro continua pendente.
+
+Relatório final: Template ID/versão; título/elemento; fontes consultadas; skill/ferramenta realmente usada; parâmetros/quantidade; resultado da validação; arquivo e caminho reais; mudanças de status realmente confirmadas; pendências.
