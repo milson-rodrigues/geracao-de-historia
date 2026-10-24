@@ -8,6 +8,12 @@
 
 </div>
 
+## Fluxo de criação
+
+![Fluxo de criação de histórias em quadrinhos](docs/fluxo-criacao-historia.svg)
+
+O fluxo acima vale para ChatGPT e agentes. A cópia individual do roteiro no GitHub é opcional; a consulta à fonte narrativa e às regras atuais antes da geração é obrigatória.
+
 ## Como começar
 
 1. Leia [`ROUTER-MESTRE.md`](ROUTER-MESTRE.md).
