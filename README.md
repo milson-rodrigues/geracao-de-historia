@@ -24,12 +24,9 @@
 
 ## Convenção universal das fontes
 
-Para cada identificador `<nome-historia>`, mantenha o par de arquivos:
+As narrativas de coleção ficam em `historias/historias-<nome-colecao>.md`. O status de produção pode ser registrado em `historias/status-criacao-historia.<nome-colecao>.md`. Consulte sempre a árvore e o conteúdo atuais do GitHub.
 
-- **Narrativa:** `historias/historias-<nome-historia>.md`
-- **Status:** `historias/status-criacao-historia.<nome-historia>.md`
-
-O segmento deve ser idêntico nos dois nomes, em minúsculas, sem espaços e preferencialmente separado por hífens. Confirme os caminhos na árvore atual do GitHub; não presuma que arquivos existem apenas porque seguem o padrão.
+Copiar um roteiro individual para `historias/` é opcional: facilita o rastreio, mas não é obrigatório para gerar a imagem. Se o usuário fornecer um arquivo Markdown, ele pode ser usado como roteiro da tarefa. Atualize o manifesto quando o estado de produção mudar e houver acesso autorizado; registre apenas fatos confirmados.
 
 Arquivos canônicos presentes:
 - [`historias/historias-novo-testamento.md`](historias/historias-novo-testamento.md)
