@@ -8,19 +8,19 @@
 - Roteador estável: `ROUTER-MESTRE.md`
 - Primeiro leia: `regras/00-LEIA-PRIMEIRO.md`
 - Catálogo: `templates/CATALOGO.md`
-- Template atual para aprovação visual: `templates/mockup-template.md`
+- Template para aprovação visual: `templates/mockup-template.md`
 - Template ID: `TPL-MOCKUP-UNIVERSAL`
 
-## Contrato universal de fontes
+## Contrato universal das fontes
 
 - Narrativa: `historias/historias-<nome-historia>.md`
 - Status: `historias/status-criacao-historia.<nome-historia>.md`
 
-Use o mesmo `<nome-historia>` em ambos, confirme os arquivos na árvore atual do GitHub e leia seus conteúdos antes de qualquer geração. Fontes que já existem:
-- `historias/historia-novo-testamento.md`
+Use o mesmo identificador em ambos. Caminhos confirmados atualmente:
+- `historias/historias-novo-testamento.md`
+- `historias/status-criacao-historia.novo-testamento.md`
 - `historias/historias-antigo-testamento.md`
-
-O primeiro caminho ainda usa o nome legado singular `historia-novo-testamento.md`. Não o renomear sem migração planejada dos links, status e referências. Para novos arquivos, aplicar a convenção universal `historias/historias-<nome-historia>.md`.
+- `historias/status-criacao-historia.antigo-testamento.md`
 
 ## Regras de trabalho
 
@@ -37,6 +37,10 @@ O primeiro caminho ainda usa o nome legado singular `historia-novo-testamento.md
 - Taste Skill, quando útil: https://github.com/Leonxlnx/taste-skill
 - Open Design, opcional: https://github.com/nexu-io/open-design
 
+## Idioma
+
+Todo texto editorial do projeto deve ser escrito em português brasileiro (pt-BR), com revisão de ortografia, acentuação, pontuação, concordância e legibilidade do texto dentro das imagens.
+
 ## Estado atual
 
-O mockup universal aguarda aprovação visual do usuário. Não presumir que a imagem de mockup está no GitHub até confirmar um arquivo salvo. Coleções e status devem permanecer separados e rastreáveis.
+O mockup universal aguarda aprovação visual do usuário. Não presumir que a imagem de mockup está no GitHub até confirmar um arquivo salvo. Coleções e status permanecem separados e rastreáveis.
