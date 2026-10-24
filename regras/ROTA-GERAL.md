@@ -19,7 +19,7 @@ Consulte primeiro [`templates/CATALOGO.md`](../templates/CATALOGO.md). Se o ID n
 1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) e [`regras/00-LEIA-PRIMEIRO.md`](00-LEIA-PRIMEIRO.md).
 2. Catálogo e template exato.
 3. Fonte narrativa atual: `historias/historias-<nome-historia>.md`.
-4. Manifesto da mesma coleção: `historias/status-criacao-historia.<nome-historia>.md), se aplicável.
+4. Manifesto da mesma coleção: `historias/status-criacao-historia.<nome-historia>.md`, se aplicável.
 5. Regras de skills, visual e validação.
 6. Documentação atual da skill/ferramenta principal no repositório oficial, quando acessível.
 7. Recursos complementares aprovados pelo template, por exemplo a biblioteca `awesome-gpt-image-2`.
