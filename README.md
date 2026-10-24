@@ -68,3 +68,8 @@ A biblioteca complementar ajuda a descobrir estilos e estruturar prompts; não s
 ## Integridade
 
 Não inventar fontes, imagens salvas, status ou resultados. Uma imagem exibida no chat não prova que foi salva no GitHub. Não marcar um ativo aprovado sem inspeção real e validação do usuário quando requerida.
+
+
+## Cópias locais de skills
+
+A pasta `.agents/skills/` contém arquivos locais de apoio e pode ficar defasada. Para qualquer produção, consulte primeiro a versão atual publicada no repositório oficial indicado em `regras/SKILLS-E-RECURSOS.md`. Não trate a cópia local como autoridade de versão e não declare uma ferramenta operacional apenas pela presença de arquivos locais.
