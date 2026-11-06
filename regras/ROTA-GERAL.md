@@ -16,13 +16,15 @@ Consulte primeiro [`templates/CATALOGO.md`](../templates/CATALOGO.md). Se o ID n
 
 ## 3. Regra de bloqueio — consulta obrigatória ao GitHub
 
+O `ROUTER-MESTRE.md` é o ponto de entrada estável e não deve receber alterações rotineiras. Ele encaminha para `regras/00-LEIA-PRIMEIRO.md`, que governa a sequência de consulta. Este documento define os detalhes da produção; não substitui nem reescreve a rota de entrada. Atualizações operacionais devem ocorrer aqui ou nas regras/templates especializados.
+
 Toda nova solicitação de produção começa com consulta direta ao repositório canônico no GitHub, branch `main`. Repetir a consulta em cada solicitação/sessão. Memória, contexto de conversas anteriores, cópias locais e instruções antigas não substituem a versão atual.
 
 Não iniciar geração sem concluir a ordem de consulta, confirmar os arquivos e ler a narrativa oficial. Se o GitHub ou uma fonte essencial estiver indisponível, interromper e informar o bloqueio; não completar lacunas por suposição.
 
 ## 3. Ordem obrigatória de consulta
 
-1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) e [`regras/00-LEIA-PRIMEIRO.md`](00-LEIA-PRIMEIRO.md).
+1. `ROUTER-MESTRE.md` já consultado como ponto de entrada; seguir [`regras/00-LEIA-PRIMEIRO.md`](00-LEIA-PRIMEIRO.md).
 2. Catálogo e template exato.
 3. Fonte narrativa atual: `historias/historias-<nome-historia>.md`.
 4. Manifesto da mesma coleção: `historias/status-criacao-historia.<nome-historia>.md`, se aplicável.
