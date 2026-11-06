@@ -113,3 +113,19 @@ O relatório final deve informar, conforme aplicável: Template ID/versão, tít
 Este é o documento mutável de configuração operacional. Atualize-o quando o fluxo, a ordem de consulta, o roteamento de ferramentas ou as regras transversais mudarem. Atualize também os documentos especializados afetados e verifique consistência dos links.
 
 **Não altere o `ROUTER-MESTRE.md` para mudanças operacionais comuns.** Ele permanece como bootstrap estável e aponta para este guia.
+
+
+## 12. Gate de confirmação e proibição de prévia antecipada
+
+**Nenhuma imagem deve ser gerada, pesquisada ou exibida como prévia antes de resolver ambiguidades materiais e concluir as verificações obrigatórias.**
+
+1. Primeiro, concluir a consulta ao GitHub, a leitura das fontes, a identificação do template, a verificação do manifesto e a preparação do conteúdo.
+2. Se houver ambiguidade que altere materialmente o ativo — por exemplo, mockup/prancha em quadrinhos versus ilustração única, sprite individual versus sprite sheet, transparência, dimensões ou quantidade de frames — apresentar uma pergunta objetiva com as alternativas necessárias e aguardar a resposta.
+3. Enquanto aguarda confirmação, não chamar ferramenta de geração de imagem, não pesquisar imagens para ilustrar a resposta e não exibir imagens de referência como se fossem prévias do resultado.
+4. Não produzir uma imagem demonstrativa para tentar explicar a diferença entre opções. Descrever as opções em texto.
+5. Quando o pedido e o template já definirem inequivocamente a saída, não pedir confirmação redundante: seguir diretamente para a única geração final autorizada.
+6. Depois da confirmação (quando necessária), fazer uma única chamada de geração destinada ao ativo final, com quantidade 1 quando suportada. Não gerar rascunhos, thumbnails, testes visuais ou variações intermediárias.
+7. Imagens externas só podem ser pesquisadas/exibidas quando o usuário pedir explicitamente referências visuais ou pesquisa de imagens. Identificá-las claramente como referências externas, com origem; nunca apresentá-las como resultado gerado.
+8. Não usar imagens com marcas d'água ou de terceiros como se fossem ativos produzidos pelo projeto. A presença de uma imagem na resposta não comprova geração, validação ou salvamento.
+
+A sequência obrigatória é: **consulta e validação das fontes → resolver ambiguidades e obter confirmação quando necessária → preparar conteúdo/prompt → uma geração final → inspeção e validação → registro textual de status autorizado**.
