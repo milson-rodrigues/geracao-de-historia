@@ -58,3 +58,16 @@ Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
 - [ ] Se a ferramenta oferecer resolução nativa maior adequada, foi considerada/preferida.
 - [ ] Arquivo salvo sob o nome e caminho corretos, sem confundir as duas variantes de mockup.
 - [ ] O texto permanece legível e totalmente desobstruído pelos personagens e elementos de cena.
+
+
+## Gate de pré-geração — validação obrigatória
+
+- [ ] Consulta ao GitHub, fontes, template e manifesto concluída antes de qualquer operação visual.
+- [ ] Tipo de saída e requisitos materiais estão inequívocos; se não estavam, a pergunta foi feita em texto e a confirmação foi recebida.
+- [ ] Nenhuma ferramenta de geração foi chamada antes da confirmação necessária.
+- [ ] Nenhuma imagem ilustrativa, thumbnail, rascunho ou referência externa foi pesquisada/exibida como prévia não solicitada.
+- [ ] Se referências externas foram explicitamente solicitadas, estão identificadas como referências, com origem, e não como resultado gerado.
+- [ ] Foi realizada apenas uma chamada de geração final, com quantidade 1 quando suportada.
+- [ ] Nenhuma imagem com marca d'água ou de terceiros foi apresentada como ativo gerado pelo projeto.
+
+Falha em qualquer item aplicável impede classificar o ativo como aprovado.
