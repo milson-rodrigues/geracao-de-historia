@@ -41,7 +41,7 @@ Antes de gerar, consultar o manifesto e procurar o ID exato da história. Se já
 
 O idioma padrão é português brasileiro (pt-BR). Aplicar as regras atuais de skills, direção visual, proporção, requisitos pedagógicos e validação definidas no guia operacional, no template e nos documentos especializados.
 
-Uma skill publicada não prova que a ferramenta esteja instalada, conectada ou operacional. Declarar somente o método efetivamente utilizado. Geração não equivale a aprovação.
+A ferramenta principal para geração é a ferramenta nativa de imagens do GPT personalizado, quando disponível na sessão. Higgsfield não é dependência obrigatória e sua indisponibilidade não bloqueia a geração nativa. Declarar somente o método efetivamente utilizado. Geração não equivale a aprovação.
 
 ## 7. Estado e persistência
 
@@ -60,4 +60,4 @@ Não gerar, pesquisar nem exibir imagens de prévia antes de concluir a consulta
 
 Esclarecer somente requisitos especiais que não estejam definidos e que alterem materialmente a prancha, como proporção excepcional ou exigências específicas de composição. Pedidos explícitos de sprites são tratados pelo template correspondente. Enquanto uma informação realmente necessária estiver pendente, não chamar gerador de imagens, não pesquisar imagens ilustrativas e não exibir referências visuais.
 
-Com a história identificada e as fontes verificadas, preparar e realizar uma única geração final da prancha em quadrinhos, quantidade 1 quando suportada. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
+Com a história identificada e as fontes verificadas, preparar e realizar uma única geração final da prancha em quadrinhos pela ferramenta nativa de imagens do GPT personalizado, quantidade 1 quando suportada. Não exigir Higgsfield. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
