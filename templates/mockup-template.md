@@ -1,9 +1,9 @@
-# Template para mockup visual — modelo universal
+# Template de prancha em quadrinhos — modelo universal
 
 - **Template ID:** `TPL-MOCKUP-UNIVERSAL`
-- **Versão:** 1.1.1
+- **Versão:** 1.2.0
 - **Estado:** DIREÇÃO VISUAL APROVADA PELO USUÁRIO
-- **Finalidade:** produzir uma imagem-mockup para validar a linguagem visual e a composição antes da produção de histórias finais.
+- **Finalidade:** produzir a prancha final ilustrada de cada história bíblica, seguindo a direção visual de referência aprovada pelo usuário.
 - **Escopo:** qualquer coleção que possua uma fonte `historias/historias-<nome-historia>.md`.
 
 ## Artefatos vetoriais sincronizados no GitHub
@@ -12,9 +12,9 @@ A direção visual foi aprovada pelo usuário: banner superior de pergaminho, se
 
 ## 1. Objetivo
 
-Gerar uma página-mockup visual para o usuário avaliar. A linguagem deve combinar ilustrações sequenciais, **balões de fala** para diálogos e **caixas retangulares** para narração/contexto. O layout deve ser adaptável a histórias diferentes, sem impor uma quantidade fixa de quadros.
+Gerar a prancha final da história, pronta para leitura e avaliação. A linguagem deve combinar ilustrações sequenciais, **balões de fala** para diálogos e **caixas retangulares** para narração/contexto. O layout deve ser adaptável a histórias diferentes, sem impor uma quantidade fixa de quadros.
 
-A direção visual do mockup está aprovada; isso não aprova histórias finais, textos narrativos nem imagens produzidas para histórias específicas. Não altera o status de produção de nenhuma história real.
+A direção visual de referência está aprovada. Cada prancha de história continua exigindo validação própria.
 
 ## 2. Entrada
 
@@ -22,7 +22,7 @@ Entrada natural recomendada: **“Gere a imagem da história. Título: 001 - Deu
 
 Localize a história no repositório antes de gerar. Se o usuário só informar o título, procure correspondência exata na coleção apropriada. Se houver mais de uma correspondência ou a coleção for necessária para decidir a fonte, pergunte apenas o detalhe que falta. Se o roteiro não existir no GitHub nem tiver sido fornecido, peça a fonte em vez de inventar contexto.
 
-O método pode ser ChatGPT ou ferramenta externa, conforme disponibilidade real. Mockups demonstrativos sem história real devem ser identificados como demonstração, não como narrativa canônica.
+Usar a ferramenta nativa de geração de imagens do GPT personalizado. Não criar mockups demonstrativos quando o usuário solicitar uma história real.
 
 ## 3. Contrato universal de fontes
 
@@ -34,14 +34,14 @@ O padrão de nome não prova que um arquivo existe. Consulte a árvore atual do 
 
 ## 4. Leitura obrigatória antes de gerar
 
-1. Consultar `ROUTER-MESTRE.md` no repositório canônico, na branch `main`.
+1. Consultar `ROUTER-MESTRE.md` no repositório canônico, na branch `main`, e seguir o guia mutável `00_GUIA-DE-CONFIGURACAO.md`.
 2. Ler `regras/00-LEIA-PRIMEIRO.md`.
 3. Verificar `templates/CATALOGO.md` e confirmar que `TPL-MOCKUP-UNIVERSAL` está disponível.
 4. Ler a versão atual deste template.
 5. Para uma história real, localizar e ler a fonte narrativa atual que contém o número e o título solicitados; normalmente é uma coleção `historias/historias-<nome-colecao>.md` ou um roteiro fornecido pelo usuário.
 6. Ler o manifesto de status da coleção se existir e for relevante para o estado da produção. Sua ausência não bloqueia a geração quando a fonte narrativa é suficiente.
 7. Ler `regras/ROTA-GERAL.md`, `regras/SKILLS-E-RECURSOS.md`, `regras/PADRAO-VISUAL-E-COMPOSICAO.md` e `regras/VALIDACAO-FINAL.md`.
-8. Consultar documentação atual das skills externas no GitHub antes da geração.
+8. Usar a ferramenta nativa de geração de imagens do GPT personalizado; skills externas são opcionais e não bloqueiam a execução.
 9. Usar referências visuais apenas quando realmente acessíveis. Uma imagem anexada ao chat não é automaticamente um arquivo no repositório.
 
 Se qualquer fonte essencial estiver ausente ou inacessível, informar o bloqueio. Não preencher lacunas com memória ou suposições.
@@ -59,7 +59,7 @@ Se qualquer fonte essencial estiver ausente ou inacessível, informar o bloqueio
 - Manter anatomia plausível, silhuetas claras, paleta equilibrada e continuidade visual.
 - A arte não pode introduzir fatos narrativos ausentes da fonte.
 
-O primeiro mockup é avaliado sobretudo por legibilidade, hierarquia, composição, fluxo de leitura, adequação dos balões/retângulos e potencial de reutilização.
+A prancha final é avaliada por fidelidade narrativa, legibilidade, hierarquia, composição, fluxo de leitura, continuidade dos personagens e qualidade da ilustração.
 
 ## 6. Idioma obrigatório: português brasileiro
 
@@ -110,10 +110,10 @@ Se GitHub ou fonte essencial estiver inacessível, bloquear a geração e inform
 
 ## 8. Quantidade e estado
 
-- Uma solicitação de mockup final = uma chamada destinada à saída final; usar quantidade 1 quando suportada.
+- Uma solicitação de história = uma única chamada destinada à prancha final; usar quantidade 1 quando suportada.
 - Não gerar variantes/lotes sem solicitação explícita.
 - A direção visual do template está aprovada. Cada imagem final de história continua exigindo validação própria.
-- Não marcar a história demonstrativa como concluída.
+- Não classificar como aprovada sem inspecionar a prancha final.
 - Não enviar, commitar ou armazenar imagens finais no GitHub. O manifesto textual pode ser atualizado quando autorizado.
 - Não afirmar salvamento em qualquer destino sem confirmar o arquivo e o caminho real.
 
@@ -132,7 +132,7 @@ Se GitHub ou fonte essencial estiver inacessível, bloquear a geração e inform
 
 ## 10. Relatório
 
-Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill Higgsfield consultada, uso (ou não) da biblioteca GPT Image 2, ferramenta efetivamente utilizada, resultado da inspeção, estado de aprovação e caminho real do arquivo caso tenha sido salvo.
+Informar Template ID/versão, história/coleção, fontes consultadas, ferramenta efetivamente utilizada, resultado da inspeção, estado de aprovação e caminho real do arquivo caso tenha sido salvo.
 
 
 ## Regras de composição aprovadas
@@ -171,3 +171,35 @@ Neste projeto, toda solicitação de geração de uma história bíblica tem com
 - Perguntar apenas sobre requisitos especiais não definidos que alterem materialmente a prancha, como proporção excepcional ou composição específica.
 - Após escopo definido e todas as fontes verificadas, fazer uma única geração final, quantidade 1 quando suportada.
 - Imagens externas só podem ser exibidas como referências quando solicitadas explicitamente; devem ser identificadas como externas e nunca confundidas com resultado gerado.
+
+
+## 13. Layout de referência aprovado — prancha final
+
+Usar a imagem de referência fornecida pelo usuário nesta configuração como especificação visual. O arquivo da referência não precisa ser armazenado no GitHub; as regras abaixo tornam o padrão reproduzível.
+
+### Estrutura obrigatória da página
+
+1. **Canvas:** uma única prancha horizontal 16:9, ocupando toda a imagem, sem moldura de interface, fundo de aplicativo ou margens pretas externas.
+2. **Cabeçalho superior:** faixa larga de pergaminho envelhecido, centralizada, com número da história e título em destaque; referência bíblica logo abaixo ou na mesma faixa. Elementos decorativos discretos nas extremidades podem enquadrar o pergaminho.
+3. **Área narrativa:** exatamente seis quadros, organizados em grade de três colunas por duas linhas. Todos os quadros devem ter dimensões visuais equilibradas, bordas bem definidas e gutters regulares.
+4. **Texto dos quadros:** cada quadro recebe uma caixa de narração em pergaminho claro, preferencialmente na parte superior, com texto curto e legível. A caixa não pode encobrir rostos, mãos ou ação essencial. Usar balão de fala somente quando a fonte justificar diálogo; não inventar falas bíblicas.
+5. **Sequência:** leitura da esquerda para a direita e de cima para baixo. Os seis quadros representam seis momentos distintos e cronológicos da história, sem repetir cena apenas para preencher espaço.
+6. **Faixa pedagógica inferior:** três painéis alinhados horizontalmente, com mesma altura e hierarquia visual:
+   - **O QUE APRENDEMOS:** síntese de 3 a 4 ensinamentos específicos da história.
+   - **PERGUNTAS PARA A CRIANÇA:** pelo menos três perguntas específicas, curtas e legíveis.
+   - **ORAÇÃO:** oração desenvolvida, normalmente 4 a 7 frases, encerrada exatamente por “Em nome de Jesus, Amém!”.
+7. **Identidade dos painéis inferiores:** cabeçalho colorido próprio para cada painel (verde para aprendizados, vermelho/terracota para perguntas, azul para oração), ícone temático simples à esquerda e fundo em tom claro de pergaminho. Manter contraste e coerência com a paleta geral.
+8. **Moldura e acabamento:** borda externa fina em tom escuro terroso; papel/pergaminho como linguagem de interface; ilustração narrativa rica, com acabamento de quadrinhos/graphic novel, luz cinematográfica e cenários contextualizados.
+9. **Paleta:** tons quentes e naturais, saturação moderada a viva sem aparência neon; céu, vegetação e paisagem podem ter cores expressivas. Evitar aparência excessivamente lavada ou cinzenta.
+10. **Continuidade:** manter personagens reconhecíveis entre quadros (rosto, idade aparente, cabelo, roupa e acessórios). Não misturar personagens ou eventos de outras histórias.
+
+### Regras de conteúdo e legibilidade
+
+- Planejar e revisar todo o texto antes da chamada de geração.
+- Não colocar texto genérico de placeholder, instruções de template ou títulos como “NARRAÇÃO” dentro da prancha final.
+- O cabeçalho deve usar o número e o título oficiais exatamente como aparecem na fonte.
+- Referências bíblicas devem corresponder à história solicitada; não ampliar referências sem base na fonte.
+- As caixas de narração podem resumir os tópicos da fonte em linguagem infantil, mas não podem acrescentar fatos.
+- Distribuir a narrativa em seis momentos coerentes. Se a fonte contiver menos de seis acontecimentos explícitos, decompor visualmente momentos existentes sem inventar novos eventos.
+- A imagem de referência define a composição e a linguagem visual, não os personagens, textos ou fatos da história usada como exemplo.
+- Se o texto não couber com legibilidade, simplificar a redação sem perder fatos essenciais ou apresentar o conteúdo completo junto da imagem; nunca eliminar perguntas ou encurtar indevidamente a oração.
