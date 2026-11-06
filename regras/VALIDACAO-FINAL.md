@@ -63,7 +63,8 @@ Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
 ## Gate de pré-geração — validação obrigatória
 
 - [ ] Consulta ao GitHub, fontes, template e manifesto concluída antes de qualquer operação visual.
-- [ ] Tipo de saída e requisitos materiais estão inequívocos; se não estavam, a pergunta foi feita em texto e a confirmação foi recebida.
+- [ ] A saída de história foi tratada como prancha em quadrinhos, sem perguntar se o usuário prefere ilustração única.
+- [ ] Requisitos especiais não definidos que alterem materialmente a prancha foram esclarecidos antes da geração, quando aplicável.
 - [ ] Nenhuma ferramenta de geração foi chamada antes da confirmação necessária.
 - [ ] Nenhuma imagem ilustrativa, thumbnail, rascunho ou referência externa foi pesquisada/exibida como prévia não solicitada.
 - [ ] Se referências externas foram explicitamente solicitadas, estão identificadas como referências, com origem, e não como resultado gerado.
