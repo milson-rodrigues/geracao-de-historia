@@ -18,6 +18,16 @@ Coleção: antigo-testamento
 
 O usuário também pode fornecer um arquivo `.md` com o roteiro ou indicar um arquivo de história existente. Não obrigar o usuário a decorar Template IDs ou nomes internos. Se o formato solicitado não estiver claro, confirmar apenas o detalhe que impede a execução.
 
+## Regra de bloqueio: GitHub primeiro
+
+**Toda solicitação de produção deve começar pela consulta ao repositório canônico no GitHub, branch `main`.** Essa consulta é obrigatória em toda sessão e em toda nova história/ativo; não reutilizar rotas, templates, fontes narrativas, manifestos ou instruções lembrados de conversas anteriores como substitutos da versão atual.
+
+- Confirmar acesso ao repositório e ler este roteador atualizado.
+- Seguir integralmente a ordem de consulta abaixo e o fluxo descrito nos documentos referenciados.
+- Confirmar existência, conteúdo e correspondência de cada arquivo antes de usá-lo.
+- Se GitHub, fonte essencial, template ou manifesto aplicável estiver inacessível, interromper a produção e informar exatamente o bloqueio. Não gerar com base em memória, cópia local antiga ou contexto presumido.
+- Não iniciar geração enquanto a identificação da história, a leitura narrativa e a verificação de duplicidade/status não estiverem concluídas.
+
 ## Rota obrigatória antes da geração
 
 1. Leia [regras/00-LEIA-PRIMEIRO.md](regras/00-LEIA-PRIMEIRO.md).
@@ -26,12 +36,18 @@ O usuário também pode fornecer um arquivo `.md` com o roteiro ou indicar um ar
    - [Novo Testamento](historias/historias-novo-testamento.md)
    - [Antigo Testamento](historias/historias-antigo-testamento.md)
    Não presuma que essa lista é completa; novas coleções podem ser acrescentadas.
-4. Identifique a entrada exata pelo número e título. Preserve os fatos, personagens, referência bíblica e sequência; não invente acontecimentos para preencher quadros.
+4. Identifique a entrada exata pelo número e título. Preserve os fatos, personagens, referência bíblica e sequência; não invente acontecimentos para preencher quadros. Consulte o manifesto de status da coleção e verifique se já existe registro gerado, validado ou aprovado. Se houver registro, não gere novamente sem solicitação explícita de nova versão. Se o manifesto estiver ausente, vazio ou incompleto, trate o histórico como desconhecido; não conclua que a história nunca foi produzida.
 5. Leia [regras/ROTA-GERAL.md](regras/ROTA-GERAL.md), [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md), [regras/PADRAO-VISUAL-E-COMPOSICAO.md](regras/PADRAO-VISUAL-E-COMPOSICAO.md) e [regras/VALIDACAO-FINAL.md](regras/VALIDACAO-FINAL.md).
 6. Consulte no GitHub a versão atual das skills e documentações externas indicadas, principalmente [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md) e, como complemento, [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2). Verifique se a ferramenta necessária está realmente disponível antes de afirmar que a usou.
 7. Gere uma única imagem final por pedido, salvo solicitação explícita de variações. Por padrão, 16:9 horizontal e Full HD mínimo (1920 × 1080); 9:16 vertical somente quando pedido.
 8. Revise contexto, sequência, composição, falas, balões, caixas de narração, ortografia pt-BR, legibilidade e resolução real.
-9. Se houver acesso autorizado ao GitHub, atualize o manifesto de status correspondente quando o estado de produção mudar e confirme a gravação. A cópia individual do roteiro é opcional. Nunca diga que salvou algo sem verificar.
+9. As imagens finais geradas devem permanecer fora do GitHub: não fazer upload, commit ou armazenamento de imagens no repositório. Se houver acesso autorizado, atualize somente registros textuais de status quando o estado mudar e confirme a gravação. A cópia individual do roteiro é opcional. Nunca diga que salvou algo sem verificar.
+
+## Saída e conteúdo pedagógico obrigatório
+
+Para histórias bíblicas destinadas a crianças, incluir no conteúdo editorial pelo menos três perguntas de compreensão/reflexão, específicas da história, e uma oração desenvolvida, normalmente com 4 a 7 frases, em linguagem infantil e relacionada ao ensinamento narrado. A oração deve terminar exatamente com: **“Em nome de Jesus, Amém!”**. Não usar perguntas genéricas repetidas mecanicamente.
+
+As imagens finais não devem ser armazenadas no GitHub. O repositório mantém fontes, templates, regras e registros textuais; a imagem entregue no chat ou em outro destino autorizado não deve ser confundida com um arquivo versionado.
 
 ## Fonte narrativa e cópia opcional
 
