@@ -1,0 +1,115 @@
+# 00_GUIA-DE-CONFIGURACAO.md — guia operacional mutável
+
+**Função:** concentrar o fluxo operacional vigente para produção de histórias em quadrinhos, mockups e sprites neste repositório.
+
+**Repositório canônico:** `milson-rodrigues/geracao-de-historia`, branch `main`.
+
+**Ponto de entrada estável:** [ROUTER-MESTRE.md](ROUTER-MESTRE.md). Este guia é a fonte operacional mutável. Atualizações de processo devem ocorrer aqui ou nos documentos especializados, nunca no roteador mestre durante manutenção rotineira.
+
+## 1. Regra de consulta obrigatória
+
+Toda solicitação de produção começa pela consulta direta ao GitHub, branch `main`. Repetir a consulta a cada nova solicitação; memória, conversas anteriores, cópias locais e instruções antigas não substituem os arquivos atuais.
+
+Se o GitHub, a fonte narrativa, o template ou outra dependência essencial estiver inacessível, interromper a produção e informar o bloqueio. Não gerar por suposição nem preencher lacunas com memória.
+
+## 2. Ordem de consulta
+
+Para cada produção:
+
+1. Ler este guia atualizado no GitHub.
+2. Consultar a árvore atual do repositório e ler [README.md](README.md) quando necessário para entender a estrutura.
+3. Ler [templates/CATALOGO.md](templates/CATALOGO.md) e confirmar que o Template ID existe e corresponde ao tipo de ativo.
+4. Ler o arquivo exato do template selecionado. Para mockup universal, consultar [templates/mockup-template.md](templates/mockup-template.md), Template ID `TPL-MOCKUP-UNIVERSAL`.
+5. Localizar e ler integralmente a fonte narrativa oficial em `historias/` ou o roteiro fornecido pelo usuário. Confirmar número, título, coleção, referência bíblica, personagens, fatos e sequência.
+6. Consultar o manifesto de status aplicável à coleção, quando existir, e verificar o identificador exato para evitar repetição.
+7. Ler as regras especializadas aplicáveis:
+   - [regras/00-LEIA-PRIMEIRO.md](regras/00-LEIA-PRIMEIRO.md) — ponte de compatibilidade/entrada legada;
+   - [regras/ROTA-GERAL.md](regras/ROTA-GERAL.md);
+   - [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md);
+   - [regras/PADRAO-VISUAL-E-COMPOSICAO.md](regras/PADRAO-VISUAL-E-COMPOSICAO.md);
+   - [regras/VALIDACAO-FINAL.md](regras/VALIDACAO-FINAL.md).
+8. Consultar a versão atual das skills e documentações externas indicadas, especialmente [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md). Verificar a disponibilidade real da ferramenta antes de declarar que foi utilizada.
+9. Aplicar os requisitos específicos do template, gerar e validar o ativo.
+10. Atualizar somente registros textuais de status quando houver mudança real, autorização e acesso de escrita. Reabrir o arquivo e confirmar a gravação.
+
+Não ler o repositório inteiro por padrão. Consultar apenas os arquivos exigidos pelo fluxo e suas dependências.
+
+## 3. Identificação e prevenção de duplicidade
+
+- Não inventar Template IDs. Se o ID não existir no catálogo ou não corresponder ao ativo solicitado, parar e informar.
+- Identificar a história pelo número/ID e título oficial na fonte narrativa; não usar apenas semelhança de título.
+- Consultar o manifesto da coleção antes de gerar.
+- Se a história já estiver registrada como gerada, validada ou aprovada, não gerar novamente sem solicitação explícita de nova versão.
+- Manifesto ausente, vazio ou incompleto significa histórico desconhecido; não prova que a história nunca foi produzida.
+- Se o histórico for desconhecido e a prevenção de repetição for material, esclarecer com o usuário antes de prosseguir.
+
+## 4. Autoridade das fontes
+
+1. **Fonte narrativa canônica:** fatos, personagens, acontecimentos, referência e sequência.
+2. **Template selecionado:** tipo de ativo, contexto, composição e requisitos específicos.
+3. **Regras do projeto:** qualidade, idioma, integridade e validação.
+4. **Skills/documentação de ferramentas:** execução técnica; não podem contradizer as fontes anteriores.
+5. **Manifesto de status:** estado de produção confirmado; não é fonte narrativa.
+
+Se o usuário fornecer um roteiro, ele pode ser usado como fonte da tarefa. Não substituir silenciosamente a fonte canônica; sinalizar divergências relevantes.
+
+## 5. Requisitos editoriais para histórias bíblicas infantis
+
+Para cada história bíblica destinada a crianças:
+
+- Incluir pelo menos **três perguntas** específicas dos fatos e ensinamentos da história. Variar entre compreensão, reflexão e aplicação; não repetir perguntas genéricas mecanicamente.
+- Incluir uma **oração desenvolvida**, normalmente com 4 a 7 frases, em linguagem infantil e relacionada à narrativa.
+- A oração deve terminar exatamente com **“Em nome de Jesus, Amém!”**.
+- Não remover perguntas nem encurtar a oração para acomodar a imagem. Reorganizar a composição ou apresentar o conteúdo completo junto da imagem.
+
+## 6. Imagens, armazenamento e quantidade
+
+- Imagens finais geradas devem permanecer fora do GitHub. Não fazer upload, commit ou armazenamento de imagens no repositório.
+- O GitHub mantém fontes narrativas, templates, regras e registros textuais autorizados.
+- Uma imagem exibida no chat não prova que foi salva em outro destino.
+- Uma solicitação de ativo final corresponde a uma única geração final, quantidade 1 quando suportada. Não criar lotes ou variações, salvo pedido explícito.
+- Não sobrescrever ativo aprovado sem autorização.
+- Não afirmar salvamento, caminho, resolução ou aprovação sem evidência verificável.
+
+## 7. Proporção e qualidade
+
+- Padrão: horizontal 16:9, mínimo raster de 1920 × 1080.
+- Vertical 9:16 somente quando solicitado explicitamente, mínimo raster de 1080 × 1920.
+- Preferir resolução nativa maior quando a ferramenta suportar e for adequada.
+- Conferir dimensões reais do arquivo final; não inferir resolução pela aparência.
+- Seguir a composição e as exceções definidas no template específico. Não impor layout fixo de uma prancha a sprites ou outros ativos.
+
+## 8. Skills e ferramentas
+
+- Consultar a versão atual da skill oficial [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md) antes da geração.
+- Consultar [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) como complemento de direção artística e estruturação de prompts, quando relevante.
+- Taste Skill e Open Design são complementares/opcionais, conforme [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md).
+- Documentação pública ou presença de arquivos não prova que CLI, integração, credenciais ou ferramenta estejam operacionais.
+- Declarar somente a ferramenta e o método realmente utilizados.
+
+## 9. Validação
+
+Aplicar [regras/VALIDACAO-FINAL.md](regras/VALIDACAO-FINAL.md) e os critérios do template. Verificar, conforme o ativo:
+
+- fidelidade à fonte e sequência narrativa;
+- contexto, personagens e continuidade;
+- composição, silhueta, anatomia e legibilidade;
+- balões, caixas de narração e ordem de leitura;
+- ortografia, acentuação, pontuação e naturalidade em pt-BR;
+- perguntas e oração completas, quando aplicáveis;
+- dimensões e proporção reais;
+- ausência de falhas críticas.
+
+Geração não equivale a aprovação. Usar os estados definidos na regra de validação e não marcar como aprovado sem inspeção real.
+
+## 10. Status, persistência e relatório
+
+Atualizar o manifesto textual da coleção somente quando o estado mudar de fato, houver autorização e o acesso de escrita estiver disponível. Registrar apenas fatos confirmados. Depois da gravação, reler o arquivo e confirmar conteúdo, caminho e commit.
+
+O relatório final deve informar, conforme aplicável: Template ID/versão, título/elemento e coleção, fontes consultadas, skill/documentação consultada, ferramenta realmente utilizada, parâmetros e quantidade, validação, caminho real do arquivo se salvo fora do GitHub, alteração de status confirmada e pendências.
+
+## 11. Manutenção deste guia
+
+Este é o documento mutável de configuração operacional. Atualize-o quando o fluxo, a ordem de consulta, o roteamento de ferramentas ou as regras transversais mudarem. Atualize também os documentos especializados afetados e verifique consistência dos links.
+
+**Não altere o `ROUTER-MESTRE.md` para mudanças operacionais comuns.** Ele permanece como bootstrap estável e aponta para este guia.
