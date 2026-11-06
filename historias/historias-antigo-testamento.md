@@ -1500,5 +1500,4 @@ ser tratada como uma lista oficial de 232 histórias, nem como uma
 transcrição de outro repositório. Antes de ampliar a coleção, revise a
 cobertura dos livros do Antigo Testamento, a distribuição entre
 narrativas e textos poéticos/proféticos, a numeração e as referências
-bíblicas. As histórias devem ser redigidas em texto, sem geração de
-imagens, salvo se o escopo for alterado explicitamente.
+bíblicas. Este arquivo é a fonte canônica dos fatos, personagens, títulos, referências e sequência narrativa. A produção de pranchas ilustradas em quadrinhos, quando solicitada pelo usuário, segue o template e as regras visuais/operacionais do projeto; esta nota editorial não constitui bloqueio à geração de imagens.
