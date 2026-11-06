@@ -117,10 +117,12 @@ Este é o documento mutável de configuração operacional. Atualize-o quando o 
 
 ## 12. Gate de confirmação e proibição de prévia antecipada
 
-**Nenhuma imagem deve ser gerada, pesquisada ou exibida como prévia antes de resolver ambiguidades materiais e concluir as verificações obrigatórias.**
+**Toda solicitação de criação de história bíblica neste projeto significa produzir uma prancha em quadrinhos.** Esse formato é padrão fixo e não deve ser questionado nem comparado com a opção de ilustração única.
+
+Nenhuma imagem deve ser gerada, pesquisada ou exibida como prévia antes de concluir as verificações obrigatórias.
 
 1. Primeiro, concluir a consulta ao GitHub, a leitura das fontes, a identificação do template, a verificação do manifesto e a preparação do conteúdo.
-2. Se houver ambiguidade que altere materialmente o ativo — por exemplo, mockup/prancha em quadrinhos versus ilustração única, sprite individual versus sprite sheet, transparência, dimensões ou quantidade de frames — apresentar uma pergunta objetiva com as alternativas necessárias e aguardar a resposta.
+2. Não perguntar se o usuário deseja prancha em quadrinhos ou ilustração única: para histórias, a saída é sempre uma prancha em quadrinhos. Perguntar somente sobre lacunas realmente não definidas que alterem materialmente a prancha (por exemplo, proporção diferente do padrão ou requisitos especiais). Pedidos explícitos de sprites seguem o template de sprite correspondente e podem exigir esclarecimentos próprios.
 3. Enquanto aguarda confirmação, não chamar ferramenta de geração de imagem, não pesquisar imagens para ilustrar a resposta e não exibir imagens de referência como se fossem prévias do resultado.
 4. Não produzir uma imagem demonstrativa para tentar explicar a diferença entre opções. Descrever as opções em texto.
 5. Quando o pedido e o template já definirem inequivocamente a saída, não pedir confirmação redundante: seguir diretamente para a única geração final autorizada.
@@ -128,4 +130,4 @@ Este é o documento mutável de configuração operacional. Atualize-o quando o 
 7. Imagens externas só podem ser pesquisadas/exibidas quando o usuário pedir explicitamente referências visuais ou pesquisa de imagens. Identificá-las claramente como referências externas, com origem; nunca apresentá-las como resultado gerado.
 8. Não usar imagens com marcas d'água ou de terceiros como se fossem ativos produzidos pelo projeto. A presença de uma imagem na resposta não comprova geração, validação ou salvamento.
 
-A sequência obrigatória é: **consulta e validação das fontes → resolver ambiguidades e obter confirmação quando necessária → preparar conteúdo/prompt → uma geração final → inspeção e validação → registro textual de status autorizado**.
+A sequência obrigatória para histórias é: **consulta e validação das fontes → preparar a prancha em quadrinhos e seu conteúdo → esclarecer apenas requisitos especiais não definidos → uma geração final → inspeção e validação → registro textual de status autorizado**.
