@@ -145,3 +145,19 @@ Resumo obrigatório: canvas 16:9 sem interface externa; cabeçalho de pergaminho
 A imagem de referência determina somente o estilo e a composição. Não copiar o conteúdo da história que aparece nela. A narrativa oficial do GitHub determina integralmente os fatos, personagens e sequência.
 
 **A coleção Antigo Testamento também segue este padrão visual de produção.** A nota editorial da fonte narrativa é contextual e não deve ser interpretada como bloqueio à produção de pranchas solicitadas pelo usuário; a política operacional de produção está neste guia.
+
+
+## 14. Proibição de imagens soltas e de resultados substitutos
+
+Em uma solicitação de história bíblica, **não gerar, buscar, anexar ou exibir imagens isoladas de cenas, paisagens, personagens ou referências visuais como resposta parcial**. O usuário solicitou uma prancha completa, não imagens avulsas.
+
+- Não usar pesquisa de imagens, resultados de sites, imagens de bancos externos, miniaturas, galerias ou componentes de imagem para ilustrar a resposta.
+- Não produzir uma imagem de criação mundial, céu, mar, personagem ou qualquer cena individual como substituto de uma prancha.
+- Não exibir duas ou mais imagens independentes para sugerir que a prancha foi produzida.
+- A única saída visual autorizada para uma solicitação de história é **uma única imagem final contendo a prancha completa**, com cabeçalho, seis quadros e os três painéis pedagógicos definidos no template.
+- A geração deve ser feita pela ferramenta nativa de geração de imagens do próprio GPT personalizado. Não substituir essa chamada por pesquisa web, imagens externas, SVG demonstrativo ou descrição textual acompanhada de imagens.
+- Se a ferramenta nativa não estiver disponível ou falhar, informar claramente que a prancha não foi gerada. Não preencher a resposta com imagens ilustrativas, resultados externos ou prévias.
+- Texto de preparação, fontes e validação podem ser apresentados sem imagens enquanto a geração não ocorrer.
+- Não declarar que houve geração se a ferramenta não retornou a prancha completa.
+
+**Critério de saída:** zero imagens isoladas + uma única prancha completa. Qualquer saída visual diferente disso é falha de execução e não pode ser registrada como geração concluída.
