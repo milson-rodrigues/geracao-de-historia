@@ -86,3 +86,15 @@ Falha em qualquer item aplicável impede classificar o ativo como aprovado.
 - [ ] A oração está desenvolvida e termina exatamente com “Em nome de Jesus, Amém!”.
 - [ ] Ilustração, personagens, cenários e sequência são fiéis à fonte oficial, sem elementos copiados da história-exemplo.
 - [ ] Não há placeholders, marca d'água, texto de interface ou conteúdo de outra história.
+
+
+## Gate de saída — prancha única obrigatória
+
+- [ ] A resposta visual contém exatamente uma imagem final com a prancha completa.
+- [ ] A imagem inclui cabeçalho, seis quadros narrativos e três painéis pedagógicos inferiores.
+- [ ] Não foram exibidas imagens isoladas de paisagens, personagens, cenas ou ilustrações avulsas.
+- [ ] Não foram usadas imagens externas, resultados de pesquisa, miniaturas ou galerias como substituto da geração.
+- [ ] A prancha foi retornada pela ferramenta nativa de geração de imagens do GPT personalizado.
+- [ ] Se a ferramenta falhou ou estava indisponível, nenhuma imagem substituta foi exibida e o status permaneceu não gerado.
+
+**Falha crítica:** qualquer imagem avulsa ou referência externa apresentada como resposta à solicitação de história invalida a entrega. A saída correta é uma prancha completa ou uma comunicação textual explícita de bloqueio.
