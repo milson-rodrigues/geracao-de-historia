@@ -41,3 +41,22 @@ Se o template pedir prancha pedagógica padrão, aplicar seus requisitos exatos 
 - Produzir em **9:16 vertical, mínimo 1080 × 1920**, somente quando o usuário pedir explicitamente ou selecionar o template vertical.
 - Manter variantes nomeadas e lado a lado no diretório de mockups: `mockup-template-universal.svg` (padrão horizontal) e `mockup-template-universal-9x16.svg` (vertical).
 - Planejar primeiro as áreas de texto para que personagens, cenários, mãos e objetos não as encubram. O texto deve caber na composição, nunca ser escondido para caber na imagem.
+
+
+## Padrão fixo de prancha bíblica infantil
+
+Para histórias bíblicas deste projeto, aplicar o layout de referência aprovado:
+
+- Uma única imagem horizontal 16:9, sem interface de aplicativo ou margens externas.
+- Cabeçalho superior em pergaminho com número, título oficial e referência bíblica.
+- Seis quadros narrativos em grade 3 colunas × 2 linhas, com bordas e espaçamento consistentes.
+- Caixa de narração em pergaminho claro na região superior de cada quadro, sem encobrir a ação principal.
+- Leitura sequencial da esquerda para a direita e de cima para baixo.
+- Três painéis inferiores alinhados: **O QUE APRENDEMOS**, **PERGUNTAS PARA A CRIANÇA** e **ORAÇÃO**.
+- Painéis inferiores com cabeçalhos coloridos distintos (verde, terracota/vermelho e azul), ícone temático e fundo claro.
+- No mínimo três perguntas específicas da história e oração desenvolvida (normalmente 4–7 frases), terminando exatamente em **“Em nome de Jesus, Amém!”**.
+- Ilustração em estilo quadrinhos/graphic novel, cenários históricos coerentes, luz cinematográfica, cores naturais expressivas e continuidade visual dos personagens.
+- Não inventar diálogos bíblicos. Usar balões somente quando houver fala sustentada pela fonte; a narração em caixas é o padrão.
+- Não inserir placeholders, texto de interface, marca d'água, elementos de aplicativo ou imagens de outra história.
+
+O exemplo visual enviado pelo usuário é referência de composição, acabamento e hierarquia, não uma fonte para copiar personagens ou conteúdo narrativo. A narrativa oficial continua sendo a única autoridade para os acontecimentos.
