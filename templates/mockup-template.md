@@ -52,7 +52,7 @@ Se qualquer fonte essencial estiver ausente ou inacessível, informar o bloqueio
 - **Balões de fala** para falas de personagens; o bico do balão deve apontar para quem está falando.
 - **Caixas retangulares** para narração, lugar, contexto, passagem do tempo e resumo de ações.
 - Deixar clara a distinção entre fala e narração.
-- Composição adaptável à quantidade de cenas necessária; não impor seis quadros ou rodapé pedagógico sem exigência explícita.
+- Composição adaptável à narrativa, mantendo como base aprovada seis quadros em grade 3 × 2 e os três painéis pedagógicos inferiores para histórias bíblicas infantis. Ajustar a quantidade de quadros somente quando a narrativa exigir e sem eliminar as perguntas ou a oração obrigatórias.
 - Título com hierarquia visual clara.
 - Textos curtos, legíveis, com alto contraste e margens internas.
 - Não sobrepor texto a rostos, gestos ou objetos importantes.
