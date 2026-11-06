@@ -61,3 +61,10 @@ Não gerar, pesquisar nem exibir imagens de prévia antes de concluir a consulta
 Esclarecer somente requisitos especiais que não estejam definidos e que alterem materialmente a prancha, como proporção excepcional ou exigências específicas de composição. Pedidos explícitos de sprites são tratados pelo template correspondente. Enquanto uma informação realmente necessária estiver pendente, não chamar gerador de imagens, não pesquisar imagens ilustrativas e não exibir referências visuais.
 
 Com a história identificada e as fontes verificadas, preparar e realizar uma única geração final da prancha em quadrinhos pela ferramenta nativa de imagens do GPT personalizado, quantidade 1 quando suportada. Não exigir Higgsfield. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
+
+
+## 10. Padrão visual obrigatório das histórias
+
+Toda história bíblica deve seguir a composição de referência definida em `templates/mockup-template.md`, seção 13: cabeçalho em pergaminho; seis quadros narrativos em grade 3×2; caixas de narração; três painéis pedagógicos inferiores (O QUE APRENDEMOS, PERGUNTAS PARA A CRIANÇA e ORAÇÃO); acabamento de quadrinhos/graphic novel; cores naturais expressivas; continuidade dos personagens; proporção 16:9.
+
+A referência visual orienta layout e direção de arte, não o conteúdo narrativo. Não copiar os personagens, acontecimentos ou textos da história usada como exemplo.
