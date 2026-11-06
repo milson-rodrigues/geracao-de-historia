@@ -54,8 +54,10 @@ Informar Template ID/versão; título/coleção; fontes consultadas; documentaç
 
 ## 9. Gate de confirmação antes de qualquer imagem
 
-Não gerar, pesquisar nem exibir imagens de prévia antes de concluir a consulta às fontes, identificar o template, verificar o manifesto e resolver ambiguidades materiais.
+Para solicitações de histórias deste projeto, a saída padrão e obrigatória é sempre uma **prancha em quadrinhos**. Não perguntar se o usuário prefere prancha ou ilustração única; essa escolha já está definida pelo projeto.
 
-Se o tipo de saída não estiver inequívoco (por exemplo, mockup de quadrinhos ou ilustração única), apresentar a pergunta de esclarecimento em texto e aguardar a resposta. Enquanto aguarda, não chamar gerador de imagens, não pesquisar imagens ilustrativas e não exibir referências visuais. Não criar imagem demonstrativa para explicar opções.
+Não gerar, pesquisar nem exibir imagens de prévia antes de concluir a consulta às fontes, identificar o template e verificar o manifesto.
 
-Quando o escopo estiver claro, realizar uma única geração final, quantidade 1 quando suportada. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
+Esclarecer somente requisitos especiais que não estejam definidos e que alterem materialmente a prancha, como proporção excepcional ou exigências específicas de composição. Pedidos explícitos de sprites são tratados pelo template correspondente. Enquanto uma informação realmente necessária estiver pendente, não chamar gerador de imagens, não pesquisar imagens ilustrativas e não exibir referências visuais.
+
+Com a história identificada e as fontes verificadas, preparar e realizar uma única geração final da prancha em quadrinhos, quantidade 1 quando suportada. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
