@@ -1,6 +1,6 @@
 # Validação final de ativos visuais
 
-A geração não equivale a aprovação. Preencha a checklist conforme o tipo de ativo e evidências observadas no arquivo final.
+A geração não equivale a aprovação. Preencha a checklist conforme o tipo de ativo e evidências observadas no arquivo final. A sequência operacional vigente está em [00_GUIA-DE-CONFIGURACAO.md](../00_GUIA-DE-CONFIGURACAO.md).
 
 ## Checklist comum
 
@@ -19,9 +19,8 @@ A geração não equivale a aprovação. Preencha a checklist conforme o tipo de
 
 ## Verificações obrigatórias antes da geração
 
-- [ ] A versão atual do GitHub (branch `main`) foi consultada nesta solicitação.
-- [ ] `ROUTER-MESTRE.md` foi usado apenas como ponto de entrada estável e permaneceu inalterado.
-- [ ] A sequência detalhada de `regras/00-LEIA-PRIMEIRO.md` foi seguida: README, catálogo, template, fonte narrativa, manifesto aplicável, regras e skills atuais.
+- [ ] O bootstrap estável `ROUTER-MESTRE.md` e o guia mutável `00_GUIA-DE-CONFIGURACAO.md` foram consultados no GitHub, branch `main`.
+- [ ] A ordem vigente do guia foi seguida; o roteador mestre não foi alterado para manutenção operacional.
 - [ ] O ID e título foram confirmados na fonte oficial.
 - [ ] O manifesto da coleção foi consultado para detectar geração anterior ou aprovação.
 - [ ] Se o histórico estava ausente/incompleto, foi marcado como desconhecido, sem presumir ausência de geração.
@@ -51,7 +50,6 @@ Aplicar somente quando o template exigir seis quadros em grade 3×2 e três pain
 - **BLOQUEADA:** fonte, ferramenta ou dependência essencial indisponível.
 
 Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
-
 
 ## Proporção e resolução
 
