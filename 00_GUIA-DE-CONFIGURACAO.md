@@ -134,3 +134,14 @@ Nenhuma imagem deve ser gerada, pesquisada ou exibida como prévia antes de conc
 8. Não usar imagens com marcas d'água ou de terceiros como se fossem ativos produzidos pelo projeto. A presença de uma imagem na resposta não comprova geração, validação ou salvamento.
 
 A sequência obrigatória para histórias é: **consulta e validação das fontes → preparar a prancha em quadrinhos e seu conteúdo → esclarecer apenas requisitos especiais não definidos → uma geração final → inspeção e validação → registro textual de status autorizado**.
+
+
+## 13. Referência visual canônica da prancha
+
+A referência visual fornecida pelo usuário nesta conversa define a apresentação esperada das pranchas bíblicas. A especificação reproduzível está em `templates/mockup-template.md`, seção 13, e em `regras/PADRAO-VISUAL-E-COMPOSICAO.md`.
+
+Resumo obrigatório: canvas 16:9 sem interface externa; cabeçalho de pergaminho com número/título/referência; seis quadros em grade 3×2, cada um com narração legível; três painéis pedagógicos inferiores alinhados (O QUE APRENDEMOS, PERGUNTAS PARA A CRIANÇA, ORAÇÃO), com cabeçalhos coloridos e ícones; acabamento de quadrinhos/graphic novel com cenários coerentes, iluminação cinematográfica, paleta natural expressiva e continuidade de personagens.
+
+A imagem de referência determina somente o estilo e a composição. Não copiar o conteúdo da história que aparece nela. A narrativa oficial do GitHub determina integralmente os fatos, personagens e sequência.
+
+**A coleção Antigo Testamento também segue este padrão visual de produção.** A nota editorial da fonte narrativa é contextual e não deve ser interpretada como bloqueio à produção de pranchas solicitadas pelo usuário; a política operacional de produção está neste guia.
