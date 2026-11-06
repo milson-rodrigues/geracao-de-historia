@@ -28,7 +28,7 @@ Para cada produção:
    - [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md);
    - [regras/PADRAO-VISUAL-E-COMPOSICAO.md](regras/PADRAO-VISUAL-E-COMPOSICAO.md);
    - [regras/VALIDACAO-FINAL.md](regras/VALIDACAO-FINAL.md).
-8. Consultar a versão atual das skills e documentações externas indicadas, especialmente [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md). Verificar a disponibilidade real da ferramenta antes de declarar que foi utilizada.
+8. Identificar e utilizar prioritariamente a ferramenta nativa de geração de imagens disponibilizada pelo próprio GPT personalizado que está executando o fluxo. Não exigir Higgsfield, CLI externa, integração ou credenciais de terceiros como pré-condição quando a ferramenta nativa estiver disponível. Consultar skills externas somente como referências complementares, se pertinentes.
 9. Aplicar os requisitos específicos do template, gerar e validar o ativo.
 10. Atualizar somente registros textuais de status quando houver mudança real, autorização e acesso de escrita. Reabrir o arquivo e confirmar a gravação.
 
@@ -81,11 +81,14 @@ Para cada história bíblica destinada a crianças:
 
 ## 8. Skills e ferramentas
 
-- Consultar a versão atual da skill oficial [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md) antes da geração.
+- **Ferramenta principal:** ferramenta nativa de geração de imagens do GPT personalizado “Gerar imagem bíblica”, quando disponível na sessão. Ela é o mecanismo de execução esperado para produzir a prancha diretamente no ChatGPT.
+- Higgsfield não é ferramenta obrigatória nem dependência do fluxo. Não bloquear a geração porque Higgsfield, sua CLI, integração ou credenciais não estão disponíveis.
+- Só utilizar Higgsfield se o usuário solicitar explicitamente essa ferramenta e ela estiver realmente disponível.
+- Skills e bibliotecas externas (incluindo Higgsfield e GPT Image 2 Prompt Library) são referências complementares de técnica e direção visual; não substituem nem condicionam a ferramenta nativa do GPT.
 - Consultar [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2) como complemento de direção artística e estruturação de prompts, quando relevante.
 - Taste Skill e Open Design são complementares/opcionais, conforme [regras/SKILLS-E-RECURSOS.md](regras/SKILLS-E-RECURSOS.md).
 - Documentação pública ou presença de arquivos não prova que CLI, integração, credenciais ou ferramenta estejam operacionais.
-- Declarar somente a ferramenta e o método realmente utilizados.
+- Declarar somente a ferramenta e o método realmente utilizados. Se a ferramenta nativa do GPT gerar a imagem, identificá-la como ferramenta de geração de imagens do próprio GPT; nunca atribuir a geração ao Higgsfield.
 
 ## 9. Validação
 
