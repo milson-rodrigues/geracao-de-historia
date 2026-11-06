@@ -85,16 +85,13 @@ Para cada história bíblica destinada a crianças, preparar no painel pedagógi
 
 Revisar perguntas e oração antes da geração. Se o espaço da imagem não comportar todo o conteúdo com legibilidade, reorganizar o layout ou apresentar o conteúdo completo junto da imagem; não cortar perguntas nem abreviar a oração para caber.
 
-## 7. Skills e ferramentas
+## 7. Ferramenta e referências
 
-### Principal: Higgsfield
+### Ferramenta principal: geração nativa do GPT personalizado
 
-- Repositório oficial: https://github.com/higgsfield-ai/skills
-- Skill de geração: https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md
+A prancha final deve ser gerada pela ferramenta nativa de geração de imagens disponibilizada pelo próprio GPT personalizado “Gerar imagem bíblica”, diretamente no ChatGPT, quando disponível na sessão. Não exigir Higgsfield, CLI, integração ou credenciais externas. A indisponibilidade do Higgsfield não bloqueia esta rota. Só usar Higgsfield se o usuário solicitar explicitamente e a ferramenta estiver disponível.
 
-Consultar a versão atual diretamente no GitHub antes de cada geração e ler as instruções relevantes. Uma cópia local pode estar desatualizada e não é a autoridade da versão. Confirmar que CLI/integração e credenciais estão realmente operacionais antes de declarar execução.
-
-### Complemento: GPT Image 2 Prompt Library
+### Referência complementar: GPT Image 2 Prompt Library
 
 - Repositório: https://github.com/freestylefly/awesome-gpt-image-2
 - Skill: https://github.com/freestylefly/awesome-gpt-image-2/blob/main/agents/skills/gpt-image-2-style-library/SKILL.md
@@ -103,7 +100,7 @@ Usar quando útil para procurar exemplos e modelos de prompt por categoria, esti
 
 ### Método de saída
 
-A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente disponível. Registrar apenas o método que foi de fato utilizado. Um link ou uma skill no GitHub não prova instalação ou execução.
+Usar prioritariamente a ferramenta nativa de geração de imagens do GPT personalizado. Registrar apenas o método realmente utilizado. Skills e ferramentas externas são complementares, salvo solicitação explícita do usuário.
 
 ## 7A. Consulta ao GitHub e prevenção de repetição
 
