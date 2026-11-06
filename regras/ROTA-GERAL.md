@@ -50,3 +50,12 @@ Não declarar caminho, salvamento, aprovação, commit ou status atualizado sem 
 ## 8. Relatório
 
 Informar Template ID/versão; título/coleção; fontes consultadas; documentação/skills consultadas; método/ferramenta realmente utilizada; parâmetros/quantidade; validação; caminho real do arquivo, se salvo; mudanças de status confirmadas e pendências.
+
+
+## 9. Gate de confirmação antes de qualquer imagem
+
+Não gerar, pesquisar nem exibir imagens de prévia antes de concluir a consulta às fontes, identificar o template, verificar o manifesto e resolver ambiguidades materiais.
+
+Se o tipo de saída não estiver inequívoco (por exemplo, mockup de quadrinhos ou ilustração única), apresentar a pergunta de esclarecimento em texto e aguardar a resposta. Enquanto aguarda, não chamar gerador de imagens, não pesquisar imagens ilustrativas e não exibir referências visuais. Não criar imagem demonstrativa para explicar opções.
+
+Quando o escopo estiver claro, realizar uma única geração final, quantidade 1 quando suportada. Pesquisar/exibir imagens externas somente quando o usuário solicitar referências; identificá-las como referências externas e nunca como resultado gerado. Imagens com marca d'água ou de terceiros não podem ser apresentadas como ativos do projeto.
