@@ -17,6 +17,27 @@ A geração não equivale a aprovação. Preencha a checklist conforme o tipo de
 - [ ] O arquivo está realmente salvo e abre, quando se declara salvamento.
 - [ ] O manifesto da mesma coleção foi atualizado e relido, se houve alteração de status.
 
+## Verificações obrigatórias antes da geração
+
+- [ ] A versão atual do GitHub (branch `main`) foi consultada nesta solicitação.
+- [ ] Roteador, catálogo, template, fonte narrativa e regras aplicáveis foram lidos na ordem exigida.
+- [ ] O ID e título foram confirmados na fonte oficial.
+- [ ] O manifesto da coleção foi consultado para detectar geração anterior ou aprovação.
+- [ ] Se o histórico estava ausente/incompleto, foi marcado como desconhecido, sem presumir ausência de geração.
+- [ ] A geração não foi iniciada quando uma fonte essencial ou o GitHub estava inacessível.
+
+## Validação pedagógica de histórias infantis
+
+- [ ] Existem pelo menos três perguntas específicas de compreensão/reflexão.
+- [ ] A oração tem desenvolvimento adequado (normalmente 4 a 7 frases), linguagem infantil e relação com a história.
+- [ ] A oração termina exatamente com **“Em nome de Jesus, Amém!”**.
+- [ ] Nenhuma pergunta ou trecho da oração foi removido para acomodar o layout; se necessário, o conteúdo completo acompanha a imagem.
+
+## Política de armazenamento
+
+- [ ] A imagem final não foi enviada nem commitada no GitHub.
+- [ ] Qualquer alteração no GitHub limita-se a arquivos textuais autorizados, como manifesto de status.
+
 ## Para pranchas que exijam layout fixo
 
 Aplicar somente quando o template exigir seis quadros em grade 3×2 e três painéis inferiores (`O QUE APRENDEMOS`, `PERGUNTAS PARA A CRIANÇA`, `ORAÇÃO`). Não impor esse formato a um mockup universal ou a sprites por padrão.
