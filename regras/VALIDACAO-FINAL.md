@@ -20,7 +20,8 @@ A geração não equivale a aprovação. Preencha a checklist conforme o tipo de
 ## Verificações obrigatórias antes da geração
 
 - [ ] A versão atual do GitHub (branch `main`) foi consultada nesta solicitação.
-- [ ] Roteador, catálogo, template, fonte narrativa e regras aplicáveis foram lidos na ordem exigida.
+- [ ] `ROUTER-MESTRE.md` foi usado apenas como ponto de entrada estável e permaneceu inalterado.
+- [ ] A sequência detalhada de `regras/00-LEIA-PRIMEIRO.md` foi seguida: README, catálogo, template, fonte narrativa, manifesto aplicável, regras e skills atuais.
 - [ ] O ID e título foram confirmados na fonte oficial.
 - [ ] O manifesto da coleção foi consultado para detectar geração anterior ou aprovação.
 - [ ] Se o histórico estava ausente/incompleto, foi marcado como desconhecido, sem presumir ausência de geração.
