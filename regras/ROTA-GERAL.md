@@ -14,6 +14,12 @@ O usuário fornece o Template ID e a história/ativo. Campos adicionais dependem
 
 Consulte primeiro [`templates/CATALOGO.md`](../templates/CATALOGO.md). Se o ID não existir ou o arquivo estiver ausente, pare e informe.
 
+## 3. Regra de bloqueio — consulta obrigatória ao GitHub
+
+Toda nova solicitação de produção começa com consulta direta ao repositório canônico no GitHub, branch `main`. Repetir a consulta em cada solicitação/sessão. Memória, contexto de conversas anteriores, cópias locais e instruções antigas não substituem a versão atual.
+
+Não iniciar geração sem concluir a ordem de consulta, confirmar os arquivos e ler a narrativa oficial. Se o GitHub ou uma fonte essencial estiver indisponível, interromper e informar o bloqueio; não completar lacunas por suposição.
+
 ## 3. Ordem obrigatória de consulta
 
 1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) e [`regras/00-LEIA-PRIMEIRO.md`](00-LEIA-PRIMEIRO.md).
@@ -35,6 +41,10 @@ O mesmo identificador `<nome-historia>` deve ser usado no arquivo narrativo e no
 - `historias/status-criacao-historia.<nome-historia>.md`
 
 Não assumir que o arquivo existe; validar caminho, conteúdo, coleção e correspondência entre os arquivos. A narrativa define fatos e sequência; status define somente o progresso registrado para essa coleção.
+
+## 4A. Controle de repetição
+
+Antes de gerar, consultar o manifesto de status da coleção e procurar o identificador exato da história. Se já houver registro de imagem gerada, validada ou aprovada, não gerar outra automaticamente; pedir confirmação ou aguardar solicitação explícita de nova versão. Se o manifesto estiver ausente, vazio ou incompleto, classificar o histórico como desconhecido, nunca como prova de que não houve geração anterior.
 
 ## 5. Idioma e ortografia
 
@@ -100,6 +110,10 @@ O objetivo principal é gerar a imagem fiel à história. Criar uma cópia indiv
 - Cópia individual opcional: nome descritivo em `historias/`, sem sobrescrever arquivos existentes.
 
 O identificador de coleção deve ser consistente entre a fonte e o manifesto quando ambos existirem. Não inventar status nem commits.
+
+## 11. Política de armazenamento de imagens
+
+Imagens finais geradas não devem ser enviadas, commitadas ou armazenadas no GitHub. O repositório é a fonte de verdade para narrativas, templates, regras e controle textual de status. Quando autorizado e possível, atualizar somente o manifesto textual da coleção e confirmar a gravação. A imagem exibida no chat não equivale a arquivo salvo no GitHub.
 
 ## Proporção e qualidade padrão
 
