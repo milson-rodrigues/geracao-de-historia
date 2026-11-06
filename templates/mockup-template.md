@@ -166,11 +166,11 @@ Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill H
 
 ## 12. Confirmação de escopo e bloqueio de prévias
 
-Este template produz um **mockup visual**, não determina automaticamente que toda solicitação de história deva resultar em mockup. Antes de gerar, confirme que o usuário deseja este formato quando o pedido também puder significar uma ilustração única ou outro tipo de ativo.
+Neste projeto, toda solicitação de geração de uma história bíblica tem como saída uma **prancha em quadrinhos** seguindo este template. Não perguntar se o usuário deseja prancha em quadrinhos ou ilustração única. O template universal define o formato de saída padrão.
 
-- Se houver ambiguidade material entre mockup/prancha e ilustração única, perguntar em texto qual saída deseja e aguardar a resposta.
+- Não solicitar confirmação sobre prancha versus ilustração única: a prancha em quadrinhos é obrigatória para histórias.
 - Antes dessa confirmação, não gerar imagem, não buscar imagens ilustrativas e não exibir referências ou prévias visuais.
 - Não criar imagem de demonstração para explicar as opções.
-- Se o pedido já especificar claramente o mockup universal, não pedir confirmação redundante.
+- Perguntar apenas sobre requisitos especiais não definidos que alterem materialmente a prancha, como proporção excepcional ou composição específica.
 - Após escopo definido e todas as fontes verificadas, fazer uma única geração final, quantidade 1 quando suportada.
 - Imagens externas só podem ser exibidas como referências quando solicitadas explicitamente; devem ser identificadas como externas e nunca confundidas com resultado gerado.
