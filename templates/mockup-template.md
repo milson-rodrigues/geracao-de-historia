@@ -162,3 +162,15 @@ Informar Template ID/versão, tema, fontes consultadas, versão e URL da skill H
 - Os modelos vetoriais correspondentes ficam juntos em `mockups/`: `mockup-template-universal.svg` (padrão 16:9) e `mockup-template-universal-9x16.svg` (variante 9:16).
 - Não inferir que o arquivo é Full HD apenas pela aparência. Conferir as dimensões da imagem raster final. SVG é escalável; para exportação, respeitar as dimensões mínimas acima.
 - Ao entregar ambos os formatos, manter o arquivo horizontal como principal e rotular claramente a variante vertical.
+
+
+## 12. Confirmação de escopo e bloqueio de prévias
+
+Este template produz um **mockup visual**, não determina automaticamente que toda solicitação de história deva resultar em mockup. Antes de gerar, confirme que o usuário deseja este formato quando o pedido também puder significar uma ilustração única ou outro tipo de ativo.
+
+- Se houver ambiguidade material entre mockup/prancha e ilustração única, perguntar em texto qual saída deseja e aguardar a resposta.
+- Antes dessa confirmação, não gerar imagem, não buscar imagens ilustrativas e não exibir referências ou prévias visuais.
+- Não criar imagem de demonstração para explicar as opções.
+- Se o pedido já especificar claramente o mockup universal, não pedir confirmação redundante.
+- Após escopo definido e todas as fontes verificadas, fazer uma única geração final, quantidade 1 quando suportada.
+- Imagens externas só podem ser exibidas como referências quando solicitadas explicitamente; devem ser identificadas como externas e nunca confundidas com resultado gerado.
