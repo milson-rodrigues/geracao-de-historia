@@ -203,3 +203,12 @@ Usar a imagem de referência fornecida pelo usuário nesta configuração como e
 - Distribuir a narrativa em seis momentos coerentes. Se a fonte contiver menos de seis acontecimentos explícitos, decompor visualmente momentos existentes sem inventar novos eventos.
 - A imagem de referência define a composição e a linguagem visual, não os personagens, textos ou fatos da história usada como exemplo.
 - Se o texto não couber com legibilidade, simplificar a redação sem perder fatos essenciais ou apresentar o conteúdo completo junto da imagem; nunca eliminar perguntas ou encurtar indevidamente a oração.
+
+
+## 14. Saída visual única — proibição de imagens isoladas
+
+Para uma história real, a saída visual é exclusivamente **uma prancha completa em uma única imagem**. Não entregar imagens de cenas isoladas, paisagens, personagens, capas, thumbnails, imagens de referência ou mosaicos de imagens independentes.
+
+A ferramenta nativa de geração de imagens do GPT personalizado deve receber um único pedido para compor toda a prancha. Não usar pesquisa de imagens, resultados de sites, bancos de imagens, imagens externas ou componentes de exibição de imagens para simular a entrega. Não dividir a prancha em seis arquivos ou imagens separadas.
+
+Se a ferramenta nativa não estiver operacional, declarar que a prancha não foi gerada e explicar o bloqueio. Não substituir o resultado por imagens soltas ou exemplos visuais. O status permanece não gerado.
