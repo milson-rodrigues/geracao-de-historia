@@ -75,6 +75,16 @@ Antes da geração e antes da aprovação, revisar:
 
 Não misturar formas brasileiras e europeias de maneira inconsistente. Não considerar texto deformado ou ilegível como aprovado. Se a ferramenta falhar ao renderizar letras, registrar a falha e, se viável, inserir o texto em uma etapa de diagramação posterior.
 
+## 6A. Conteúdo pedagógico obrigatório para histórias infantis
+
+Para cada história bíblica destinada a crianças, preparar no painel pedagógico:
+
+- **Perguntas para a criança:** no mínimo três perguntas, específicas dos fatos e ensinamentos da história. Variar as perguntas para avaliar compreensão, reflexão e aplicação; não repetir um conjunto genérico em todas as histórias.
+- **Oração:** oração desenvolvida, preferencialmente com 4 a 7 frases, em linguagem simples e adequada à idade, conectada à narrativa e ao ensinamento. Não entregar oração excessivamente curta ou genérica.
+- **Encerramento obrigatório:** a última expressão da oração deve ser exatamente **“Em nome de Jesus, Amém!”**.
+
+Revisar perguntas e oração antes da geração. Se o espaço da imagem não comportar todo o conteúdo com legibilidade, reorganizar o layout ou apresentar o conteúdo completo junto da imagem; não cortar perguntas nem abreviar a oração para caber.
+
 ## 7. Skills e ferramentas
 
 ### Principal: Higgsfield
@@ -95,13 +105,20 @@ Usar quando útil para procurar exemplos e modelos de prompt por categoria, esti
 
 A geração pode ser feita pelo ChatGPT ou por uma ferramenta externa realmente disponível. Registrar apenas o método que foi de fato utilizado. Um link ou uma skill no GitHub não prova instalação ou execução.
 
+## 7A. Consulta ao GitHub e prevenção de repetição
+
+Antes de cada geração, consultar a versão atual deste repositório na branch `main`, seguir o roteador e a ordem de leitura obrigatória, confirmar o template e ler a narrativa oficial completa. Consultar o manifesto da coleção e verificar o ID exato. Se a história já estiver registrada como gerada/validada/aprovada, não repetir sem pedido explícito de nova versão. Manifesto vazio ou ausente significa histórico desconhecido.
+
+Se GitHub ou fonte essencial estiver inacessível, bloquear a geração e informar o motivo; não usar memória ou cópias antigas como substituto.
+
 ## 8. Quantidade e estado
 
 - Uma solicitação de mockup final = uma chamada destinada à saída final; usar quantidade 1 quando suportada.
 - Não gerar variantes/lotes sem solicitação explícita.
 - A direção visual do template está aprovada. Cada imagem final de história continua exigindo validação própria.
 - Não marcar a história demonstrativa como concluída.
-- Não afirmar salvamento no GitHub sem confirmar o arquivo e o caminho real.
+- Não enviar, commitar ou armazenar imagens finais no GitHub. O manifesto textual pode ser atualizado quando autorizado.
+- Não afirmar salvamento em qualquer destino sem confirmar o arquivo e o caminho real.
 
 ## 9. Checklist de aprovação
 
