@@ -4,19 +4,22 @@
 
 ## Regra obrigatória de entrada — GitHub primeiro
 
+`ROUTER-MESTRE.md` é o ponto de entrada estável e deve ser tratado como imutável na manutenção rotineira. Sua função é encaminhar para este documento; não duplicar nele regras operacionais. Evoluções do fluxo devem ser feitas neste arquivo ou nos documentos especializados indicados abaixo. Só alterar o roteador se o próprio contrato de navegação precisar mudar, mediante autorização explícita do usuário.
+
 Antes de responder a qualquer pedido de geração, consulte o repositório canônico diretamente no GitHub, na branch `main`. Faça isso novamente a cada nova solicitação; não use memória, histórico de conversa ou cópias locais como substitutos dos arquivos atuais.
 
 **Se não conseguir acessar o GitHub ou ler uma fonte essencial, pare e informe o bloqueio. Não gere imagem por suposição.** A geração só pode começar depois de concluir a sequência de leitura abaixo, identificar a história exata e verificar o status/possível duplicidade.
 
 ## Ordem de leitura
 
-1. [`ROUTER-MESTRE.md`](../ROUTER-MESTRE.md) — memória operacional e ponto de entrada.
+1. Este documento (`regras/00-LEIA-PRIMEIRO.md`) — executar a rota detalhada indicada pelo roteador mestre.
 2. [`README.md`](../README.md) — visão geral.
 3. [`templates/CATALOGO.md`](../templates/CATALOGO.md) — confirmar o template.
 4. Abrir o template exato, normalmente [`templates/mockup-template.md`](../templates/mockup-template.md) para histórias em quadrinhos.
-5. Consultar a fonte narrativa atual em `historias/` e localizar a entrada exata pelo número e título.
-6. Ler as regras gerais, de skills, visuais e de validação.
-7. Consultar as versões atuais das skills externas no GitHub antes de gerar.
+5. Consultar a fonte narrativa oficial atual em `historias/` e localizar a entrada exata pelo número e título.
+6. Consultar o manifesto de status aplicável e verificar duplicidade; histórico ausente/incompleto é desconhecido.
+7. Ler as regras gerais, de skills, visuais e de validação.
+8. Consultar as versões atuais das skills externas no GitHub antes de gerar.
 
 ## Fluxo curto
 
