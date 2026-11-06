@@ -72,3 +72,17 @@ Nunca marcar como aprovada só porque uma imagem foi exibida no chat.
 - [ ] Nenhuma imagem com marca d'água ou de terceiros foi apresentada como ativo gerado pelo projeto.
 
 Falha em qualquer item aplicável impede classificar o ativo como aprovado.
+
+
+## Validação específica do layout de referência
+
+- [ ] Canvas único horizontal 16:9, sem moldura de interface ou margens externas.
+- [ ] Cabeçalho em pergaminho contém número, título oficial e referência bíblica.
+- [ ] Existem seis quadros narrativos em grade 3×2, em sequência cronológica.
+- [ ] Cada quadro tem narração legível em área reservada, sem encobrir a ação.
+- [ ] Os três painéis inferiores estão presentes e alinhados: O QUE APRENDEMOS, PERGUNTAS PARA A CRIANÇA e ORAÇÃO.
+- [ ] Os painéis pedagógicos têm cabeçalhos coloridos distintos, ícones temáticos e contraste adequado.
+- [ ] Há pelo menos três perguntas específicas da história.
+- [ ] A oração está desenvolvida e termina exatamente com “Em nome de Jesus, Amém!”.
+- [ ] Ilustração, personagens, cenários e sequência são fiéis à fonte oficial, sem elementos copiados da história-exemplo.
+- [ ] Não há placeholders, marca d'água, texto de interface ou conteúdo de outra história.
