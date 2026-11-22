@@ -161,3 +161,43 @@ Em uma solicitação de história bíblica, **não gerar, buscar, anexar ou exib
 - Não declarar que houve geração se a ferramenta não retornou a prancha completa.
 
 **Critério de saída:** zero imagens isoladas + uma única prancha completa. Qualquer saída visual diferente disso é falha de execução e não pode ser registrada como geração concluída.
+
+
+## 15. Expansão arquitetural — AI Creative Hub
+
+O repositório passa a documentar uma arquitetura-alvo multimodal denominada **AI Creative Hub**, sem renomear o repositório GitHub nesta etapa. O escopo de domínio contempla Image, Comic, Video, Voice, Audio e Sprite.
+
+Documentos de referência:
+- [Arquitetura AI Creative Hub](docs/AI-CREATIVE-HUB-ARCHITECTURE.md)
+- [Índice de comandos](commands/COMMAND-INDEX.md)
+- [Manual de comandos](commands/COMMAND-MANUAL.md)
+- [Contrato do Command Router](commands/COMMAND-CONTRACT.md)
+- [Registro de skills](external/SKILL-REGISTRY.md)
+
+O fluxo de histórias bíblicas permanece especializado na Comic Bridge e continua sujeito ao template, fontes, manifesto e regras deste guia. A expansão multimídia não altera retroativamente esses requisitos.
+
+## 16. Comandos, bridges e skills
+
+Os comandos documentados são uma interface conversacional especificada, não comandos slash já registrados em um host. Não declarar que um comando é executável até existir parser/dispatcher integrado e testes de integração.
+
+Separação obrigatória:
+- **Command:** intenção solicitada pelo usuário.
+- **Bridge:** domínio responsável pela operação.
+- **Workflow:** sequência de etapas.
+- **Skill:** conhecimento/instruções especializadas carregadas sob demanda.
+- **Provider/Adapter:** ferramenta externa ou nativa que efetivamente executa a operação.
+
+A pasta `.agents/skills/` já contém skills locais. Não duplicar essas pastas em `skills/`. Usar `external/SKILL-REGISTRY.md` para registrar procedência, versão, licença, compatibilidade e estratégia (INTERNAL, ADAPTED ou REFERENCE). Skills externas só podem ser copiadas/adaptadas após auditoria de licença, dependências, scripts, permissões e segurança.
+
+Não presumir que a presença de uma skill local prova instalação, autenticação ou disponibilidade de provider. Consultar a fonte oficial e validar o contrato técnico quando a tarefa exigir.
+
+## 17. Política de providers por domínio
+
+A seleção de provider deve ser baseada em capacidade, schema atual, disponibilidade, entradas, saída exigida, política e custo conhecido. Não fixar um provider no nome do comando.
+
+- Image, Video e Audio podem avaliar adapters documentados na skill Higgsfield Generate, após validação operacional.
+- Voice exige homologação específica de TTS/dublagem; a skill Higgsfield Generate local declara que não atende TTS.
+- Sprite exige validação de dimensões, transparência, frames e formato de exportação.
+- Comic orquestra narrativa, storyboard, imagens e QA; não é sinônimo de um gerador de imagem.
+
+As regras específicas do fluxo bíblico continuam prevalecendo sobre defaults genéricos de providers e skills.
