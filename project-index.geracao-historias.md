@@ -45,3 +45,14 @@ Todo texto editorial do projeto deve ser escrito em português brasileiro (pt-BR
 ## Estado atual
 
 O mockup universal aguarda aprovação visual do usuário. Não presumir que a imagem de mockup está no GitHub até confirmar um arquivo salvo. Coleções e status permanecem separados e rastreáveis.
+
+
+## AI Creative Hub — expansão multimodal
+
+- Arquitetura-alvo: `docs/AI-CREATIVE-HUB-ARCHITECTURE.md`
+- Índice de comandos: `commands/COMMAND-INDEX.md`
+- Manual de comandos: `commands/COMMAND-MANUAL.md`
+- Contrato do roteador: `commands/COMMAND-CONTRACT.md`
+- Registro de skills externas/locais: `external/SKILL-REGISTRY.md`
+
+Bridges documentadas: Image, Comic, Video, Voice, Audio e Sprite. Os comandos estão especificados como interface conversacional; parser/dispatcher executável ainda não foi implementado. O fluxo bíblico existente permanece subordinado ao guia operacional, ao catálogo, às fontes narrativas e aos templates atuais.
