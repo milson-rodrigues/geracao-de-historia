@@ -2,7 +2,7 @@
 
 # Geração de Histórias em Quadrinhos — Image & Sprite Lab
 
-**Templates universais para mockups e produção visual rastreável**
+**AI Creative Hub — bridges multimodais, comandos e produção visual rastreável**
 
 [Roteador mestre](ROUTER-MESTRE.md) · [Catálogo](templates/CATALOGO.md) · [Regras](regras/00-LEIA-PRIMEIRO.md) · [Instruções do Projeto ChatGPT](configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md)
 
@@ -19,10 +19,11 @@ O fluxo acima vale para ChatGPT e agentes. A cópia individual do roteiro no Git
 ## Como começar
 
 1. Leia [`ROUTER-MESTRE.md`](ROUTER-MESTRE.md).
-2. Consulte [`templates/CATALOGO.md`](templates/CATALOGO.md) e escolha um ID existente.
-3. Leia o template e a fonte narrativa atual.
-4. Consulte as regras e a versão atual das skills externas.
-5. Gere o ativo, valide-o e registre apenas estados confirmados.
+2. Consulte o [índice de comandos](commands/COMMAND-INDEX.md) e o [manual](commands/COMMAND-MANUAL.md).
+3. Identifique a bridge e o workflow apropriados.
+4. Para histórias bíblicas, consulte [`templates/CATALOGO.md`](templates/CATALOGO.md), o template e a fonte narrativa canônica.
+5. Consulte o [registro de skills](external/SKILL-REGISTRY.md) e valide provider, versão e disponibilidade antes da execução.
+6. Gere o ativo, valide-o e registre apenas estados confirmados.
 
 ## Template universal
 
@@ -57,18 +58,28 @@ Arquivos canônicos presentes:
 | [`regras/SKILLS-E-RECURSOS.md`](regras/SKILLS-E-RECURSOS.md) | Skills e recursos complementares |
 | [`regras/PADRAO-VISUAL-E-COMPOSICAO.md`](regras/PADRAO-VISUAL-E-COMPOSICAO.md) | Direção visual e tipografia |
 | [`regras/VALIDACAO-FINAL.md`](regras/VALIDACAO-FINAL.md) | Checklist de validação |
+| [`commands/COMMAND-INDEX.md`](commands/COMMAND-INDEX.md) | Catálogo de comandos multimodais |
+| [`commands/COMMAND-MANUAL.md`](commands/COMMAND-MANUAL.md) | Sintaxe e utilização dos comandos |
+| [`commands/COMMAND-CONTRACT.md`](commands/COMMAND-CONTRACT.md) | Contrato do roteador de comandos |
+| [`external/SKILL-REGISTRY.md`](external/SKILL-REGISTRY.md) | Procedência e governança de skills |
+| [`docs/AI-CREATIVE-HUB-ARCHITECTURE.md`](docs/AI-CREATIVE-HUB-ARCHITECTURE.md) | Arquitetura-alvo multimodal |
 | [`configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md`](configuracao-projeto-prompt-instrucao/PROMPT-PROJETO.md) | Instruções internas do Projeto ChatGPT |
 
 ## Idioma e ortografia
 
 Todo texto editorial deve usar **português brasileiro (pt-BR)**: títulos, falas, narração, legendas, instruções, documentação e relatórios. Revisar ortografia, acentuação, pontuação, concordância e legibilidade antes de aprovar.
 
-## Skills
+## AI Creative Hub
 
-- **Principal para geração:** [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md). Consultar a versão atual no repositório oficial antes de cada geração.
-- **Complementar para referência de prompts e estilos:** [awesome-gpt-image-2](https://github.com/freestylefly/awesome-gpt-image-2), incluindo a [GPT-Image2 Style Library](https://github.com/freestylefly/awesome-gpt-image-2/blob/main/agents/skills/gpt-image-2-style-library/SKILL.md).
+A arquitetura-alvo organiza seis bridges: **Image, Comic, Video, Voice, Audio e Sprite**. Os comandos são documentados em [`commands/COMMAND-INDEX.md`](commands/COMMAND-INDEX.md); os contratos e exemplos estão no [manual](commands/COMMAND-MANUAL.md) e no [Command Router Contract](commands/COMMAND-CONTRACT.md). A visão arquitetural está em [`docs/AI-CREATIVE-HUB-ARCHITECTURE.md`](docs/AI-CREATIVE-HUB-ARCHITECTURE.md).
 
-A biblioteca complementar ajuda a descobrir estilos e estruturar prompts; não substitui a narrativa canônica nem a documentação atual da ferramenta de geração. Não presumir que uma CLI ou integração está operacional apenas porque existe uma skill no GitHub.
+**Importante:** os comandos estão especificados documentalmente, mas ainda não há parser/dispatcher de slash commands implementado neste repositório. A documentação não registra comandos automaticamente em ChatGPT ou outros hosts.
+
+### Skills e providers
+
+A pasta `.agents/skills/` já contém skills locais da Higgsfield. Não duplicar esses conteúdos. Consultar o [registro de skills](external/SKILL-REGISTRY.md) para procedência, escopo e política de adoção. Skills externas devem ser referenciadas ou adaptadas após auditoria de licença, dependências e segurança.
+
+A skill [Higgsfield Generate](https://github.com/higgsfield-ai/skills/blob/main/higgsfield-generate/SKILL.md) documenta recursos de imagem, vídeo, 3D e áudio via CLI, mas não comprova que CLI, conta ou provider estejam disponíveis. Para histórias bíblicas, prevalece a ferramenta principal definida no guia operacional atual. Voice/TTS requer provider especializado homologado.
 
 ## Integridade
 
