@@ -48,3 +48,20 @@ Documentação pública, skills ou links não provam que uma ferramenta externa 
 ## 5. Relatório obrigatório
 
 Informar a ferramenta realmente utilizada, parâmetros e quantidade quando disponíveis, resultado da validação e limitações. Registrar skills externas apenas quando efetivamente consultadas. Não inventar execução.
+
+
+## 6. Integração ao AI Creative Hub
+
+O roteamento de comandos e bridges está documentado em:
+- [Índice de comandos](../commands/COMMAND-INDEX.md)
+- [Manual de comandos](../commands/COMMAND-MANUAL.md)
+- [Contrato do Command Router](../commands/COMMAND-CONTRACT.md)
+- [Registro de skills](../external/SKILL-REGISTRY.md)
+
+Não confundir comando, bridge, workflow, skill e provider. O comando expressa a intenção; a bridge define o domínio; o workflow ordena etapas; a skill fornece instruções especializadas; o provider executa a operação.
+
+A pasta `.agents/skills/` contém cópias locais existentes. Não duplicar essas skills em outra árvore. O registro externo deve indicar fonte, versão/commit, licença, data de verificação, dependências e compatibilidade. Atualizar cópias locais somente após auditoria e com proveniência.
+
+A política deste documento não substitui a política específica do fluxo bíblico definida em `00_GUIA-DE-CONFIGURACAO.md`. Para histórias bíblicas, aplicar a ferramenta e os gates explicitamente definidos naquele guia. Para outras bridges, resolver provider por capacidade e validar disponibilidade/schema atual.
+
+Voice e Audio são domínios distintos: Voice cobre fala, TTS, transcrição e dublagem; Audio cobre música, efeitos, ambientes, edição, mixagem e masterização.
